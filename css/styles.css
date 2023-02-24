@@ -7719,7 +7719,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-chinese {
   font-family: "kaiti", "kaishu", "SimSun", "regular script", "zhengshu", "zhengkai", cursive;
-  font-size: 3.5rem;
+  font-size: calc(1.475rem + 2.7vw);
 }
 
 
