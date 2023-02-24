@@ -7718,7 +7718,7 @@ textarea.form-control-lg {
 
 /* rtl:end:remove */
 .text-chinese {
-  font-family: "SimSun", "regular script", "kaiti", "kaishu", "zhengshu", "zhengkai", cursive;
+  font-family: "kaiti", "kaishu", "SimSun", "regular script", "zhengshu", "zhengkai", cursive;
 }
 
 
