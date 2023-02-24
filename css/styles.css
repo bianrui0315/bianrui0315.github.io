@@ -7717,6 +7717,12 @@ textarea.form-control-lg {
 }
 
 /* rtl:end:remove */
+.text-chinese {
+  font-family: "SimSun", "regular script", "kaiti", "kaishu", "zhengshu", "zhengkai", cursive;
+}
+
+
+
 .text-primary {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
