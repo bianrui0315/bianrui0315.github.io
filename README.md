@@ -194,7 +194,8 @@ STECONF(Science, Technology and Engineering Conferences) 2023
 ICCCM 2023  
 IEEE-ECCE 2023  
 Algotel/Cores 2023  
-2023 IEEE RTC  
+2023 IEEE RTC 
+WiCV 2023 (Women in Computer Vision Workshop) at CVPR
   
 
 ### Journal Reviewer
