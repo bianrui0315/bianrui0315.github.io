@@ -176,39 +176,39 @@ CSTA Awards Committee
 
 ### Conference Reviewer
 
-IEEE INFOCOM '17 '18 '19 '20 '21
-IEEE CNS '18 '20
-IEEE HASE '19' MIND '20
-ACNS '20
-SRDS '21
-CSAE '22
-PAM '22
-ICICS '20
-DSN '19 '21 '22
-CODASPY '20'21
-IEEE SM '20'23
-IEEE IWCMC Security Symposium '23
-ICDATE '23
-IEEE ITEC '23
-ICASIS '23
-BalkanCom'23
-IEEE ICECIE '23
-STECONF '23
-ICCCM '23
-IEEE-ECCE '23
-Algotel/Cores '23
-IEEE RTC '23
-WiCV 2023 at CVPR '23
-IEEE LCN-MarCaS '23
-NetSoft S4SI '23
+IEEE INFOCOM '17 '18 '19 '20 '21  
+IEEE CNS '18 '20  
+IEEE HASE '19' MIND '20  
+ACNS '20  
+SRDS '21  
+CSAE '22  
+PAM '22  
+ICICS '20  
+DSN '19 '21 '22  
+CODASPY '20'21  
+IEEE SM '20'23  
+IEEE IWCMC Security Symposium '23  
+ICDATE '23  
+IEEE ITEC '23  
+ICASIS '23  
+BalkanCom'23  
+IEEE ICECIE '23  
+STECONF '23  
+ICCCM '23  
+IEEE-ECCE '23  
+Algotel/Cores '23  
+IEEE RTC '23  
+WiCV 2023 at CVPR '23  
+IEEE LCN-MarCaS '23  
+NetSoft S4SI '23  
   
 
 ### Journal Reviewer
 
-TNSE (Transactions on Network Science and Engineering)
-IEEE Access
-IEEE Communications Letters
-Mobile Information Systems
+TNSE (Transactions on Network Science and Engineering)  
+IEEE Access  
+IEEE Communications Letters  
+Mobile Information Systems  
 
   
 
