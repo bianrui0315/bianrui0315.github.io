@@ -176,25 +176,31 @@ CSTA Awards Committee
 
 ### Conference Reviewer
 
-CSAE 2022(International Conference on Computer Science and Application Engineering)  
-MIND 2020  
-PAM 2022(Passive and Active Measurement International Conference)  
-ICICS 2020(International Conference on Information and Communications Security)  
-DSN 2022(International Conference on Dependable Systems and Networks)  
-CODASPY (Conference on Data and Application Security and Privacy)  
-IEEE SM 2023(IEEE International Conference on Smart Mobility)  
-IEEE IWCMC 2023 Security Symposium  
-ICDATE 2023 (International Conference on Digital Applications, Transformation & Economy 2023)  
-2023 IEEE Transportation Electrification Conference & Expo  
-IEEE IWCMC 2023 Security Symposium  
-ICASIS2023 (International Conference on Advanced Sensing and Intelligent Systems)  
+IEEE INFOCOM '17 '18 '19 '20 '21  
+IEEE CNS '18 '20  
+IEEE HASE '19' MIND '20  
+ACNS '20  
+SRDS '21  
+CSAE '22  
+PAM '22  
+ICICS '20  
+DSN '19 '21 '22  
+CODASPY '20'21  
+IEEE SM '20'23  
+IEEE IWCMC Security Symposium '23  
+ICDATE '23  
+IEEE ITEC '23  
+ICASIS '23  
 BalkanCom'23  
-IEEE ICECIE'2023  
-STECONF(Science, Technology and Engineering Conferences) 2023  
-ICCCM 2023  
-IEEE-ECCE 2023  
-Algotel/Cores 2023  
-2023 IEEE RTC  
+IEEE ICECIE '23  
+STECONF '23  
+ICCCM '23  
+IEEE-ECCE '23  
+Algotel/Cores '23  
+IEEE RTC '23  
+WiCV 2023 at CVPR '23  
+IEEE LCN-MarCaS '23  
+NetSoft S4SI '23  
   
 
 ### Journal Reviewer
@@ -202,7 +208,8 @@ Algotel/Cores 2023
 TNSE (Transactions on Network Science and Engineering)  
 IEEE Access  
 IEEE Communications Letters  
-MDPI AI, Computers, Networks  
+Mobile Information Systems  
+
   
 
 * * *
