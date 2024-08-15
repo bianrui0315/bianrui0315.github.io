@@ -14,7 +14,7 @@
 Rui Bian 边锐
 ===========
 
-Los Angeles, CA, USA · (302) 415-5277 · [bianrui0315@gmail.com](mailto:bianrui0315@gmail.com) · [bianrui@udel.edu](mailto:bianrui@udel.edu)
+Los Angeles, CA, USA · (302) 415-5277 · [bianrui0315@gmail.com](mailto:bianrui0315@gmail.com)
 
 Welcome to my website! I am a Data Scientist at Expatiate Communications with a PhD in computer engineering from the University of Delaware. As a former Research Assistant, I have a strong background in cybersecurity and computer networking. I'm passionate about data science, machine learning, computer engineering, and Internet technology, and I have led and published several projects in these fields. Explore my website to learn more about my skills, expertise, and achievements. Thank you for visiting!
 
@@ -235,4 +235,4 @@ Awards & Certifications
 Thank you for visiting
 ----------------------
 
-Copyright © 2023. All rights reserved.
+Copyright © 2024. All rights reserved.
