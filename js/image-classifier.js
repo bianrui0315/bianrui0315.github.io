@@ -1,6 +1,3 @@
-import * as tf from '@tensorflow/tfjs';
-import * as mobilenet from '@tensorflow-models/mobilenet';
-
 const imageUpload = document.getElementById('imageUpload');
 const uploadedImage = document.getElementById('uploadedImage');
 const classifyButton = document.getElementById('classifyButton');
@@ -21,7 +18,10 @@ imageUpload.addEventListener('change', (event) => {
         reader.onload = (e) => {
             uploadedImage.src = e.target.result;
             uploadedImage.style.display = 'block';
-            classifyButton.style.display = 'block';
+            // Only show classify button after image is fully loaded
+            uploadedImage.onload = () => {
+                classifyButton.style.display = 'block';
+            };
             predictionResult.innerText = '';
         };
         reader.readAsDataURL(file);
