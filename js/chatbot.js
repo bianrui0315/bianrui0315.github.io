@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message-bubble');
         messageElement.classList.add(sender === 'user' ? 'message-user' : 'message-bot');
-        messageElement.innerText = message;
+        messageElement.innerHTML = message;
         chatMessages.appendChild(messageElement);
         chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
     }
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (lowerCaseMessage.includes('thank')) {
             return "You're welcome! Is there anything else I can help you with?";
         } else {
-            return "I'm not sure how to answer that. I can tell you about Rui's skills, experience, education, or projects.";
+            return "For now, I cannot answer this question. Please feel free to contact Rui directly at <a href=\"mailto:bianrui0315@gmail.com\">bianrui0315@gmail.com</a>.";
         }
     }
 

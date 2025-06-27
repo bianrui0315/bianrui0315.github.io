@@ -201,6 +201,11 @@ body {
     margin-right: auto;
 }
 
+.message-bot a {
+    color: var(--bs-primary); /* Make links in bot messages primary color */
+    text-decoration: underline;
+}
+
 #question-dropdown {
     width: 100%; /* Make dropdown take full width */
     margin-bottom: 10px; /* Space between dropdown and input */
@@ -209,4 +214,10 @@ body {
     border-radius: 5px;
     background-color: #fff;
     font-size: 0.9rem;
+}
+
+/* Temporary rule to ensure modal content is visible */
+#projectDetailModal .modal-body * {
+    display: block !important;
+    visibility: visible !important;
 }
