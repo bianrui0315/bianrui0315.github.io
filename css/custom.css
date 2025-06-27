@@ -158,6 +158,7 @@ body {
 
 .chat-input {
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     padding: 10px 15px;
     border-top: 1px solid #eee;
 }
@@ -167,7 +168,8 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 8px;
-    margin-right: 10px;
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add bottom margin for spacing */
 }
 
 .chat-input button {
@@ -197,4 +199,14 @@ body {
     background-color: #e0e0e0;
     align-self: flex-start;
     margin-right: auto;
+}
+
+#question-dropdown {
+    width: 100%; /* Make dropdown take full width */
+    margin-bottom: 10px; /* Space between dropdown and input */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 0.9rem;
 }
