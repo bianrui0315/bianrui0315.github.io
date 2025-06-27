@@ -1,0 +1,73 @@
+:root {
+    --bs-primary: #007bff; /* A modern blue */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* A clean, modern font */
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.skill-category {
+    margin-bottom: 2rem;
+}
+
+.skill-category h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--bs-primary);
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.skill-item {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--bs-primary);
+}
+
+.skill-item span {
+    display: block;
+    font-weight: bold;
+}
+
+/* Mobile responsiveness adjustments */
+@media (max-width: 768px) {
+    .skill-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .resume-section {
+        padding: 3rem 1rem !important; /* Adjust padding for smaller screens */
+    }
+
+    .resume-section-content {
+        margin-left: 0 !important; /* Remove left margin on smaller screens */
+    }
+
+    .navbar-brand .img-profile {
+        display: none !important; /* Hide profile image on small screens */
+    }
+
+    .navbar-brand .d-lg-none {
+        display: block !important; /* Show name on small screens */
+    }
+}
