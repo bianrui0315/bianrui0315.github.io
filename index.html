@@ -426,6 +426,38 @@
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
+                            <h3 class="mb-0">Text-to-Audio Converter</h3>
+                            <div class="subheading mb-3">Convert text to speech in English or Chinese using browser's AI capabilities.</div>
+                            <p>Type or paste text (max 300 characters) and select a language to hear it spoken aloud.</p>
+                            <div class="mt-3">
+                                <textarea id="textToConvert" class="form-control mb-2" rows="4" maxlength="300" placeholder="Enter text here..."></textarea>
+                                <small class="form-text text-muted">Characters: <span id="charCount">0</span>/300</small>
+                                <div class="input-group mt-2 mb-3">
+                                    <label class="input-group-text" for="languageSelect">Language</label>
+                                    <select class="form-select" id="languageSelect">
+                                        <option value="en-US" selected>English (US)</option>
+                                        <option value="zh-CN">Chinese (Mandarin)</option>
+                                    </select>
+                                    <button class="btn btn-primary" id="speakButton">Speak</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">AI Fact Generator</h3>
+                            <div class="subheading mb-3">Discover random AI knowledge and fun facts!</div>
+                            <p>Click the button below to learn something new about Artificial Intelligence.</p>
+                            <div class="mt-3">
+                                <div id="aiFactDisplay" class="alert alert-info" role="alert">
+                                    Click 'Generate Fact' to see an AI fact!
+                                </div>
+                                <button class="btn btn-primary" id="generateFactButton">Generate Fact</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
                             <h3 class="mb-0">Transparent Proxy Detection and Analysis</h3>
                             <div class="subheading mb-3">Developed a novel method to detect and analyze transparent proxies, identifying over 1.5 million vulnerable proxies.</div>
                             <p><strong>Technologies:</strong> Python, Scapy, Nmap, API, HTML, Curl, Ping, TraceRoute</p>
@@ -796,6 +828,8 @@
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
         <script src="js/image-classifier.js"></script>
         <script src="js/perceptron-visualization.js"></script>
+        <script src="js/text-to-audio.js"></script>
+        <script src="js/ai-facts.js"></script>
         
     </body>
 </html>

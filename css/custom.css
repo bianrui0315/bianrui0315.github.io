@@ -71,3 +71,27 @@ body {
         display: block !important; /* Show name on small screens */
     }
 }
+
+/* AI Fact Generator Styling */
+#aiFactDisplay {
+    min-height: 100px; /* Ensure consistent height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1rem;
+    font-style: italic;
+    border-left: 5px solid var(--bs-primary);
+    background-color: #e9f7ff; /* Lighter blue background */
+    color: #0056b3; /* Darker blue text */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
