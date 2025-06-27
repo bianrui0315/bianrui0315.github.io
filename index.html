@@ -830,6 +830,32 @@
         <script src="js/perceptron-visualization.js"></script>
         <script src="js/text-to-audio.js"></script>
         <script src="js/ai-facts.js"></script>
+        <script src="js/chatbot.js"></script>
+
+        <!-- Chatbot HTML -->
+        <div id="chatbot-icon" class="chat-icon">
+            <i class="fas fa-comments"></i>
+        </div>
+
+        <div id="chatbot-window" class="chat-window">
+            <div class="chat-header">
+                <span>Rui's AI Assistant</span>
+                <button id="close-chat" class="close-button">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input">
+                <select id="question-dropdown" class="form-select mb-2">
+                    <option value="">Or select a question...</option>
+                    <option value="What are Rui's skills?">What are Rui's skills?</option>
+                    <option value="Tell me about Rui's experience.">Tell me about Rui's experience.</option>
+                    <option value="Where did Rui study?">Where did Rui study?</option>
+                    <option value="What projects has Rui worked on?">What projects has Rui worked on?</option>
+                    <option value="How can I contact Rui?">How can I contact Rui?</option>
+                </select>
+                <input type="text" id="chat-input-field" placeholder="Ask me about Rui...">
+                <button id="send-chat-button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
         
     </body>
 </html>
