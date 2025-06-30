@@ -463,12 +463,21 @@
                                         <option value="es-ES">Spanish (Spain)</option>
                                         <option value="fr-FR">French (France)</option>
                                         <option value="de-DE">German (Germany)</option>
-                                        <option value="ja-JP">Japanese (Japan)</option>
                                     </select>
                                     <button class="btn btn-primary" id="speakButton">Speak</button>
                                 </div>
                             </div>
                             <button class="btn btn-info mt-3" data-bs-toggle="modal" data-bs-target="#projectDetailModal" data-project-id="text-to-audio">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">ML Forecasting Dashboard</h3>
+                            <div class="subheading mb-3">Demonstrates various machine learning algorithms for time series forecasting with data generation, prediction, and error analysis.</div>
+                            <p>Generate synthetic yearly data, apply Linear Regression, Random Forest, and ARIMA models to predict future values, and compare their performance.</p>
+                            <div class="mt-3">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mlForecastingModal">Launch ML Forecasting Demo</button>
+                            </div>
                         </div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
@@ -866,6 +875,8 @@
         <script src="js/perceptron-visualization.js"></script>
         <script src="js/ai-translator.js"></script>
         <script src="js/text-to-audio.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/ml-forecasting.js"></script>
 
         <!-- Project Detail Modal -->
         <div id="chatbot-icon" class="chat-icon">
@@ -892,6 +903,81 @@
             </div>
         </div>
         
+    <!-- ML Forecasting Modal -->
+    <div class="modal fade" id="mlForecastingModal" tabindex="-1" aria-labelledby="mlForecastingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mlForecastingModalLabel">ML Forecasting Dashboard</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h6>Historical Data</h6>
+                            <button id="generateDataButton" class="btn btn-primary mb-3">Generate New Data</button>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Year</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="historicalDataTableBody">
+                                        <!-- Data will be inserted here by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h6>Forecast Visualization</h6>
+                            <canvas id="forecastChart"></canvas>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row mt-4">
+                        <div class="col-lg-6">
+                            <h6>Predictions for Next Year</h6>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>Predicted Value (Next Year)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="predictionsTableBody">
+                                        <!-- Predictions will be inserted here by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h6>Model Error Metrics (MAE, RMSE)</h6>
+                            <div class="table-responsive">
+                                <table class="table table-dark table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>MAE</th>
+                                            <th>RMSE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="errorMetricsTableBody">
+                                        <!-- Error metrics will be inserted here by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Project Detail Modal -->
         <div class="modal fade" id="projectDetailModal" tabindex="-1" aria-labelledby="projectDetailModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">

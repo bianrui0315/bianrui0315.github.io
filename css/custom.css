@@ -228,3 +228,41 @@ body {
     display: block !important;
     visibility: visible !important;
 }
+
+/* ML Forecasting Modal Styling */
+#mlForecastingModal .modal-content {
+    background-color: #1a1a2e; /* Dark blue-purple background */
+    color: #e0e0e0; /* Light gray text */
+    border: 1px solid var(--bs-primary);
+    box-shadow: 0 0 20px rgba(100, 151, 177, 0.8);
+}
+
+#mlForecastingModal .modal-header {
+    border-bottom: 1px solid var(--bs-primary);
+}
+
+#mlForecastingModal .modal-title {
+    color: var(--bs-primary);
+}
+
+#mlForecastingModal .table-responsive {
+    margin-top: 1rem;
+}
+
+#mlForecastingModal .table-dark th {
+    background-color: #0d0d1a; /* Very dark for table headers */
+    color: var(--bs-primary);
+    border-color: #2a2a4a;
+}
+
+#mlForecastingModal .table-dark td {
+    border-color: #2a2a4a;
+}
+
+#mlForecastingModal canvas {
+    background-color: #0d0d1a; /* Very dark background for chart */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(100, 151, 177, 0.5);
+    max-height: 400px; /* Limit the height of the chart */
+}
