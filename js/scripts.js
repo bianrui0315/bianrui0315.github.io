@@ -55,4 +55,19 @@ window.addEventListener('DOMContentLoaded', event => {
         appearOnScroll.observe(fader);
     });
 
+    // Image hover effect for profile picture
+    const profileImage = document.querySelector('.img-profile');
+    if (profileImage) {
+        const originalSrc = profileImage.src;
+        const hoverSrc = 'assets/img/My ChatGPT image.png';
+
+        profileImage.addEventListener('mouseover', () => {
+            profileImage.src = hoverSrc;
+        });
+
+        profileImage.addEventListener('mouseout', () => {
+            profileImage.src = originalSrc;
+        });
+    }
+
 });
