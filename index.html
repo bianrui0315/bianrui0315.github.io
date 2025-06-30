@@ -89,6 +89,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#service">Service</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#membership">Membership</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -844,6 +845,29 @@
                         </li>
                         
                     </ul>
+                </div>
+            </section>
+            <hr class="m-0" />
+            <!-- Contact-->
+            <section class="resume-section" id="contact">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Leave Me a Message</h2>
+                    <form id="contactForm" action="https://formspree.io/f/xnnvwbeg" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="_replyto" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="formSuccessMessage" class="mt-3 alert alert-success" style="display:none;">Thank you for your message! I will get back to you soon.</div>
                 </div>
             </section>
             <section class="resume-section" id="bottom">

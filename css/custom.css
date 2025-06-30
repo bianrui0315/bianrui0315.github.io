@@ -1,271 +1,34 @@
-:root {
-    --bs-primary: #6497b1; /* Muted Medium Blue */
+
+/* Contact Form Styling */
+#contactForm .form-label {
+    color: #e0e0e0; /* Light gray for labels */
 }
 
-body {
-    font-family: 'Space Mono', monospace; /* Sci-fi body font */
-}
-
-.text-primary {
-    color: var(--bs-primary) !important;
-}
-
-.bg-primary {
-    background-color: var(--bs-primary) !important;
-}
-
-.skill-category {
-    margin-bottom: 2rem;
-}
-
-.skill-category h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #6497b1; /* Muted Medium Blue */
-}
-
-.skill-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-}
-
-.skill-item {
-    background-color: #2a2a4a; /* Darker background for skill items */
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(100, 151, 177, 0.5); /* Muted Medium Blue glow effect */
-    color: #e0e0e0; /* Light text for contrast */
-}
-
-.skill-item i {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #6497b1; /* Muted Medium Blue for icons */
-}
-
-.skill-item span {
-    display: block;
-    font-weight: bold;
-}
-
-/* Mobile responsiveness adjustments */
-@media (max-width: 768px) {
-    .skill-list {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .resume-section {
-        padding: 3rem 1rem !important; /* Adjust padding for smaller screens */
-    }
-
-    .resume-section-content {
-        margin-left: 0 !important; /* Remove left margin on smaller screens */
-    }
-
-    .navbar-brand .img-profile {
-        display: none !important; /* Hide profile image on small screens */
-    }
-
-    .navbar-brand .d-lg-none {
-        display: block !important; /* Show name on small screens */
-    }
-}
-
-/* AI Fact Generator Styling */
-#aiFactDisplay {
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.1rem;
-    font-style: italic;
-    border: 2px solid var(--bs-primary); /* Sci-fi border */
-    background-color: #1a1a2e; /* Dark background */
-    color: #6497b1; /* Muted Medium Blue text */
-    box-shadow: 0 0 15px rgba(100, 151, 177, 0.5); /* Muted Medium Blue glow */
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Chatbot Styling */
-.chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--bs-primary); /* Sci-fi aqua */
-    color: #1a1a2e; /* Dark text for contrast */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(100, 151, 177, 0.7); /* Stronger muted medium blue glow */
-    z-index: 1000;
-}
-
-.chat-window {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 350px;
-    height: 450px;
-    background-color: #1a1a2e; /* Dark background */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(100, 151, 177, 0.8); /* Intense muted medium blue glow */
-    display: flex;
-    flex-direction: column;
-    z-index: 1000;
-    overflow: hidden;
-    display: none; /* Hidden by default */
-}
-
-.chat-header {
-    background-color: #6497b1; /* Muted Medium Blue */
-    color: #1a1a2e; /* Dark text for contrast */
-    padding: 10px 15px;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.chat-header .close-button {
-    background: none;
-    border: none;
-    color: #1a1a2e; /* Dark text for contrast */
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.chat-messages {
-    flex-grow: 1;
-    padding: 15px;
-    overflow-y: auto;
-    background-color: #2a2a4a; /* Slightly lighter dark background */
-    color: #e0e0e0; /* Light gray text */
-}
-
-.chat-input {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 15px;
-    border-top: 1px solid #6497b1; /* Muted Medium Blue border */
-}
-
-.chat-input input {
-    flex-grow: 1;
-    border: 1px solid #6497b1; /* Muted Medium Blue border */
-    border-radius: 5px;
-    padding: 8px;
-    margin-right: 0;
-    margin-bottom: 10px;
+#contactForm .form-control {
     background-color: #0d0d1a; /* Very dark input background */
     color: #e0e0e0; /* Light gray text */
+    border: 1px solid var(--bs-primary); /* Muted Medium Blue border */
 }
 
-.chat-input button {
-    background-color: var(--bs-primary); /* Sci-fi aqua */
+#contactForm .form-control:focus {
+    background-color: #1a1a2e; /* Slightly lighter on focus */
+    border-color: var(--bs-primary); /* Keep primary color border */
+    box-shadow: 0 0 0 0.25rem rgba(100, 151, 177, 0.25); /* Subtle glow on focus */
+}
+
+#contactForm .btn-primary {
+    background-color: var(--bs-primary); /* Muted Medium Blue for button */
+    border-color: var(--bs-primary);
     color: #1a1a2e; /* Dark text for contrast */
-    border: none;
-    border-radius: 5px;
-    padding: 8px 12px;
-    cursor: pointer;
 }
 
-.message-bubble {
-    padding: 8px 12px;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    max-width: 80%;
-    word-wrap: break-word;
+#contactForm .btn-primary:hover {
+    background-color: #4a7a96; /* Darker shade on hover */
+    border-color: #4a7a96;
 }
 
-.message-user {
-    background-color: #6497b1; /* Muted Medium Blue */
-    color: #1a1a2e; /* Dark text for contrast */
-    align-self: flex-end;
-    margin-left: auto;
-}
-
-.message-bot {
-    background-color: #3a3a5a; /* Slightly lighter dark for bot messages */
-    color: #e0e0e0; /* Light gray text */
-    align-self: flex-start;
-    margin-right: auto;
-}
-
-.message-bot a {
-    color: #003366; /* Professional Deep Blue for links in bot messages */
-    text-decoration: underline;
-}
-
-#question-dropdown {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #6497b1; /* Muted Medium Blue border */
-    border-radius: 5px;
-    background-color: #0d0d1a; /* Very dark dropdown background */
-    color: #e0e0e0; /* Light gray text */
-    font-size: 0.9rem;
-}
-
-/* Temporary rule to ensure modal content is visible */
-#projectDetailModal .modal-body * {
-    display: block !important;
-    visibility: visible !important;
-}
-
-/* ML Forecasting Modal Styling */
-#mlForecastingModal .modal-content {
-    background-color: #1a1a2e; /* Dark blue-purple background */
-    color: #e0e0e0; /* Light gray text */
-    border: 1px solid var(--bs-primary);
-    box-shadow: 0 0 20px rgba(100, 151, 177, 0.8);
-}
-
-#mlForecastingModal .modal-header {
-    border-bottom: 1px solid var(--bs-primary);
-}
-
-#mlForecastingModal .modal-title {
-    color: var(--bs-primary);
-}
-
-#mlForecastingModal .table-responsive {
-    margin-top: 1rem;
-}
-
-#mlForecastingModal .table-dark th {
-    background-color: #0d0d1a; /* Very dark for table headers */
-    color: var(--bs-primary);
-    border-color: #2a2a4a;
-}
-
-#mlForecastingModal .table-dark td {
-    border-color: #2a2a4a;
-}
-
-#mlForecastingModal canvas {
-    background-color: #0d0d1a; /* Very dark background for chart */
-    border-radius: 0.5rem;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(100, 151, 177, 0.5);
-    width: 600px !important; /* Fixed width for the chart */
-    height: 400px !important; /* Fixed height for the chart */
-    max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
-    max-height: 400px; /* Limit the height of the chart */
+#formSuccessMessage {
+    background-color: #2a2a4a; /* Darker background for success message */
+    color: #ADFF2F; /* GreenYellow for success text */
+    border-color: #ADFF2F;
 }

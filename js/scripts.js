@@ -70,4 +70,48 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+    // Contact Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const formSuccessMessage = document.getElementById('formSuccessMessage');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Submit form using Fetch API
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: contactForm.method,
+                    body: new FormData(contactForm),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formSuccessMessage.style.display = 'block';
+                    contactForm.reset(); // Clear the form
+                    setTimeout(() => {
+                        formSuccessMessage.style.display = 'none';
+                    }, 5000); // Hide message after 5 seconds
+                } else {
+                    alert('Oops! There was a problem submitting your form.');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Oops! There was a network error.');
+            }
+        });
+    }
+
 });
