@@ -11,7 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #00FFFF; /* Sci-fi Aqua */
+  --bs-blue: #6497b1; /* Muted Medium Blue */
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
   --bs-pink: #d63384;
@@ -33,7 +33,7 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #00FFFF; /* Sci-fi Aqua */
+  --bs-primary: #6497b1; /* Muted Medium Blue */
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -41,7 +41,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-primary-rgb: 0, 255, 255; /* RGB for Aqua */
+  --bs-primary-rgb: 100, 151, 177; /* RGB for Muted Medium Blue */
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
@@ -85,8 +85,20 @@ body {
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='%236497b1' opacity='0.01'/%3E%3C/svg%3E"); /* Subtle dot pattern */
+  background-size: 40px 40px;
+  animation: backgroundPan 120s linear infinite; /* Much slower pan animation */
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes backgroundPan {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 200% 200%;
+  }
 }
 
 hr {
@@ -107,7 +119,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   font-family: 'Orbitron', sans-serif; /* New heading font */
   font-weight: 700;
   line-height: 1.2;
-  color: #00FFFF; /* Sci-fi Aqua for headings */
+  color: #6497b1; /* Muted Medium Blue for headings */
 }
 
 h1, .h1 {
@@ -241,7 +253,7 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #005b96;
+  color: #4a7a96;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3954,7 +3966,9 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: #974a2d;
+  color: var(--bs-primary); /* Sci-fi aqua on hover */
+  text-shadow: 0 0 8px var(--bs-primary); /* Subtle glow effect */
+  transform: translateX(5px); /* Slight slide effect */
 }
 .nav-link.disabled {
   color: #6c757d;
@@ -11377,6 +11391,11 @@ p.lead {
     max-width: 10rem;
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  #sideNav .navbar-brand .img-profile:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.7); /* Sci-fi glow on hover */
   }
   #sideNav .navbar-collapse {
     display: flex;
@@ -11402,17 +11421,21 @@ p.lead {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
-  color: #fff;
+  background-color: #2a2a4a; /* Darker background for icons */
+  color: #00FFFF; /* Sci-fi aqua for icons */
   border-radius: 100%;
   font-size: 1.5rem;
   margin-right: 1.5rem;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 .social-icons .social-icon:last-child {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: #bd5d38;
+  background-color: #00FFFF; /* Sci-fi aqua on hover */
+  color: #1a1a2e; /* Dark text on hover */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Stronger sci-fi glow */
+  transform: translateY(-3px); /* Slight lift effect */
 }
 
 .dev-icons {
@@ -11430,6 +11453,28 @@ section.resume-section {
 }
 section.resume-section .resume-section-content {
   width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.resume-section .resume-section-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+}
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 }
 
 @media (min-width: 768px) {

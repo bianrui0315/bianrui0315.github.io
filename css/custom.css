@@ -1,5 +1,5 @@
 :root {
-    --bs-primary: #00FFFF; /* Sci-fi Aqua */
+    --bs-primary: #6497b1; /* Muted Medium Blue */
 }
 
 body {
@@ -21,7 +21,7 @@ body {
 .skill-category h4 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--bs-primary);
+    color: #6497b1; /* Muted Medium Blue */
 }
 
 .skill-list {
@@ -35,14 +35,14 @@ body {
     padding: 1rem;
     border-radius: 0.5rem;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Sci-fi glow effect */
+    box-shadow: 0 0 15px rgba(100, 151, 177, 0.5); /* Muted Medium Blue glow effect */
     color: #e0e0e0; /* Light text for contrast */
 }
 
 .skill-item i {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--bs-primary); /* Sci-fi aqua for icons */
+    color: #6497b1; /* Muted Medium Blue for icons */
 }
 
 .skill-item span {
@@ -84,8 +84,8 @@ body {
     font-style: italic;
     border: 2px solid var(--bs-primary); /* Sci-fi border */
     background-color: #1a1a2e; /* Dark background */
-    color: #00FFFF; /* Sci-fi aqua text */
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Sci-fi glow */
+    color: #6497b1; /* Muted Medium Blue text */
+    box-shadow: 0 0 15px rgba(100, 151, 177, 0.5); /* Muted Medium Blue glow */
     padding: 1.5rem;
     border-radius: 0.5rem;
     opacity: 0;
@@ -112,7 +112,7 @@ body {
     justify-content: center;
     font-size: 1.8rem;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Stronger sci-fi glow */
+    box-shadow: 0 0 15px rgba(100, 151, 177, 0.7); /* Stronger muted medium blue glow */
     z-index: 1000;
 }
 
@@ -124,7 +124,7 @@ body {
     height: 450px;
     background-color: #1a1a2e; /* Dark background */
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Intense sci-fi glow */
+    box-shadow: 0 0 20px rgba(100, 151, 177, 0.8); /* Intense muted medium blue glow */
     display: flex;
     flex-direction: column;
     z-index: 1000;
@@ -133,7 +133,7 @@ body {
 }
 
 .chat-header {
-    background-color: #00FFFF; /* Sci-fi aqua */
+    background-color: #6497b1; /* Muted Medium Blue */
     color: #1a1a2e; /* Dark text for contrast */
     padding: 10px 15px;
     font-size: 1.1rem;
@@ -162,12 +162,12 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px 15px;
-    border-top: 1px solid #00FFFF; /* Sci-fi aqua border */
+    border-top: 1px solid #6497b1; /* Muted Medium Blue border */
 }
 
 .chat-input input {
     flex-grow: 1;
-    border: 1px solid #00FFFF; /* Sci-fi aqua border */
+    border: 1px solid #6497b1; /* Muted Medium Blue border */
     border-radius: 5px;
     padding: 8px;
     margin-right: 0;
@@ -194,7 +194,7 @@ body {
 }
 
 .message-user {
-    background-color: #00FFFF; /* Sci-fi aqua for user messages */
+    background-color: #6497b1; /* Muted Medium Blue */
     color: #1a1a2e; /* Dark text for contrast */
     align-self: flex-end;
     margin-left: auto;
@@ -208,7 +208,7 @@ body {
 }
 
 .message-bot a {
-    color: #00FFFF; /* Sci-fi aqua for links in bot messages */
+    color: #003366; /* Professional Deep Blue for links in bot messages */
     text-decoration: underline;
 }
 
@@ -216,7 +216,7 @@ body {
     width: 100%;
     margin-bottom: 10px;
     padding: 8px;
-    border: 1px solid #00FFFF; /* Sci-fi aqua border */
+    border: 1px solid #6497b1; /* Muted Medium Blue border */
     border-radius: 5px;
     background-color: #0d0d1a; /* Very dark dropdown background */
     color: #e0e0e0; /* Light gray text */
