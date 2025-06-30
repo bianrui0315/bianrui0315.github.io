@@ -1,0 +1,48 @@
+## Website Future Improvements (TODO List)
+
+### I. Content & Features
+
+1.  **Expand Project Details:** For all projects, consider expanding the "Learn More" modals to include:
+    *   More in-depth descriptions of the problem, solution, and your specific contributions.
+    *   Technical challenges faced and how you overcame them.
+    *   Key results or impact of the project.
+    *   Screenshots or short video demos (if applicable).
+2.  **Interactive ML/AI Demos:** Beyond the forecasting dashboard, you could add other interactive demos to showcase different ML/AI concepts:
+    *   A simple neural network for classification (e.g., classifying Iris dataset).
+    *   A basic Natural Language Processing (NLP) demo (e.g., sentiment analysis of a short text).
+    *   A pathfinding algorithm visualization (e.g., A* search).
+3.  **Blog System:** Implement a more robust blog system. Currently, it's a placeholder. You could use:
+    *   A static site generator (like Jekyll, Hugo, or Eleventy) if you prefer writing in Markdown and generating static HTML.
+    *   A simple JavaScript-based solution to load blog posts from Markdown files.
+4.  **Testimonials/Endorsements Section:** Add a section where you can feature testimonials or endorsements from colleagues, mentors, or clients.
+
+### II. Technical Improvements
+
+1.  **Backend for Complex ML Models:** For more advanced or computationally intensive ML models (like a full ARIMA implementation, or Facebook Prophet), consider setting up a small backend service (e.g., using Python with Flask/FastAPI or Node.js with Express.js). This would allow you to leverage powerful ML libraries not available in the browser and keep the client-side lightweight.
+2.  **Dependency Management (npm/Yarn):** Instead of relying solely on CDNs for libraries like Chart.js and `ml-random-forest`, consider using a package manager like npm or Yarn. This provides better version control, allows for local development, and integrates well with modern build tools.
+3.  **Build Process:** Implement a build process using tools like Webpack or Parcel. This can:
+    *   **Minify** your CSS and JavaScript files, reducing their size for faster loading.
+    *   **Bundle** your JavaScript modules into fewer files, reducing HTTP requests.
+    *   **Transpile** modern JavaScript (ES6+) to be compatible with older browsers (if needed).
+4.  **Code Refactoring & Modularity:** As the JavaScript grows, consider refactoring it into more modular, reusable components. For example, each interactive demo could be a self-contained module.
+5.  **Linting & Formatting Automation:** Address the `stylelint` issue. Ensure you have a consistent way to run linters (ESLint for JavaScript, Stylelint for CSS) and formatters (Prettier) to maintain code quality and consistency. This can be integrated into your development workflow or as a pre-commit hook.
+
+### III. User Experience (UX)
+
+1.  **Accessibility (A11y):** Review and improve the website's accessibility for users with disabilities. This includes:
+    *   Ensuring sufficient color contrast (which we've already started addressing).
+    *   Adding proper ARIA attributes for interactive elements.
+    *   Ensuring keyboard navigation is intuitive.
+    *   Providing alternative text for all images.
+2.  **Loading Indicators:** For interactive elements like the ML forecasting dashboard, add subtle loading spinners or progress bars while data is being generated or models are running. This improves perceived performance and user feedback.
+3.  **Enhanced Error Handling:** Provide more user-friendly error messages for any issues that might arise in interactive features.
+
+### IV. Design & Aesthetics
+
+1.  **Refine Color Palette:** While the current muted blue is professional, you could explore a slightly broader, yet cohesive, sci-fi inspired color palette to add more visual depth without sacrificing professionalism.
+2.  **Custom Illustrations/Graphics:** Consider adding unique, custom illustrations or graphics that align with your sci-fi/geeky theme. This can make your site stand out.
+
+### V. Performance & SEO
+
+1.  **Image Optimization:** Further optimize all images (e.g., using modern formats like WebP, implementing responsive images with `srcset` for different screen sizes).
+2.  **Lazy Loading:** Implement lazy loading for images and other media that are below the fold. This means they only load when they are about to enter the viewport, improving initial page load times.
