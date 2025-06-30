@@ -34,6 +34,7 @@ const translations = {
 };
 
 translateButton.addEventListener('click', () => {
+    console.log('Translate button clicked!');
     const inputText = textToTranslate.value.toLowerCase().trim();
     const direction = translationDirection.value;
     let translatedText = "";

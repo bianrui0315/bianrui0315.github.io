@@ -10,6 +10,7 @@ textToConvert.addEventListener('input', () => {
 });
 
 speakButton.addEventListener('click', () => {
+    console.log('Speak button clicked!');
     const text = textToConvert.value;
     const lang = languageSelect.value;
 
