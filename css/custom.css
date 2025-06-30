@@ -264,5 +264,8 @@ body {
     border-radius: 0.5rem;
     padding: 1rem;
     box-shadow: 0 0 10px rgba(100, 151, 177, 0.5);
+    width: 600px !important; /* Fixed width for the chart */
+    height: 400px !important; /* Fixed height for the chart */
+    max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
     max-height: 400px; /* Limit the height of the chart */
 }

@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // For a true "test error", you'd split data into train/test sets.
         // For this demo, we'll calculate how well each model "fits" the historical data.
         const lrHistoricalPredictions = historicalData.map(d => lrModel.predict(d.year));
-        const polyHistoricalPredictions = historicalData.map(d => polyModel.predict(d.year));
+        
 
         // For RF and ARIMA placeholders, we can't easily get historical predictions for error calculation
         // without more complex implementations. For now, we'll just show predictions.
