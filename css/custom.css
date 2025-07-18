@@ -73,6 +73,133 @@ body {
     }
 }
 
+/* Professional Enhancements for Recruiters */
+.achievement-highlights {
+    background: linear-gradient(135deg, rgba(100, 151, 177, 0.1), rgba(26, 26, 46, 0.1));
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(100, 151, 177, 0.3);
+}
+
+.achievement-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+}
+
+.achievement-item p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a0a0a0;
+}
+
+.professional-cta {
+    background: linear-gradient(135deg, rgba(100, 151, 177, 0.15), rgba(26, 26, 46, 0.1));
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid rgba(100, 151, 177, 0.3);
+}
+
+.availability-status .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+.role-summary {
+    background: rgba(100, 151, 177, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--bs-primary);
+    font-style: italic;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(100, 151, 177, 0.4);
+    background: linear-gradient(135deg, #5a8ba3, #6497b1);
+}
+
+/* Value Proposition Styling */
+.value-proposition {
+    background: linear-gradient(135deg, rgba(100, 151, 177, 0.1), rgba(26, 26, 46, 0.05));
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(100, 151, 177, 0.2);
+}
+
+.value-item {
+    text-align: center;
+    padding: 1.5rem;
+    height: 100%;
+    background: rgba(100, 151, 177, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(100, 151, 177, 0.2);
+}
+
+.value-item h5 {
+    color: var(--bs-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.value-item p {
+    color: #c0c0c0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Contact Options Styling */
+.contact-options {
+    background: linear-gradient(135deg, rgba(100, 151, 177, 0.1), rgba(26, 26, 46, 0.05));
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(100, 151, 177, 0.2);
+}
+
+.contact-option {
+    padding: 1.5rem;
+    height: 100%;
+    background: rgba(100, 151, 177, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(100, 151, 177, 0.2);
+}
+
+.contact-option h5 {
+    color: var(--bs-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contact-option p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.btn-outline-primary {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(100, 151, 177, 0.3);
+}
+
 /* AI Fact Generator Styling */
 #aiFactDisplay {
     min-height: 100px;
