@@ -7,6 +7,15 @@
     <title>Rui Bian | AI & Data Science Leader</title>
     <meta name="description" content="Portfolio of Rui Bian. Scaling AI Capabilities from Research to Production.">
 
+    <!-- Open Graph / SEO Meta Tags -->
+    <meta property="og:title" content="Rui Bian | AI & Data Science Leader">
+    <meta property="og:description"
+        content="Scaling AI Capabilities from Research to Production. Portfolio of Rui Bian, Ph.D.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bianrui0315.github.io/">
+    <meta property="og:image" content="https://bianrui0315.github.io/assets/img/og-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,11 +39,14 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">RUI BIAN</div>
-            <ul class="nav-links">
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#ecosystem">Ecosystem</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#impact" class="nav-item">Impact</a></li>
+                <li><a href="#ecosystem" class="nav-item">Ecosystem</a></li>
+                <li><a href="#leadership" class="nav-item">Leadership</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -72,7 +84,7 @@
 
             <div class="case-grid">
                 <!-- Case Study 1 -->
-                <div class="card case-card">
+                <div class="card case-card fade-in">
                     <h3>Transforming EdTech Intelligence</h3>
                     <div class="case-meta">
                         <span>Expatiate Communications</span>
@@ -100,7 +112,7 @@
                 </div>
 
                 <!-- Case Study 2 -->
-                <div class="card case-card">
+                <div class="card case-card fade-in">
                     <h3>Global-Scale Routing Analytics</h3>
                     <div class="case-meta">
                         <span>University of Delaware</span>
@@ -135,7 +147,7 @@
             <h2>Tech Ecosystem</h2>
             <div class="ecosystem-grid">
 
-                <div class="eco-category">
+                <div class="eco-category fade-in">
                     <i class="fa-solid fa-brain"></i>
                     <h3>Machine Learning</h3>
                     <div class="skill-tags">
@@ -148,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="eco-category">
+                <div class="eco-category fade-in">
                     <i class="fa-solid fa-server"></i>
                     <h3>Data Engineering</h3>
                     <div class="skill-tags">
@@ -161,7 +173,7 @@
                     </div>
                 </div>
 
-                <div class="eco-category">
+                <div class="eco-category fade-in">
                     <i class="fa-brands fa-aws"></i>
                     <h3>Cloud & Architecture</h3>
                     <div class="skill-tags">
@@ -180,7 +192,7 @@
     </section>
 
     <!-- Thought Leadership Section -->
-    <section class="section" id="leadership">
+    <section class="section fade-in" id="leadership">
         <div class="container">
             <h2>Thought Leadership</h2>
 
@@ -235,7 +247,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="section" id="contact"
+    <section class="section fade-in" id="contact"
         style="border-top: 1px solid var(--border-color); text-align: center; padding-top: var(--spacing-xl);">
         <div class="container">
             <h2 style="margin-bottom: var(--spacing-sm);">Contact</h2>
@@ -361,6 +373,49 @@
         init();
         animate();
 
+        // --- Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // --- Scroll Fade-In Observer ---
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
         // --- Resume Bot Logic ---
         const botToggle = document.getElementById('botToggle');
         const botWindow = document.getElementById('botWindow');
@@ -392,6 +447,20 @@
             botToggle.style.transform = 'scale(1)';
         });
 
+        function showTypingIndicator() {
+            const el = document.createElement('div');
+            el.className = 'typing-indicator';
+            el.id = 'typingIndicator';
+            el.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            botMessages.appendChild(el);
+            botMessages.scrollTop = botMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const el = document.getElementById('typingIndicator');
+            if (el) el.remove();
+        }
+
         optionBtns.forEach(btn => {
             btn.addEventListener('click', function () {
                 const qKey = this.getAttribute('data-q');
@@ -404,12 +473,16 @@
                 document.getElementById('botOptions').style.opacity = '0.5';
                 document.getElementById('botOptions').style.pointerEvents = 'none';
 
+                // Show typing animation
+                showTypingIndicator();
+
                 // Simulate AI typing delay
                 setTimeout(() => {
+                    removeTypingIndicator();
                     addMessage(botAnswers[qKey], 'bot');
                     document.getElementById('botOptions').style.opacity = '1';
                     document.getElementById('botOptions').style.pointerEvents = 'auto';
-                }, 800);
+                }, 1200);
             });
         });
 
