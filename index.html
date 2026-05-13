@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome -->
@@ -32,9 +32,6 @@
 
 <body>
 
-    <!-- Canvas Background Layer -->
-    <canvas id="canvas-bg"></canvas>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -45,6 +42,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#impact" class="nav-item">Impact</a></li>
                 <li><a href="#ecosystem" class="nav-item">Ecosystem</a></li>
+                <li><a href="#credentials" class="nav-item">Credentials</a></li>
                 <li><a href="#leadership" class="nav-item">Leadership</a></li>
                 <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
@@ -53,25 +51,35 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-mesh"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="gradient-text">Scaling AI Capabilities from Research to Production.</h1>
-                <p>AI & Data Science Leader with a PhD in Computer Engineering. Specializing in architecting robust
-                    predictive systems and optimizing massive-scale data pipelines.</p>
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <div class="availability-badge">
+                        <span class="availability-dot"></span>
+                        Open to Opportunities
+                    </div>
+                    <h1 class="gradient-text">Scaling AI Capabilities from Research to Production.</h1>
+                    <p>AI &amp; Data Science Leader with a Ph.D. in Computer Engineering. 14+ years bridging rigorous academic research and production-grade AI systems — from internet-scale network measurement to Agentic AI pipelines serving 30 school districts.</p>
 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <h4>10+</h4>
-                        <p>Years Engineering</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h4>14+</h4>
+                            <p>Years Engineering</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>30+</h4>
+                            <p>Districts Served</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>8+</h4>
+                            <p>Top-Tier Pubs</p>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h4>50+</h4>
-                        <p>Systems Deployed</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4>8+</h4>
-                        <p>Top-Tier Pubs</p>
-                    </div>
+                </div>
+
+                <div class="hero-photo">
+                    <img src="assets/img/headshot.jpg" alt="Rui Bian, PhD — AI &amp; Data Science Leader">
                 </div>
             </div>
         </div>
@@ -85,7 +93,7 @@
             <div class="case-grid">
                 <!-- Case Study 1 -->
                 <div class="card case-card fade-in">
-                    <h3>Transforming EdTech Intelligence</h3>
+                    <h3>Transforming EdTech Intelligence at Scale</h3>
                     <div class="case-meta">
                         <span>Expatiate Communications</span>
                         <span>Lead Data Scientist</span>
@@ -93,48 +101,165 @@
 
                     <div class="case-section">
                         <h4>The Challenge</h4>
-                        <p>School districts lacked predictive visibility into IEP compliance and operational
-                            bottlenecks, relying on slow, manual data aggregation.</p>
+                        <p>School districts lacked predictive visibility into IEP compliance, academic progress, and operational risk — relying on slow, fragmented manual data aggregation across disparate assessment platforms.</p>
                     </div>
 
                     <div class="case-section">
                         <h4>Architecture</h4>
-                        <p>Engineered automated ETL pipelines handling massive-scale district data. Deployed
-                            production-ready predictive machine learning models within the iTAAP platform.</p>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
+                            <li>Modernized core data pipelines using <strong>Microsoft Fabric</strong>, advanced Python, and optimized SQL stored procedures</li>
+                            <li>Designed an <strong>Agentic AI system</strong> to fully automate complex ETL processes and intelligent data routing</li>
+                            <li>Built an <strong>Assessment Integration Engine</strong> standardizing iReady, NWEA, and IXL data against State Testing levels for real-time academic progress prediction</li>
+                            <li>Engineered compliance dashboards in <strong>Power BI / DAX</strong>: FAPE Compliance Prediction, IEP Risk Projection, Student Services Tracking, Achievement Gap, and State Performance Plan Indicators</li>
+                            <li>Developed <strong>iTAAP Insights Email Alerts</strong> to automatically notify districts of at-risk students requiring early intervention</li>
+                            <li>Architected secure data endpoints enabling cross-team consumption of centralized iTAAP data for other company products</li>
+                        </ul>
                     </div>
 
                     <div class="case-section">
                         <h4>Business Impact</h4>
-                        <p class="text-accent">Successfully deployed to 50+ school districts. Achieved a 90% reduction
-                            in data processing time and improved data availability by 95%+, directly driving business
-                            ROI.</p>
+                        <p class="text-accent">Platform deployed across nearly 30 school districts. Achieved a <strong>90% reduction in data processing time</strong> via Agentic AI automation. Mentors data science interns on internal tooling, continuously improving the iTAAP operational lifecycle.</p>
                     </div>
                 </div>
 
                 <!-- Case Study 2 -->
                 <div class="card case-card fade-in">
-                    <h3>Global-Scale Routing Analytics</h3>
+                    <h3>Internet-Scale Transparent Proxy Analysis</h3>
                     <div class="case-meta">
                         <span>University of Delaware</span>
-                        <span>Ph.D. Research</span>
+                        <span>Ph.D. Research &middot; IEEE INFOCOM 2024</span>
                     </div>
 
                     <div class="case-section">
                         <h4>The Challenge</h4>
-                        <p>Detecting anomalies and understanding the behavior of complex cloud network routing (AWS EC2,
-                            BGP Anycast) at a global scale requires processing enormous datasets in real-time.</p>
+                        <p>Transparent proxies silently intercept and modify web traffic without user awareness, but their true prevalence, behavior, and network-wide impact were poorly understood at scale.</p>
                     </div>
 
                     <div class="case-section">
-                        <h4>Architecture</h4>
-                        <p>Designed robust BGP-based detection methodologies. Leveraged heavy predictive modeling and
-                            machine learning algorithms on top of extensive Python/AWS data pipelines.</p>
+                        <h4>Methodology</h4>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
+                            <li>Designed a large-scale active measurement system to detect and fingerprint transparent proxies across global internet paths</li>
+                            <li>Built Python-based data collection and analysis pipelines processing millions of network probes</li>
+                            <li>Developed novel detection heuristics combining HTTP header analysis and TCP-level signals</li>
+                        </ul>
                     </div>
 
                     <div class="case-section">
                         <h4>Academic Impact</h4>
-                        <p class="text-accent">Authored multiple top-tier publications advancing the field of network
-                            security and cloud infrastructure analysis.</p>
+                        <p class="text-accent">Published at <strong>IEEE INFOCOM 2024</strong> — one of the top-ranked venues in computer networking, revealing the significant hidden influence of transparent proxies on internet traffic integrity.</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="card case-card fade-in">
+                    <h3>Mapping the Open Proxy Ecosystem</h3>
+                    <div class="case-meta">
+                        <span>University of Delaware</span>
+                        <span>Ph.D. Research &middot; Computer Networks 2022</span>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>The Challenge</h4>
+                        <p>The open proxy landscape — used for anonymization, censorship circumvention, and malicious activity — had never been comprehensively characterized in terms of scale, geography, and behavior.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Methodology</h4>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
+                            <li>Crawled, scanned, and analyzed <strong>436,000+ open proxies</strong> across the global internet</li>
+                            <li>Built large-scale data collection infrastructure using Python and AWS for distributed scanning</li>
+                            <li>Applied statistical modeling and traffic analysis to characterize proxy behavior, uptime, and abuse patterns</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Academic Impact</h4>
+                        <p class="text-accent">Published in <strong>Computer Networks (Elsevier)</strong>, 2022 — delivering the first comprehensive analysis of the open proxy ecosystem and its security implications at internet scale.</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="card case-card fade-in">
+                    <h3>Anycast Routing & Remote Peering Effects</h3>
+                    <div class="case-meta">
+                        <span>University of Delaware</span>
+                        <span>Ph.D. Research &middot; ACM SIGCOMM CCR 2019</span>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>The Challenge</h4>
+                        <p>Remote peering in BGP networks was known to distort anycast routing decisions, but the extent of this unintended impact on global traffic distribution — including for major cloud providers — had not been passively quantified.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Methodology</h4>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
+                            <li>Developed a <strong>passive BGP measurement methodology</strong> to infer anycast catchment boundaries without active probing</li>
+                            <li>Analyzed global BGP routing tables and AS-path data across hundreds of vantage points</li>
+                            <li>Correlated routing anomalies with remote peering relationships at internet exchange points (IXPs)</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Academic Impact</h4>
+                        <p class="text-accent">Published in <strong>ACM SIGCOMM Computer Communication Review</strong>, 2019 — a flagship networking venue — establishing foundational methodology for passive anycast analysis used in subsequent internet measurement research.</p>
+                    </div>
+                </div>
+                <!-- Case Study 5 -->
+                <div class="card case-card fade-in">
+                    <div class="case-status-badge">In Progress</div>
+                    <h3>AI Cloaking &amp; Content Differentiation on the Open Web</h3>
+                    <div class="case-meta">
+                        <span>Independent Research</span>
+                        <span>Target: IMC / WWW / USENIX Security</span>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>The Challenge</h4>
+                        <p>As AI crawlers become ubiquitous, websites are moving beyond binary blocking (robots.txt) to a more sophisticated, unmeasured tactic: returning HTTP 200 responses to both humans and AI bots, but serving degraded, watermarked, or "poisoned" content specifically to crawlers like GPTBot.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Methodology</h4>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
+                            <li>Twin-crawler framework (Playwright) visiting <strong>Tranco Top 10,000 domains</strong> — once as a standard browser UA, once as GPTBot</li>
+                            <li>DOM tree structural comparison and text similarity scoring via <strong>Jaccard &amp; TF-IDF cosine similarity</strong></li>
+                            <li>Sector-level taxonomy: paywall injection, text truncation, gibberish poisoning, visual watermarking</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Novelty</h4>
+                        <p class="text-accent">Unlike prior work measuring <em>blocking</em>, this measures <em>deception</em> — filling a critical gap in understanding how the web's content landscape diverges between human and AI readers.</p>
+                    </div>
+                </div>
+
+                <!-- Case Study 6 -->
+                <div class="card case-card fade-in">
+                    <div class="case-status-badge">In Progress</div>
+                    <h3>LLM-Hallucinated Infrastructure Domains as an Attack Surface</h3>
+                    <div class="case-meta">
+                        <span>Independent Research</span>
+                        <span>Target: NDSS / CCS / USENIX Security</span>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>The Challenge</h4>
+                        <p>LLMs are widely used to generate Infrastructure-as-Code (Terraform, Kubernetes YAML, Nginx configs). If a model hallucinates a plausible but unregistered domain endpoint, an attacker could register that domain to intercept live API traffic or credentials from deployed systems.</p>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Methodology</h4>
+                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
+                            <li>1,000+ DevOps-focused prompts submitted to <strong>GPT-4o, Claude 3.5 Sonnet, and Llama-3-70B</strong></li>
+                            <li>Regex extraction of all generated domains, filtered against known public registries</li>
+                            <li>DNS resolution + Registrar API queries to quantify <strong>hallucination rate and live registrability</strong> of phantom endpoints</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-section">
+                        <h4>Novelty</h4>
+                        <p class="text-accent">Distinct from package hallucination studies — this targets DNS-level infrastructure interception, a critical supply chain risk not previously measured in the LLM security literature.</p>
                     </div>
                 </div>
             </div>
@@ -148,15 +273,33 @@
             <div class="ecosystem-grid">
 
                 <div class="eco-category fade-in">
-                    <i class="fa-solid fa-brain"></i>
-                    <h3>Machine Learning</h3>
+                    <i class="fa-solid fa-microchip"></i>
+                    <h3>LLM & AI Systems</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Context Engineering</span>
+                        <span class="skill-tag">Harness Engineering</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">MCP</span>
+                        <span class="skill-tag">Agentic AI</span>
+                        <span class="skill-tag">AI Security</span>
+                        <span class="skill-tag">AI Guardrails</span>
+                        <span class="skill-tag">AI-Coding CLI</span>
+                    </div>
+                </div>
+
+                <div class="eco-category fade-in">
+                    <i class="fa-solid fa-brain"></i>
+                    <h3>Core ML & Modeling</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AI Model Training</span>
+                        <span class="skill-tag">Model Fine-Tuning</span>
+                        <span class="skill-tag">Model Evaluation</span>
                         <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Scikit-Learn</span>
-                        <span class="skill-tag">Predictive Modeling</span>
-                        <span class="skill-tag">NLP</span>
                         <span class="skill-tag">HuggingFace</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">Predictive Modeling</span>
                     </div>
                 </div>
 
@@ -164,11 +307,12 @@
                     <i class="fa-solid fa-server"></i>
                     <h3>Data Engineering</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Fabric</span>
                         <span class="skill-tag">Apache Airflow</span>
                         <span class="skill-tag">Spark</span>
-                        <span class="skill-tag">Hadoop</span>
                         <span class="skill-tag">Snowflake</span>
                         <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">SQL / Stored Procedures</span>
                         <span class="skill-tag">Big Data Analytics</span>
                     </div>
                 </div>
@@ -182,11 +326,47 @@
                         <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">System Design</span>
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C/C++</span>
                         <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Power BI / DAX</span>
+                        <span class="skill-tag">MLOps</span>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="section fade-in" id="credentials">
+        <div class="container">
+            <h2>Professional Credentials</h2>
+
+            <!-- DataCamp Suite -->
+            <div class="cert-issuer-group">
+                <div class="cert-issuer-header">
+                    <div class="cert-issuer-badge datacamp">DC</div>
+                    <div class="cert-issuer-header-text">
+                        <h3>DataCamp</h3>
+                        <p>4 Active Certifications &middot; Issued 2026 &middot; Valid through 2028</p>
+                    </div>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card">AI Engineer for Developers Associate</div>
+                    <div class="cert-card">AI Engineer for Data Scientists Associate</div>
+                    <div class="cert-card">Data Scientist Associate</div>
+                    <div class="cert-card">Data Engineer Associate</div>
+                </div>
+            </div>
+
+            <!-- Standalone Certs -->
+            <div class="cert-standalone-grid">
+                <div class="cert-standalone-card">
+                    <div class="cert-issuer-badge google">G</div>
+                    <div>
+                        <h4>Google Cybersecurity Professional Certificate</h4>
+                        <p>Coursera &middot; Issued Aug 2023</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -226,12 +406,12 @@
                 <!-- Academic Service -->
                 <div class="service-area">
                     <div class="service-box">
-                        <h3><i class="fa-solid fa-globe text-warning me-2"></i> Academic Service</h3>
+                        <h3><i class="fa-solid fa-globe" style="color: var(--accent-color); margin-right: 0.5rem;"></i> Academic Service</h3>
                         <p style="font-size: 0.95rem;">Extensive peer review contributions ensuring the integrity and
                             quality of high-tier network science and security venues.</p>
 
                         <h4
-                            style="font-size: 1rem; color: #fff; margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">
+                            style="font-size: 1rem; color: var(--text-primary); margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">
                             Key TPC / Reviewer Roles:</h4>
                         <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem;">
                             <li>IEEE INFOCOM ('17, '18, '19, '20, '21)</li>
@@ -287,92 +467,8 @@
         </div>
     </div>
 
-    <!-- Rest of scripts -->
+    <!-- Scripts -->
     <script>
-        // ... previous canvas script stays here ...
-        // Lightweight particle/network effect for the hero background
-        const canvas = document.getElementById('canvas-bg');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let particlesArray;
-
-        class Particle {
-            constructor(x, y, dx, dy, size) {
-                this.x = x;
-                this.y = y;
-                this.dx = dx;
-                this.dy = dy;
-                this.size = size;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-                ctx.fill();
-            }
-            update() {
-                if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
-                if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
-                this.x += this.dx;
-                this.y += this.dy;
-                this.draw();
-            }
-        }
-
-        function init() {
-            particlesArray = [];
-            let numberOfParticles = (canvas.height * canvas.width) / 15000;
-            for (let i = 0; i < numberOfParticles; i++) {
-                let size = (Math.random() * 2) + 1;
-                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
-                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
-                let dx = (Math.random() - 0.5) * 0.5;
-                let dy = (Math.random() - 0.5) * 0.5;
-                particlesArray.push(new Particle(x, y, dx, dy, size));
-            }
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, innerWidth, innerHeight);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-            }
-            connect();
-        }
-
-        function connect() {
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                        ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        let opacityValue = 1 - (distance / 10000);
-                        ctx.strokeStyle = 'rgba(255,255,255,' + opacityValue * 0.05 + ')';
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        window.addEventListener('resize',
-            function () {
-                canvas.width = innerWidth;
-                canvas.height = innerHeight;
-                init();
-            }
-        )
-
-        init();
-        animate();
-
         // --- Mobile Menu Logic ---
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
@@ -424,9 +520,9 @@
         const optionBtns = document.querySelectorAll('.bot-option-btn');
 
         const botAnswers = {
-            "leadership": "Rui manages and mentors high-performing data science and engineering teams. As a Lead Data Scientist at Expatiate, he guided the development of the iTAAP platform from conception to production across 50+ school districts, aligning technical execution with direct business ROI.",
-            "scale": "Absolutely. At the University of Delaware, his research involved ingesting and analyzing global cloud network traffic (AWS EC2, BGP routing) at an immense scale. In industry, he architected ETL pipelines serving 50+ districts resulting in a 90% reduction in processing time.",
-            "tech": "His core strength lies at the intersection of Data Engineering and ML. He is highly proficient in Python, PyTorch/TensorFlow, Apache Airflow, Spark, and AWS (EC2/S3/RDS). He's particularly strong at taking an ML model and architecting the robust cloud pipeline needed to serve it in production."
+            "leadership": "Rui brings 14+ years of engineering experience and actively mentors data science interns, directing them to build internal automation tools that improve the iTAAP operational lifecycle. As Lead Data Scientist at Expatiate Communications, he aligned technical architecture with direct business ROI across nearly 30 school districts — spanning data infrastructure, predictive analytics, and compliance tooling.",
+            "scale": "Absolutely. In industry, he architected data pipelines on Microsoft Fabric serving nearly 30 school districts, with a 90% reduction in processing time driven by a custom Agentic AI ETL system. In research at the University of Delaware, he analyzed global BGP routing and AWS EC2 cloud traffic at internet scale.",
+            "tech": "His core stack spans Data Engineering (Microsoft Fabric, Python, SQL stored procedures, ETL pipelines), Business Intelligence (Power BI, DAX, compliance dashboards), Machine Learning (PyTorch, TensorFlow, Scikit-Learn, predictive modeling), and Cloud (AWS EC2/S3/RDS, Docker). He is particularly strong at designing Agentic AI systems that automate complex data workflows end-to-end."
         };
 
         function addMessage(text, sender) {
