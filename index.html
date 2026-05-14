@@ -45,6 +45,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#experience" class="nav-item">Experience</a></li>
                 <li><a href="#impact" class="nav-item">Impact</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
                 <li><a href="#ecosystem" class="nav-item">Ecosystem</a></li>
                 <li><a href="#credentials" class="nav-item">Credentials</a></li>
                 <li><a href="#leadership" class="nav-item">Leadership</a></li>
@@ -64,25 +65,25 @@
                         Open to Opportunities
                     </div>
                     <h1 class="gradient-text">Scaling AI Capabilities from Research to Production.</h1>
-                    <p>AI &amp; Data Science Leader with a Ph.D. in Computer Engineering. 14+ years bridging rigorous academic research and production-grade AI systems — from internet-scale network measurement to Agentic AI pipelines that cut processing time by 90%.</p>
+                    <p>AI &amp; Data Science Leader with a Ph.D. in Computer Engineering. Built and deployed the iTAAP production data platform across 25+ California school districts — spanning agentic AI orchestration, multi-model ML prediction, browser automation, geospatial visualization, and full-lifecycle ETL. Published at IEEE INFOCOM, ACM SIGCOMM, and Elsevier.</p>
 
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <h4>14+</h4>
-                            <p>Years Engineering</p>
+                            <h4>32</h4>
+                            <p>Projects Built</p>
                         </div>
                         <div class="stat-item">
-                            <h4>90%</h4>
-                            <p>Pipeline Efficiency</p>
+                            <h4>25+</h4>
+                            <p>School Districts</p>
                         </div>
                         <div class="stat-item">
-                            <h4>8+</h4>
-                            <p>Top-Tier Pubs</p>
+                            <h4>150+</h4>
+                            <p>Power BI Dashboards</p>
                         </div>
                     </div>
 
                     <div class="hero-cta">
-                        <a href="assets/resume.pdf" download class="btn-resume">
+                        <a href="assets/cv/Rui%20Bian_Data%20Scientist_20250613.pdf" download class="btn-resume">
                             <i class="fa-solid fa-file-arrow-down"></i> Download Resume
                         </a>
                         <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" class="btn-github">
@@ -93,6 +94,38 @@
 
                 <div class="hero-photo">
                     <img src="assets/img/headshot.jpg" alt="Rui Bian, PhD — AI &amp; Data Science Leader">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics Strip -->
+    <section class="metrics-strip" id="metrics">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-item">
+                    <span class="metric-num count-up" data-target="32" data-suffix="">0</span>
+                    <span class="metric-label">Production<br>Projects Built</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num count-up" data-target="25" data-suffix="+">0+</span>
+                    <span class="metric-label">School<br>Districts Served</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num count-up" data-target="150" data-suffix="+">0+</span>
+                    <span class="metric-label">Power BI<br>Dashboards</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num count-up" data-target="18" data-suffix="">0</span>
+                    <span class="metric-label">School Sites<br>Automated</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num count-up" data-target="10" data-suffix="K+">0K+</span>
+                    <span class="metric-label">California<br>Schools Mapped</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-num count-up" data-target="90" data-suffix="%">0%</span>
+                    <span class="metric-label">Pipeline<br>Time Saved</span>
                 </div>
             </div>
         </div>
@@ -147,6 +180,64 @@
         </div>
     </section>
 
+    <!-- Core Strengths Section -->
+    <section class="section" id="strengths" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2>Core Strengths</h2>
+            <div class="capabilities-grid">
+
+                <div class="capability-card innov fade-in">
+                    <i class="fa-solid fa-lightbulb capability-icon"></i>
+                    <h3>Innovation</h3>
+                    <p>First-principles thinking — designing novel systems when off-the-shelf tools fall short, and choosing the right technology for each problem rather than defaulting to the familiar.</p>
+                    <ul class="capability-evidence">
+                        <li>LangGraph + local Ollama LLM for privacy-preserving agentic ETL — student data never leaves the server</li>
+                        <li>Progressive filtering algorithm that separates "no data" from "underperforming" — handles real-world data gaps correctly</li>
+                        <li>Dual-API fallback chain (OpenAI → Gemini → structured JSON) — report generation never fails on a single API outage</li>
+                        <li>Go CLI in a Python-dominant stack — deliberate language selection for reliability, not default</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card reliable fade-in">
+                    <i class="fa-solid fa-shield-halved capability-icon"></i>
+                    <h3>Reliability</h3>
+                    <p>Production systems designed to fail gracefully, recover automatically, and be safe for non-technical operators — with test modes, audit trails, and idempotent reruns.</p>
+                    <ul class="capability-evidence">
+                        <li>Idempotent ETL pipelines (truncate + reload) — always safe to rerun after failure without data corruption</li>
+                        <li>Per-school error recovery — a single API or browser failure never aborts the full multi-district run</li>
+                        <li>Pre-flight validation (Extract_checker) catches bad files before any database write</li>
+                        <li>Test mode in every user-facing system — no accidental production sends or overwrites</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card domain fade-in">
+                    <i class="fa-solid fa-book-open capability-icon"></i>
+                    <h3>Domain Expertise</h3>
+                    <p>Deep knowledge across two very different fields — California K-12 education compliance and internet-scale network measurement — enabling contributions that generalist engineers cannot make.</p>
+                    <ul class="capability-evidence">
+                        <li>Encoded federal IEP legal rules (IDEA) as computable thresholds: annual 365-day, triennial 3-year, assessment plan 60-day</li>
+                        <li>IDEA LRE placement calculations matching California state benchmark categories</li>
+                        <li>CALPADS, SEIS, Aeries SIS, CAASPP, ELPAC data structures and compliance requirements</li>
+                        <li>IEEE INFOCOM 2024, ACM SIGCOMM CCR 2019, Elsevier Computer Networks 2022 — peer-reviewed network science publications</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card lead fade-in">
+                    <i class="fa-solid fa-chess-king capability-icon"></i>
+                    <h3>Leadership</h3>
+                    <p>Solo architect, builder, and owner of a 32-project production platform serving 25+ independent organizations — from design to deployment to ongoing support.</p>
+                    <ul class="capability-evidence">
+                        <li>Multi-tenant architecture scales to new districts without code changes — onboarding is configuration, not engineering</li>
+                        <li>Designed every system for non-technical operators: GUI tools, color-coded reports, double-click launchers</li>
+                        <li>TPC member and reviewer: IEEE INFOCOM ('17–'21), IEEE/IFIP DSN ('19–'22), Elsevier Computer Networks, TNSE</li>
+                        <li>Mentors data science interns on internal tooling, automation, and production engineering practices</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Case Studies Section -->
     <section class="section" id="impact">
         <div class="container">
@@ -169,18 +260,17 @@
                     <div class="case-section">
                         <h4>Architecture</h4>
                         <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>Modernized core data pipelines using <strong>Microsoft Fabric</strong>, advanced Python, and optimized SQL stored procedures</li>
-                            <li>Designed an <strong>Agentic AI system</strong> to fully automate complex ETL processes and intelligent data routing</li>
-                            <li>Built an <strong>Assessment Integration Engine</strong> standardizing iReady, NWEA, and IXL data against State Testing levels for real-time academic progress prediction</li>
-                            <li>Engineered compliance dashboards in <strong>Power BI / DAX</strong>: FAPE Compliance Prediction, IEP Risk Projection, Student Services Tracking, Achievement Gap, and State Performance Plan Indicators</li>
-                            <li>Developed <strong>iTAAP Insights Email Alerts</strong> to automatically notify districts of at-risk students requiring early intervention</li>
-                            <li>Architected secure data endpoints enabling cross-team consumption of centralized iTAAP data for other company products</li>
+                            <li>Designed a <strong>LangGraph agentic pipeline orchestrator</strong> with gate-node conditional routing, fan-out parallelism across 4 concurrent stages, and a local Ollama LLM (qwen2.5:7b) that analyzes failures and suggests fixes — no student data leaves the server</li>
+                            <li>Built a <strong>6-domain ML prediction system</strong> (CAASPP ELA/Math, ELPAC, Chronic Absenteeism, College/Career, Suspension) using scikit-learn, ARIMA, and Holt-Winters with per-district model selection; integrated OpenAI + Gemini APIs for plain-language administrative narratives</li>
+                            <li>Automated <strong>IEP compliance tracking</strong> across 21 districts: Playwright PDF download with MFA handling → PDF date parsing → green/yellow/orange/red deadline risk scoring → Power BI dashboards; zero missed IEP deadlines after deployment</li>
+                            <li>Engineered <strong>32 production tools</strong> covering ETL, compliance reporting, browser automation (Playwright + Selenium), async web scraping, SFTP delivery, a Go REST API client to MongoDB, and 150+ Power BI dashboards across 9 dashboard types</li>
+                            <li>Built automated <strong>Gmail API email alert system</strong> delivering data-driven weekly performance summaries to 18 school sites with dynamic metric selection from 12 indicators</li>
                         </ul>
                     </div>
 
                     <div class="case-section">
                         <h4>Business Impact</h4>
-                        <p class="text-accent">Platform deployed across nearly 30 school districts. Achieved a <strong>90% reduction in data processing time</strong> via Agentic AI automation. Mentors data science interns on internal tooling, continuously improving the iTAAP operational lifecycle.</p>
+                        <p class="text-accent">Platform deployed across <strong>25+ California school districts</strong>. LangGraph agentic automation achieved a <strong>75–90% reduction in pipeline processing time</strong>. Replaced dozens of hours of weekly manual work — data collection, compliance tracking, report generation, and stakeholder communication — with single-command automated pipelines.</p>
                     </div>
                 </div>
 
@@ -328,6 +418,156 @@
         </div>
     </section>
 
+    <!-- Production Portfolio Section -->
+    <section class="section" id="projects" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2>Production Portfolio</h2>
+            <p class="section-subtitle">32 production projects built for the iTAAP platform — agentic AI, multi-model ML, compliance automation, browser automation, geospatial visualization, and polyglot engineering across 25+ California school districts.</p>
+
+            <div class="project-grid">
+
+                <div class="project-card cat-ai fade-in">
+                    <span class="project-num">01</span>
+                    <span class="project-category cat-ai">AI / Orchestration</span>
+                    <h4>LangGraph SPED Pipeline Orchestrator</h4>
+                    <p class="project-desc">Agentic LangGraph state machine with gate-node conditional routing, 4-stage fan-out parallelism, and local Ollama LLM that diagnoses failures and suggests fixes. Student data never leaves the server.</p>
+                    <div class="project-tech">
+                        <span>LangGraph</span><span>Ollama</span><span>Python</span><span>subprocess</span><span>Tkinter</span>
+                    </div>
+                    <div class="project-impact">↑ 75–90% runtime reduction · replaced 4–6 hr manual process</div>
+                </div>
+
+                <div class="project-card cat-ml fade-in">
+                    <span class="project-num">02</span>
+                    <span class="project-category cat-ml">Machine Learning</span>
+                    <h4>6-Domain Student Outcome Prediction</h4>
+                    <p class="project-desc">Per-district ML system predicting CAASPP ELA/Math, ELPAC, Chronic Absenteeism, College/Career, and Suspension. Per-district model selection across RF / Linear / ARIMA / Holt-Winters with OpenAI + Gemini narrative generation.</p>
+                    <div class="project-tech">
+                        <span>scikit-learn</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span>
+                    </div>
+                    <div class="project-impact">20+ districts · 6 prediction domains · AI-written reports</div>
+                </div>
+
+                <div class="project-card cat-ml fade-in">
+                    <span class="project-num">03</span>
+                    <span class="project-category cat-ml">ML Forecasting</span>
+                    <h4>Per-School Suspension Rate Forecasting</h4>
+                    <p class="project-desc">5 models trained per school (ETS, ARIMA, Prophet, Random Forest, linear baseline). Ensemble of top 3 weighted by inverse validation error. Per-school comparison charts and ranked summary CSV.</p>
+                    <div class="project-tech">
+                        <span>Prophet</span><span>ARIMA</span><span>ETS</span><span>scikit-learn</span><span>statsmodels</span>
+                    </div>
+                    <div class="project-impact">Ensemble outperformed any single model in 70%+ of schools</div>
+                </div>
+
+                <div class="project-card cat-ai fade-in">
+                    <span class="project-num">04</span>
+                    <span class="project-category cat-ai">AI / Algorithm</span>
+                    <h4>School Recommendation Engine</h4>
+                    <p class="project-desc">Progressive multi-indicator filtering algorithm that finds nearby California schools outperforming a given school. Handles data gaps correctly — "no data" is not treated as "underperforming." Haversine radius search + Folium map output.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>Haversine</span><span>Folium</span><span>pandas</span><span>geopy</span>
+                    </div>
+                    <div class="project-impact">6 indicators · data-gap-aware algorithm · statewide coverage</div>
+                </div>
+
+                <div class="project-card cat-compliance fade-in">
+                    <span class="project-num">05</span>
+                    <span class="project-category cat-compliance">Compliance</span>
+                    <h4>IEP Compliance Pipeline</h4>
+                    <p class="project-desc">4-step pipeline encoding federal IDEA law as computable thresholds: SQL query → Playwright PDF download with MFA handling → PDF date extraction → green/yellow/orange/red risk scoring published to Power BI dashboards.</p>
+                    <div class="project-tech">
+                        <span>Playwright</span><span>PDF parsing</span><span>SQL Server</span><span>Power BI</span>
+                    </div>
+                    <div class="project-impact">21 districts · hundreds of students tracked · zero missed deadlines</div>
+                </div>
+
+                <div class="project-card cat-compliance fade-in">
+                    <span class="project-num">06</span>
+                    <span class="project-category cat-compliance">Analytics</span>
+                    <h4>At-Risk Student Identification</h4>
+                    <p class="project-desc">Cross-domain risk flagging across 14 LEAs: joins CAASPP, ELPAC, discipline, and SPED data to assign SST, 504, and SEL flags. Color-coded Excel reports via openpyxl + SQL Server write-back for Power BI dashboards.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>pandas</span><span>openpyxl</span><span>SQL Server</span><span>Power BI</span>
+                    </div>
+                    <div class="project-impact">14 LEAs · replaced 14 ad-hoc processes with one standard system</div>
+                </div>
+
+                <div class="project-card cat-viz fade-in">
+                    <span class="project-num">07</span>
+                    <span class="project-category cat-viz">Visualization</span>
+                    <h4>California School Radar Map</h4>
+                    <p class="project-desc">Streamlit app with Plotly Mapbox scatter map, vectorized Haversine radius search, zip-code geocoding, click-to-move centering, and radar chart comparison across 6 performance indicators for any two schools side by side.</p>
+                    <div class="project-tech">
+                        <span>Streamlit</span><span>Plotly Mapbox</span><span>NumPy</span><span>SQL Server</span>
+                    </div>
+                    <div class="project-impact">10,000+ California schools · live proximity filtering · sub-second</div>
+                </div>
+
+                <div class="project-card cat-pipeline fade-in">
+                    <span class="project-num">08</span>
+                    <span class="project-category cat-pipeline">Data Pipeline</span>
+                    <h4>CALPADS ODS Hybrid Pipeline</h4>
+                    <p class="project-desc">Dual-mode pipeline: REST API with token auth for 5 report types, Selenium browser automation for portal-only reports. Dual-credential routing maps each LEA to its assigned CALPADS account automatically.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>requests</span><span>Selenium</span><span>SQLAlchemy</span>
+                    </div>
+                    <div class="project-impact">25+ districts · 7 report types · replaced 45-min manual session</div>
+                </div>
+
+                <div class="project-card cat-scraping fade-in">
+                    <span class="project-num">09</span>
+                    <span class="project-category cat-scraping">Web Scraping</span>
+                    <h4>ASHA Pro Finder Async Scraper</h4>
+                    <p class="project-desc">Async two-phase Playwright scraper: Phase 1 paginates Coveo search API to collect profile IDs; Phase 2 scrapes each profile with BeautifulSoup regex ID matching. Per-record error isolation — failures log and continue without aborting.</p>
+                    <div class="project-tech">
+                        <span>asyncio</span><span>Playwright</span><span>BeautifulSoup</span><span>Python</span>
+                    </div>
+                    <div class="project-impact">~6,000 SLP &amp; audiologist profiles · name · cert · phone · address</div>
+                </div>
+
+                <div class="project-card cat-pipeline fade-in">
+                    <span class="project-num">10</span>
+                    <span class="project-category cat-pipeline">Data Engineering</span>
+                    <h4>CALPADS Multi-District Extract Uploader</h4>
+                    <p class="project-desc">Validation-first ETL: pre-flight LEA code check across 25+ districts, auto-fix for trailing delimiter errors (dry-run + apply-fix flags), idempotent truncate+reload, freshness tracking upserted to SQL Server for Power BI staleness indicators.</p>
+                    <div class="project-tech">
+                        <span>Python</span><span>pandas</span><span>SQLAlchemy</span><span>pyodbc</span>
+                    </div>
+                    <div class="project-impact">Auto-fix resolved 80% of errors · eliminated silent data corruption</div>
+                </div>
+
+                <div class="project-card cat-go fade-in">
+                    <span class="project-num">11</span>
+                    <span class="project-category cat-go">Go / Systems</span>
+                    <h4>Aeries SIS API Go Client</h4>
+                    <p class="project-desc">Go CLI fetching 12 Aeries SIS dataset types into MongoDB. Dynamically discovers high schools by HighGradeLevel field — no hardcoded lists. Per-school error recovery continues on API failure. `init()` guard validates config before any network call.</p>
+                    <div class="project-tech">
+                        <span>Go</span><span>MongoDB</span><span>REST API</span><span>net/http</span>
+                    </div>
+                    <div class="project-impact">12 dataset types · dynamic high school discovery · zero maintenance</div>
+                </div>
+
+                <div class="project-card cat-auto fade-in">
+                    <span class="project-num">12</span>
+                    <span class="project-category cat-auto">Automation</span>
+                    <h4>Gmail API Weekly Alert System</h4>
+                    <p class="project-desc">OAuth2 Gmail API pipeline querying SQL Server and dynamically selecting metrics from a configurable pool of 12 indicators. Constructs HTML-formatted tables and delivers weekly performance summaries to 18 school sites. Test mode prevents accidental sends.</p>
+                    <div class="project-tech">
+                        <span>Gmail API</span><span>OAuth2</span><span>Python</span><span>SQL Server</span>
+                    </div>
+                    <div class="project-impact">18 school sites · 12 dynamic indicators · fully automated weekly</div>
+                </div>
+
+            </div>
+
+            <div class="portfolio-footer">
+                32 total projects &nbsp;·&nbsp; Python (primary) · Go · SQL · Playwright · LangGraph · scikit-learn · Streamlit · Prophet · MongoDB
+                <br>
+                <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">View GitHub →</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Ecosystem Section -->
     <section class="section" id="ecosystem">
         <div class="container">
@@ -336,31 +576,31 @@
 
                 <div class="eco-category fade-in">
                     <i class="fa-solid fa-microchip"></i>
-                    <h3>LLM & AI Systems</h3>
+                    <h3>LLM & Agentic AI</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">Context Engineering</span>
-                        <span class="skill-tag">Harness Engineering</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">Ollama (Local LLM)</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Gemini API</span>
+                        <span class="skill-tag">Agentic AI Design</span>
                         <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">Fan-out Parallelism</span>
                         <span class="skill-tag">MCP</span>
-                        <span class="skill-tag">Agentic AI</span>
-                        <span class="skill-tag">AI Security</span>
-                        <span class="skill-tag">AI Guardrails</span>
-                        <span class="skill-tag">AI-Coding CLI</span>
                     </div>
                 </div>
 
                 <div class="eco-category fade-in">
                     <i class="fa-solid fa-brain"></i>
-                    <h3>Core ML & Modeling</h3>
+                    <h3>ML & Forecasting</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">AI Model Training</span>
-                        <span class="skill-tag">Model Fine-Tuning</span>
-                        <span class="skill-tag">Model Evaluation</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">HuggingFace</span>
-                        <span class="skill-tag">Scikit-Learn</span>
-                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">Prophet</span>
+                        <span class="skill-tag">ARIMA</span>
+                        <span class="skill-tag">Holt-Winters (ETS)</span>
+                        <span class="skill-tag">Ensemble Methods</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">statsmodels</span>
                         <span class="skill-tag">Predictive Modeling</span>
                     </div>
                 </div>
@@ -369,28 +609,29 @@
                     <i class="fa-solid fa-server"></i>
                     <h3>Data Engineering</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Microsoft Fabric</span>
-                        <span class="skill-tag">Apache Airflow</span>
-                        <span class="skill-tag">Spark</span>
-                        <span class="skill-tag">Snowflake</span>
+                        <span class="skill-tag">Python / pandas / numpy</span>
+                        <span class="skill-tag">SQL Server / T-SQL</span>
+                        <span class="skill-tag">SQLAlchemy / pyodbc</span>
                         <span class="skill-tag">ETL Pipelines</span>
-                        <span class="skill-tag">SQL / Stored Procedures</span>
-                        <span class="skill-tag">Big Data Analytics</span>
+                        <span class="skill-tag">Playwright</span>
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">asyncio</span>
+                        <span class="skill-tag">Paramiko / SFTP</span>
                     </div>
                 </div>
 
                 <div class="eco-category fade-in">
-                    <i class="fa-brands fa-aws"></i>
-                    <h3>Cloud & Architecture</h3>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Visualization & Systems</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">AWS (EC2, S3, RDS)</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">System Design</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Plotly Mapbox</span>
                         <span class="skill-tag">Power BI / DAX</span>
-                        <span class="skill-tag">MLOps</span>
+                        <span class="skill-tag">Folium</span>
+                        <span class="skill-tag">Go (Golang)</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Multi-tenant Architecture</span>
+                        <span class="skill-tag">Gmail API / OAuth2</span>
                     </div>
                 </div>
 
@@ -510,7 +751,7 @@
                     style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="assets/resume.pdf" download
+                <a href="assets/cv/Rui%20Bian_Data%20Scientist_20250613.pdf" download
                     style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
                     <i class="fa-solid fa-file-arrow-down"></i> Resume
                 </a>
@@ -533,9 +774,12 @@
                 fit for your team?</div>
         </div>
         <div class="bot-options" id="botOptions">
-            <button class="bot-option-btn" data-q="leadership">Tell me about his leadership experience.</button>
-            <button class="bot-option-btn" data-q="scale">Has he worked at massive scale?</button>
+            <button class="bot-option-btn" data-q="projects">What production projects has he built?</button>
+            <button class="bot-option-btn" data-q="scale">Has he worked at scale?</button>
             <button class="bot-option-btn" data-q="tech">What's his core tech stack?</button>
+            <button class="bot-option-btn" data-q="ml">What's his ML/AI experience?</button>
+            <button class="bot-option-btn" data-q="automation">Tell me about his automation work.</button>
+            <button class="bot-option-btn" data-q="leadership">Tell me about his leadership.</button>
         </div>
     </div>
 
@@ -592,9 +836,12 @@
         const optionBtns = document.querySelectorAll('.bot-option-btn');
 
         const botAnswers = {
-            "leadership": "Rui brings 14+ years of engineering experience and actively mentors data science interns, directing them to build internal automation tools that improve the iTAAP operational lifecycle. As Lead Data Scientist at Expatiate Communications, he aligned technical architecture with direct business ROI across nearly 30 school districts — spanning data infrastructure, predictive analytics, and compliance tooling.",
-            "scale": "Absolutely. In industry, he architected data pipelines on Microsoft Fabric serving nearly 30 school districts, with a 90% reduction in processing time driven by a custom Agentic AI ETL system. In research at the University of Delaware, he analyzed global BGP routing and AWS EC2 cloud traffic at internet scale.",
-            "tech": "His core stack spans LLM & AI Systems (Agentic AI, RAG, MCP, Prompt/Context/Harness Engineering, AI Security, AI Guardrails), Core ML (PyTorch, HuggingFace, model fine-tuning and evaluation), Data Engineering (Microsoft Fabric, Python, SQL, ETL pipelines, Power BI/DAX), and Cloud (AWS, Docker, Kubernetes, MLOps). He is particularly strong at designing end-to-end Agentic AI systems that cut processing time by 90%."
+            "projects": "Rui built 32 production projects for the iTAAP education data platform serving 25+ California school districts. Highlights include: a LangGraph agentic pipeline orchestrator that cut processing time by 75–90%; a 6-domain ML prediction system (CAASPP, ELPAC, Chronic Absenteeism, College/Career, Suspension) across 20+ districts; an IEP compliance pipeline with Playwright PDF automation across 21 districts; a Streamlit+Plotly Mapbox app mapping 10,000+ California schools; an async Playwright scraper that extracted ~6,000 professional profiles; and a Go CLI tool fetching 12 Aeries SIS dataset types into MongoDB.",
+            "scale": "Yes — the iTAAP platform serves 25+ California school districts with 150+ Power BI dashboards across 9 dashboard types. Rui's LangGraph agentic pipeline replaced a 4–6 hour weekly manual process with a single command and achieved a 75–90% runtime reduction via fan-out parallelism. In academic research at the University of Delaware, he analyzed 436,000+ open proxies and processed millions of network probes at internet scale using Python and AWS.",
+            "tech": "Rui's demonstrated stack: Python (primary) · Go · SQL/T-SQL · PowerShell. AI/ML: LangGraph, Ollama (local LLM), OpenAI API, Gemini API, scikit-learn, Prophet, ARIMA, Holt-Winters. Data engineering: pandas, SQLAlchemy, pyodbc, SQL Server. Automation: Playwright (sync + async), Selenium, asyncio, BeautifulSoup, Paramiko/SFTP. Visualization: Streamlit, Plotly Mapbox, Folium, Power BI/DAX. Storage: SQL Server, MongoDB.",
+            "ml": "Rui has built production ML systems, not just notebooks. He designed a 6-domain student outcome prediction system using scikit-learn with per-district model selection (Random Forest, Linear Regression, ARIMA, Holt-Winters) and integrated OpenAI + Gemini APIs to generate plain-language administrative reports. He also built per-school suspension rate forecasting with a 5-model ensemble (ETS + ARIMA + Prophet) weighted by validation error, and a geospatial school recommendation engine using progressive multi-indicator filtering that handles data gaps correctly.",
+            "automation": "Automation is where Rui has the deepest production experience. He automated IEP compliance PDF downloading from SEIS with MFA handling across 21 districts; built an async two-phase Playwright scraper extracting ~6,000 professional profiles; automated SEIS export column selection (103 columns per district) via Selenium; built a Gmail API weekly email pipeline to 18 school sites; and wrote a Go CLI for full Aeries SIS data ingestion into MongoDB with per-school error recovery. All systems were designed for non-technical operators with GUI tools, test modes, and audit logs.",
+            "leadership": "As Lead Data Scientist at Expatiate Communications, Rui owns the full iTAAP platform solo — design, development, deployment, and maintenance across 25+ districts. He mentors data science interns and has designed every system for non-technical end users: double-click launchers, color-coded compliance reports, and GUI pipeline monitors. In academia at the University of Delaware, he served as TPC member and reviewer for IEEE INFOCOM, IEEE/IFIP DSN, Elsevier Computer Networks, and other top venues across 5+ years."
         };
 
         function addMessage(text, sender) {
@@ -653,6 +900,38 @@
                 }, 1200);
             });
         });
+
+        // --- Animated Counter for Metrics Strip ---
+        function animateCount(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1800;
+            const startTime = performance.now();
+            function step(ts) {
+                const progress = Math.min((ts - startTime) / duration, 1);
+                const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                el.textContent = Math.floor(ease * target) + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        let countersStarted = false;
+        const counterEls = document.querySelectorAll('.count-up');
+        const metricsSection = document.getElementById('metrics');
+
+        if (metricsSection && counterEls.length) {
+            const counterObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !countersStarted) {
+                        countersStarted = true;
+                        counterEls.forEach(el => animateCount(el));
+                        counterObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+            counterObserver.observe(metricsSection);
+        }
 
     </script>
 </body>
