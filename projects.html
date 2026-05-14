@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects — Rui Bian | AI & Data Science</title>
+    <meta name="description" content="All 32 production projects built by Rui Bian for the iTAAP education data platform — AI orchestration, ML forecasting, ETL pipelines, compliance automation, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd60b4c730.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/premium.css">
+    <style>
+        /* Page Header */
+        .page-header {
+            padding: 130px 0 var(--spacing-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 900px 500px at 50% 100%, rgba(245,166,35,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-header h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: var(--spacing-md); position: relative; }
+        .page-header p  { max-width: 640px; margin: 0 auto; position: relative; }
+        .page-header-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .ph-stat { text-align: center; }
+        .ph-stat strong { display: block; font-family: var(--font-display); font-size: 2rem; color: var(--accent-color); }
+        .ph-stat span   { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+
+        /* Filter Bar */
+        .filter-bar {
+            position: sticky;
+            top: 61px;
+            z-index: 200;
+            background: rgba(10,15,30,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.85rem 0;
+        }
+        .filter-bar .container {
+            display: flex;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.38rem 1rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-primary);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+        .filter-btn:hover  { border-color: var(--accent-color); color: var(--accent-color); }
+        .filter-btn.active { background: rgba(245,166,35,0.12); border-color: var(--accent-color); color: var(--accent-color); font-weight: 600; }
+
+        /* Project Cards */
+        .projects-section { padding: var(--spacing-xxl) 0; }
+
+        .category-section { margin-bottom: var(--spacing-xxl); }
+
+        .category-label {
+            font-family: var(--font-primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        .category-label::after { content: ''; flex: 1; height: 1px; background: var(--border-color); }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+        @media (min-width: 900px)  { .detail-grid { grid-template-columns: repeat(2,1fr); } }
+        @media (min-width: 1300px) { .detail-grid { grid-template-columns: repeat(3,1fr); } }
+
+        .detail-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            transition: opacity 0.28s ease, transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 16px 16px 0 0;
+        }
+        .detail-card.cat-ai::before         { background: linear-gradient(90deg,#f5a623,#f59e0b); }
+        .detail-card.cat-ml::before         { background: linear-gradient(90deg,#8b5cf6,#c084fc); }
+        .detail-card.cat-pipeline::before   { background: linear-gradient(90deg,#3b82f6,#60a5fa); }
+        .detail-card.cat-compliance::before { background: linear-gradient(90deg,#ef4444,#f87171); }
+        .detail-card.cat-auto::before       { background: linear-gradient(90deg,#6b7280,#9ca3af); }
+        .detail-card.cat-scraping::before   { background: linear-gradient(90deg,#14b8a6,#2dd4bf); }
+        .detail-card.cat-viz::before        { background: linear-gradient(90deg,#10b981,#34d399); }
+        .detail-card.cat-go::before         { background: linear-gradient(90deg,#6366f1,#818cf8); }
+
+        .detail-card:hover {
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 30px rgba(245,166,35,0.06);
+        }
+        .detail-card.hiding { opacity: 0; transform: scale(0.97); pointer-events: none; }
+        .detail-card.hidden { display: none; }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-num {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            opacity: 0.45;
+            letter-spacing: 0.06em;
+        }
+        .detail-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin: 0;
+            line-height: 1.3;
+        }
+        .card-problem {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+            padding-left: var(--spacing-md);
+            border-left: 2px solid var(--border-color);
+            font-style: italic;
+        }
+        .card-approach {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .card-approach li {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.45;
+        }
+        .card-approach li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            font-size: 0.6rem;
+            top: 0.22rem;
+            color: var(--accent-color);
+        }
+        .card-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .card-tech span {
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: var(--text-muted);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+        }
+        .card-impact {
+            font-size: 0.78rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.65rem;
+        }
+
+        /* Page Footer */
+        .page-footer {
+            border-top: 1px solid var(--border-color);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .back-link:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="text-decoration:none;">RUI BIAN</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#experience" class="nav-item">Experience</a></li>
+                <li><a href="index.html#strengths" class="nav-item">Strengths</a></li>
+                <li><a href="projects.html" class="nav-item" style="color:var(--accent-color);">All Projects</a></li>
+                <li><a href="index.html#ecosystem" class="nav-item">Ecosystem</a></li>
+                <li><a href="index.html#credentials" class="nav-item">Credentials</a></li>
+                <li><a href="index.html#leadership" class="nav-item">Leadership</a></li>
+                <li><a href="index.html#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="gradient-text">All 32 Production Projects</h1>
+            <p>Complete portfolio for the <strong style="color:var(--text-primary)">iTAAP</strong> education data platform — built across AI orchestration, ML forecasting, data engineering, compliance automation, browser automation, and geospatial visualization for 25+ California school districts.</p>
+            <div class="page-header-stats">
+                <div class="ph-stat"><strong>32</strong><span>Projects</span></div>
+                <div class="ph-stat"><strong>25+</strong><span>Districts</span></div>
+                <div class="ph-stat"><strong>6</strong><span>Categories</span></div>
+                <div class="ph-stat"><strong>Python + Go</strong><span>Languages</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="container">
+            <button class="filter-btn active"   onclick="filter('all',this)">All (32)</button>
+            <button class="filter-btn"           onclick="filter('ai',this)">AI &amp; ML (4)</button>
+            <button class="filter-btn"           onclick="filter('engineering',this)">Data Engineering (10)</button>
+            <button class="filter-btn"           onclick="filter('compliance',this)">Compliance &amp; Analytics (5)</button>
+            <button class="filter-btn"           onclick="filter('automation',this)">Automation &amp; Web (7)</button>
+            <button class="filter-btn"           onclick="filter('bi',this)">Business Intelligence (4)</button>
+            <button class="filter-btn"           onclick="filter('software',this)">Software Engineering (2)</button>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <section class="projects-section">
+        <div class="container">
+
+            <!-- ── AI & Machine Learning ─────────────────────────── -->
+            <div class="category-section" id="sec-ai">
+                <div class="category-label"><i class="fa-solid fa-microchip" style="color:var(--accent-color)"></i> AI &amp; Machine Learning</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-ai" data-category="ai">
+                        <div class="card-top"><span class="card-num">01</span><span class="project-category cat-ai">AI / Orchestration</span></div>
+                        <h3>LangGraph Agentic Pipeline Orchestrator</h3>
+                        <p class="card-problem">Multi-step SPED data pipeline required manual sequential execution every week — steps were skipped, order was wrong, and failures were silent.</p>
+                        <ul class="card-approach">
+                            <li>LangGraph StateGraph with gate node + conditional routing: downstream stages only run when ingestion succeeds</li>
+                            <li>Fan-out parallelism to 4 concurrent stages (LRE, IEP compliance, predictions, LEA reports) with a custom TypedDict reducer for safe concurrent state writes</li>
+                            <li>Local Ollama LLM (qwen2.5:7b) analyzes failure logs and suggests fixes — student data never leaves the server</li>
+                            <li>Tkinter GUI monitor with real-time streaming log output for non-technical operators</li>
+                        </ul>
+                        <div class="card-tech"><span>LangGraph</span><span>Ollama</span><span>qwen2.5:7b</span><span>Python</span><span>subprocess</span><span>Tkinter</span></div>
+                        <div class="card-impact">↑ 75–90% runtime reduction · replaced 4–6 hr manual weekly process with one command</div>
+                    </div>
+
+                    <div class="detail-card cat-ml" data-category="ai">
+                        <div class="card-top"><span class="card-num">02</span><span class="project-category cat-ml">Machine Learning</span></div>
+                        <h3>6-Domain Student Outcome Prediction System</h3>
+                        <p class="card-problem">Districts only learned about poor student outcomes after the fact — no forward-looking indicators existed for proactive intervention.</p>
+                        <ul class="card-approach">
+                            <li>6-domain prediction: CAASPP ELA, CAASPP Math, ELPAC, Chronic Absenteeism, College/Career, Suspension — each with a dedicated analyzer class</li>
+                            <li>Feature engineering from multi-year SQL Server data: prior year scores, year-over-year deltas, 3-year rolling means, trend slopes</li>
+                            <li>Per-district model selection across 4 candidate models (Random Forest, Linear, ARIMA, Holt-Winters) ranked by R² on held-out validation data</li>
+                            <li>OpenAI (GPT-4o-mini) + Gemini (gemini-1.5-flash) fallback chain generates plain-language administrative narratives with hallucination validation</li>
+                        </ul>
+                        <div class="card-tech"><span>scikit-learn</span><span>statsmodels</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span><span>matplotlib</span></div>
+                        <div class="card-impact">Deployed 20+ districts · proactive intervention 4–6 months before year-end outcomes</div>
+                    </div>
+
+                    <div class="detail-card cat-ml" data-category="ai">
+                        <div class="card-top"><span class="card-num">03</span><span class="project-category cat-ml">ML Forecasting</span></div>
+                        <h3>Per-School Suspension Rate Forecasting</h3>
+                        <p class="card-problem">Suspension rates varied wildly by school and had different seasonal patterns — a single global model was unreliable for planning intervention resources.</p>
+                        <ul class="card-approach">
+                            <li>5 models trained per school: ETS (Holt-Winters), ARIMA, Prophet, Random Forest, linear baseline — with MAE evaluation against 2024–2025 actuals</li>
+                            <li>Ensemble of top 3 (ETS + ARIMA + Prophet) weighted by inverse validation error</li>
+                            <li>Per-school comparison charts showing all model projections vs. actuals; summary CSV ranked by RMSE</li>
+                            <li>ARIMA exception handling for schools with too-short history to converge</li>
+                        </ul>
+                        <div class="card-tech"><span>Prophet</span><span>ARIMA</span><span>ETS</span><span>scikit-learn</span><span>statsmodels</span><span>matplotlib</span><span>seaborn</span></div>
+                        <div class="card-impact">Ensemble outperformed any single model in 70%+ of schools tested</div>
+                    </div>
+
+                    <div class="detail-card cat-ai" data-category="ai">
+                        <div class="card-top"><span class="card-num">04</span><span class="project-category cat-ai">AI / Algorithm</span></div>
+                        <h3>School Recommendation Engine</h3>
+                        <p class="card-problem">No systematic way existed to find nearby California schools that consistently outperform a given school across multiple indicators, while handling real-world data gaps correctly.</p>
+                        <ul class="card-approach">
+                            <li>Haversine 30-mile radius search narrows a statewide dataset to geographically relevant candidates</li>
+                            <li>Progressive multi-indicator filter: applies each available metric sequentially — schools without data for an indicator are excluded from that step only, not globally</li>
+                            <li>Correctly distinguishes "no data" from "underperforming" — a critical design decision that naive threshold filtering misses</li>
+                            <li>Folium interactive map output + ranked summary CSV by number of indicators outperformed</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>Haversine</span><span>Folium</span><span>geopy</span><span>googlemaps</span></div>
+                        <div class="card-impact">6 indicators · statewide coverage · data-gap-aware recommendation algorithm</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Data Engineering ──────────────────────────────── -->
+            <div class="category-section" id="sec-engineering">
+                <div class="category-label"><i class="fa-solid fa-server" style="color:#60a5fa"></i> Data Engineering &amp; ETL</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">05</span><span class="project-category cat-pipeline">Data Engineering</span></div>
+                        <h3>SEIS Input Data Pipeline</h3>
+                        <p class="card-problem">Weekly manual combining, normalizing, and routing of SEIS export files from 25 districts into a single warehouse-ready format.</p>
+                        <ul class="card-approach">
+                            <li>Multi-source ingestion combining per-district SEIS CSV exports with configurable column normalization</li>
+                            <li>JCCS merge: 4 sub-entities aggregated into a single district record before routing</li>
+                            <li>File routing by LEA code to district-specific destinations; CLI stage flags for selective re-runs</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>pathlib</span><span>argparse</span></div>
+                        <div class="card-impact">Eliminated weekly manual file processing across 25 LEAs</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">06</span><span class="project-category cat-pipeline">ETL / Validation</span></div>
+                        <h3>CALPADS Extract Uploader</h3>
+                        <p class="card-problem">25+ districts' CALPADS extract files arrived with delimiter errors, wrong LEA codes, and encoding issues — manual upload was silently corrupting warehouse data.</p>
+                        <ul class="card-approach">
+                            <li>Pre-flight LEA code validation in column 3 against expected values before any upload begins</li>
+                            <li>Auto-fix: trailing delimiter detection with `--fix` (preview) and `--apply-fix` (correct in-place) CLI flags</li>
+                            <li>Idempotent truncate+reload pattern: safe to rerun after partial failure; SQLAlchemy fast_executemany for bulk performance</li>
+                            <li>Freshness upsert to SQL Server DataDateTime table after each successful load — visible in Power BI staleness indicators</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>SQLAlchemy</span><span>pyodbc</span><span>argparse</span></div>
+                        <div class="card-impact">Auto-fix resolved 80% of errors · eliminated silent data corruption</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">07</span><span class="project-category cat-pipeline">ETL / Automation</span></div>
+                        <h3>CALPADS ODS Download Pipeline</h3>
+                        <p class="card-problem">CALPADS ODS reports needed regular download for 25+ LEAs across both REST API-accessible and portal-only formats, using two different credential sets.</p>
+                        <ul class="card-approach">
+                            <li>REST API with token auth for 5 report types; Selenium browser automation for 2 portal-only SSRS reports</li>
+                            <li>Dual-account LEA routing: `lea_data.py` maps each district to its assigned CALPADS account automatically</li>
+                            <li>`--download` / `--upload` mode flags: re-run uploads without re-downloading already-retrieved files</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>requests</span><span>Selenium</span><span>pandas</span><span>SQLAlchemy</span></div>
+                        <div class="card-impact">25+ districts · 7 report types · replaced 45-min manual weekly session</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">08</span><span class="project-category cat-pipeline">ETL / SFTP</span></div>
+                        <h3>SouthFork SIRAS Pipeline</h3>
+                        <p class="card-problem">A rural LEA's SIRAS export schema was entirely different from the county's required 80+ column format — requiring weekly manual field mapping, date normalization, and disability code translation.</p>
+                        <ul class="card-approach">
+                            <li>Playwright downloads raw SEIS export in single unattended session</li>
+                            <li>80+ column pandas transform: disability code lookup dicts (30+ entries), grade level code translation, multi-format date normalization to SIRAS required format</li>
+                            <li>Column count validation before output; Paramiko SFTP upload to county server</li>
+                            <li>subprocess orchestrator chains all 3 stages with stage-level error logging</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Playwright</span><span>pandas</span><span>paramiko</span></div>
+                        <div class="card-impact">Automated weekly SIRAS delivery for rural LEA · eliminated manual schema translation</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">09</span><span class="project-category cat-pipeline">ETL / Automation</span></div>
+                        <h3>IVA SIS Extract Pipeline</h3>
+                        <p class="card-problem">Charter school's Aeries SIS CALPADS extracts required navigating a complex UI, unzipping downloads, renaming files to standard convention, and uploading via SFTP each cycle.</p>
+                        <ul class="card-approach">
+                            <li>Playwright automation with Kendo UI-aware selectors navigates Aeries SIS, selects each CALPADS extract type, and downloads the generated ZIP</li>
+                            <li>Subprocess unzip + regex-based rename to `IVA_&lt;type&gt;.txt` naming convention</li>
+                            <li>Paramiko SFTP uploads all `IVA_*.txt` files to staging server; each stage independently runnable for reruns</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Playwright</span><span>paramiko</span><span>zipfile</span></div>
+                        <div class="card-impact">End-to-end automation replacing multi-step manual portal + upload workflow</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">10</span><span class="project-category cat-pipeline">ETL / Format Engineering</span></div>
+                        <h3>BEST Academy STAS Attendance Pipeline</h3>
+                        <p class="card-problem">Charter school's SIS generated attendance in a proprietary CSV format entirely incompatible with the CALPADS STAS 23-field caret-delimited fixed format required for state submission.</p>
+                        <ul class="card-approach">
+                            <li>Playwright downloads the attendance CSV from the SIS portal in an unattended session</li>
+                            <li>23-field STAS converter: maps source columns, derives `other_days` (total minus present minus absent), calculates dynamic school-year string</li>
+                            <li>Paramiko SFTP delivers the formatted file; python-dotenv for credential management</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Playwright</span><span>pandas</span><span>paramiko</span><span>python-dotenv</span></div>
+                        <div class="card-impact">Automated weekly CALPADS attendance submission · replaced manual format conversion</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">11</span><span class="project-category cat-pipeline">Data Quality</span></div>
+                        <h3>SEIS Data Corrector</h3>
+                        <p class="card-problem">SEIS exports contained incorrect district name assignments caused by student transfer timing, propagating errors into downstream compliance reports.</p>
+                        <ul class="card-approach">
+                            <li>Modular pipeline: combine raw exports → correct via reference mapping → organize into per-district CSVs</li>
+                            <li>Backup of originals before any correction; slugified output filenames for cross-platform compatibility</li>
+                            <li>Reference mapping table updated independently of the pipeline code</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>python-slugify</span></div>
+                        <div class="card-impact">Correct district assignments in all downstream compliance reporting</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">12</span><span class="project-category cat-pipeline">Data Engineering</span></div>
+                        <h3>File Format Conversion Utilities</h3>
+                        <p class="card-problem">Education data files arrived in varying formats and encodings (CSV/TXT, UTF-8/CP1252) incompatible with legacy CALPADS upload systems.</p>
+                        <ul class="card-approach">
+                            <li>CSV-to-TXT streaming converter: memory-efficient row-by-row processing for large files</li>
+                            <li>UTF-8 to CP1252 re-encoder: handles characters outside the CP1252 range with configurable replacement</li>
+                            <li>Multi-year historical CSV concatenator: combines annual exports with consistent header management</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span></div>
+                        <div class="card-impact">All file types uploadable to legacy CALPADS systems without manual intervention</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">13</span><span class="project-category cat-pipeline">Data Quality</span></div>
+                        <h3>Extract Checker — Pre-Upload Validation</h3>
+                        <p class="card-problem">Mis-routed or misconfigured CALPADS extract files would silently overwrite correct warehouse data with no error raised during upload.</p>
+                        <ul class="card-approach">
+                            <li>Pre-flight scan checks the LEA code in column 3 of every extract file against expected values for each of 17 districts</li>
+                            <li>Generates a pass/fail report before any upload begins — bad files never reach the database</li>
+                            <li>Config-driven: expected LEA codes maintained in a separate mapping file, not hardcoded</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span></div>
+                        <div class="card-impact">Prevented warehouse corruption · all bad files caught at validation stage</div>
+                    </div>
+
+                    <div class="detail-card cat-pipeline" data-category="engineering">
+                        <div class="card-top"><span class="card-num">14</span><span class="project-category cat-pipeline">Data Quality</span></div>
+                        <h3>Verify Dropouts — Enrollment Verification</h3>
+                        <p class="card-problem">Students exit-coded as dropouts may have re-enrolled elsewhere, inflating dropout rates in federal compliance reports — verifying each SSID manually against live CALPADS was taking 3–4 hours per LEA.</p>
+                        <ul class="card-approach">
+                            <li>ThreadPoolExecutor parallel Selenium workers: each worker has its own ChromeDriver instance, logs to a per-worker queue</li>
+                            <li>Deduplication runs before workers start; batch REST API write-back with chunked requests and single-item fallback on 404</li>
+                            <li>Worker count and batch size configurable via environment variables; JSON audit logs with timing per worker</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Selenium</span><span>ThreadPoolExecutor</span><span>requests</span></div>
+                        <div class="card-impact">3–4 hr → 25–35 min per LEA · 8× speedup with 8 parallel workers</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Compliance & Analytics ────────────────────────── -->
+            <div class="category-section" id="sec-compliance">
+                <div class="category-label"><i class="fa-solid fa-scale-balanced" style="color:#f87171"></i> Compliance &amp; Analytics</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-compliance" data-category="compliance">
+                        <div class="card-top"><span class="card-num">15</span><span class="project-category cat-compliance">Compliance</span></div>
+                        <h3>IEP Compliance Pipeline</h3>
+                        <p class="card-problem">21 LEAs were manually tracking IEP annual review and triennial re-evaluation deadlines in spreadsheets — missing a federal IDEA deadline is a compliance violation.</p>
+                        <ul class="card-approach">
+                            <li>SQL query identifies students with IEPs due within configurable windows</li>
+                            <li>Playwright downloads invitation and assessment plan PDFs from SEIS with MFA detection and handling</li>
+                            <li>PDF date parser extracts meeting dates, assessment dates, and invitation dates across multiple form layouts</li>
+                            <li>Computes days until/past deadline per student; applies green/yellow/orange/red/grey risk scoring based on encoded California IDEA rules (annual ≤365 days, triennial ≤3 years, assessment plan ≤60 days)</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Playwright</span><span>pdfplumber</span><span>openpyxl</span><span>SQLAlchemy</span><span>Power BI</span></div>
+                        <div class="card-impact">21 districts · zero missed IEP deadlines after deployment</div>
+                    </div>
+
+                    <div class="detail-card cat-compliance" data-category="compliance">
+                        <div class="card-top"><span class="card-num">16</span><span class="project-category cat-compliance">Compliance</span></div>
+                        <h3>LRE Compliance Reporting</h3>
+                        <p class="card-problem">15 LEAs needed IDEA Least Restrictive Environment placement percentages calculated from SEIS data and compared against California state benchmarks — a calculation that required deep understanding of federal LRE category definitions.</p>
+                        <ul class="card-approach">
+                            <li>4 federal LRE placement categories (≥80% GE time, 40–79%, &lt;40%, separate school) correctly encoded from IDEA regulation, validated against known state reports</li>
+                            <li>Preschool LRE uses different category definitions; JCCS 4 sub-entities aggregate separately before district rollup</li>
+                            <li>Per-LEA Jupyter notebooks run headlessly via nbconvert runner; SQL Server write-back for Power BI</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>Jupyter</span><span>nbconvert</span><span>SQLAlchemy</span></div>
+                        <div class="card-impact">15 districts · automated LRE reporting · replaced days-long manual Excel process</div>
+                    </div>
+
+                    <div class="detail-card cat-compliance" data-category="compliance">
+                        <div class="card-top"><span class="card-num">17</span><span class="project-category cat-compliance">Analytics</span></div>
+                        <h3>EAP At-Risk Student Identification</h3>
+                        <p class="card-problem">14 LEAs had no consistent method to identify students needing SST referrals, 504 plans, or SEL support — each coordinator used a different ad-hoc process.</p>
+                        <ul class="card-approach">
+                            <li>Multi-source join: CAASPP assessment scores, ELPAC results, discipline records (suspension days), and SPED indicators at the student level</li>
+                            <li>3 policy-encoded risk flags: SST (academic performance thresholds), 504 (eligibility indicators), SEL (suspension ≥5 days)</li>
+                            <li>Color-coded Excel reports via openpyxl; SQL Server write-back for Power BI weekly review dashboards</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>openpyxl</span><span>SQLAlchemy</span><span>pyodbc</span></div>
+                        <div class="card-impact">14 LEAs · replaced 14 ad-hoc processes with one consistent system</div>
+                    </div>
+
+                    <div class="detail-card cat-compliance" data-category="compliance">
+                        <div class="card-top"><span class="card-num">18</span><span class="project-category cat-compliance">Analytics</span></div>
+                        <h3>Student Service Calculations &amp; Predictions</h3>
+                        <p class="card-problem">15+ LEAs had no automated way to calculate current special education service hours by type (SLP, OT, PT) or project future service demand for resource planning.</p>
+                        <ul class="card-approach">
+                            <li>Per-LEA Jupyter notebooks calculate service hours by type from SEIS data; nbconvert runner executes all notebooks headlessly in batch</li>
+                            <li>Service hour projections using trend analysis for resource planning across the school year</li>
+                            <li>openpyxl formatted reports; Selenium assists with data extraction from web portals where needed</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pandas</span><span>Jupyter</span><span>nbconvert</span><span>openpyxl</span><span>Selenium</span></div>
+                        <div class="card-impact">15+ LEAs · weekly automated service calculation replacing manual Excel aggregation</div>
+                    </div>
+
+                    <div class="detail-card cat-compliance" data-category="compliance">
+                        <div class="card-top"><span class="card-num">19</span><span class="project-category cat-compliance">Demo / BI</span></div>
+                        <h3>IEP Compliance Demo Environment</h3>
+                        <p class="card-problem">Client prospects needed to experience the full iTAAP platform without accessing production student data — a demo environment required matching compliance logic without real records.</p>
+                        <ul class="card-approach">
+                            <li>Complete sanitized Power BI demo suite (10+ .pbix files) across all dashboard types, using synthetic data</li>
+                            <li>Python script exports 60+ IEP compliance color-coding rules (Initial eval, Annual IEP, Tri-Annual) across 3 compliance dimensions to machine-readable legend CSV</li>
+                            <li>Documentation generation: rule descriptions formatted for both human review and system reference</li>
+                        </ul>
+                        <div class="card-tech"><span>Power BI Desktop</span><span>Python</span><span>pandas</span><span>openpyxl</span></div>
+                        <div class="card-impact">Enabled client demos across all iTAAP dashboard types without production data exposure</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Automation & Web ──────────────────────────────── -->
+            <div class="category-section" id="sec-automation">
+                <div class="category-label"><i class="fa-solid fa-robot" style="color:#9ca3af"></i> Automation &amp; Web Scraping</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-auto" data-category="automation">
+                        <div class="card-top"><span class="card-num">20</span><span class="project-category cat-auto">Automation</span></div>
+                        <h3>SEIS Column Selection Automation</h3>
+                        <p class="card-problem">Each SEIS data export required manually clicking ~103 checkboxes in the SEIS portal per LEA, taking 30–60 minutes per cycle — and any missed column required starting over for that LEA.</p>
+                        <ul class="card-approach">
+                            <li>103 required columns externalized to `columns_needed.txt`; per-LEA credentials in git-ignored `credentials.json`</li>
+                            <li>Selenium iterates through the column list, selects each checkbox, triggers export download, and saves with timestamps</li>
+                            <li>Explicit waits (not fixed sleeps), retry logic for transient failures, and per-run timestamped log file</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Selenium</span><span>ChromeDriver</span></div>
+                        <div class="card-impact">30–60 min → ~8 min unattended · eliminated missed-column errors entirely</div>
+                    </div>
+
+                    <div class="detail-card cat-auto" data-category="automation">
+                        <div class="card-top"><span class="card-num">21</span><span class="project-category cat-auto">Automation</span></div>
+                        <h3>CALPADS 8.1a ODS Report Scraper</h3>
+                        <p class="card-problem">CALPADS 8.1a Student Profile Exits report is embedded inside a nested SSRS iframe and cannot be accessed via API — download required manual portal navigation every week.</p>
+                        <ul class="card-approach">
+                            <li>Playwright handles CALPADS login, outer page navigation, iframe frame-switching (nested context manager)</li>
+                            <li>Dynamic date parameterization injected into SSRS report viewer; nested popup + download event capture</li>
+                            <li>Custom date-stamped filename written to output directory on success</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Playwright</span></div>
+                        <div class="card-impact">Weekly CALPADS SSRS report automated · consistent date-stamped output</div>
+                    </div>
+
+                    <div class="detail-card cat-auto" data-category="automation">
+                        <div class="card-top"><span class="card-num">22</span><span class="project-category cat-auto">Automation</span></div>
+                        <h3>SBCUSD SEIS Multi-Report Automation</h3>
+                        <p class="card-problem">A large school district needed 4 different SEIS report types downloaded weekly from different portal sections, with optional MFA and a cross-month datepicker that reset on navigation.</p>
+                        <ul class="card-approach">
+                            <li>Single-session Playwright automation: MFA detection via regex match on page text before attempting bypass</li>
+                            <li>Saved search URL execution for 2 report types; Service Tracker navigation for 1; MFA-aware general download for 1</li>
+                            <li>Cross-month datepicker traversal: detects current displayed month and clicks navigation arrows as needed</li>
+                            <li>Paramiko SFTP upload after all 4 downloads complete in one session</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Playwright</span><span>paramiko</span></div>
+                        <div class="card-impact">4 SEIS report types automated in a single unattended session for a large district</div>
+                    </div>
+
+                    <div class="detail-card cat-auto" data-category="automation">
+                        <div class="card-top"><span class="card-num">23</span><span class="project-category cat-auto">Automation</span></div>
+                        <h3>Automated Weekly Email Alert System</h3>
+                        <p class="card-problem">18 school sites had no regular visibility into their performance metrics — administrators only saw data when they logged into Power BI, which many never did.</p>
+                        <ul class="card-approach">
+                            <li>Gmail API OAuth2 pipeline (credentials.json → token.json) with scoped send-only permissions</li>
+                            <li>Dynamic metric selection: rotates 1 General Ed + 1 SPED metric from a configurable pool of 12 indicators each week</li>
+                            <li>SQL Server queries build HTML-formatted data tables with inline styling for email clients</li>
+                            <li>Test mode: single flag sends to internal addresses only — safe for non-technical staff to test</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Gmail API</span><span>OAuth2</span><span>pandas</span><span>SQLAlchemy</span></div>
+                        <div class="card-impact">18 school sites · 12 metric pool · zero-touch weekly delivery</div>
+                    </div>
+
+                    <div class="detail-card cat-auto" data-category="automation">
+                        <div class="card-top"><span class="card-num">24</span><span class="project-category cat-auto">Automation</span></div>
+                        <h3>SQL Stored Procedure Runner</h3>
+                        <p class="card-problem">14 stored procedures per district database needed sequential execution with a validation checkpoint in the middle — manual runs caused missed steps, wrong order, and no audit record.</p>
+                        <ul class="card-approach">
+                            <li>Python CLI + Tkinter GUI runner executes 3 SP groups per database in correct sequence</li>
+                            <li>VerifyDropOuts checkpoint between groups: if it fails, downstream SPs are blocked (prevents calculations on unverified dropout data)</li>
+                            <li>Each SP execution is timed and logged to a timestamped CSV with stdout/stderr capture</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pyodbc</span><span>Tkinter</span></div>
+                        <div class="card-impact">Zero missed SP steps or wrong-order executions since deployment</div>
+                    </div>
+
+                    <div class="detail-card cat-auto" data-category="automation">
+                        <div class="card-top"><span class="card-num">25</span><span class="project-category cat-auto">Automation</span></div>
+                        <h3>Power BI Bulk Refresh Automation</h3>
+                        <p class="card-problem">150+ .pbix files across 6 directories needed regular refresh after each pipeline run — manually opening and refreshing each file in Power BI Desktop was taking hours.</p>
+                        <ul class="card-approach">
+                            <li>PowerShell WinForms GUI with folder picker and progress display</li>
+                            <li>Smart completion detection: monitors Power BI Desktop UI state (title bar text) + CPU-idle fallback for files that don't update the title</li>
+                            <li>Resume-from-log: skips files already refreshed in a previous run; configurable concurrency limits to avoid memory exhaustion</li>
+                        </ul>
+                        <div class="card-tech"><span>PowerShell</span><span>WinForms</span><span>Windows Process API</span></div>
+                        <div class="card-impact">150+ .pbix files · single-click automated bulk refresh with audit log</div>
+                    </div>
+
+                    <div class="detail-card cat-scraping" data-category="automation">
+                        <div class="card-top"><span class="card-num">26</span><span class="project-category cat-scraping">Web Scraping</span></div>
+                        <h3>ASHA Pro Finder Async Scraper</h3>
+                        <p class="card-problem">Districts needed to identify California SLP and audiologist contractors from the ASHA directory — no bulk export existed, requiring individual profile page visits for each of thousands of providers.</p>
+                        <ul class="card-approach">
+                            <li>Phase 1: async Playwright paginates the Coveo search API with POST requests (up to 6,000 profiles), extracting IDs and metadata via BeautifulSoup regex matching on inconsistent HTML attributes</li>
+                            <li>Phase 2: async profile scraping extracts 18 fields (name, certifications, phone, address, specialty, education) per page</li>
+                            <li>Per-record error isolation: failed pages log a warning and continue — the full run never aborts on a single bad page</li>
+                            <li>Results streamed to UTF-8-sig CSV incrementally; configurable concurrency limits to avoid rate limiting</li>
+                        </ul>
+                        <div class="card-tech"><span>asyncio</span><span>Playwright</span><span>BeautifulSoup</span><span>Python</span><span>pandas</span></div>
+                        <div class="card-impact">~6,000 SLP &amp; audiologist profiles · 18 fields per record · complete California directory</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Business Intelligence ─────────────────────────── -->
+            <div class="category-section" id="sec-bi">
+                <div class="category-label"><i class="fa-solid fa-chart-bar" style="color:#34d399"></i> Business Intelligence &amp; Reporting</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-viz" data-category="bi">
+                        <div class="card-top"><span class="card-num">27</span><span class="project-category cat-viz">Business Intelligence</span></div>
+                        <h3>Power BI Reporting Suite</h3>
+                        <p class="card-problem">25+ districts needed consistent, self-service reporting across 9 analytics domains — building and maintaining dashboards manually for each district was not scalable.</p>
+                        <ul class="card-approach">
+                            <li>9 dashboard types × 20+ districts = 150+ production .pbix files: iTAAP main, Mini, EAP, IEP Compliance, SPP, Student Service, Service Projection, SST/504, SchoolCard</li>
+                            <li>Template-based deployment: changes propagate to all districts by updating the template and redistributing</li>
+                            <li>All dashboards connect live to SQL Server; automated refresh via PowerShell automation after each pipeline run</li>
+                        </ul>
+                        <div class="card-tech"><span>Power BI Desktop</span><span>SQL Server (live)</span><span>DAX</span><span>Python</span><span>PowerShell</span></div>
+                        <div class="card-impact">150+ production dashboards · 25+ districts · 9 dashboard types · weekly automated refresh</div>
+                    </div>
+
+                    <div class="detail-card cat-viz" data-category="bi">
+                        <div class="card-top"><span class="card-num">28</span><span class="project-category cat-viz">SQL / Analytics</span></div>
+                        <h3>SQL Server Stored Procedure Library</h3>
+                        <p class="card-problem">Complex compliance metrics needed consistent calculation logic across 94 district databases — ad-hoc queries per district produced inconsistent results that broke reporting.</p>
+                        <ul class="card-approach">
+                            <li>14 SP types replicated per district: chronic absenteeism with day-multiplier projection, IDEA Indicators 9–10 disproportionality (age filtering, ethnicity normalization, LRE bucketing, ~320KB), LRE calculation, geospatial comparable schools (geography data type), ELPAC, graduation cohorts, CCR</li>
+                            <li>Window functions, dynamic SQL, statistical mode calculation for ethnicity majority determination</li>
+                            <li>Geospatial comparable schools SP uses SQL Server geography type for radius-based school matching</li>
+                        </ul>
+                        <div class="card-tech"><span>T-SQL</span><span>SQL Server</span><span>geography data type</span></div>
+                        <div class="card-impact">~94 district SP instances · powers all Power BI dashboards · consistent compliance metrics</div>
+                    </div>
+
+                    <div class="detail-card cat-viz" data-category="bi">
+                        <div class="card-top"><span class="card-num">29</span><span class="project-category cat-viz">Observability</span></div>
+                        <h3>Data Freshness Tracker</h3>
+                        <p class="card-problem">Power BI dashboard consumers had no way to know if they were looking at fresh or stale data — two silent pipeline failures went unnoticed until decisions were already made.</p>
+                        <ul class="card-approach">
+                            <li>Python monitors file timestamps for all pipeline output directories using pathlib</li>
+                            <li>Upserts last-modified timestamp to SQL Server DataDateTime table after each successful pipeline stage</li>
+                            <li>Power BI reads the DataDateTime table live — each dashboard shows a "last updated" indicator in the corner</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pathlib</span><span>pandas</span><span>SQLAlchemy</span></div>
+                        <div class="card-impact">Caught 2 silent pipeline failures before decisions were made on stale data</div>
+                    </div>
+
+                    <div class="detail-card cat-viz" data-category="bi">
+                        <div class="card-top"><span class="card-num">30</span><span class="project-category cat-viz">Tooling</span></div>
+                        <h3>Power BI File Data Extractor</h3>
+                        <p class="card-problem">Power BI .pbix files are opaque ZIP containers — auditing embedded data models or dashboard structure required opening each file in Power BI Desktop manually, one at a time.</p>
+                        <ul class="card-approach">
+                            <li>pbix_extractor.py treats .pbix as ZIP archive and uses pbixray to extract all embedded data model tables to CSV for programmatic audit</li>
+                            <li>pbix_analyzer.py reads the Report/Layout JSON file inside .pbix — encoded as UTF-16-LE with a binary preamble — to extract visual structure, DAX measures, and report metadata</li>
+                            <li>CLI design: directory-level batch processing across all .pbix files in a folder</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>pbixray</span><span>zipfile</span><span>pandas</span></div>
+                        <div class="card-impact">Programmatic .pbix audit without Power BI Desktop · supports 150+ file reporting suite</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Software Engineering ──────────────────────────── -->
+            <div class="category-section" id="sec-software">
+                <div class="category-label"><i class="fa-brands fa-golang" style="color:#818cf8"></i> Software Engineering</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-go" data-category="software">
+                        <div class="card-top"><span class="card-num">31</span><span class="project-category cat-go">Go / Systems</span></div>
+                        <h3>SBCUSD Aeries API Go Client</h3>
+                        <p class="card-problem">12 Aeries SIS dataset types needed to be ingested into MongoDB for analytics — high-volume iteration over all schools required reliable per-entity error recovery that Python threading made complex.</p>
+                        <ul class="card-approach">
+                            <li>Go CLI with `-fetch=all` and comma-separated selective mode; `flag` package with `regexp` validation of year format</li>
+                            <li>Dynamic high school discovery: queries the loaded schools collection for `HighGradeLevel ≥ 9` — no hardcoded school lists, no maintenance when schools change</li>
+                            <li>Per-school error recovery with idiomatic Go `(value, error)` returns — a single API failure logs and continues without aborting the full run</li>
+                            <li>`init()` guard validates config placeholders before any network call; MongoDB ping confirms connectivity at startup</li>
+                            <li>Idempotent `clearCollection` + `InsertMany` pattern safe to rerun without duplicate data</li>
+                        </ul>
+                        <div class="card-tech"><span>Go</span><span>MongoDB</span><span>net/http</span><span>go.mongodb.org/mongo-driver</span><span>encoding/json</span></div>
+                        <div class="card-impact">12 dataset types · dynamic school classification · zero maintenance · compiled single binary</div>
+                    </div>
+
+                    <div class="detail-card cat-viz" data-category="software">
+                        <div class="card-top"><span class="card-num">32</span><span class="project-category cat-viz">Web App</span></div>
+                        <h3>California School Radar Map</h3>
+                        <p class="card-problem">Administrators had no interactive way to find and compare nearby schools on multiple performance indicators geographically — static reports required a GIS analyst to produce and were instantly outdated.</p>
+                        <ul class="card-approach">
+                            <li>Streamlit app backed by SQL Server CTE view joining 12 indicators (CAASPP, ELPAC, chronic absenteeism, suspension, graduation, CCR) across 10,000+ schools</li>
+                            <li>Vectorized Haversine distance search using NumPy broadcasting: sub-second proximity filtering on the full dataset without a spatial index</li>
+                            <li>UI: zip-code geocoding jump, click-to-move map centering, dynamic indicator selection from sidebar, Streamlit session state preserving position/selections across interactions</li>
+                            <li>Radar chart renders any two selected schools side-by-side across all 6 performance indicators for direct comparison</li>
+                        </ul>
+                        <div class="card-tech"><span>Python</span><span>Streamlit</span><span>Plotly Mapbox</span><span>NumPy</span><span>pandas</span><span>SQL Server</span></div>
+                        <div class="card-impact">10,000+ California schools mapped · live proximity filtering · sub-second performance</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <p style="margin-top:var(--spacing-md); font-size:0.8rem;">
+                <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color:var(--accent-color);">GitHub</a>
+                &nbsp;·&nbsp;
+                <a href="https://www.linkedin.com/in/bianrui0315/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-color);">LinkedIn</a>
+                &nbsp;·&nbsp;
+                <a href="mailto:bianrui0315@gmail.com" style="color:var(--accent-color);">Email</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        // Category filter
+        function filter(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.detail-card');
+            cards.forEach(card => {
+                const matches = category === 'all' || card.dataset.category === category;
+                if (matches) {
+                    card.classList.remove('hiding');
+                    setTimeout(() => card.classList.remove('hidden'), 10);
+                } else {
+                    card.classList.add('hiding');
+                    setTimeout(() => card.classList.add('hidden'), 290);
+                }
+            });
+
+            // Show/hide category section headers
+            const sections = document.querySelectorAll('.category-section');
+            sections.forEach(sec => {
+                const visibleCards = sec.querySelectorAll(`.detail-card[data-category="${category}"]`);
+                if (category === 'all' || visibleCards.length > 0) {
+                    sec.style.display = '';
+                } else {
+                    setTimeout(() => { sec.style.display = 'none'; }, 300);
+                }
+            });
+        }
+
+        // Scroll fade-in for cards
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.detail-card').forEach((card, i) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(24px)';
+            card.style.transitionDelay = `${(i % 3) * 0.06}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
