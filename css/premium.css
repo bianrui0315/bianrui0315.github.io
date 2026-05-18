@@ -310,6 +310,38 @@ a:hover {
     50%       { opacity: 0.4; transform: scale(0.8); }
 }
 
+/* Hero tagline + scannable bullets */
+.hero-tagline {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-primary);
+}
+
+.hero-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+}
+
+.hero-bullets li {
+    position: relative;
+    padding: 0.35rem 0 0.35rem 1.4rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.hero-bullets li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
 /* Hero CTA Buttons */
 .hero-cta {
     display: flex;
