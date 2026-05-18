@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rui Bian | Senior Applied Data Scientist & AI Analytics Engineer</title>
-    <meta name="description" content="Rui Bian, PhD — Senior Applied Data Scientist and AI Analytics Engineer. Built production ML systems, AI-driven analytics, and automated reporting infrastructure serving 30+ organizations. Published at IEEE INFOCOM, ACM SIGCOMM.">
+    <meta name="description" content="Rui Bian, PhD — Senior Applied Data Scientist and AI Analytics Engineer. Built production ML systems, AI-driven analytics, and automated reporting infrastructure serving 30+ school districts. Published at IEEE INFOCOM, ACM SIGCOMM.">
     <meta name="keywords" content="Rui Bian, Data Scientist, AI Analytics Engineer, Applied ML, Predictive Analytics, LangGraph, FastAPI, Python, scikit-learn, Power BI, Los Angeles, PhD, Computer Engineering">
 
     <!-- Open Graph / SEO Meta Tags -->
@@ -43,8 +43,8 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#projects" class="nav-item">Projects</a></li>
                 <li><a href="#ecosystem" class="nav-item">Skills</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
                 <li><a href="#experience" class="nav-item">Experience</a></li>
                 <li><a href="projects.html" class="nav-item">Engineering Log</a></li>
                 <li><a href="#credentials" class="nav-item">Credentials</a></li>
@@ -67,7 +67,7 @@
                     <h1 class="gradient-text">Senior Data Scientist &amp; AI Analytics Engineer</h1>
                     <p class="hero-tagline">Building production ML systems and decision-support analytics for enterprise-scale operations &middot; Ph.D. Computer Engineering</p>
                     <ul class="hero-bullets">
-                        <li>Deployed predictive analytics and AI-driven reporting across 30+ organizations — risk models, compliance tracking, automated dashboards</li>
+                        <li>Deployed predictive analytics and AI-driven reporting across 30+ school districts — risk models, compliance tracking, automated dashboards</li>
                         <li>End-to-end ownership: Python &middot; FastAPI &middot; Azure / AWS &middot; scikit-learn &middot; LangGraph &middot; Power BI &middot; SQL Server</li>
                         <li>Ph.D. Computer Engineering &middot; IEEE INFOCOM &middot; ACM SIGCOMM &middot; Patent holder</li>
                     </ul>
@@ -230,6 +230,108 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Portfolio Section -->
+    <section class="section" id="projects" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2>Production Portfolio</h2>
+            <p class="section-subtitle">Six production systems spanning AI orchestration, predictive ML, compliance automation, geospatial analytics, and data engineering — all deployed across 30+ California school districts.</p>
+
+            <div class="project-grid">
+
+                <div class="project-card cat-ai fade-in">
+                    <span class="project-num">01</span>
+                    <span class="project-category cat-ai">AI / Orchestration</span>
+                    <h4>LangGraph Agentic Pipeline Orchestrator</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Multi-step data pipelines required manual execution, missed steps, and had no failure diagnosis.</span></div>
+                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">LangGraph agentic state machine with gate-node routing, 4-stage fan-out parallelism, and local Ollama LLM for failure analysis — no data leaves the server.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>LangGraph</span><span>Ollama</span><span>Python</span><span>subprocess</span><span>Tkinter</span>
+                    </div>
+                    <div class="project-impact">↑ 75–90% runtime reduction · replaced 4–6 hr manual process</div>
+                </div>
+
+                <div class="project-card cat-ml fade-in">
+                    <span class="project-num">02</span>
+                    <span class="project-category cat-ml">Machine Learning</span>
+                    <h4>6-Domain Student Outcome Prediction</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Districts had no early visibility into student risk across academic, attendance, and behavioral domains.</span></div>
+                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Per-district ML prediction across 6 domains using RF / ARIMA / Holt-Winters with per-district model selection; GPT-4 + Gemini generate administrator-ready narrative reports.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>scikit-learn</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span>
+                    </div>
+                    <div class="project-impact">20+ districts · 6 prediction domains · AI-written reports</div>
+                </div>
+
+                <div class="project-card cat-compliance fade-in">
+                    <span class="project-num">03</span>
+                    <span class="project-category cat-compliance">Compliance Automation</span>
+                    <h4>IEP Compliance Risk Pipeline</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">21 districts tracked federal IEP deadlines manually in spreadsheets, with no automated risk scoring or visibility.</span></div>
+                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">4-stage pipeline: SQL → MFA-aware PDF download → date extraction → 4-tier IDEA risk scoring published live to Power BI.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Playwright</span><span>PDF parsing</span><span>SQL Server</span><span>Power BI</span>
+                    </div>
+                    <div class="project-impact">21 districts · zero missed IEP deadlines after deployment</div>
+                </div>
+
+                <div class="project-card cat-viz fade-in">
+                    <span class="project-num">04</span>
+                    <span class="project-category cat-viz">Visualization</span>
+                    <h4>California School Radar Map</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">No interactive way to geographically explore and compare school performance across California at scale.</span></div>
+                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Streamlit + Plotly Mapbox app with vectorized Haversine radius search, zip-code geocoding, and radar chart comparison across 6 indicators.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Streamlit</span><span>Plotly Mapbox</span><span>NumPy</span><span>SQL Server</span>
+                    </div>
+                    <div class="project-impact">10,000+ California schools · live proximity filtering · sub-second</div>
+                </div>
+
+                <div class="project-card cat-pipeline fade-in">
+                    <span class="project-num">05</span>
+                    <span class="project-category cat-pipeline">Data Engineering</span>
+                    <h4>CALPADS ODS Hybrid Pipeline</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">30+ districts required 45+ minutes of manual portal navigation per cycle to retrieve compliance reports.</span></div>
+                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Dual-mode pipeline: REST API for structured reports + Selenium automation for portal-only reports, with automatic LEA-to-credential routing.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>REST API</span><span>Selenium</span><span>SQLAlchemy</span>
+                    </div>
+                    <div class="project-impact">30+ districts · 7 report types · replaced 45-min manual session</div>
+                </div>
+
+                <div class="project-card cat-go fade-in">
+                    <span class="project-num">06</span>
+                    <span class="project-category cat-go">Go / APIs</span>
+                    <h4>Aeries SIS API Go Client</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">12 SIS dataset types needed reliable automated ingestion into MongoDB with no single-school failure causing full-run aborts.</span></div>
+                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Concurrent Go CLI with dynamic high school discovery, per-school error recovery, and authenticated REST API → MongoDB ingestion across all 12 dataset types.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Go</span><span>MongoDB</span><span>REST API</span><span>net/http</span>
+                    </div>
+                    <div class="project-impact">12 dataset types · dynamic school discovery · zero maintenance</div>
+                </div>
+
+            </div>
+
+            <div class="portfolio-footer">
+                <a href="projects.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Full Engineering Log →</a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
+                <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">GitHub →</a>
             </div>
         </div>
     </section>
@@ -517,108 +619,6 @@
                         <p class="text-accent">Distinct from package hallucination studies — this targets DNS-level infrastructure interception, a critical supply chain risk not previously measured in the LLM security literature.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Production Portfolio Section -->
-    <section class="section" id="projects" style="border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <h2>Production Portfolio</h2>
-            <p class="section-subtitle">Six production systems spanning AI orchestration, predictive ML, compliance automation, geospatial analytics, and data engineering — all deployed across 30+ California school districts.</p>
-
-            <div class="project-grid">
-
-                <div class="project-card cat-ai fade-in">
-                    <span class="project-num">01</span>
-                    <span class="project-category cat-ai">AI / Orchestration</span>
-                    <h4>LangGraph Agentic Pipeline Orchestrator</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Multi-step data pipelines required manual execution, missed steps, and had no failure diagnosis.</span></div>
-                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">LangGraph agentic state machine with gate-node routing, 4-stage fan-out parallelism, and local Ollama LLM for failure analysis — no data leaves the server.</span></div>
-                    </div>
-                    <div class="project-tech">
-                        <span>LangGraph</span><span>Ollama</span><span>Python</span><span>subprocess</span><span>Tkinter</span>
-                    </div>
-                    <div class="project-impact">↑ 75–90% runtime reduction · replaced 4–6 hr manual process</div>
-                </div>
-
-                <div class="project-card cat-ml fade-in">
-                    <span class="project-num">02</span>
-                    <span class="project-category cat-ml">Machine Learning</span>
-                    <h4>6-Domain Student Outcome Prediction</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Districts had no early visibility into student risk across academic, attendance, and behavioral domains.</span></div>
-                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Per-district ML prediction across 6 domains using RF / ARIMA / Holt-Winters with per-district model selection; GPT-4 + Gemini generate administrator-ready narrative reports.</span></div>
-                    </div>
-                    <div class="project-tech">
-                        <span>scikit-learn</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span>
-                    </div>
-                    <div class="project-impact">20+ districts · 6 prediction domains · AI-written reports</div>
-                </div>
-
-                <div class="project-card cat-compliance fade-in">
-                    <span class="project-num">03</span>
-                    <span class="project-category cat-compliance">Compliance Automation</span>
-                    <h4>IEP Compliance Risk Pipeline</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">21 districts tracked federal IEP deadlines manually in spreadsheets, with no automated risk scoring or visibility.</span></div>
-                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">4-stage pipeline: SQL → MFA-aware PDF download → date extraction → 4-tier IDEA risk scoring published live to Power BI.</span></div>
-                    </div>
-                    <div class="project-tech">
-                        <span>Playwright</span><span>PDF parsing</span><span>SQL Server</span><span>Power BI</span>
-                    </div>
-                    <div class="project-impact">21 districts · zero missed IEP deadlines after deployment</div>
-                </div>
-
-                <div class="project-card cat-viz fade-in">
-                    <span class="project-num">04</span>
-                    <span class="project-category cat-viz">Visualization</span>
-                    <h4>California School Radar Map</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">No interactive way to geographically explore and compare school performance across California at scale.</span></div>
-                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Streamlit + Plotly Mapbox app with vectorized Haversine radius search, zip-code geocoding, and radar chart comparison across 6 indicators.</span></div>
-                    </div>
-                    <div class="project-tech">
-                        <span>Streamlit</span><span>Plotly Mapbox</span><span>NumPy</span><span>SQL Server</span>
-                    </div>
-                    <div class="project-impact">10,000+ California schools · live proximity filtering · sub-second</div>
-                </div>
-
-                <div class="project-card cat-pipeline fade-in">
-                    <span class="project-num">05</span>
-                    <span class="project-category cat-pipeline">Data Engineering</span>
-                    <h4>CALPADS ODS Hybrid Pipeline</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">30+ districts required 45+ minutes of manual portal navigation per cycle to retrieve compliance reports.</span></div>
-                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Dual-mode pipeline: REST API for structured reports + Selenium automation for portal-only reports, with automatic LEA-to-credential routing.</span></div>
-                    </div>
-                    <div class="project-tech">
-                        <span>Python</span><span>REST API</span><span>Selenium</span><span>SQLAlchemy</span>
-                    </div>
-                    <div class="project-impact">30+ districts · 7 report types · replaced 45-min manual session</div>
-                </div>
-
-                <div class="project-card cat-go fade-in">
-                    <span class="project-num">06</span>
-                    <span class="project-category cat-go">Go / APIs</span>
-                    <h4>Aeries SIS API Go Client</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">12 SIS dataset types needed reliable automated ingestion into MongoDB with no single-school failure causing full-run aborts.</span></div>
-                        <div class="psi-row"><span class="psi-label">Solution</span><span class="psi-text">Concurrent Go CLI with dynamic high school discovery, per-school error recovery, and authenticated REST API → MongoDB ingestion across all 12 dataset types.</span></div>
-                    </div>
-                    <div class="project-tech">
-                        <span>Go</span><span>MongoDB</span><span>REST API</span><span>net/http</span>
-                    </div>
-                    <div class="project-impact">12 dataset types · dynamic school discovery · zero maintenance</div>
-                </div>
-
-            </div>
-
-            <div class="portfolio-footer">
-                <a href="projects.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Full Engineering Log →</a>
-                &nbsp;&nbsp;·&nbsp;&nbsp;
-                <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">GitHub →</a>
             </div>
         </div>
     </section>

@@ -978,6 +978,25 @@ a:hover {
     margin: 0;
 }
 
+/* Section heading gold accent */
+.section > .container > h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.section > .container > h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
 /* Production Portfolio Section */
 .section-subtitle {
     color: var(--text-secondary);
