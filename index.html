@@ -230,12 +230,12 @@
                     <h4>Agentic ML Pipeline Orchestration System</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Multi-step data pipelines required manual execution, missed steps, and had no failure diagnosis.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">LangGraph state machine: gate-node conditional routing + 4-stage fan-out parallelism; local Ollama LLM (qwen2.5:7b) runs failure analysis on-server — zero data egress; multi-tenant config orchestrates all districts from single runtime.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">LangGraph state machine with gate-node conditional routing + 4-stage fan-out parallelism; chose local Ollama over cloud LLM — student records never leave the server, eliminating compliance risk at architecture level; per-district fault isolation at node level — single failure triggers LLM diagnosis without cascading; multi-tenant config eliminates per-district code changes.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>LangGraph</span><span>Ollama</span><span>Python</span><span>subprocess</span><span>Tkinter</span>
                     </div>
-                    <div class="project-impact">↓ 75–90% pipeline runtime · zero external data egress · 30+ districts orchestrated</div>
+                    <div class="project-impact">↓ 75–90% runtime · 30+ districts · 100K+ records/run · node-level fault isolation · zero data egress</div>
                 </div>
 
                 <div class="project-card cat-ml fade-in">
@@ -244,12 +244,12 @@
                     <h4>Multi-Domain Risk Prediction &amp; Decision-Support System</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Districts had no early visibility into student risk across academic, attendance, and behavioral domains.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Per-district model selection (RF / ARIMA / Holt-Winters) optimized by validation error across 6 domains; dual-API fallback chain (GPT-4 → Gemini) ensures 100% report uptime; batch scoring pipeline over SQL Server warehouse.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Chose per-district model selection over global model — accounts for demographic and policy variation across districts; dual-API fallback chain (GPT-4 → Gemini → structured JSON) achieves graceful degradation — report generation survives any single API outage; idempotent batch scoring over SQL Server warehouse.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>scikit-learn</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span>
                     </div>
-                    <div class="project-impact">20+ districts · 6 domains · 100% report uptime via dual-API fallback</div>
+                    <div class="project-impact">20+ districts · 6 concurrent domains · 3-layer graceful degradation · idempotent reruns</div>
                 </div>
 
                 <div class="project-card cat-compliance fade-in">
@@ -258,12 +258,12 @@
                     <h4>Automated Compliance Monitoring &amp; Risk Scoring System</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">21 districts tracked federal IEP deadlines manually in spreadsheets, with no automated risk scoring or visibility.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">4-stage pipeline: SQL extraction → MFA-aware Playwright automation → PDF date parsing → IDEA risk scoring (365-day / 3-year / 60-day federal thresholds encoded as computable rules); per-district error isolation; live Power BI dashboards.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">4-stage pipeline with per-district fault isolation: SQL extraction → MFA-aware Playwright → PDF date parsing → IDEA risk scoring; chose computable rule encoding over heuristic date logic — federal thresholds (365-day annual, 3-year triennial, 60-day assessment) enforced as auditable first-class rules; single-district failure never aborts multi-district run.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>Playwright</span><span>PDF parsing</span><span>SQL Server</span><span>Power BI</span>
                     </div>
-                    <div class="project-impact">21 districts · 0 missed deadlines · federal compliance thresholds encoded as computable rules</div>
+                    <div class="project-impact">21 districts · 0 missed IEP deadlines · computable-rule compliance · district-level fault isolation</div>
                 </div>
 
                 <div class="project-card cat-viz fade-in">
@@ -272,12 +272,12 @@
                     <h4>Geospatial School Analytics &amp; Search Platform</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">No interactive way to geographically explore and compare school performance across California at scale.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Vectorized Haversine radius search (NumPy); progressive filtering algorithm distinguishes &ldquo;no data&rdquo; from &ldquo;underperforming&rdquo; — handles real-world data sparsity without false negatives; radar chart comparison across 6 metrics; zip-code geocoding layer.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Chose vectorized NumPy Haversine over SQL-side distance queries — moves compute to application layer for predictable sub-second response at 10K+ scale; progressive filtering enforces a correctness invariant: &ldquo;no data&rdquo; explicitly distinguished from &ldquo;underperforming&rdquo; — prevents false negatives on sparse-data regions; radar chart across 6 indicators.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>Streamlit</span><span>Plotly Mapbox</span><span>NumPy</span><span>SQL Server</span>
                     </div>
-                    <div class="project-impact">10K+ schools · sub-second search · correct sparse-data handling</div>
+                    <div class="project-impact">10K+ schools · sub-second search · correctness-first design · no false negatives on sparse data</div>
                 </div>
 
                 <div class="project-card cat-pipeline fade-in">
@@ -286,12 +286,12 @@
                     <h4>Hybrid API/Automation Government Data Ingestion Pipeline</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">30+ districts required 45+ minutes of manual portal navigation per cycle to retrieve compliance reports.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Dual-mode ingestion: REST API for structured report types + Selenium automation for portal-only flows; automatic LEA-to-credential routing for 30+ districts; idempotent batch design — always safe to rerun after partial failure.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Chose dual-mode over Selenium-only — REST API routes provide reliable structured ingestion where available; Selenium reserved only for portal-locked flows, minimizing automation surface area; automatic LEA-to-credential routing handles 30+ districts without per-district code changes; idempotent truncate-reload prevents state corruption after partial failures.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>Python</span><span>REST API</span><span>Selenium</span><span>SQLAlchemy</span>
                     </div>
-                    <div class="project-impact">30+ districts · 7 report types · idempotent batch · eliminated 45-min manual sessions per cycle</div>
+                    <div class="project-impact">30+ districts · 7 report types · minimal Selenium surface area · idempotent truncate-reload</div>
                 </div>
 
                 <div class="project-card cat-go fade-in">
@@ -300,12 +300,12 @@
                     <h4>High-Reliability Concurrent SIS Data Ingestion Service</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">12 SIS dataset types needed reliable automated ingestion into MongoDB with no single-school failure causing full-run aborts.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Concurrent Go CLI using goroutines for parallel ingestion; dynamic high school discovery at runtime; per-school error isolation — individual failures logged and skipped without aborting the run; Go chosen over Python for memory efficiency and goroutine concurrency.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Chose Go over Python — goroutines provide lower memory overhead than asyncio for high-concurrency API fan-out; per-goroutine error isolation: individual timeouts and auth failures are logged and skipped without blocking concurrent streams; retry semantics scoped at school granularity, not dataset level; dynamic school discovery eliminates hardcoded configuration.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>Go</span><span>MongoDB</span><span>REST API</span><span>net/http</span>
                     </div>
-                    <div class="project-impact">12 dataset types · goroutine concurrency · per-school error isolation · zero maintenance</div>
+                    <div class="project-impact">12 dataset types · goroutine fan-out · per-school fault isolation · retry at school granularity</div>
                 </div>
 
             </div>
@@ -363,57 +363,46 @@
         </div>
     </section>
 
-    <!-- Core Strengths Section -->
+    <!-- Platform Design Principles Section -->
     <section class="section" id="strengths" style="border-top: 1px solid var(--border-color);">
         <div class="container">
-            <h2>Core Strengths</h2>
+            <h2>Platform Design Principles</h2>
+            <p class="section-subtitle">Three non-negotiable engineering constraints applied across all 32 production systems — not policies, but structural guarantees.</p>
             <div class="capabilities-grid">
-
-                <div class="capability-card innov fade-in">
-                    <i class="fa-solid fa-lightbulb capability-icon"></i>
-                    <h3>Innovation</h3>
-                    <p>First-principles thinking — designing novel systems when off-the-shelf tools fall short, and choosing the right technology for each problem rather than defaulting to the familiar.</p>
-                    <ul class="capability-evidence">
-                        <li>LangGraph + local Ollama LLM for privacy-preserving agentic ETL — student data never leaves the server</li>
-                        <li>Progressive filtering algorithm that separates "no data" from "underperforming" — handles real-world data gaps correctly</li>
-                        <li>Dual-API fallback chain (OpenAI → Gemini → structured JSON) — report generation never fails on a single API outage</li>
-                        <li>Go CLI in a Python-dominant stack — deliberate language selection for reliability, not default</li>
-                    </ul>
-                </div>
 
                 <div class="capability-card reliable fade-in">
                     <i class="fa-solid fa-shield-halved capability-icon"></i>
-                    <h3>Reliability</h3>
-                    <p>Production systems designed to fail gracefully, recover automatically, and be safe for non-technical operators — with test modes, audit trails, and idempotent reruns.</p>
+                    <h3>Fault Isolation by Default</h3>
+                    <p>Every system isolates failures at the tenant boundary. One school or district failing never cascades to others — enforced at the goroutine or node level, not by try/catch wrapping.</p>
                     <ul class="capability-evidence">
-                        <li>Idempotent ETL pipelines (truncate + reload) — always safe to rerun after failure without data corruption</li>
-                        <li>Per-school error recovery — a single API or browser failure never aborts the full multi-district run</li>
-                        <li>Pre-flight validation (Extract_checker) catches bad files before any database write</li>
+                        <li>Per-district error recovery node in LangGraph pipelines — failure triggers LLM diagnosis, not pipeline abort</li>
+                        <li>Per-goroutine isolation in Go SIS Service — individual timeouts logged and skipped without blocking concurrent streams</li>
+                        <li>Single MFA failure never aborts IEP Compliance Pipeline across 21 districts</li>
+                        <li>Pre-flight Extract_checker validates all inputs before any database write</li>
+                    </ul>
+                </div>
+
+                <div class="capability-card innov fade-in">
+                    <i class="fa-solid fa-rotate capability-icon"></i>
+                    <h3>Idempotent Operations</h3>
+                    <p>All ETL pipelines use truncate-reload semantics — never append-only. Any pipeline is safe to rerun after partial failure without data corruption, duplication, or manual cleanup.</p>
+                    <ul class="capability-evidence">
+                        <li>Truncate-reload in CALPADS Pipeline — consistent state guaranteed regardless of failure point</li>
+                        <li>Idempotent batch scoring in Risk Prediction System — results reproducible given same input snapshot</li>
+                        <li>30+ districts on shared infrastructure with strict tenant data isolation</li>
                         <li>Test mode in every user-facing system — no accidental production sends or overwrites</li>
                     </ul>
                 </div>
 
                 <div class="capability-card domain fade-in">
-                    <i class="fa-solid fa-book-open capability-icon"></i>
-                    <h3>Domain Expertise</h3>
-                    <p>Deep knowledge across two very different fields — California K-12 education compliance and internet-scale network measurement — enabling contributions that generalist engineers cannot make.</p>
+                    <i class="fa-solid fa-lock capability-icon"></i>
+                    <h3>Privacy by Architecture</h3>
+                    <p>AI inference on student data runs locally via Ollama — a structural constraint, not a configuration option. Eliminates PII exposure risk regardless of downstream code changes or vendor policy.</p>
                     <ul class="capability-evidence">
-                        <li>Encoded federal IEP legal rules (IDEA) as computable thresholds: annual 365-day, triennial 3-year, assessment plan 60-day</li>
-                        <li>IDEA LRE placement calculations matching California state benchmark categories</li>
-                        <li>CALPADS, SEIS, Aeries SIS, CAASPP, ELPAC data structures and compliance requirements</li>
-                        <li>IEEE INFOCOM 2024, ACM SIGCOMM CCR 2019, Elsevier Computer Networks 2022 — peer-reviewed network science publications</li>
-                    </ul>
-                </div>
-
-                <div class="capability-card lead fade-in">
-                    <i class="fa-solid fa-chess-king capability-icon"></i>
-                    <h3>Leadership</h3>
-                    <p>Solo architect, builder, and owner of a 32-project production platform serving 30+ independent organizations — from design to deployment to ongoing support.</p>
-                    <ul class="capability-evidence">
-                        <li>Multi-tenant architecture scales to new districts without code changes — onboarding is configuration, not engineering</li>
-                        <li>Designed every system for non-technical operators: GUI tools, color-coded reports, double-click launchers</li>
-                        <li>TPC member and reviewer: IEEE INFOCOM ('17–'21), IEEE/IFIP DSN ('19–'22), Elsevier Computer Networks, TNSE</li>
-                        <li>Mentors data science interns on internal tooling, automation, and production engineering practices</li>
+                        <li>Local Ollama qwen2.5:7b for failure analysis — zero student data sent to cloud LLM APIs</li>
+                        <li>No student PII in any external API payload — enforced by design, not by access control policy</li>
+                        <li>Multi-tenant architecture: district A cannot access district B data by construction</li>
+                        <li>Structured audit log maintained locally for all pipeline runs</li>
                     </ul>
                 </div>
 
