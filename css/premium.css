@@ -310,6 +310,15 @@ a:hover {
     50%       { opacity: 0.4; transform: scale(0.8); }
 }
 
+/* Hero subtext (credential/focus line below tagline) */
+.hero-subtext {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-family: var(--font-primary);
+    letter-spacing: 0.03em;
+}
+
 /* Hero tagline + scannable bullets */
 .hero-tagline {
     font-size: 1rem;
@@ -569,7 +578,7 @@ a:hover {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
     .ecosystem-grid {
         grid-template-columns: repeat(4, 1fr);
     }
