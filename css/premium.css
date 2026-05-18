@@ -987,6 +987,36 @@ a:hover {
     margin: 0;
 }
 
+/* Engineering Philosophy */
+.philosophy-block {
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+}
+
+.philosophy-statement {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    padding: var(--spacing-lg);
+    border-left: 3px solid var(--accent-color);
+    background: rgba(245, 166, 35, 0.03);
+    border-radius: 0 8px 8px 0;
+    margin: 0;
+}
+
+.philosophy-lead {
+    display: block;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.65rem;
+}
+
 /* Section heading gold accent */
 .section > .container > h2 {
     display: inline-block;

@@ -330,9 +330,9 @@
                     <div class="timeline-role">Lead Data Scientist</div>
                     <p class="timeline-company">Expatiate Communications · Pasadena, CA</p>
                     <ul class="timeline-highlights">
-                        <li>Sole architect and owner of 32 production systems serving 30+ school districts — ML prediction, IEP compliance automation, agentic pipelines, and 150+ Power BI dashboards</li>
-                        <li>Built LangGraph agentic orchestration system achieving <strong style="color: var(--accent-color);">75–90% pipeline runtime reduction</strong>; designed 6-domain outcome prediction with per-district model selection</li>
-                        <li>Deployed multi-tenant data platform on Microsoft Fabric with idempotent ETL, API integrations, and automated reporting to 18 school sites via Gmail API</li>
+                        <li>Sole architect and owner of 32 production systems serving 30+ school districts; standardized district onboarding to configuration files — reduced new-district setup from weeks of engineering work to hours of configuration</li>
+                        <li>Built LangGraph agentic orchestration achieving <strong style="color: var(--accent-color);">75–90% pipeline runtime reduction</strong>; designed 6-domain outcome prediction with per-district model selection; enabled compliance teams to run multi-district risk pipelines without engineering support</li>
+                        <li>Deployed operator-first platform on Microsoft Fabric: non-technical staff run complex compliance workflows via GUI launchers; automated Gmail API reporting eliminated manual weekly reporting burden across 18 school sites</li>
                     </ul>
                 </div>
 
@@ -404,6 +404,26 @@
                         <li>Multi-tenant architecture: district A cannot access district B data by construction</li>
                         <li>Structured audit log maintained locally for all pipeline runs</li>
                     </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Philosophy Section -->
+    <section class="section fade-in" id="philosophy" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2>Engineering Philosophy</h2>
+            <div class="philosophy-block">
+
+                <div class="philosophy-statement fade-in">
+                    <strong class="philosophy-lead">Reliability is a product feature.</strong>
+                    Systems handling public-sector student data must remain correct under partial failure, degraded upstream inputs, and operational retries. Design approach prioritizes isolation boundaries, deterministic recovery semantics, and operational transparency — not as optimizations, but as first-class requirements that shape every architectural decision from the start.
+                </div>
+
+                <div class="philosophy-statement fade-in">
+                    <strong class="philosophy-lead">Systems scale humans, not just compute.</strong>
+                    Every system I build is operated by non-technical staff: compliance coordinators, district program managers, school administrators. Architectural decisions account for the human operating layer — test modes before production sends, color-coded risk signals instead of raw scores, single-command automation for workflows that previously required engineering involvement. The measure of leverage is not pipeline throughput, but whether your systems enable people who couldn't do the work before to do it reliably now.
                 </div>
 
             </div>
