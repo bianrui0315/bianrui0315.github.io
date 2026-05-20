@@ -838,30 +838,26 @@ a:hover {
 }
 
 .bot-suggestions {
-    padding: 8px var(--spacing-md);
+    padding: 8px var(--spacing-md) 6px;
     border-top: 1px solid var(--border-color);
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     flex-shrink: 0;
 }
-
-.bot-suggestions::-webkit-scrollbar { display: none; }
 
 .bot-suggest-btn {
     background: transparent;
     border: 1px solid rgba(245, 166, 35, 0.4);
     color: var(--accent-color);
     border-radius: 20px;
-    padding: 5px 12px;
-    font-size: 0.72rem;
+    padding: 4px 10px;
+    font-size: 0.7rem;
     font-family: var(--font-primary);
     cursor: pointer;
     white-space: nowrap;
     transition: background var(--transition-fast);
-    flex-shrink: 0;
+    line-height: 1.4;
 }
 
 .bot-suggest-btn:hover {
