@@ -45,6 +45,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#ecosystem" class="nav-item">Skills</a></li>
                 <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#gallery" class="nav-item">Gallery</a></li>
                 <li><a href="#experience" class="nav-item">Experience</a></li>
                 <li><a href="projects.html" class="nav-item">Engineering Log</a></li>
                 <li><a href="#credentials" class="nav-item">Credentials</a></li>
@@ -318,6 +319,27 @@
                 &nbsp;&nbsp;·&nbsp;&nbsp;
                 <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">GitHub →</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Project Gallery -->
+    <section class="section" id="gallery" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2>Project Index</h2>
+            <p class="section-subtitle">All production systems, tools, and research — filter by category.</p>
+
+            <div class="gallery-filters" id="galleryFilters">
+                <button class="filter-btn filter-active" data-tag="all">All</button>
+                <button class="filter-btn" data-tag="AI / LLM">AI / LLM</button>
+                <button class="filter-btn" data-tag="ML">Machine Learning</button>
+                <button class="filter-btn" data-tag="Data Engineering">Data Engineering</button>
+                <button class="filter-btn" data-tag="Automation">Automation</button>
+                <button class="filter-btn" data-tag="Go">Go</button>
+                <button class="filter-btn" data-tag="Visualization">Visualization</button>
+                <button class="filter-btn" data-tag="Research">Research</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid"></div>
         </div>
     </section>
 
@@ -1101,6 +1123,174 @@
                 }
             });
         }
+
+        // --- Dynamic Project Gallery ---
+        const GALLERY_PROJECTS = [
+            {
+                title: "Agentic ML Pipeline Orchestration System",
+                desc: "LangGraph state machine with gate-node conditional routing and 4-stage fan-out parallelism. Local Ollama LLM diagnoses failures in real time — zero student data sent to cloud APIs.",
+                tags: ["AI / LLM", "Automation"],
+                tech: ["LangGraph", "Ollama", "Python", "subprocess", "Tkinter"],
+                impact: "75–90% runtime reduction · 30+ districts · 100K+ records/run",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Multi-Domain Risk Prediction & Decision-Support System",
+                desc: "6-domain student outcome prediction (CAASPP, ELPAC, Absenteeism, College/Career, Suspension) with per-district model selection and dual-API fallback chain for graceful degradation.",
+                tags: ["ML"],
+                tech: ["scikit-learn", "ARIMA", "Holt-Winters", "OpenAI API", "Gemini API"],
+                impact: "20+ districts · 6 concurrent domains · 3-layer graceful degradation",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Automated IEP Compliance Monitoring & Risk Scoring",
+                desc: "4-stage pipeline: SQL extraction → MFA-aware Playwright PDF download → date parsing → IDEA deadline risk scoring. Federal thresholds encoded as auditable first-class rules.",
+                tags: ["Automation", "Data Engineering"],
+                tech: ["Playwright", "PDF parsing", "SQL Server", "Power BI"],
+                impact: "21 districts · 0 missed IEP deadlines · district-level fault isolation",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Geospatial School Analytics & Search Platform",
+                desc: "Vectorized NumPy Haversine for sub-second distance search across 10K+ schools. Progressive filtering explicitly distinguishes 'no data' from 'underperforming' — no false negatives.",
+                tags: ["Visualization"],
+                tech: ["Streamlit", "Plotly Mapbox", "NumPy", "SQL Server"],
+                impact: "10K+ schools · sub-second search · correctness-first design",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Hybrid API/Automation Government Data Ingestion Pipeline",
+                desc: "Dual-mode ingestion — REST API for structured data, Selenium reserved for portal-locked flows only. Auto LEA-to-credential routing handles 30+ districts. Idempotent truncate-reload.",
+                tags: ["Data Engineering", "Automation"],
+                tech: ["Python", "REST API", "Selenium", "SQLAlchemy", "SQL Server"],
+                impact: "30+ districts · 7 report types · idempotent reruns",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "High-Reliability Concurrent SIS Data Ingestion Service",
+                desc: "Go goroutines for high-concurrency API fan-out with per-goroutine error isolation. Individual auth failures are logged and skipped without blocking concurrent streams. Retry at school granularity.",
+                tags: ["Go", "Data Engineering"],
+                tech: ["Go", "MongoDB", "REST API", "net/http"],
+                impact: "12 dataset types · goroutine fan-out · per-school fault isolation",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Gmail API Automated Weekly Reporting System",
+                desc: "Weekly data-driven performance summaries delivered to 18 school sites via Gmail API. Dynamic metric selection from 12 indicators per site, fully automated end-to-end.",
+                tags: ["Automation"],
+                tech: ["Gmail API", "Python", "OAuth2", "SQL Server"],
+                impact: "18 school sites · 12 dynamic indicators · zero manual effort",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Async Two-Phase Playwright Profile Scraper",
+                desc: "Phase 1 collects profile URLs at scale; phase 2 extracts structured data concurrently via asyncio. Handles pagination, rate limiting, and session persistence.",
+                tags: ["Automation"],
+                tech: ["Playwright", "asyncio", "Python", "BeautifulSoup"],
+                impact: "~6,000 professional profiles extracted",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "Power BI Analytics Suite — 150+ Dashboards",
+                desc: "9 dashboard types covering student performance, IEP compliance, attendance, and predictive risk across 30+ school districts. Complex DAX measures over multi-source SQL Server data models.",
+                tags: ["Visualization", "Data Engineering"],
+                tech: ["Power BI", "DAX", "SQL Server", "Microsoft Fabric"],
+                impact: "150+ dashboards · 9 types · 30+ districts",
+                status: "production", statusLabel: "Production"
+            },
+            {
+                title: "IEEE INFOCOM 2024: Transparent Proxy Analysis at Internet Scale",
+                desc: "Large-scale active measurement system detecting and fingerprinting transparent proxies across global internet paths using novel HTTP header and TCP-level detection heuristics.",
+                tags: ["Research"],
+                tech: ["Python", "AWS", "HTTP analysis", "TCP measurement"],
+                impact: "Published IEEE INFOCOM 2024 · internet-scale measurement",
+                status: "research", statusLabel: "Published"
+            },
+            {
+                title: "Elsevier Computer Networks 2022: Open Proxy Ecosystem Analysis",
+                desc: "Crawled, scanned, and analyzed 436,000+ open proxies across the global internet. Statistical modeling and traffic analysis to characterize proxy behavior, uptime, and abuse patterns.",
+                tags: ["Research"],
+                tech: ["Python", "AWS", "Statistical modeling", "Traffic analysis"],
+                impact: "436K+ proxies analyzed · Computer Networks, Elsevier 2022",
+                status: "research", statusLabel: "Published"
+            },
+            {
+                title: "ACM SIGCOMM CCR 2019: Passive Anycast BGP Analysis",
+                desc: "Passive BGP measurement methodology to infer anycast catchment boundaries without active probing. Correlated routing anomalies with remote peering relationships at internet exchange points.",
+                tags: ["Research"],
+                tech: ["BGP measurement", "Python", "AS-path analysis"],
+                impact: "ACM SIGCOMM CCR 2019 · foundational methodology cited by subsequent work",
+                status: "research", statusLabel: "Published"
+            },
+            {
+                title: "AI Cloaking & Content Differentiation Research",
+                desc: "Twin-crawler framework (Playwright) visiting Tranco Top 10,000 domains as browser UA vs. GPTBot. DOM tree comparison + Jaccard/TF-IDF cosine similarity to detect AI-targeted content degradation.",
+                tags: ["Research", "AI / LLM"],
+                tech: ["Playwright", "Python", "TF-IDF", "Jaccard similarity"],
+                impact: "Top 10K domains · target: IMC / WWW / USENIX Security",
+                status: "in-progress", statusLabel: "In Progress"
+            },
+            {
+                title: "LLM-Hallucinated Infrastructure Domains Research",
+                desc: "1,000+ DevOps prompts to GPT-4o, Claude 3.5 Sonnet, Llama-3-70B. Regex extraction of generated domains + DNS/Registrar API queries to measure hallucination rate and live registrability.",
+                tags: ["Research", "AI / LLM"],
+                tech: ["GPT-4o", "Claude API", "Python", "DNS analysis"],
+                impact: "1K+ prompts · target: NDSS / CCS / USENIX Security",
+                status: "in-progress", statusLabel: "In Progress"
+            }
+        ];
+
+        (function initGallery() {
+            const grid = document.getElementById('galleryGrid');
+            if (!grid) return;
+
+            grid.innerHTML = GALLERY_PROJECTS.map(p => `
+                <div class="gallery-card" data-tags="${p.tags.join(',')}">
+                    <div class="gcard-top">
+                        <span class="gcard-status status-${p.status}">${p.statusLabel}</span>
+                        ${p.tags.map(t => `<span class="gcard-tag">${t}</span>`).join('')}
+                    </div>
+                    <h4 class="gcard-title">${p.title}</h4>
+                    <p class="gcard-desc">${p.desc}</p>
+                    <div class="gcard-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+                    <div class="gcard-impact">${p.impact}</div>
+                </div>
+            `).join('');
+
+            let filterTimer = null;
+
+            function filterGallery(tag) {
+                document.querySelectorAll('.filter-btn').forEach(b =>
+                    b.classList.toggle('filter-active', b.dataset.tag === tag)
+                );
+
+                if (filterTimer) clearTimeout(filterTimer);
+
+                document.querySelectorAll('.gallery-card').forEach(card => {
+                    const match = tag === 'all' || card.dataset.tags.split(',').includes(tag);
+                    card.dataset.vis = match ? '1' : '0';
+
+                    if (match) {
+                        card.style.display = '';
+                        requestAnimationFrame(() => requestAnimationFrame(() =>
+                            card.classList.remove('gcard-hide')
+                        ));
+                    } else {
+                        card.classList.add('gcard-hide');
+                    }
+                });
+
+                filterTimer = setTimeout(() => {
+                    document.querySelectorAll('.gallery-card[data-vis="0"]').forEach(c => {
+                        c.style.display = 'none';
+                    });
+                }, 280);
+            }
+
+            document.querySelectorAll('.filter-btn').forEach(btn =>
+                btn.addEventListener('click', () => filterGallery(btn.dataset.tag))
+            );
+        })();
 
         loadResumeCount();
         loadGitHubStats();
