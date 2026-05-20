@@ -329,14 +329,14 @@
             <p class="section-subtitle">All production systems, tools, and research — filter by category.</p>
 
             <div class="gallery-filters" id="galleryFilters">
-                <button class="filter-btn filter-active" data-tag="all">All</button>
-                <button class="filter-btn" data-tag="AI / LLM">AI / LLM</button>
-                <button class="filter-btn" data-tag="ML">Machine Learning</button>
-                <button class="filter-btn" data-tag="Data Engineering">Data Engineering</button>
-                <button class="filter-btn" data-tag="Automation">Automation</button>
-                <button class="filter-btn" data-tag="Go">Go</button>
-                <button class="filter-btn" data-tag="Visualization">Visualization</button>
-                <button class="filter-btn" data-tag="Research">Research</button>
+                <button class="filter-btn filter-active" data-tag="all"><i class="fa-solid fa-grip"></i> All</button>
+                <button class="filter-btn" data-tag="AI / LLM"><i class="fa-solid fa-microchip"></i> AI / LLM</button>
+                <button class="filter-btn" data-tag="ML"><i class="fa-solid fa-chart-line"></i> Machine Learning</button>
+                <button class="filter-btn" data-tag="Data Engineering"><i class="fa-solid fa-database"></i> Data Engineering</button>
+                <button class="filter-btn" data-tag="Automation"><i class="fa-solid fa-gears"></i> Automation</button>
+                <button class="filter-btn" data-tag="Go"><i class="fa-solid fa-bolt"></i> Go</button>
+                <button class="filter-btn" data-tag="Visualization"><i class="fa-solid fa-chart-pie"></i> Visualization</button>
+                <button class="filter-btn" data-tag="Research"><i class="fa-solid fa-flask"></i> Research</button>
             </div>
 
             <div class="gallery-grid" id="galleryGrid"></div>
@@ -796,20 +796,31 @@
     </section>
 
     <!-- AI Resume Chatbot -->
-    <div class="bot-toggle" id="botToggle" title="Ask Rui's AI">
-        <i class="fa-solid fa-robot"></i>
+    <div class="bot-toggle" id="botToggle">
+        <div class="bot-toggle-avatar">
+            <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="bot-toggle-text">
+            <span class="bot-toggle-label">Ask Rui's AI</span>
+            <span class="bot-toggle-sub">Powered by Llama 3.1</span>
+        </div>
+        <div class="bot-toggle-ping"></div>
     </div>
 
     <div class="bot-window" id="botWindow">
         <div class="bot-header">
             <div style="display:flex; align-items:center; gap:10px;">
-                <i class="fa-solid fa-robot" style="color:var(--accent-color); font-size:1.1rem;"></i>
+                <div style="width:32px;height:32px;background:var(--accent-color);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#000;font-size:0.9rem;flex-shrink:0;">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
                 <div>
                     <h4 style="margin:0; font-size:0.92rem; font-family:var(--font-primary);">Rui's AI Assistant</h4>
-                    <span style="font-size:0.68rem; color:var(--text-muted);">Powered by Llama 3.1</span>
+                    <span style="font-size:0.68rem; color:var(--text-muted);">Powered by Llama 3.1 · Ask anything</span>
                 </div>
             </div>
-            <i class="fa-solid fa-xmark bot-close" id="botClose"></i>
+            <button class="bot-close" id="botClose" aria-label="Close chat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
         <div class="bot-messages" id="botMessages">
             <div class="msg bot">Hi! I'm Rui's AI assistant. Ask me anything about his skills, projects, or experience — I'll give you a straight answer.</div>
@@ -1266,16 +1277,22 @@
 
                 if (filterTimer) clearTimeout(filterTimer);
 
+                let showIdx = 0;
                 document.querySelectorAll('.gallery-card').forEach(card => {
                     const match = tag === 'all' || card.dataset.tags.split(',').includes(tag);
                     card.dataset.vis = match ? '1' : '0';
 
                     if (match) {
+                        const delay = showIdx * 45;
+                        showIdx++;
+                        card.style.transitionDelay = `0ms`;
                         card.style.display = '';
-                        requestAnimationFrame(() => requestAnimationFrame(() =>
-                            card.classList.remove('gcard-hide')
-                        ));
+                        requestAnimationFrame(() => requestAnimationFrame(() => {
+                            card.style.transitionDelay = `${delay}ms`;
+                            card.classList.remove('gcard-hide');
+                        }));
                     } else {
+                        card.style.transitionDelay = '0ms';
                         card.classList.add('gcard-hide');
                     }
                 });
@@ -1283,8 +1300,9 @@
                 filterTimer = setTimeout(() => {
                     document.querySelectorAll('.gallery-card[data-vis="0"]').forEach(c => {
                         c.style.display = 'none';
+                        c.style.transitionDelay = '0ms';
                     });
-                }, 280);
+                }, 320);
             }
 
             document.querySelectorAll('.filter-btn').forEach(btn =>
