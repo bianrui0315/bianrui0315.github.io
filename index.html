@@ -928,11 +928,20 @@
             setTimeout(() => botInput.focus(), 300);
         });
 
-        botClose.addEventListener('click', () => {
+        function closeBot() {
             chatOpen = false;
             botWindow.classList.remove('active');
             botToggle.style.transform = 'scale(1)';
             botToggle.style.pointerEvents = 'auto';
+        }
+
+        botClose.addEventListener('click', closeBot);
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (chatOpen && !botWindow.contains(e.target) && !botToggle.contains(e.target)) {
+                closeBot();
+            }
         });
 
         botSend.addEventListener('click', () => sendMessage(botInput.value));
