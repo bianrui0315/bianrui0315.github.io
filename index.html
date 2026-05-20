@@ -85,9 +85,12 @@
                     </div>
 
                     <div class="hero-cta">
-                        <a href="assets/cv/Ray_Rui_Bian_Data_Scientist.pdf" download class="btn-resume">
-                            <i class="fa-solid fa-file-arrow-down"></i> Download Resume
-                        </a>
+                        <div style="display:flex; flex-direction:column; align-items:flex-start;">
+                            <a href="/api/download-resume" class="btn-resume">
+                                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                            </a>
+                            <span id="hero-dl-count" class="resume-dl-count"></span>
+                        </div>
                         <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" class="btn-github">
                             <i class="fa-brands fa-github"></i> GitHub
                         </a>
@@ -702,14 +705,15 @@
 
     <!-- Contact Section -->
     <section class="section fade-in" id="contact"
-        style="border-top: 1px solid var(--border-color); text-align: center; padding-top: var(--spacing-xl);">
-        <div class="container">
+        style="border-top: 1px solid var(--border-color); padding-top: var(--spacing-xl);">
+        <div class="container" style="text-align: center;">
             <h2 style="margin-bottom: var(--spacing-sm);">Let's Connect</h2>
             <p style="margin-bottom: var(--spacing-lg); max-width: 520px; margin-left: auto; margin-right: auto;">
                 Open to Senior Data Scientist, AI/ML Engineer, and leadership roles. Based in Los Angeles — open to hybrid and remote.
             </p>
 
-            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+            <!-- Social + Resume Links -->
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-bottom: var(--spacing-lg);">
                 <a href="mailto:bianrui0315@gmail.com"
                     style="padding: 10px 24px; border: 1px solid var(--accent-color); border-radius: 8px; color: var(--accent-color); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
                     <i class="fa-solid fa-envelope"></i> Email
@@ -722,10 +726,49 @@
                     style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
-                <a href="assets/cv/Ray_Rui_Bian_Data_Scientist.pdf" download
-                    style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-file-arrow-down"></i> Resume
-                </a>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                    <a href="/api/download-resume"
+                        style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-file-arrow-down"></i> Resume
+                    </a>
+                    <span id="contact-dl-count" class="resume-dl-count"></span>
+                </div>
+            </div>
+
+            <!-- GitHub Live Stats -->
+            <p id="gh-stats-loading" class="gh-stats-loading">
+                <i class="fa-brands fa-github"></i>&nbsp; Loading GitHub activity&hellip;
+            </p>
+            <div id="gh-stats-widget" class="gh-stats-widget" style="display:none;">
+                <div class="gh-stats-card">
+                    <h4><i class="fa-brands fa-github"></i> Top Languages</h4>
+                    <div id="gh-lang-bars"></div>
+                </div>
+                <div class="gh-stats-card">
+                    <h4><i class="fa-solid fa-code-commit"></i> Recent Commits</h4>
+                    <div id="gh-recent-commits"></div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrap">
+                <h3>Send a Message</h3>
+                <form id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="cf-name">Name</label>
+                        <input type="text" id="cf-name" name="name" required placeholder="Your name" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-email">Email</label>
+                        <input type="email" id="cf-email" name="email" required placeholder="your@email.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" required rows="4" placeholder="Tell me about the role or project&hellip;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="contact-submit">Send Message &rarr;</button>
+                    <div class="form-feedback" id="contact-feedback"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -903,6 +946,120 @@
             }, { threshold: 0.4 });
             counterObserver.observe(metricsSection);
         }
+
+        // --- Resume Download Counter ---
+        async function loadResumeCount() {
+            try {
+                const res = await fetch('/api/download-resume?stats=1');
+                if (!res.ok) return;
+                const { count } = await res.json();
+                if (count > 0) {
+                    const label = `Downloaded ${count} time${count !== 1 ? 's' : ''}`;
+                    ['hero-dl-count', 'contact-dl-count'].forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) el.textContent = label;
+                    });
+                }
+            } catch { /* silently ignore */ }
+        }
+
+        // --- GitHub Live Stats ---
+        async function loadGitHubStats() {
+            try {
+                const res = await fetch('/api/github-stats');
+                if (!res.ok) throw new Error('non-200');
+                const data = await res.json();
+                if (data.error) throw new Error(data.error);
+
+                const langContainer = document.getElementById('gh-lang-bars');
+                if (langContainer && data.topLanguages?.length) {
+                    const max = data.topLanguages[0].count;
+                    langContainer.innerHTML = data.topLanguages.map(({ lang, count }) => `
+                        <div class="lang-bar-row">
+                            <span class="lang-bar-label">${lang}</span>
+                            <div class="lang-bar-track">
+                                <div class="lang-bar-fill" style="width:${Math.round(count / max * 100)}%"></div>
+                            </div>
+                            <span class="lang-count">${count}</span>
+                        </div>`).join('');
+                }
+
+                const commitsContainer = document.getElementById('gh-recent-commits');
+                if (commitsContainer) {
+                    if (data.recentCommits?.length) {
+                        commitsContainer.innerHTML = data.recentCommits.map(c => `
+                            <div class="gh-commit-item">
+                                <div class="gh-commit-repo">${c.repo}</div>
+                                <div class="gh-commit-msg">${c.message}</div>
+                            </div>`).join('');
+                    } else {
+                        commitsContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.82rem;">No recent public commits.</p>';
+                    }
+                }
+
+                const loading = document.getElementById('gh-stats-loading');
+                if (loading) loading.style.display = 'none';
+                const widget = document.getElementById('gh-stats-widget');
+                if (widget) widget.style.display = 'grid';
+            } catch {
+                const loading = document.getElementById('gh-stats-loading');
+                if (loading) loading.style.display = 'none';
+            }
+        }
+
+        // --- Contact Form ---
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const btn      = document.getElementById('contact-submit');
+                const feedback = document.getElementById('contact-feedback');
+                const name     = document.getElementById('cf-name').value.trim();
+                const email    = document.getElementById('cf-email').value.trim();
+                const message  = document.getElementById('cf-message').value.trim();
+
+                feedback.className = 'form-feedback';
+                feedback.style.display = 'none';
+
+                if (!name || !email || !message) {
+                    feedback.textContent = 'Please fill in all fields.';
+                    feedback.className = 'form-feedback error';
+                    feedback.style.display = 'block';
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+
+                try {
+                    const res = await fetch('/api/contact', {
+                        method:  'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body:    JSON.stringify({ name, email, message }),
+                    });
+                    const data = await res.json();
+
+                    if (res.ok && data.success) {
+                        feedback.textContent = 'Message sent! I\'ll be in touch soon.';
+                        feedback.className = 'form-feedback success';
+                        contactForm.reset();
+                    } else {
+                        feedback.textContent = data.error || 'Something went wrong. Please try emailing directly.';
+                        feedback.className = 'form-feedback error';
+                    }
+                } catch {
+                    feedback.textContent = 'Network error. Please email bianrui0315@gmail.com directly.';
+                    feedback.className = 'form-feedback error';
+                } finally {
+                    feedback.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Send Message →';
+                }
+            });
+        }
+
+        loadResumeCount();
+        loadGitHubStats();
 
     </script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aa6ec806b265450b9f5738faec36c95e"}'></script><!-- End Cloudflare Web Analytics -->
