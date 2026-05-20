@@ -773,27 +773,37 @@
         </div>
     </section>
 
-    <!-- Resume Bot UI -->
-    <div class="bot-toggle" id="botToggle">
+    <!-- AI Resume Chatbot -->
+    <div class="bot-toggle" id="botToggle" title="Ask Rui's AI">
         <i class="fa-solid fa-robot"></i>
     </div>
 
     <div class="bot-window" id="botWindow">
         <div class="bot-header">
-            <h4><i class="fa-solid fa-robot text-accent"></i> Rui's AI Matchmaker</h4>
+            <div style="display:flex; align-items:center; gap:10px;">
+                <i class="fa-solid fa-robot" style="color:var(--accent-color); font-size:1.1rem;"></i>
+                <div>
+                    <h4 style="margin:0; font-size:0.92rem; font-family:var(--font-primary);">Rui's AI Assistant</h4>
+                    <span style="font-size:0.68rem; color:var(--text-muted);">Powered by Llama 3.1</span>
+                </div>
+            </div>
             <i class="fa-solid fa-xmark bot-close" id="botClose"></i>
         </div>
         <div class="bot-messages" id="botMessages">
-            <div class="msg bot">Hi! I'm an AI assistant trained on Rui's background. How can I help you evaluate his
-                fit for your team?</div>
+            <div class="msg bot">Hi! I'm Rui's AI assistant. Ask me anything about his skills, projects, or experience — I'll give you a straight answer.</div>
         </div>
-        <div class="bot-options" id="botOptions">
-            <button class="bot-option-btn" data-q="projects">What production projects has he built?</button>
-            <button class="bot-option-btn" data-q="scale">Has he worked at scale?</button>
-            <button class="bot-option-btn" data-q="tech">What's his core tech stack?</button>
-            <button class="bot-option-btn" data-q="ml">What's his ML/AI experience?</button>
-            <button class="bot-option-btn" data-q="automation">Tell me about his automation work.</button>
-            <button class="bot-option-btn" data-q="leadership">Tell me about his leadership.</button>
+        <div class="bot-suggestions" id="botSuggestions">
+            <button class="bot-suggest-btn">What's his core tech stack?</button>
+            <button class="bot-suggest-btn">Tell me about his ML experience.</button>
+            <button class="bot-suggest-btn">Has he worked at scale?</button>
+            <button class="bot-suggest-btn">What production systems has he built?</button>
+            <button class="bot-suggest-btn">Is he open to remote work?</button>
+        </div>
+        <div class="bot-input-area">
+            <input type="text" id="botInput" placeholder="Ask anything about Rui…" autocomplete="off" maxlength="500">
+            <button id="botSend" class="bot-send-btn" aria-label="Send">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
         </div>
     </div>
 
@@ -842,21 +852,17 @@
             appearOnScroll.observe(fader);
         });
 
-        // --- Resume Bot Logic ---
-        const botToggle = document.getElementById('botToggle');
-        const botWindow = document.getElementById('botWindow');
-        const botClose = document.getElementById('botClose');
+        // --- AI Resume Chatbot ---
+        const botToggle   = document.getElementById('botToggle');
+        const botWindow   = document.getElementById('botWindow');
+        const botClose    = document.getElementById('botClose');
         const botMessages = document.getElementById('botMessages');
-        const optionBtns = document.querySelectorAll('.bot-option-btn');
+        const botInput    = document.getElementById('botInput');
+        const botSend     = document.getElementById('botSend');
+        const botSuggestions = document.getElementById('botSuggestions');
 
-        const botAnswers = {
-            "projects": "Rui built 32 production projects for the iTAAP education data platform serving 30+ California school districts. Highlights include: a LangGraph agentic pipeline orchestrator that cut processing time by 75–90%; a 6-domain ML prediction system (CAASPP, ELPAC, Chronic Absenteeism, College/Career, Suspension) across 20+ districts; an IEP compliance pipeline with Playwright PDF automation across 21 districts; a Streamlit+Plotly Mapbox app mapping 10,000+ California schools; an async Playwright scraper that extracted ~6,000 professional profiles; and a Go CLI tool fetching 12 Aeries SIS dataset types into MongoDB.",
-            "scale": "Yes — the iTAAP platform serves 30+ California school districts with 150+ Power BI dashboards across 9 dashboard types. Rui's LangGraph agentic pipeline replaced a 4–6 hour weekly manual process with a single command and achieved a 75–90% runtime reduction via fan-out parallelism. In academic research at the University of Delaware, he analyzed 436,000+ open proxies and processed millions of network probes at internet scale using Python and AWS.",
-            "tech": "Rui's demonstrated stack: Python (primary) · Go · SQL/T-SQL · PowerShell. AI/ML: LangGraph, Ollama (local LLM), OpenAI API, Gemini API, scikit-learn, XGBoost, Prophet, ARIMA, Holt-Winters, SHAP, MLflow. Backend & APIs: Flask, FastAPI, REST APIs, OAuth2. Data engineering: pandas, SQLAlchemy, pyodbc, SQL Server, Apache Spark, Microsoft Fabric. Cloud & DevOps: Azure, AWS, Docker, CI/CD. Automation: Playwright (sync + async), Selenium, asyncio, BeautifulSoup, Paramiko/SFTP. Visualization: Streamlit, Plotly Mapbox, Folium, Power BI/DAX. Storage: SQL Server, MongoDB.",
-            "ml": "Rui has built production ML systems, not just notebooks. He designed a 6-domain student outcome prediction system using scikit-learn with per-district model selection (Random Forest, Linear Regression, ARIMA, Holt-Winters) and integrated OpenAI + Gemini APIs to generate plain-language administrative reports. He also built per-school suspension rate forecasting with a 5-model ensemble (ETS + ARIMA + Prophet) weighted by validation error, and a geospatial school recommendation engine using progressive multi-indicator filtering that handles data gaps correctly.",
-            "automation": "Automation is where Rui has the deepest production experience. He automated IEP compliance PDF downloading from SEIS with MFA handling across 21 districts; built an async two-phase Playwright scraper extracting ~6,000 professional profiles; automated SEIS export column selection (103 columns per district) via Selenium; built a Gmail API weekly email pipeline to 18 school sites; and wrote a Go CLI for full Aeries SIS data ingestion into MongoDB with per-school error recovery. All systems were designed for non-technical operators with GUI tools, test modes, and audit logs.",
-            "leadership": "As Lead Data Scientist at Expatiate Communications, Rui owns the full iTAAP platform solo — design, development, deployment, and maintenance across 30+ districts. He mentors data science interns and has designed every system for non-technical end users: double-click launchers, color-coded compliance reports, and GUI pipeline monitors. In academia at the University of Delaware, he served as TPC member and reviewer for IEEE INFOCOM, IEEE/IFIP DSN, Elsevier Computer Networks, and other top venues across 5+ years."
-        };
+        let chatHistory = [];
+        let chatOpen = false;
 
         function addMessage(text, sender) {
             const el = document.createElement('div');
@@ -865,16 +871,6 @@
             botMessages.appendChild(el);
             botMessages.scrollTop = botMessages.scrollHeight;
         }
-
-        botToggle.addEventListener('click', () => {
-            botWindow.classList.add('active');
-            botToggle.style.transform = 'scale(0)';
-        });
-
-        botClose.addEventListener('click', () => {
-            botWindow.classList.remove('active');
-            botToggle.style.transform = 'scale(1)';
-        });
 
         function showTypingIndicator() {
             const el = document.createElement('div');
@@ -890,28 +886,67 @@
             if (el) el.remove();
         }
 
-        optionBtns.forEach(btn => {
+        async function sendMessage(text) {
+            const msg = text.trim();
+            if (!msg) return;
+
+            addMessage(msg, 'user');
+            chatHistory.push({ role: 'user', content: msg });
+
+            botInput.value = '';
+            botSend.disabled = true;
+            botInput.disabled = true;
+            botSuggestions.style.display = 'none';
+            showTypingIndicator();
+
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msg, history: chatHistory.slice(-6) }),
+                });
+                const data = await res.json();
+                removeTypingIndicator();
+                const reply = data.reply || "Sorry, I couldn't get a response. Please email bianrui0315@gmail.com.";
+                addMessage(reply, 'bot');
+                chatHistory.push({ role: 'assistant', content: reply });
+            } catch {
+                removeTypingIndicator();
+                addMessage("Network error — please email bianrui0315@gmail.com directly.", 'bot');
+            } finally {
+                botSend.disabled = false;
+                botInput.disabled = false;
+                botInput.focus();
+            }
+        }
+
+        botToggle.addEventListener('click', () => {
+            chatOpen = true;
+            botWindow.classList.add('active');
+            botToggle.style.transform = 'scale(0)';
+            botToggle.style.pointerEvents = 'none';
+            setTimeout(() => botInput.focus(), 300);
+        });
+
+        botClose.addEventListener('click', () => {
+            chatOpen = false;
+            botWindow.classList.remove('active');
+            botToggle.style.transform = 'scale(1)';
+            botToggle.style.pointerEvents = 'auto';
+        });
+
+        botSend.addEventListener('click', () => sendMessage(botInput.value));
+
+        botInput.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage(botInput.value);
+            }
+        });
+
+        document.querySelectorAll('.bot-suggest-btn').forEach(btn => {
             btn.addEventListener('click', function () {
-                const qKey = this.getAttribute('data-q');
-                const userText = this.textContent;
-
-                // Add user message
-                addMessage(userText, 'user');
-
-                // Disable options temporarily
-                document.getElementById('botOptions').style.opacity = '0.5';
-                document.getElementById('botOptions').style.pointerEvents = 'none';
-
-                // Show typing animation
-                showTypingIndicator();
-
-                // Simulate AI typing delay
-                setTimeout(() => {
-                    removeTypingIndicator();
-                    addMessage(botAnswers[qKey], 'bot');
-                    document.getElementById('botOptions').style.opacity = '1';
-                    document.getElementById('botOptions').style.pointerEvents = 'auto';
-                }, 1200);
+                sendMessage(this.textContent);
             });
         });
 
