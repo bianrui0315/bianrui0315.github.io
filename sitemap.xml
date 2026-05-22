@@ -1,51 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://bianrui0315.github.io/index.html</loc>
-        <lastmod>2025-06-30</lastmod>
+        <loc>https://bianrui.pages.dev/</loc>
+        <lastmod>2026-05-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://bianrui0315.github.io/assets/blog/Generating Personalized Individualized Education Programs (IEPs) for Special Education Students Using Machine Learning and Artificial Intelligence.html</loc>
-        <lastmod>2025-06-30</lastmod>
+        <loc>https://bianrui.pages.dev/projects.html</loc>
+        <lastmod>2026-05-21</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://bianrui0315.github.io/assets/blog/Leveraging Machine Learning and Artificial Intelligence for Recommending K-12 Schools to Parents.html</loc>
-        <lastmod>2025-06-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bianrui0315.github.io/assets/blog/Selecting Machine Learning Models for Predicting Educational Indicators of K-12 Students.html</loc>
-        <lastmod>2025-06-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bianrui0315.github.io/assets/blog/Utilizing Machine Learning and Artificial Intelligence to Process and Predict K-12 Student Data.html</loc>
-        <lastmod>2025-06-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bianrui0315.github.io/assets/cv/CV_Rui_Bian.pdf</loc>
-        <lastmod>2025-06-30</lastmod>
+        <loc>https://bianrui.pages.dev/assets/blog/Utilizing%20Machine%20Learning%20and%20Artificial%20Intelligence%20to%20Process%20and%20Predict%20K-12%20Student%20Data.html</loc>
+        <lastmod>2026-05-21</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://bianrui0315.github.io/assets/cv/Resume_Rui_Bian.pdf</loc>
-        <lastmod>2025-06-30</lastmod>
+        <loc>https://bianrui.pages.dev/assets/blog/Leveraging%20Machine%20Learning%20and%20Artificial%20Intelligence%20for%20Recommending%20K-12%20Schools%20to%20Parents.html</loc>
+        <lastmod>2026-05-21</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://bianrui0315.github.io/assets/Rui-Bian.jpg</loc>
-        <lastmod>2025-06-30</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://bianrui.pages.dev/assets/blog/Selecting%20Machine%20Learning%20Models%20for%20Predicting%20Educational%20Indicators%20of%20K-12%20Students.html</loc>
+        <lastmod>2026-05-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bianrui.pages.dev/assets/blog/Generating%20Personalized%20Individualized%20Education%20Programs%20(IEPs)%20for%20Special%20Education%20Students%20Using%20Machine%20Learning%20and%20Artificial%20Intelligence.html</loc>
+        <lastmod>2026-05-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bianrui.pages.dev/assets/cv/Resume_Rui_Bian.pdf</loc>
+        <lastmod>2026-05-21</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 </urlset>
