@@ -1,7 +1,7 @@
-# bianrui0315.github.io — Portfolio Site
+# bianrui.net — Portfolio Site
 
 Personal portfolio for **Rui Bian, PhD** — Senior Applied Data Scientist & AI/ML Engineer.  
-Deployed on **Cloudflare Pages** at [bianrui.pages.dev](https://bianrui.pages.dev).
+Deployed at [bianrui.net](https://bianrui.net).
 
 ---
 
