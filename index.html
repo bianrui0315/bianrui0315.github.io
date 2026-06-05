@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rui Bian | Senior Applied Data Scientist & AI Analytics Engineer</title>
-    <meta name="description" content="Rui Bian, PhD — Senior Applied Data Scientist and AI Analytics Engineer. Built production ML systems, AI-driven analytics, and automated reporting infrastructure serving 30+ school districts. Published at IEEE INFOCOM, ACM SIGCOMM.">
+    <meta name="description" content="Rui Bian, PhD — Senior Applied Data Scientist and AI Analytics Engineer. Built production ML systems, public products like Free Image Tools, AI-driven analytics, and automated reporting infrastructure. Published at IEEE INFOCOM, ACM SIGCOMM.">
     <meta name="keywords" content="Rui Bian, Data Scientist, AI Analytics Engineer, Applied ML, Predictive Analytics, LangGraph, FastAPI, Python, scikit-learn, Power BI, Los Angeles, PhD, Computer Engineering">
     <meta name="google-site-verification" content="PbrneMZzm9Aa2FzYXJ0vC0v1G3k90C6wWLx52WfqBgc">
 
@@ -15,13 +15,13 @@
     <!-- Open Graph / SEO Meta Tags -->
     <meta property="og:title" content="Rui Bian, PhD | Senior AI & Data Science Leader">
     <meta property="og:description"
-        content="14+ years bridging research and production AI. Agentic AI · LLMs · RAG · MLOps · Microsoft Fabric. Open to high-impact opportunities.">
+        content="14+ years bridging research, production AI, and public product engineering. Agentic AI · LLMs · RAG · MLOps · Microsoft Fabric. Open to high-impact opportunities.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bianrui.net/">
     <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rui Bian, PhD | Senior AI & Data Science Leader">
-    <meta name="twitter:description" content="14+ years bridging research and production AI. Agentic AI · LLMs · RAG · MLOps. Open to opportunities.">
+    <meta name="twitter:description" content="14+ years bridging research, production AI, and public product engineering. Agentic AI · LLMs · RAG · MLOps. Open to opportunities.">
     <meta name="twitter:image" content="https://bianrui.net/assets/img/headshot.jpg">
 
     <!-- JSON-LD Structured Data -->
@@ -33,7 +33,7 @@
       "url": "https://bianrui.net/",
       "image": "https://bianrui.net/assets/img/headshot.jpg",
       "jobTitle": "Senior Applied Data Scientist & AI Analytics Engineer",
-      "description": "PhD with 14+ years of experience in production ML systems, agentic AI, LLMs, RAG, and data engineering.",
+      "description": "PhD with 14+ years of experience in production ML systems, public product engineering, agentic AI, LLMs, RAG, and data engineering.",
       "worksFor": {
         "@type": "Organization",
         "name": "Expatiate Communications"
@@ -261,8 +261,8 @@
     <!-- Production Portfolio Section -->
     <section class="section" id="projects" style="border-top: 1px solid var(--border-color);">
         <div class="container">
-            <h2>Selected Production ML Systems</h2>
-            <p class="section-subtitle">End-to-end production systems — ML design, pipeline architecture, API deployment, and operational monitoring — all serving 30+ California school districts.</p>
+            <h2>Selected Engineering &amp; Product Work</h2>
+            <p class="section-subtitle">End-to-end production systems and public products — ML design, pipeline architecture, API deployment, privacy-first web tooling, and operational monitoring.</p>
 
             <div class="project-grid">
 
@@ -350,6 +350,21 @@
                     <div class="project-impact">12 dataset types · goroutine fan-out · per-school fault isolation · retry at school granularity</div>
                 </div>
 
+                <div class="project-card cat-product fade-in">
+                    <span class="project-num">07</span>
+                    <span class="project-category cat-product">Product</span>
+                    <h4>Free Image Tools</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Most online image utilities require uploading files to a server, creating privacy friction for simple compression, conversion, resizing, and PDF workflows.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a browser-first product where core image processing runs client-side via Web APIs: no upload wait, no server-side file storage, batch downloads, modern WebP/AVIF support, social presets, and AI alt-text generation as an opt-in edge inference workflow.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Client-side JS</span><span>Canvas API</span><span>Cloudflare</span><span>SEO</span>
+                    </div>
+                    <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Visit product →</a>
+                    <div class="project-impact">Privacy-first image tools · compression · conversion · resizing · PDF/image workflows · AI alt text</div>
+                </div>
+
             </div>
 
             <div class="portfolio-footer">
@@ -364,7 +379,7 @@
     <section class="section" id="gallery" style="border-top: 1px solid var(--border-color);">
         <div class="container">
             <h2>Project Index</h2>
-            <p class="section-subtitle">All production systems, tools, and research — filter by category.</p>
+            <p class="section-subtitle">All production systems, products, tools, and research — filter by category.</p>
 
             <div class="gallery-filters" id="galleryFilters">
                 <button class="filter-btn filter-active" data-tag="all"><i class="fa-solid fa-grip"></i> All</button>
@@ -373,6 +388,7 @@
                 <button class="filter-btn" data-tag="Data Engineering"><i class="fa-solid fa-database"></i> Data Engineering</button>
                 <button class="filter-btn" data-tag="Automation"><i class="fa-solid fa-gears"></i> Automation</button>
                 <button class="filter-btn" data-tag="Go"><i class="fa-solid fa-bolt"></i> Go</button>
+                <button class="filter-btn" data-tag="Product"><i class="fa-solid fa-cube"></i> Product</button>
                 <button class="filter-btn" data-tag="Visualization"><i class="fa-solid fa-chart-pie"></i> Visualization</button>
                 <button class="filter-btn" data-tag="Research"><i class="fa-solid fa-flask"></i> Research</button>
             </div>
@@ -1224,6 +1240,15 @@
                 status: "production", statusLabel: "Production"
             },
             {
+                title: "Free Image Tools",
+                desc: "Privacy-first public product for compressing, converting, resizing, and packaging images directly in the browser. Includes batch workflows, WebP/AVIF support, PDF/image conversion, social presets, metadata removal, and opt-in AI alt-text generation.",
+                tags: ["Product", "Automation"],
+                tech: ["Client-side JS", "Canvas API", "Cloudflare", "SEO"],
+                impact: "Browser-side processing · no upload required · batch image workflows",
+                status: "product", statusLabel: "Product",
+                url: "https://freeimgtools.net/"
+            },
+            {
                 title: "Gmail API Automated Weekly Reporting System",
                 desc: "Weekly data-driven performance summaries delivered to 18 school sites via Gmail API. Dynamic metric selection from 12 indicators per site, fully automated end-to-end.",
                 tags: ["Automation"],
@@ -1302,6 +1327,7 @@
                     <h4 class="gcard-title">${p.title}</h4>
                     <p class="gcard-desc">${p.desc}</p>
                     <div class="gcard-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+                    ${p.url ? `<a class="gcard-link" href="${p.url}" target="_blank" rel="noopener noreferrer">Visit product →</a>` : ''}
                     <div class="gcard-impact">${p.impact}</div>
                 </div>
             `).join('');

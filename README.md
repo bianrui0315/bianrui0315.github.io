@@ -25,7 +25,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 
 ### AI Resume Chatbot (`/api/chat`)
 - Powered by **Llama 3.1 8B** via Cloudflare Workers AI — no third-party API key needed
-- Full resume system prompt: all 14 projects, design principles, publications, certifications
+- Full resume system prompt: flagship systems, public product, design principles, publications, certifications
 - Multi-turn conversation with history (last 6 messages sent per request)
 - Floating pill button with pulsing online indicator; free-text input + quick-suggest chips
 
@@ -45,8 +45,8 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Cached in KV for 1 hour to avoid rate limits
 
 ### Dynamic Project Gallery
-- 14 cards: 9 production systems · 3 published papers · 2 in-progress research
-- Filter tags with icons: All · AI/LLM · ML · Data Engineering · Automation · Go · Visualization · Research
+- 15 cards: 9 production systems · 1 public product · 3 published papers · 2 in-progress research
+- Filter tags with icons: All · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
 - Staggered fade-in (45ms per card) with spring easing; scale-out on hide
 
 ---

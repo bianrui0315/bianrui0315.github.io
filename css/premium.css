@@ -1242,6 +1242,7 @@ a:hover {
 .project-category.cat-scraping  { background: rgba(20,184,166,0.12);  color: #2dd4bf; border: 1px solid rgba(20,184,166,0.3); }
 .project-category.cat-go        { background: rgba(99,102,241,0.12);  color: #818cf8; border: 1px solid rgba(99,102,241,0.3); }
 .project-category.cat-auto      { background: rgba(107,114,128,0.15); color: #9ca3af; border: 1px solid rgba(107,114,128,0.3); }
+.project-category.cat-product   { background: rgba(236,72,153,0.12);  color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
 
 .project-card h4 {
     font-family: var(--font-display);
@@ -1503,6 +1504,7 @@ a:hover {
 .project-card.cat-scraping::before   { background: linear-gradient(90deg,#14b8a6,#2dd4bf); }
 .project-card.cat-go::before         { background: linear-gradient(90deg,#6366f1,#818cf8); }
 .project-card.cat-auto::before       { background: linear-gradient(90deg,#6b7280,#9ca3af); }
+.project-card.cat-product::before    { background: linear-gradient(90deg,#ec4899,#f472b6); }
 
 .project-card:hover {
     box-shadow: 0 24px 50px rgba(0,0,0,0.45), 0 0 35px rgba(245,166,35,0.08);
@@ -1899,6 +1901,12 @@ a:hover {
     border: 1px solid rgba(245, 166, 35, 0.3);
 }
 
+.gcard-status.status-product {
+    background: rgba(236, 72, 153, 0.1);
+    color: #f472b6;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
 .gcard-tag {
     font-size: 0.62rem;
     color: var(--text-muted);
@@ -1946,6 +1954,23 @@ a:hover {
     border-top: 1px solid var(--border-color);
     padding-top: 8px;
     line-height: 1.4;
+}
+
+.project-link,
+.gcard-link {
+    color: var(--accent-color);
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: fit-content;
+}
+
+.project-link:hover,
+.gcard-link:hover {
+    color: var(--accent-color-light);
 }
 
 /* Resume download counter label */

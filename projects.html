@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering Log — Rui Bian | AI & Data Engineering</title>
-    <meta name="description" content="Technical showcase by Rui Bian — production systems spanning agentic AI orchestration, multi-model ML forecasting, ETL pipelines, compliance automation, browser automation, and geospatial visualization.">
+    <meta name="description" content="Technical showcase by Rui Bian — production systems and public products spanning agentic AI orchestration, multi-model ML forecasting, ETL pipelines, compliance automation, browser automation, image tooling, and geospatial visualization.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://bianrui.net/projects.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Engineering Log — Rui Bian | AI & Data Engineering">
-    <meta property="og:description" content="Production systems by Rui Bian: agentic AI orchestration, multi-model ML forecasting, ETL pipelines, compliance automation, and geospatial visualization.">
+    <meta property="og:description" content="Production systems and public products by Rui Bian: agentic AI orchestration, multi-model ML forecasting, ETL pipelines, compliance automation, image tooling, and geospatial visualization.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bianrui.net/projects.html">
     <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Engineering Log — Rui Bian | AI & Data Engineering">
-    <meta name="twitter:description" content="Production systems by Rui Bian: agentic AI, ML forecasting, ETL pipelines, and geospatial visualization.">
+    <meta name="twitter:description" content="Production systems and public products by Rui Bian: agentic AI, ML forecasting, ETL pipelines, image tooling, and geospatial visualization.">
     <meta name="twitter:image" content="https://bianrui.net/assets/img/headshot.jpg">
 
     <!-- JSON-LD -->
@@ -26,7 +26,7 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Engineering Log — Rui Bian",
-      "description": "Technical showcase of production AI and data engineering systems built by Rui Bian.",
+      "description": "Technical showcase of production AI systems, data engineering systems, and public products built by Rui Bian.",
       "url": "https://bianrui.net/projects.html",
       "author": {
         "@type": "Person",
@@ -158,6 +158,7 @@
         .detail-card.cat-scraping::before   { background: linear-gradient(90deg,#14b8a6,#2dd4bf); }
         .detail-card.cat-viz::before        { background: linear-gradient(90deg,#10b981,#34d399); }
         .detail-card.cat-go::before         { background: linear-gradient(90deg,#6366f1,#818cf8); }
+        .detail-card.cat-product::before    { background: linear-gradient(90deg,#ec4899,#f472b6); }
 
         .detail-card:hover {
             border-color: rgba(255,255,255,0.15);
@@ -279,12 +280,12 @@
     <header class="page-header">
         <div class="container">
             <h1 class="gradient-text">Engineering Log</h1>
-            <p>Production systems built for the <strong style="color:var(--text-primary)">iTAAP</strong> platform — agentic AI orchestration, multi-model ML forecasting, full-lifecycle ETL, compliance automation, browser automation, and geospatial visualization across 25+ California school districts.</p>
+            <p>Production systems and public products — agentic AI orchestration, multi-model ML forecasting, full-lifecycle ETL, compliance automation, browser automation, privacy-first image tooling, and geospatial visualization.</p>
             <div class="page-header-stats">
                 <div class="ph-stat"><strong>25+</strong><span>Districts</span></div>
                 <div class="ph-stat"><strong>150+</strong><span>Dashboards</span></div>
                 <div class="ph-stat"><strong>6</strong><span>Domains</span></div>
-                <div class="ph-stat"><strong>Polyglot</strong><span>Stack</span></div>
+                <div class="ph-stat"><strong>1</strong><span>Public Product</span></div>
             </div>
         </div>
     </header>
@@ -299,6 +300,7 @@
             <button class="filter-btn"           onclick="filter('automation',this)">Automation &amp; Web</button>
             <button class="filter-btn"           onclick="filter('bi',this)">Business Intelligence</button>
             <button class="filter-btn"           onclick="filter('software',this)">Software Engineering</button>
+            <button class="filter-btn"           onclick="filter('product',this)">Products</button>
         </div>
     </div>
 
@@ -778,6 +780,29 @@
                         </ul>
                         <div class="card-tech"><span>Python</span><span>Streamlit</span><span>Plotly Mapbox</span><span>NumPy</span><span>pandas</span><span>SQL Server</span></div>
                         <div class="card-impact">10,000+ California schools mapped · live proximity filtering · sub-second performance</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Products & Public Tools -->
+            <div class="category-section" id="sec-product">
+                <div class="category-label"><i class="fa-solid fa-cube" style="color:#f472b6"></i> Products &amp; Public Tools</div>
+                <div class="detail-grid">
+
+                    <div class="detail-card cat-product" data-category="product">
+                        <div class="card-top"><span class="card-num">33</span><span class="project-category cat-product">Product</span></div>
+                        <h3>Free Image Tools</h3>
+                        <p class="card-problem">Most online image tools require uploading private files to a server for basic compression, conversion, resizing, and PDF workflows — unnecessary friction for everyday creator and developer tasks.</p>
+                        <ul class="card-approach">
+                            <li>Browser-first architecture for core image processing: compression, resizing, format conversion, and batch workflows run locally using Web APIs</li>
+                            <li>Privacy-centered product positioning: no upload required for local tools, no server-side file storage, and metadata-removal workflows for safer sharing</li>
+                            <li>Built utility coverage around real search intent: WebP/AVIF conversion, target-size compression, social media presets, PDF-to-image, image-to-PDF, Base64 output, borders, circular crops, and palette extraction</li>
+                            <li>Opt-in AI alt-text generation uses Cloudflare AI for accessibility and SEO copy while keeping the core product usable without account creation or paid tiers</li>
+                        </ul>
+                        <div class="card-tech"><span>Client-side JavaScript</span><span>Canvas API</span><span>Cloudflare</span><span>Image formats</span><span>SEO</span><span>Product UX</span></div>
+                        <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Visit product →</a>
+                        <div class="card-impact">Privacy-first public image utility suite · compression · conversion · resizing · PDF workflows · AI alt text</div>
                     </div>
 
                 </div>

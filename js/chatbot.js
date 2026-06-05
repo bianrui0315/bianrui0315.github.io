@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (lowerCaseMessage.includes('education') || lowerCaseMessage.includes('degrees') || lowerCaseMessage.includes('study')) {
             return "Rui holds a Ph.D. in Computer Engineering from the University of Delaware and a Master's and Bachelor's from the University of Science and Technology of China.";
         } else if (lowerCaseMessage.includes('projects') || lowerCaseMessage.includes('work')) {
-            return "Rui has worked on exciting projects like the Cute Animal Image Classifier, Simple Perceptron Visualization, Text-to-Audio Converter, and Transparent Proxy Detection. Explore the Projects section!";
+            return "Rui has shipped production AI/data systems and public products, including Free Image Tools, LangGraph pipeline orchestration, student risk prediction, compliance automation, geospatial school analytics, and internet-scale proxy research. Explore the Projects section!";
         } else if (lowerCaseMessage.includes('contact') || lowerCaseMessage.includes('email')) {
             return "You can reach Rui at bianrui0315@gmail.com or through his LinkedIn profile.";
         } else if (lowerCaseMessage.includes('thank')) {
