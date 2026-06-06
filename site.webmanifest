@@ -1,0 +1,19 @@
+{
+  "name": "Rui Bian",
+  "short_name": "Rui Bian",
+  "icons": [
+    {
+      "src": "/assets/img/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0a0f1e",
+  "background_color": "#0a0f1e",
+  "display": "standalone"
+}
