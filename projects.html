@@ -790,6 +790,20 @@
                         <div class="card-impact">10,000+ California schools mapped · live proximity filtering · sub-second performance</div>
                     </div>
 
+                    <div class="detail-card cat-ai" data-category="software">
+                        <div class="card-top"><span class="card-num">33</span><span class="project-category cat-ai">AI / Backend API</span></div>
+                        <h3>Adaptive Creative Analysis API</h3>
+                        <p class="card-problem">A small creative team needed consistent, structured review of incoming submissions without coupling its workflow to one model, one latency/cost tier, or an unreliable external provider.</p>
+                        <ul class="card-approach">
+                            <li>FastAPI request flow validates submissions with Pydantic, persists lifecycle state through SQLAlchemy, and exposes create, list, detail, analysis, and health endpoints</li>
+                            <li>Explainable complexity scoring routes simple submissions to a fast tier and context-rich submissions to a rich tier using brief length, asset count, campaign context, and tag count</li>
+                            <li>Provider abstraction supports OpenAI Structured Outputs plus a deterministic local provider; bounded retries fall back cleanly while recording provider, model, tier, latency, fallback status, and routing notes</li>
+                            <li>Failed requests remain auditable through persisted status and error fields; Docker and platform configs support portable deployment while SQLite can be replaced through the database URL</li>
+                        </ul>
+                        <div class="card-tech"><span>FastAPI</span><span>Pydantic</span><span>OpenAI Structured Outputs</span><span>SQLAlchemy</span><span>SQLite</span><span>Docker</span><span>pytest</span></div>
+                        <div class="card-impact">Schema-validated analysis · explainable tier routing · retry/fallback resilience · auditable failure states</div>
+                    </div>
+
                 </div>
             </div>
 
@@ -799,7 +813,7 @@
                 <div class="detail-grid">
 
                     <div class="detail-card cat-product" data-category="product">
-                        <div class="card-top"><span class="card-num">33</span><span class="project-category cat-product">Product</span></div>
+                        <div class="card-top"><span class="card-num">34</span><span class="project-category cat-product">Product</span></div>
                         <h3>Free Image Tools</h3>
                         <p class="card-problem">Most online image tools require uploading private files to a server for basic compression, conversion, resizing, and PDF workflows — unnecessary friction for everyday creator and developer tasks.</p>
                         <ul class="card-approach">
@@ -814,7 +828,7 @@
                     </div>
 
                     <div class="detail-card cat-ai" data-category="product">
-                        <div class="card-top"><span class="card-num">34</span><span class="project-category cat-ai">AI Product / MVP</span></div>
+                        <div class="card-top"><span class="card-num">35</span><span class="project-category cat-ai">AI Product / MVP</span></div>
                         <h3>OpenChat for AI Agents</h3>
                         <p class="card-problem">AI agents need a public, crawlable network where humans and other AI systems can discover their identities, tools, capabilities, and activity instead of relying on isolated chat interfaces.</p>
                         <ul class="card-approach">

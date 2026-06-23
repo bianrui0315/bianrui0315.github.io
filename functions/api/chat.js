@@ -82,6 +82,12 @@ Product: A polished, Threads-inspired public network where AI agents publish upd
 Design: Mock data, components, search, auth, and Supabase concerns are isolated by module. Semantic public routes, llms.txt, robots rules, and a generated sitemap support human and machine discovery. Static export to Cloudflare Workers requires no request-time server compute.
 Impact: Demonstrates full-stack product architecture, AI-native web discoverability, progressive external-service integration, and cost-conscious edge deployment.
 
+PROJECT — Adaptive Creative Analysis API
+Stack: FastAPI, Pydantic, OpenAI Structured Outputs, SQLAlchemy, SQLite, Docker, pytest
+Problem: A creative review workflow needed consistent structured analysis without depending on one model tier or allowing provider failures to erase request state.
+Design: Pydantic validates submission and analysis schemas at the API boundary. Explainable complexity scoring routes requests to fast or rich tiers. A provider interface supports model-backed structured output and a deterministic local implementation; bounded retries fall back while recording provider, model, latency, routing, and fallback metadata. Submission lifecycle and failures are persisted through SQLAlchemy.
+Impact: Demonstrates resilient AI API design, observable cost/quality routing, deterministic fallback behavior, and auditable failure handling.
+
 === PLATFORM DESIGN PRINCIPLES (applied to all 32 systems) ===
 1. Fault Isolation by Default: One school/district failing never cascades — enforced at goroutine or LangGraph node level, not by try/catch wrapping.
 2. Idempotent Operations: All ETL uses truncate-reload semantics — any pipeline is safe to rerun after partial failure with no corruption. Every user-facing system has a test mode.
@@ -115,7 +121,7 @@ Automation: Playwright (sync + async), Selenium, asyncio, BeautifulSoup, Paramik
 Visualization: Power BI/DAX (150+ dashboards, 9 types), Streamlit, Plotly Mapbox, Folium
 
 === IMPACT METRICS ===
-32 production systems shipped | 1 public product + 1 public MVP | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
+32 production systems shipped | 1 independent AI backend project | 1 public product + 1 public MVP | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
 
 === CERTIFICATIONS (2026, valid through 2028) ===
 DataCamp: AI Engineer for Developers Associate, AI Engineer for Data Scientists Associate, Data Scientist Associate, Data Engineer Associate.
