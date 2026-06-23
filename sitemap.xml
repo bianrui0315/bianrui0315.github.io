@@ -37,9 +37,15 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://bianrui.net/assets/cv/Resume_Rui_Bian.pdf</loc>
-        <lastmod>2026-05-21</lastmod>
+        <loc>https://bianrui.net/assets/cv/Ray_Rui_Bian_Data_Scientist.pdf</loc>
+        <lastmod>2026-06-23</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://bianrui.net/llms.txt</loc>
+        <lastmod>2026-06-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>

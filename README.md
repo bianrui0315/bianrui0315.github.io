@@ -29,6 +29,11 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Multi-turn conversation with history (last 6 messages sent per request)
 - Floating pill button with pulsing online indicator; free-text input + quick-suggest chips
 
+### AI-Readable Professional Profile (`/llms.txt`)
+- Recruiter-focused professional summary for AI assistants and crawlers
+- Links to canonical portfolio, engineering log, resume, GitHub, LinkedIn, and Scholar sources
+- Exposes verified role fit, evidence, technical strengths, publications, and contact information
+
 ### Contact Form (`/api/contact`)
 - Validates and stores submissions in **Cloudflare D1** (SQLite)
 - Sends instant email notification via **Resend API**
@@ -90,6 +95,7 @@ SELECT * FROM contacts ORDER BY created_at DESC;
 ```
 ├── index.html                  # Main portfolio page
 ├── projects.html               # Full engineering log
+├── llms.txt                    # AI-readable recruiter profile
 ├── css/
 │   └── premium.css             # Main stylesheet (dark theme)
 ├── functions/
