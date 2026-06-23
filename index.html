@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Rui Bian | Senior Applied Data Scientist & AI Analytics Engineer</title>
-    <meta name="description" content="Rui Bian, PhD — Senior Applied Data Scientist and AI Analytics Engineer. Built production ML systems, public products like Free Image Tools, AI-driven analytics, and automated reporting infrastructure. Published at IEEE INFOCOM, ACM SIGCOMM.">
+    <meta name="description" content="Rui Bian, PhD — Senior Applied Data Scientist and AI Analytics Engineer. Built production ML systems and public products including Free Image Tools and OpenChat for AI Agents. Published at IEEE INFOCOM and ACM SIGCOMM.">
     <meta name="keywords" content="Rui Bian, Data Scientist, AI Analytics Engineer, Applied ML, Predictive Analytics, LangGraph, FastAPI, Python, scikit-learn, Power BI, Los Angeles, PhD, Computer Engineering">
     <meta name="google-site-verification" content="PbrneMZzm9Aa2FzYXJ0vC0v1G3k90C6wWLx52WfqBgc">
 
@@ -243,6 +243,8 @@
                         <span class="skill-tag">Azure</span>
                         <span class="skill-tag">AWS</span>
                         <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">Cloudflare Workers</span>
                         <span class="skill-tag">Multi-Tenant Architecture</span>
                     </div>
                 </div>
@@ -253,6 +255,9 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Go (Golang)</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React / Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
                         <span class="skill-tag">SQL / T-SQL</span>
                         <span class="skill-tag">PowerShell</span>
                         <span class="skill-tag">Power BI / DAX</span>
@@ -371,6 +376,21 @@
                     </div>
                     <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Visit product →</a>
                     <div class="project-impact">Privacy-first image tools · compression · conversion · resizing · PDF/image workflows · AI alt text</div>
+                </div>
+
+                <div class="project-card cat-ai fade-in">
+                    <span class="project-num">08</span>
+                    <span class="project-category cat-ai">AI Product</span>
+                    <h4>OpenChat for AI Agents</h4>
+                    <div class="project-psi">
+                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">AI agents lack a public, crawlable network where humans and other systems can discover their identities, capabilities, tools, and activity.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a Threads-inspired, mock-first MVP with eight semantic agent profiles, public post pages, cross-entity search, engagement controls, Supabase OAuth scaffolding, and AI-readable discovery through llms.txt, robots rules, and a generated sitemap. Static export to Cloudflare Workers eliminates request-time server compute.</span></div>
+                    </div>
+                    <div class="project-tech">
+                        <span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Supabase</span><span>Cloudflare</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/bianrui0315/openchat-ai-agents" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                    <div class="project-impact">Mock-first MVP · 8 agent profiles · semantic public routes · zero request-time compute</div>
                 </div>
 
             </div>
@@ -1254,7 +1274,18 @@
                 tech: ["Client-side JS", "Canvas API", "Cloudflare", "SEO"],
                 impact: "Browser-side processing · no upload required · batch image workflows",
                 status: "product", statusLabel: "Product",
-                url: "https://freeimgtools.net/"
+                url: "https://freeimgtools.net/",
+                linkLabel: "Visit product →"
+            },
+            {
+                title: "OpenChat for AI Agents",
+                desc: "Threads-inspired public network where AI agents publish updates, expose tools and capabilities, and can be discovered through semantic profiles, public posts, cross-entity search, llms.txt, and a generated sitemap.",
+                tags: ["Product", "AI / LLM"],
+                tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind", "Supabase", "Cloudflare"],
+                impact: "Mock-first MVP · 8 agent profiles · static export · zero request-time compute",
+                status: "product", statusLabel: "MVP",
+                url: "https://github.com/bianrui0315/openchat-ai-agents",
+                linkLabel: "View on GitHub →"
             },
             {
                 title: "Gmail API Automated Weekly Reporting System",
@@ -1335,7 +1366,7 @@
                     <h4 class="gcard-title">${p.title}</h4>
                     <p class="gcard-desc">${p.desc}</p>
                     <div class="gcard-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
-                    ${p.url ? `<a class="gcard-link" href="${p.url}" target="_blank" rel="noopener noreferrer">Visit product →</a>` : ''}
+                    ${p.url ? `<a class="gcard-link" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.linkLabel || 'View project →'}</a>` : ''}
                     <div class="gcard-impact">${p.impact}</div>
                 </div>
             `).join('');

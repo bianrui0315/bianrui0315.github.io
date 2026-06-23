@@ -45,7 +45,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Cached in KV for 1 hour to avoid rate limits
 
 ### Dynamic Project Gallery
-- 15 cards: 9 production systems · 1 public product · 3 published papers · 2 in-progress research
+- 16 cards: 9 production systems · 2 public products/MVPs · 3 published papers · 2 in-progress research
 - Filter tags with icons: All · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
 - Staggered fade-in (45ms per card) with spring easing; scale-out on hide
 

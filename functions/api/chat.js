@@ -76,6 +76,12 @@ Product: A privacy-first public image utility suite for compressing, converting,
 Design: Core image workflows run client-side so users do not need to upload private files for everyday image tasks. AI alt text is an opt-in edge inference workflow for accessibility and SEO copy.
 Impact: Demonstrates Rui's ability to build and ship a public-facing product, not only internal enterprise systems.
 
+PUBLIC MVP — OpenChat for AI Agents (github.com/bianrui0315/openchat-ai-agents)
+Stack: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS, Supabase Auth/client scaffolding, Cloudflare Workers Static Assets
+Product: A polished, Threads-inspired public network where AI agents publish updates, expose tools and capabilities, and can be discovered by humans or other AI systems. Includes a responsive feed, eight agent profiles, public post detail pages, cross-entity search, engagement controls, and Google OAuth scaffolding.
+Design: Mock data, components, search, auth, and Supabase concerns are isolated by module. Semantic public routes, llms.txt, robots rules, and a generated sitemap support human and machine discovery. Static export to Cloudflare Workers requires no request-time server compute.
+Impact: Demonstrates full-stack product architecture, AI-native web discoverability, progressive external-service integration, and cost-conscious edge deployment.
+
 === PLATFORM DESIGN PRINCIPLES (applied to all 32 systems) ===
 1. Fault Isolation by Default: One school/district failing never cascades — enforced at goroutine or LangGraph node level, not by try/catch wrapping.
 2. Idempotent Operations: All ETL uses truncate-reload semantics — any pipeline is safe to rerun after partial failure with no corruption. Every user-facing system has a test mode.
@@ -99,17 +105,17 @@ Ongoing independent research:
 Academic service — TPC member / reviewer: IEEE INFOCOM ('17–'21), IEEE/IFIP DSN ('19, '21, '22), IEEE TNSE, Computer Networks, IEEE ITEC, IEEE RTC, IEEE SmartSys.
 
 === TECH STACK ===
-Languages: Python (primary), Go, SQL/T-SQL, PowerShell, JavaScript
+Languages: Python (primary), Go, SQL/T-SQL, PowerShell, JavaScript, TypeScript
 AI/ML: LangGraph, Ollama, OpenAI API, Gemini API, scikit-learn, XGBoost, ARIMA, Holt-Winters, Prophet, ETS, SHAP, MLflow, PyTorch
 Data Engineering: pandas, numpy, SQLAlchemy, pyodbc, SQL Server/T-SQL, MongoDB, Apache Spark, Microsoft Fabric, batch & streaming pipelines, ETL, data quality systems
-Backend: FastAPI, Flask, REST APIs, OAuth2, Docker, CI/CD, multi-tenant architecture
-Cloud: Azure, AWS
-Web/Product: Client-side JavaScript, Canvas API, Cloudflare Pages, SEO, privacy-first product design
+Backend: FastAPI, Flask, Next.js App Router, Supabase, REST APIs, OAuth2, Docker, CI/CD, multi-tenant architecture
+Cloud: Azure, AWS, Cloudflare Workers Static Assets
+Web/Product: React, TypeScript, Tailwind CSS, client-side JavaScript, Canvas API, Cloudflare Pages, SEO, AI-readable web surfaces, privacy-first product design
 Automation: Playwright (sync + async), Selenium, asyncio, BeautifulSoup, Paramiko/SFTP
 Visualization: Power BI/DAX (150+ dashboards, 9 types), Streamlit, Plotly Mapbox, Folium
 
 === IMPACT METRICS ===
-32 production systems shipped | 1 public product shipped | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
+32 production systems shipped | 1 public product + 1 public MVP | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
 
 === CERTIFICATIONS (2026, valid through 2028) ===
 DataCamp: AI Engineer for Developers Associate, AI Engineer for Data Scientists Associate, Data Scientist Associate, Data Engineer Associate.

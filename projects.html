@@ -8,20 +8,20 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Engineering Log — Rui Bian | AI & Data Engineering</title>
-    <meta name="description" content="Technical showcase by Rui Bian — production systems and public products spanning agentic AI orchestration, multi-model ML forecasting, ETL pipelines, compliance automation, browser automation, image tooling, and geospatial visualization.">
+    <meta name="description" content="Technical showcase by Rui Bian — production systems and public products spanning agentic AI orchestration, AI agent networks, multi-model ML forecasting, ETL pipelines, compliance automation, image tooling, and geospatial visualization.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://bianrui.net/projects.html">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Engineering Log — Rui Bian | AI & Data Engineering">
-    <meta property="og:description" content="Production systems and public products by Rui Bian: agentic AI orchestration, multi-model ML forecasting, ETL pipelines, compliance automation, image tooling, and geospatial visualization.">
+    <meta property="og:description" content="Production systems and public products by Rui Bian: agentic AI orchestration, AI agent networks, multi-model ML forecasting, ETL pipelines, compliance automation, and image tooling.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bianrui.net/projects.html">
     <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Engineering Log — Rui Bian | AI & Data Engineering">
-    <meta name="twitter:description" content="Production systems and public products by Rui Bian: agentic AI, ML forecasting, ETL pipelines, image tooling, and geospatial visualization.">
+    <meta name="twitter:description" content="Production systems and public products by Rui Bian: agentic AI, AI agent networks, ML forecasting, ETL pipelines, and image tooling.">
     <meta name="twitter:image" content="https://bianrui.net/assets/img/headshot.jpg">
 
     <!-- JSON-LD -->
@@ -293,7 +293,7 @@
                 <div class="ph-stat"><strong>25+</strong><span>Districts</span></div>
                 <div class="ph-stat"><strong>150+</strong><span>Dashboards</span></div>
                 <div class="ph-stat"><strong>6</strong><span>Domains</span></div>
-                <div class="ph-stat"><strong>1</strong><span>Public Product</span></div>
+                <div class="ph-stat"><strong>2</strong><span>Public Products</span></div>
             </div>
         </div>
     </header>
@@ -811,6 +811,21 @@
                         <div class="card-tech"><span>Client-side JavaScript</span><span>Canvas API</span><span>Cloudflare</span><span>Image formats</span><span>SEO</span><span>Product UX</span></div>
                         <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Visit product →</a>
                         <div class="card-impact">Privacy-first public image utility suite · compression · conversion · resizing · PDF workflows · AI alt text</div>
+                    </div>
+
+                    <div class="detail-card cat-ai" data-category="product">
+                        <div class="card-top"><span class="card-num">34</span><span class="project-category cat-ai">AI Product / MVP</span></div>
+                        <h3>OpenChat for AI Agents</h3>
+                        <p class="card-problem">AI agents need a public, crawlable network where humans and other AI systems can discover their identities, tools, capabilities, and activity instead of relying on isolated chat interfaces.</p>
+                        <ul class="card-approach">
+                            <li>Threads-inspired responsive feed with realistic agent posts, working engagement controls, and eight public profiles spanning research, coding, data, design, support, productivity, infrastructure, and security</li>
+                            <li>Cross-entity keyword search over names, handles, bios, capabilities, tools, tags, and post content; semantic agent and post routes remain crawlable without client-side rendering dependencies</li>
+                            <li>AI-native discovery surface through public <code>/llms.txt</code>, robots rules, and generated sitemap alongside Google OAuth and Supabase client/data-model scaffolding</li>
+                            <li>Mock-first architecture isolates data, rendering, search, auth, and Supabase concerns; static Next.js export deploys to Cloudflare Workers Static Assets with no request-time server compute</li>
+                        </ul>
+                        <div class="card-tech"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span><span>Supabase</span><span>Cloudflare Workers</span></div>
+                        <a class="project-link" href="https://github.com/bianrui0315/openchat-ai-agents" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                        <div class="card-impact">Mock-first MVP · 8 agent profiles · semantic public routes · AI-readable discovery · zero request-time compute</div>
                     </div>
 
                 </div>
