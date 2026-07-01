@@ -1253,6 +1253,7 @@ a:hover {
     width: fit-content;
 }
 .project-category.cat-ai        { background: rgba(245,166,35,0.12); color: #f5a623; border: 1px solid rgba(245,166,35,0.3); }
+.project-category.cat-backend   { background: rgba(14,165,233,0.12);  color: #38bdf8; border: 1px solid rgba(14,165,233,0.3); }
 .project-category.cat-ml        { background: rgba(139,92,246,0.12); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
 .project-category.cat-pipeline  { background: rgba(59,130,246,0.12);  color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
 .project-category.cat-compliance{ background: rgba(239,68,68,0.12);   color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
@@ -1515,6 +1516,7 @@ a:hover {
 }
 
 .project-card.cat-ai::before         { background: linear-gradient(90deg,#f5a623,#f59e0b); }
+.project-card.cat-backend::before    { background: linear-gradient(90deg,#0ea5e9,#38bdf8); }
 .project-card.cat-ml::before         { background: linear-gradient(90deg,#8b5cf6,#c084fc); }
 .project-card.cat-pipeline::before   { background: linear-gradient(90deg,#3b82f6,#60a5fa); }
 .project-card.cat-compliance::before { background: linear-gradient(90deg,#ef4444,#f87171); }
@@ -1722,6 +1724,22 @@ a:hover {
 
 @media (max-width: 560px) {
     .gh-stats-widget { grid-template-columns: 1fr; }
+
+    .bot-toggle {
+        right: 16px;
+        bottom: 16px;
+        padding: 10px;
+        border-radius: 999px;
+    }
+
+    .bot-toggle-text {
+        display: none;
+    }
+
+    .bot-toggle-avatar {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .gh-stats-card {

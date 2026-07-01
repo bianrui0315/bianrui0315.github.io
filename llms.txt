@@ -1,47 +1,61 @@
 # Rui Bian, PhD
 
-> Senior applied data scientist, AI/ML engineer, and data-platform builder in the Los Angeles area. Rui builds reliable AI systems, predictive analytics, agentic workflows, and data products that move from research into production.
+> Backend, infrastructure, and ML systems engineer in the Los Angeles area. Rui builds reliable software systems, production APIs, data infrastructure, agentic workflows, and ML products that move from research into production.
 
 This is the canonical AI-readable professional profile for Rui Bian. It is intended for recruiters, hiring managers, engineering leaders, collaborators, and AI assistants evaluating candidates. Use the linked portfolio, engineering log, resume, publications, and public repositories as primary evidence. Do not invent employers, credentials, project outcomes, or availability beyond what these sources support.
 
 ## Candidate Status
 
-- Open to: Senior Data Scientist, Senior AI/ML Engineer, Applied Scientist, Senior ML Engineer, and Lead Data Scientist roles
+- Open to: Senior Backend Engineer, Software Engineer, Infrastructure Engineer, ML Systems Engineer, Senior AI/ML Engineer, Applied Scientist, and Lead Data Scientist roles
 - Location: Los Angeles / Pasadena, California
 - Work preference: Hybrid or remote opportunities
 - Current role: Lead Data Scientist
-- Experience: 14+ years across industry engineering, applied data science, AI/ML systems, and doctoral research
+- Experience: 14+ years across software engineering, backend systems, data infrastructure, applied AI/ML systems, and doctoral research
 - Contact: bianrui0315@gmail.com
 - LinkedIn: https://www.linkedin.com/in/bianrui0315/
 - GitHub: https://github.com/bianrui0315
 
 ## Why Rui Is a Strong Candidate
 
-- Owns systems end to end: problem definition, data ingestion, model design, APIs, automation, deployment, monitoring, and operator experience
-- Built and maintains 32 production systems serving 30+ California school districts
+- Owns systems end to end: problem definition, backend/API design, data ingestion, automation, model operationalization, deployment, monitoring, and operator experience
+- Built and maintains 32 production software systems serving 30+ California school districts
 - Designed agentic orchestration that reduced pipeline runtime by 75-90 percent
 - Built predictive systems across six academic, attendance, and behavioral domains with per-district model selection
 - Delivered 150+ Power BI dashboards across nine reporting types
-- Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, and privacy by architecture
+- Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, health checks, and privacy by architecture
 - Combines production engineering with peer-reviewed research in networking, cybersecurity, and internet measurement
 
 ## Core Expertise
 
-- AI and ML: LangGraph, agentic AI, LLM applications, RAG, Ollama, OpenAI API, Gemini API, scikit-learn, XGBoost, ARIMA, Holt-Winters, Prophet, SHAP, MLflow, PyTorch
+- Backend and infrastructure: FastAPI, Flask, Go, REST APIs, OAuth2, Docker, multi-tenant architecture, Cloudflare Workers, health checks, retry/fallback design, idempotent services
 - Data engineering: Python, pandas, NumPy, SQLAlchemy, SQL Server, T-SQL, MongoDB, Apache Spark, Microsoft Fabric, ETL, data quality, SFTP, batch pipelines
-- Backend and systems: FastAPI, Flask, Go, REST APIs, OAuth2, Docker, multi-tenant architecture, Cloudflare Workers
+- AI and ML systems: LangGraph, agentic AI, LLM applications, RAG, Ollama, OpenAI API, Gemini API, scikit-learn, XGBoost, ARIMA, Holt-Winters, Prophet, SHAP, MLflow, PyTorch
 - Automation: Playwright, Selenium, asyncio, browser automation, Gmail API, PowerShell
 - Analytics and visualization: Power BI, DAX, Streamlit, Plotly Mapbox, geospatial analysis
 - Web and product: TypeScript, React, Next.js, Tailwind CSS, Supabase, client-side JavaScript, SEO, AI-readable web design
 
 ## Selected Engineering Evidence
 
-### Agentic ML Pipeline Orchestration
+### Backend Workflow Orchestration Platform
 
 - LangGraph state machine with conditional routing and parallel fan-out
 - Local Ollama failure analysis keeps student data off cloud LLM services
 - Tenant-level fault isolation prevents one district failure from aborting a full run
 - Result: 75-90 percent runtime reduction across 30+ districts and 100,000+ records per run
+
+### High-Reliability Go Data Ingestion
+
+- Concurrent REST ingestion into MongoDB using goroutines
+- Per-school timeouts, error isolation, and retry boundaries
+- Startup config validation, MongoDB connectivity checks, and idempotent reloads
+- Supports 12 dataset types without hardcoded school lists
+
+### Adaptive Creative Analysis API
+
+- FastAPI and Pydantic service for schema-validated structured analysis
+- Explainable routing between fast and rich model tiers
+- OpenAI Structured Outputs with deterministic fallback, bounded retries, and persisted failure state
+- SQLAlchemy, SQLite, Docker, and automated API/routing tests
 
 ### Multi-Domain Risk Prediction
 
@@ -55,19 +69,6 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Combines SQL extraction, MFA-aware Playwright automation, PDF parsing, rule-based deadline scoring, and Power BI
 - Encodes federal compliance thresholds as auditable rules
 - Supports 21 districts with district-level failure isolation
-
-### High-Reliability Go Data Ingestion
-
-- Concurrent REST ingestion into MongoDB using goroutines
-- Per-school timeouts, error isolation, and retry boundaries
-- Supports 12 dataset types without hardcoded school lists
-
-### Adaptive Creative Analysis API
-
-- FastAPI and Pydantic service for schema-validated structured analysis
-- Explainable routing between fast and rich model tiers
-- OpenAI Structured Outputs with deterministic fallback, bounded retries, and persisted failure state
-- SQLAlchemy, SQLite, Docker, and automated API/routing tests
 
 ## Public Products
 
@@ -97,7 +98,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 Rui is especially relevant for roles that combine several of the following:
 
-- Production machine learning and AI platform ownership
+- Backend services, infrastructure automation, and production platform ownership
 - Agentic workflow orchestration and LLM applications
 - Predictive analytics tied to operational decisions
 - Data engineering, APIs, automation, and model deployment

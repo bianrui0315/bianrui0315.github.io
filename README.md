@@ -1,6 +1,6 @@
 # bianrui.net — Portfolio Site
 
-Personal portfolio for **Rui Bian, PhD** — Senior Applied Data Scientist & AI/ML Engineer.  
+Personal portfolio for **Rui Bian, PhD** — Backend, Infrastructure & ML Systems Engineer.
 Deployed at [bianrui.net](https://bianrui.net).
 
 ---
@@ -50,8 +50,8 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Cached in KV for 1 hour to avoid rate limits
 
 ### Dynamic Project Gallery
-- 17 cards: 9 production systems · 1 backend project · 2 public products/MVPs · 3 published papers · 2 in-progress research
-- Filter tags with icons: All · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
+- 17 cards: backend systems · production ML platforms · automation infrastructure · public products/MVPs · published papers · in-progress research
+- Filter tags with icons: All · Backend/Infrastructure · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
 - Staggered fade-in (45ms per card) with spring easing; scale-out on hide
 
 ---

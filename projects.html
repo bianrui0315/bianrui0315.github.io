@@ -8,21 +8,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
-    <title>Engineering Log — Rui Bian | AI & Data Engineering</title>
-    <meta name="description" content="Technical showcase by Rui Bian — production systems and public products spanning agentic AI orchestration, AI agent networks, multi-model ML forecasting, ETL pipelines, compliance automation, image tooling, and geospatial visualization.">
+    <title>Engineering Log — Rui Bian | Backend, Infrastructure & Software Systems</title>
+    <meta name="description" content="Technical showcase by Rui Bian — backend services, infrastructure automation, Go ingestion systems, FastAPI analysis APIs, production ML platforms, ETL pipelines, and public software products.">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://bianrui.net/projects.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Engineering Log — Rui Bian | AI & Data Engineering">
-    <meta property="og:description" content="Production systems and public products by Rui Bian: agentic AI orchestration, AI agent networks, multi-model ML forecasting, ETL pipelines, compliance automation, and image tooling.">
+    <meta property="og:title" content="Engineering Log — Rui Bian | Backend, Infrastructure & Software Systems">
+    <meta property="og:description" content="Production systems and public products by Rui Bian: backend APIs, Go ingestion services, infrastructure automation, agentic orchestration, ETL pipelines, and image tooling.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bianrui.net/projects.html">
     <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Engineering Log — Rui Bian | AI & Data Engineering">
-    <meta name="twitter:description" content="Production systems and public products by Rui Bian: agentic AI, AI agent networks, ML forecasting, ETL pipelines, and image tooling.">
+    <meta name="twitter:title" content="Engineering Log — Rui Bian | Backend, Infrastructure & Software Systems">
+    <meta name="twitter:description" content="Production systems and public products by Rui Bian: backend APIs, Go services, infrastructure automation, ML platforms, and public software tools.">
     <meta name="twitter:image" content="https://bianrui.net/assets/img/headshot.jpg">
 
     <!-- JSON-LD -->
@@ -31,7 +31,7 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Engineering Log — Rui Bian",
-      "description": "Technical showcase of production AI systems, data engineering systems, and public products built by Rui Bian.",
+      "description": "Technical showcase of backend services, infrastructure automation, production ML systems, data engineering systems, and public products built by Rui Bian.",
       "url": "https://bianrui.net/projects.html",
       "author": {
         "@type": "Person",
@@ -156,6 +156,7 @@
             border-radius: 16px 16px 0 0;
         }
         .detail-card.cat-ai::before         { background: linear-gradient(90deg,#f5a623,#f59e0b); }
+        .detail-card.cat-backend::before    { background: linear-gradient(90deg,#0ea5e9,#38bdf8); }
         .detail-card.cat-ml::before         { background: linear-gradient(90deg,#8b5cf6,#c084fc); }
         .detail-card.cat-pipeline::before   { background: linear-gradient(90deg,#3b82f6,#60a5fa); }
         .detail-card.cat-compliance::before { background: linear-gradient(90deg,#ef4444,#f87171); }
@@ -289,7 +290,7 @@
     <header class="page-header">
         <div class="container">
             <h1 class="gradient-text">Engineering Log</h1>
-            <p>Production systems and public products — agentic AI orchestration, multi-model ML forecasting, full-lifecycle ETL, compliance automation, browser automation, privacy-first image tooling, and geospatial visualization.</p>
+            <p>Backend services, infrastructure automation, production ML platforms, and public software products — Go ingestion systems, FastAPI APIs, fault-isolated pipelines, agentic orchestration, and deployment-ready tooling.</p>
             <div class="page-header-stats">
                 <div class="ph-stat"><strong>25+</strong><span>Districts</span></div>
                 <div class="ph-stat"><strong>150+</strong><span>Dashboards</span></div>
@@ -303,12 +304,12 @@
     <div class="filter-bar">
         <div class="container">
             <button class="filter-btn active"   onclick="filter('all',this)">All Systems</button>
+            <button class="filter-btn"           onclick="filter('software',this)">Infrastructure &amp; Backend</button>
             <button class="filter-btn"           onclick="filter('ai',this)">AI &amp; ML</button>
             <button class="filter-btn"           onclick="filter('engineering',this)">Data Engineering</button>
             <button class="filter-btn"           onclick="filter('compliance',this)">Compliance &amp; Analytics</button>
             <button class="filter-btn"           onclick="filter('automation',this)">Automation &amp; Web</button>
             <button class="filter-btn"           onclick="filter('bi',this)">Business Intelligence</button>
-            <button class="filter-btn"           onclick="filter('software',this)">Software Engineering</button>
             <button class="filter-btn"           onclick="filter('product',this)">Products</button>
         </div>
     </div>
@@ -757,13 +758,13 @@
                 </div>
             </div>
 
-            <!-- ── Software Engineering ──────────────────────────── -->
+            <!-- ── Infrastructure & Backend Engineering ──────────── -->
             <div class="category-section" id="sec-software">
-                <div class="category-label"><i class="fa-brands fa-golang" style="color:#818cf8"></i> Software Engineering</div>
+                <div class="category-label"><i class="fa-solid fa-network-wired" style="color:#38bdf8"></i> Infrastructure, Backend &amp; Software Engineering</div>
                 <div class="detail-grid">
 
-                    <div class="detail-card cat-go" data-category="software">
-                        <div class="card-top"><span class="card-num">31</span><span class="project-category cat-go">Go / Systems</span></div>
+                    <div class="detail-card cat-backend" data-category="software">
+                        <div class="card-top"><span class="card-num">31</span><span class="project-category cat-backend">Go / Backend Systems</span></div>
                         <h3>SBCUSD Aeries API Go Client</h3>
                         <p class="card-problem">12 Aeries SIS dataset types needed to be ingested into MongoDB for analytics — high-volume iteration over all schools required reliable per-entity error recovery that Python threading made complex.</p>
                         <ul class="card-approach">
@@ -777,8 +778,8 @@
                         <div class="card-impact">12 dataset types · dynamic school classification · zero maintenance · compiled single binary</div>
                     </div>
 
-                    <div class="detail-card cat-viz" data-category="software">
-                        <div class="card-top"><span class="card-num">32</span><span class="project-category cat-viz">Web App</span></div>
+                    <div class="detail-card cat-backend" data-category="software">
+                        <div class="card-top"><span class="card-num">32</span><span class="project-category cat-backend">Backend-Backed Web App</span></div>
                         <h3>California School Radar Map</h3>
                         <p class="card-problem">Administrators had no interactive way to find and compare nearby schools on multiple performance indicators geographically — static reports required a GIS analyst to produce and were instantly outdated.</p>
                         <ul class="card-approach">
@@ -791,8 +792,8 @@
                         <div class="card-impact">10,000+ California schools mapped · live proximity filtering · sub-second performance</div>
                     </div>
 
-                    <div class="detail-card cat-ai" data-category="software">
-                        <div class="card-top"><span class="card-num">33</span><span class="project-category cat-ai">AI / Backend API</span></div>
+                    <div class="detail-card cat-backend" data-category="software">
+                        <div class="card-top"><span class="card-num">33</span><span class="project-category cat-backend">FastAPI Backend API</span></div>
                         <h3>Adaptive Creative Analysis API</h3>
                         <p class="card-problem">A small creative team needed consistent, structured review of incoming submissions without coupling its workflow to one model, one latency/cost tier, or an unreliable external provider.</p>
                         <ul class="card-approach">
