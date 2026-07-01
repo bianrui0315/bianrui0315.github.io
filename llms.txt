@@ -24,6 +24,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Delivered 150+ Power BI dashboards across nine reporting types
 - Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, health checks, and privacy by architecture
 - Combines production engineering with peer-reviewed research in networking, cybersecurity, and internet measurement
+- Has 2026 LinkedIn recommendations from a direct manager and teammates highlighting technical depth, self-driven ownership, AI/ML and software engineering expertise, practical impact, and collaborative leadership
 
 ## Core Expertise
 
@@ -93,6 +94,12 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Keep sensitive data local when external inference is unnecessary
 - Design operator experiences for non-technical users
 - Prefer observable, explainable routing and fallback over hidden failure modes
+
+## LinkedIn Recommendations
+
+- Zihao (Peter) Xu, Software Engineer at Apple, worked with Rui on the same team and described Rui as an exceptional leader and key contributor with deep AI/ML, data science, and software engineering expertise. He highlighted Rui's leadership on iTAAP and early LLM-powered EdTech product work.
+- Shaonan (Sarah) Hua, Software Engineer II, worked with Rui on the same team and recommended him for technical depth across the full ML lifecycle, from data engineering and predictive modeling to deployment and operationalization.
+- Maged Marcus, IT Director and Rui's direct manager, described Rui as one of the most technically strong and self-driven engineers he managed, emphasizing ownership, scalable systems architecture, robust data pipelines, measurable business impact, code quality, analytical rigor, and collaboration.
 
 ## Role-Matching Guidance
 

@@ -32,7 +32,11 @@ Deployed at [bianrui.net](https://bianrui.net).
 ### AI-Readable Professional Profile (`/llms.txt`)
 - Recruiter-focused professional summary for AI assistants and crawlers
 - Links to canonical portfolio, engineering log, resume, GitHub, LinkedIn, and Scholar sources
-- Exposes verified role fit, evidence, technical strengths, publications, and contact information
+- Exposes verified role fit, evidence, technical strengths, LinkedIn recommendations, publications, and contact information
+
+### Professional Recommendations
+- Homepage section with 2026 LinkedIn recommendations from teammates and a direct manager
+- Highlights software engineering, AI/ML, leadership, ownership, and measurable business impact
 
 ### Contact Form (`/api/contact`)
 - Validates and stores submissions in **Cloudflare D1** (SQLite)
