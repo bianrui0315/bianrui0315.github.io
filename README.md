@@ -1,6 +1,6 @@
 # bianrui.net — Portfolio Site
 
-Personal portfolio for **Rui Bian, PhD** — Backend, Infrastructure & ML Systems Engineer.
+Personal portfolio for **Rui Bian, PhD** — incoming Founding AI & Data Engineer.
 Deployed at [bianrui.net](https://bianrui.net).
 
 ---
