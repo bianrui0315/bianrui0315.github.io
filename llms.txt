@@ -7,9 +7,9 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 ## Candidate Status
 
 - Incoming role: Founding AI and Data Engineer
-- Expected start date: August 3, 2026
+- Start timing: starting soon
 - Professional focus: AI-powered data software, data platforms, production ML systems, backend APIs, and intelligent workflow automation
-- Current role before transition: Lead Data Scientist
+- Most recent role before transition: Lead Data Scientist, ended June 2026
 - Experience: 14+ years across AI/data software, backend systems, data infrastructure, applied AI/ML systems, and doctoral research
 - Contact: bianrui0315@gmail.com
 - LinkedIn: https://www.linkedin.com/in/bianrui0315/
@@ -21,7 +21,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Built and maintains 32 production AI, data, and automation software systems serving 30+ California school districts
 - Designed agentic orchestration that reduced pipeline runtime by 75-90 percent
 - Built predictive systems across six academic, attendance, and behavioral domains with per-district model selection
-- Incoming Founding AI and Data Engineer, expected to start August 3, 2026
+- Incoming Founding AI and Data Engineer, starting soon
 - Delivered 150+ Power BI dashboards across nine reporting types
 - Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, health checks, and privacy by architecture
 - Combines production engineering with peer-reviewed research in networking, cybersecurity, and internet measurement
