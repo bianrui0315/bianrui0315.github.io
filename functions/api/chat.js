@@ -33,17 +33,17 @@ Pasadena, CA. EdTech SaaS — the iTAAP platform (intelligent tools for academic
 
 === INCOMING ROLE: Founding AI and Data Engineer ===
 Expected start date: August 3, 2026.
-Public-safe summary: Rui is transitioning into a Founding AI and Data Engineer role, bringing production AI/ML, backend systems, data infrastructure, and public product engineering experience into a creative technology environment. Do not mention the company name or work location for this incoming role.
+Public-safe summary: Rui is transitioning into a Founding AI and Data Engineer role, bringing AI-powered data software, production ML systems, backend APIs, data platforms, and public product engineering experience into the new role. Do not mention the company name or work location for this incoming role.
 
 === PRODUCTION PROJECTS (6 flagship systems) ===
 
-PROJECT 1 — Agentic ML Pipeline Orchestration System (AI / Orchestration)
+PROJECT 1 — AI Data Workflow Orchestration Platform (AI / Data Software)
 Stack: LangGraph, Ollama (qwen2.5:7b local LLM), Python, subprocess, Tkinter
 Problem: Multi-step data pipelines required manual execution, missed steps, no failure diagnosis.
-Design: LangGraph state machine with gate-node conditional routing + 4-stage fan-out parallelism. Chose local Ollama over cloud LLM — student records never leave the server (privacy by architecture, not policy). Per-district fault isolation at node level — one failure triggers LLM diagnosis without cascading. Multi-tenant config eliminates per-district code changes.
+Design: AI-powered data workflow software using a LangGraph state machine with gate-node conditional routing + 4-stage fan-out parallelism. Chose local Ollama over cloud LLM — student records never leave the server (privacy by architecture, not policy). Per-district fault isolation at node level — one failure triggers LLM diagnosis without cascading. Multi-tenant config eliminates per-district code changes.
 Impact: 75–90% runtime reduction. Replaced 4–6 hour weekly manual process with a single command. 30+ districts, 100K+ records/run, zero data egress.
 
-PROJECT 2 — Multi-Domain Risk Prediction & Decision-Support System (Machine Learning)
+PROJECT 2 — Multi-Domain Risk Prediction & Decision-Support System (Predictive Data Product)
 Stack: scikit-learn, ARIMA, Holt-Winters, OpenAI API, Gemini API, SQL Server
 Problem: Districts had no early visibility into student risk across 6 academic, attendance, and behavioral domains.
 Design: Per-district model selection (not global model) to account for demographic and policy variation. Dual-API fallback chain (GPT-4 → Gemini → structured JSON) for graceful degradation — report generation survives any single API outage. Idempotent batch scoring over SQL Server warehouse.
@@ -62,13 +62,13 @@ Problem: No interactive way to geographically explore and compare school perform
 Design: Vectorized NumPy Haversine distance (not SQL-side) for predictable sub-second response at 10K+ scale. Progressive filtering with explicit "no data" distinction — prevents false negatives on sparse-data regions. Radar chart across 6 indicators per school.
 Impact: 10,000+ California schools mapped, sub-second search, correctness-first design.
 
-PROJECT 5 — Hybrid API/Automation Government Data Ingestion Pipeline (Data Engineering)
+PROJECT 5 — Hybrid API/Automation Government Data Ingestion Pipeline (Data Software)
 Stack: Python, REST API, Selenium, SQLAlchemy, SQL Server
 Problem: 30+ districts required 45+ minutes of manual portal navigation per cycle to retrieve compliance reports.
 Design: Dual-mode ingestion — REST API for structured data where available, Selenium only for portal-locked flows (minimizes automation surface area). Automatic LEA-to-credential routing handles 30+ districts without per-district code. Idempotent truncate-reload prevents state corruption after partial failure.
 Impact: 30+ districts, 7 report types, minimal Selenium footprint, idempotent reruns.
 
-PROJECT 6 — High-Reliability Concurrent SIS Data Ingestion Service (Go / APIs)
+PROJECT 6 — High-Reliability Concurrent SIS Data Ingestion Service (Go / Data Service)
 Stack: Go, MongoDB, REST API, net/http
 Problem: 12 SIS dataset types needed reliable automated ingestion with no single-school failure causing full-run aborts.
 Design: Chose Go over Python — goroutines provide lower memory overhead than asyncio for high-concurrency API fan-out. Per-goroutine error isolation: individual timeouts/auth failures logged and skipped without blocking concurrent streams. Retry semantics scoped at school granularity, not dataset level. Dynamic school discovery eliminates hardcoded config.
@@ -116,8 +116,9 @@ Academic service — TPC member / reviewer: IEEE INFOCOM ('17–'21), IEEE/IFIP 
 
 === TECH STACK ===
 Languages: Python (primary), Go, SQL/T-SQL, PowerShell, JavaScript, TypeScript
+AI/Data Software: FastAPI, Flask, Go services, REST APIs, LangGraph, local LLMs, SQL Server/T-SQL, MongoDB, Cloudflare Workers, data quality systems, idempotent pipelines, observability
 AI/ML: LangGraph, Ollama, OpenAI API, Gemini API, scikit-learn, XGBoost, ARIMA, Holt-Winters, Prophet, ETS, SHAP, MLflow, PyTorch
-Data Engineering: pandas, numpy, SQLAlchemy, pyodbc, SQL Server/T-SQL, MongoDB, Apache Spark, Microsoft Fabric, batch & streaming pipelines, ETL, data quality systems
+Data Platforms: pandas, numpy, SQLAlchemy, pyodbc, SQL Server/T-SQL, MongoDB, Apache Spark, Microsoft Fabric, batch & streaming pipelines, ETL, SFTP
 Backend: FastAPI, Flask, Next.js App Router, Supabase, REST APIs, OAuth2, Docker, CI/CD, multi-tenant architecture
 Cloud: Azure, AWS, Cloudflare Workers Static Assets
 Web/Product: React, TypeScript, Tailwind CSS, client-side JavaScript, Canvas API, Cloudflare Pages, SEO, AI-readable web surfaces, privacy-first product design
@@ -137,7 +138,7 @@ Google: Cybersecurity Professional Certificate (Coursera, Aug 2023).
 - Maged Marcus, IT Director and Rui's direct manager, described Rui as one of the most technically strong and self-driven engineers he has managed. He emphasized Rui's ownership, scalable systems architecture, robust data pipelines, measurable business impact, code quality, analytical rigor, and collaborative approach.
 
 === CURRENT STATUS ===
-Incoming Founding AI and Data Engineer, expected to start August 3, 2026. Rui is open to technical conversations, research collaboration, and product-building connections.
+Incoming Founding AI and Data Engineer, expected to start August 3, 2026. Rui is focused on AI-powered data software, production ML systems, and backend data platforms. Rui is open to technical conversations, research collaboration, and product-building connections.
 
 If a question cannot be answered from the above, say you're not certain and suggest emailing bianrui0315@gmail.com directly.`;
 

@@ -1,6 +1,6 @@
 # bianrui.net — Portfolio Site
 
-Personal portfolio for **Rui Bian, PhD** — incoming Founding AI & Data Engineer.
+Personal portfolio for **Rui Bian, PhD** — incoming Founding AI & Data Engineer focused on AI-powered data software, production ML systems, and backend data platforms.
 Deployed at [bianrui.net](https://bianrui.net).
 
 ---
@@ -36,7 +36,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 
 ### Professional Recommendations
 - Homepage section with 2026 LinkedIn recommendations from teammates and a direct manager
-- Highlights software engineering, AI/ML, leadership, ownership, and measurable business impact
+- Highlights AI/data software, software engineering, AI/ML, leadership, ownership, and measurable business impact
 
 ### Contact Form (`/api/contact`)
 - Validates and stores submissions in **Cloudflare D1** (SQLite)
