@@ -24,7 +24,7 @@ Total experience: 14+ years (7+ years industry + 5-year PhD + prior engineering 
 PhD, Computer Engineering — University of Delaware (2017–2022), GPA 3.96/4.0. Dissertation on internet-scale measurement, cybersecurity, and distributed systems.
 B.S., Engineering — University of Science and Technology of China (USTC).
 
-=== MOST RECENT ROLE: Lead Data Scientist, Expatiate Communications (2023–June 2026) ===
+=== MOST RECENT ROLE: Lead Data Scientist, Expatiate Communications (December 2022–June 2026) ===
 Pasadena, CA. EdTech SaaS — the iTAAP platform (intelligent tools for academic achievement and performance).
 - Sole architect, developer, and maintainer of 32 production systems serving 30+ California school districts.
 - Standardized district onboarding to configuration files — reduced new-district setup from weeks of engineering work to hours.
