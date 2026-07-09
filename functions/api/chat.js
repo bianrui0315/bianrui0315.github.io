@@ -22,7 +22,9 @@ Total experience: 14+ years across industry engineering, doctoral research, and 
 
 === EDUCATION ===
 PhD researcher, Computer Engineering — University of Delaware (2015–2022), GPA 3.96/4.0. Dissertation on internet-scale measurement, cybersecurity, and distributed systems.
+Master research in Engineering — University of Science and Technology of China (USTC).
 B.S., Engineering — University of Science and Technology of China (USTC).
+Research internship — Changchun Institute of Optics, Fine Mechanics and Physics, Chinese Academy of Sciences.
 
 === MOST RECENT ROLE: Lead Data Scientist, Expatiate Communications (December 2022–June 2026) ===
 Pasadena, CA. EdTech SaaS — the iTAAP platform (intelligent tools for academic achievement and performance).
@@ -133,6 +135,7 @@ DataCamp: AI Engineer for Developers Associate, AI Engineer for Data Scientists 
 Google: Cybersecurity Professional Certificate (Coursera, Aug 2023).
 
 === LINKEDIN RECOMMENDATIONS (2026) ===
+- Haining Wang, Professor at Virginia Tech and Rui's PhD co-advisor, managed Rui directly. He strongly recommended Rui for IT and cybersecurity roles, highlighting exceptional analytical skills, relentless attention to detail, practical problem-solving across backend services, infrastructure automation, and production ML platforms, and Rui's ability to document and communicate complex IT tasks to both technical and non-technical stakeholders.
 - Zihao (Peter) Xu, Software Engineer at Apple, worked with Rui on the same team. He described Rui as an exceptional leader and key contributor with deep AI/ML, data science, and software engineering expertise. He highlighted Rui's leadership on iTAAP and early initiative integrating LLMs into EdTech products.
 - Shaonan (Sarah) Hua, Software Engineer II, worked with Rui on the same team. She recommended Rui for technical depth across the full ML lifecycle, spanning data engineering, predictive modeling, deployment, and operationalization, and noted his ability to drive innovation and business impact.
 - Maged Marcus, IT Director and Rui's direct manager, described Rui as one of the most technically strong and self-driven engineers he has managed. He emphasized Rui's ownership, scalable systems architecture, robust data pipelines, measurable business impact, code quality, analytical rigor, and collaborative approach.

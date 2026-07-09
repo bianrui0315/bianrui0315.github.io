@@ -35,7 +35,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Exposes verified role fit, evidence, technical strengths, LinkedIn recommendations, publications, and contact information
 
 ### Professional Recommendations
-- Homepage section with 2026 LinkedIn recommendations from teammates and a direct manager
+- Homepage section with 2026 LinkedIn recommendations from a PhD co-advisor, teammates, and a direct manager
 - Highlights AI/data software, software engineering, AI/ML, leadership, ownership, and measurable business impact
 
 ### Contact Form (`/api/contact`)

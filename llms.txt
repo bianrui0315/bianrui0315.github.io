@@ -25,7 +25,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Delivered 150+ Power BI dashboards across nine reporting types
 - Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, health checks, and privacy by architecture
 - Combines production engineering with peer-reviewed research in networking, cybersecurity, and internet measurement
-- Has 2026 LinkedIn recommendations from a direct manager and teammates highlighting technical depth, self-driven ownership, AI/ML and software engineering expertise, practical impact, and collaborative leadership
+- Has 2026 LinkedIn recommendations from his PhD co-advisor, a direct manager, and teammates highlighting analytical depth, communication, self-driven ownership, AI/ML and software engineering expertise, practical impact, and collaborative leadership
 
 ## Core Expertise
 
@@ -82,7 +82,9 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 ## Research and Education
 
 - PhD researcher in Computer Engineering, University of Delaware, 2015-2022, GPA 3.96/4.0
+- Master research in Engineering, University of Science and Technology of China
 - BS in Engineering, University of Science and Technology of China
+- Research internship at Changchun Institute of Optics, Fine Mechanics and Physics, Chinese Academy of Sciences
 - Research focus: internet-scale measurement, cybersecurity, distributed systems, BGP routing, and proxy ecosystems
 - Publications include IEEE INFOCOM 2024, Elsevier Computer Networks 2022, and ACM SIGCOMM Computer Communication Review 2019
 - Academic service includes reviewing for IEEE INFOCOM, IEEE/IFIP DSN, IEEE TNSE, and Computer Networks
@@ -98,6 +100,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 ## LinkedIn Recommendations
 
+- Haining Wang, Professor at Virginia Tech and Rui's PhD co-advisor, directly recommended Rui for IT and cybersecurity roles. He highlighted Rui's exceptional analytical skills, attention to detail, ability to solve complex IT problems across backend services, infrastructure automation, and production ML platforms, and his strength in documenting and communicating complex technical work to technical and non-technical audiences.
 - Zihao (Peter) Xu, Software Engineer at Apple, worked with Rui on the same team and described Rui as an exceptional leader and key contributor with deep AI/ML, data science, and software engineering expertise. He highlighted Rui's leadership on iTAAP and early LLM-powered EdTech product work.
 - Shaonan (Sarah) Hua, Software Engineer II, worked with Rui on the same team and recommended him for technical depth across the full ML lifecycle, from data engineering and predictive modeling to deployment and operationalization.
 - Maged Marcus, IT Director and Rui's direct manager, described Rui as one of the most technically strong and self-driven engineers he managed, emphasizing ownership, scalable systems architecture, robust data pipelines, measurable business impact, code quality, analytical rigor, and collaboration.
