@@ -81,7 +81,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 ## Research and Education
 
-- PhD in Computer Engineering, University of Delaware, 2017-2022, GPA 3.96/4.0
+- PhD researcher in Computer Engineering, University of Delaware, 2015-2022, GPA 3.96/4.0
 - BS in Engineering, University of Science and Technology of China
 - Research focus: internet-scale measurement, cybersecurity, distributed systems, BGP routing, and proxy ecosystems
 - Publications include IEEE INFOCOM 2024, Elsevier Computer Networks 2022, and ACM SIGCOMM Computer Communication Review 2019

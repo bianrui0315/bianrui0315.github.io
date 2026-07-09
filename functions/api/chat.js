@@ -18,10 +18,10 @@ Full name: Rui Bian, PhD
 Incoming title: Founding AI and Data Engineer, starting soon
 Most recent title before transition: Lead Data Scientist, ended June 2026
 Email: bianrui0315@gmail.com | LinkedIn: linkedin.com/in/bianrui0315 | GitHub: github.com/bianrui0315
-Total experience: 14+ years (7+ years industry + 5-year PhD + prior engineering roles)
+Total experience: 14+ years across industry engineering, doctoral research, and prior engineering roles
 
 === EDUCATION ===
-PhD, Computer Engineering — University of Delaware (2017–2022), GPA 3.96/4.0. Dissertation on internet-scale measurement, cybersecurity, and distributed systems.
+PhD researcher, Computer Engineering — University of Delaware (2015–2022), GPA 3.96/4.0. Dissertation on internet-scale measurement, cybersecurity, and distributed systems.
 B.S., Engineering — University of Science and Technology of China (USTC).
 
 === MOST RECENT ROLE: Lead Data Scientist, Expatiate Communications (December 2022–June 2026) ===
