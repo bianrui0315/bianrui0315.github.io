@@ -53,9 +53,9 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Returns top languages (bar chart) + recent public commits
 - Cached in KV for 1 hour to avoid rate limits
 
-### Private Visitor IP Viewer (`/admin/visitors.html`)
+### Private Visitor Dashboard (`/admin/visitors.html`)
 - Records HTML page visits through Cloudflare Pages middleware into D1
-- `GET /api/visitor-ips` returns the latest 10 visitor records with IP, location, time, visited path, and browser user agent
+- `GET /api/visitor-ips` returns the latest 10 visitor records plus retained-window summary stats, page/location/browser/device rankings, hourly trend data, and generated insights
 - Protected by `VISITOR_STATS_TOKEN`; do not expose this token publicly
 
 ### Dynamic Project Gallery
@@ -137,9 +137,9 @@ LIMIT 10;
 │       ├── contact.js          # POST /api/contact — contact form + email
 │       ├── download-resume.js  # GET  /api/download-resume — tracking + redirect
 │       ├── github-stats.js     # GET  /api/github-stats — GitHub API proxy
-│       └── visitor-ips.js      # GET  /api/visitor-ips — private visitor IP list
+│       └── visitor-ips.js      # GET  /api/visitor-ips — private visitor dashboard data
 ├── admin/
-│   └── visitors.html           # Private visitor IP viewer
+│   └── visitors.html           # Private visitor analytics dashboard
 └── assets/
     ├── cv/                     # Resume PDFs
     └── img/                    # Images

@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Recent Visitors | Rui Bian Admin</title>
+    <title>Visitor Dashboard | Rui Bian Admin</title>
     <style>
         :root {
             color-scheme: dark;
             --bg: #0e1117;
             --panel: #161b22;
+            --panel-soft: #111820;
             --border: #30363d;
             --text: #e6edf3;
             --muted: #8b949e;
             --accent: #f5a623;
+            --accent-soft: rgba(245, 166, 35, 0.18);
             --danger: #ff7b72;
+            --good: #3fb950;
         }
 
         * {
@@ -31,24 +34,43 @@
         }
 
         main {
-            width: min(1100px, calc(100vw - 32px));
+            width: min(1180px, calc(100vw - 32px));
             margin: 0 auto;
-            padding: 48px 0;
+            padding: 42px 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
         }
 
         h1 {
-            margin: 0 0 8px;
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            letter-spacing: 0;
+        }
+
+        h2 {
+            font-size: 1rem;
+            margin-bottom: 16px;
         }
 
         p {
-            margin: 0;
             color: var(--muted);
             line-height: 1.6;
         }
 
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
         .panel {
-            margin-top: 28px;
+            margin-top: 24px;
             padding: 20px;
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -60,10 +82,11 @@
             gap: 12px;
             flex-wrap: wrap;
             align-items: center;
+            width: min(100%, 560px);
         }
 
         input {
-            min-width: min(100%, 360px);
+            min-width: min(100%, 320px);
             flex: 1;
             padding: 12px 14px;
             border: 1px solid var(--border);
@@ -85,17 +108,148 @@
         }
 
         .status {
-            margin-top: 12px;
+            width: 100%;
             min-height: 1.4em;
             color: var(--muted);
+            font-size: 0.9rem;
         }
 
         .status.error {
             color: var(--danger);
         }
 
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.visible {
+            display: block;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .metric-card {
+            min-height: 118px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .metric-card span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .metric-card strong {
+            display: block;
+            margin-top: 10px;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--accent);
+        }
+
+        .metric-card small {
+            display: block;
+            margin-top: 8px;
+            color: var(--muted);
+            line-height: 1.4;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .insights {
+            display: grid;
+            gap: 10px;
+        }
+
+        .insight {
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel-soft);
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .bars {
+            display: grid;
+            gap: 12px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: minmax(120px, 1fr) minmax(120px, 2fr) 42px;
+            gap: 10px;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .bar-label {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .bar-track {
+            height: 10px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: #0d1117;
+        }
+
+        .bar-fill {
+            height: 100%;
+            min-width: 2px;
+            border-radius: inherit;
+            background: var(--accent);
+        }
+
+        .bar-count {
+            color: var(--muted);
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .trend {
+            display: flex;
+            gap: 5px;
+            align-items: end;
+            height: 120px;
+            padding-top: 12px;
+        }
+
+        .trend-bar {
+            flex: 1;
+            min-width: 4px;
+            border-radius: 6px 6px 0 0;
+            background: linear-gradient(180deg, var(--accent), #9a650f);
+        }
+
+        .trend-empty {
+            color: var(--muted);
+        }
+
         .table-wrap {
-            margin-top: 22px;
+            margin-top: 12px;
             overflow-x: auto;
             border: 1px solid var(--border);
             border-radius: 8px;
@@ -103,7 +257,7 @@
 
         table {
             width: 100%;
-            min-width: 820px;
+            min-width: 920px;
             border-collapse: collapse;
         }
 
@@ -113,12 +267,12 @@
             border-bottom: 1px solid var(--border);
             text-align: left;
             vertical-align: top;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         th {
             color: var(--accent);
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             text-transform: uppercase;
             letter-spacing: 0.04em;
         }
@@ -134,39 +288,136 @@
         .muted {
             color: var(--muted);
         }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            min-height: 24px;
+            padding: 3px 8px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: var(--panel-soft);
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 900px) {
+            .metric-grid,
+            .grid-three,
+            .grid-two {
+                grid-template-columns: 1fr;
+            }
+
+            .bar-row {
+                grid-template-columns: minmax(92px, 1fr) minmax(100px, 1.5fr) 34px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <main>
-        <h1>Recent Visitors</h1>
-        <p>Private admin view for the latest 10 HTML page visits: IP, location, time, visited content, and browser.</p>
-
-        <section class="panel">
+        <div class="topbar">
+            <div>
+                <h1>Visitor Dashboard</h1>
+                <p>Private analytics for recent site visits: IP, location, time, content, browser, devices, trends, and insights.</p>
+            </div>
             <div class="controls">
                 <input id="token" type="password" autocomplete="current-password" placeholder="VISITOR_STATS_TOKEN">
-                <button id="load">Load Visitors</button>
+                <button id="load">Load Dashboard</button>
+                <div id="status" class="status"></div>
             </div>
-            <div id="status" class="status"></div>
+        </div>
 
-            <div class="table-wrap" aria-live="polite">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>IP</th>
-                            <th>Location</th>
-                            <th>Visited Content</th>
-                            <th>Browser</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rows">
-                        <tr>
-                            <td colspan="5" class="muted">Enter the admin token to load recent visitors.</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section id="dashboard" class="dashboard">
+            <div class="metric-grid">
+                <article class="metric-card">
+                    <span>Retained Visits</span>
+                    <strong id="totalVisits">0</strong>
+                    <small>Latest public HTML visits, capped at 200 rows.</small>
+                </article>
+                <article class="metric-card">
+                    <span>Unique IPs</span>
+                    <strong id="uniqueVisitors">0</strong>
+                    <small>Distinct IPs in the retained window.</small>
+                </article>
+                <article class="metric-card">
+                    <span>Mobile Visits</span>
+                    <strong id="mobileVisits">0</strong>
+                    <small id="mobileShare">0% of retained visits.</small>
+                </article>
+                <article class="metric-card">
+                    <span>Bot / Crawler</span>
+                    <strong id="botVisits">0</strong>
+                    <small id="botShare">0% of retained visits.</small>
+                </article>
             </div>
+
+            <section class="panel">
+                <h2>Insights</h2>
+                <div id="insights" class="insights"></div>
+            </section>
+
+            <div class="grid-two">
+                <section class="panel">
+                    <h2>Visits By Hour</h2>
+                    <div id="trend" class="trend"></div>
+                    <p id="trendNote" class="muted"></p>
+                </section>
+
+                <section class="panel">
+                    <h2>Top Pages</h2>
+                    <div id="topPages" class="bars"></div>
+                </section>
+            </div>
+
+            <div class="grid-three">
+                <section class="panel">
+                    <h2>Top Locations</h2>
+                    <div id="topLocations" class="bars"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Browsers</h2>
+                    <div id="topBrowsers" class="bars"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Devices</h2>
+                    <div id="topDevices" class="bars"></div>
+                </section>
+            </div>
+
+            <div class="grid-two">
+                <section class="panel">
+                    <h2>Operating Systems</h2>
+                    <div id="topOperatingSystems" class="bars"></div>
+                </section>
+
+                <section class="panel">
+                    <h2>Repeat IPs</h2>
+                    <div id="topIps" class="bars"></div>
+                </section>
+            </div>
+
+            <section class="panel">
+                <h2>Recent Public Visits</h2>
+                <div class="table-wrap" aria-live="polite">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>IP</th>
+                                <th>Location</th>
+                                <th>Visited Content</th>
+                                <th>Browser</th>
+                                <th>Device</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rows"></tbody>
+                    </table>
+                </div>
+            </section>
         </section>
     </main>
 
@@ -174,52 +425,147 @@
         const tokenInput = document.getElementById('token');
         const loadButton = document.getElementById('load');
         const statusEl = document.getElementById('status');
+        const dashboardEl = document.getElementById('dashboard');
         const rowsEl = document.getElementById('rows');
+
+        function setText(id, value) {
+            document.getElementById(id).textContent = value;
+        }
 
         function text(value) {
             return value || '-';
         }
 
-        function formatBrowser(userAgent) {
-            if (!userAgent) return '-';
+        function pct(part, total) {
+            return total ? `${Math.round((part / total) * 100)}%` : '0%';
+        }
 
-            let browser = 'Unknown browser';
-            if (/Edg\//.test(userAgent)) browser = 'Microsoft Edge';
-            else if (/OPR\//.test(userAgent)) browser = 'Opera';
-            else if (/Chrome\//.test(userAgent) && !/Chromium/.test(userAgent)) browser = 'Chrome';
-            else if (/Safari\//.test(userAgent) && /Version\//.test(userAgent)) browser = 'Safari';
-            else if (/Firefox\//.test(userAgent)) browser = 'Firefox';
-            else if (/DuckDuckGo\//.test(userAgent)) browser = 'DuckDuckGo';
+        function formatTime(value) {
+            return value ? new Date(value).toLocaleString() : '-';
+        }
 
-            let os = '';
-            if (/Windows NT/.test(userAgent)) os = 'Windows';
-            else if (/Mac OS X/.test(userAgent)) os = 'macOS';
-            else if (/iPhone|iPad|iPod/.test(userAgent)) os = 'iOS';
-            else if (/Android/.test(userAgent)) os = 'Android';
-            else if (/Linux/.test(userAgent)) os = 'Linux';
+        function renderBars(id, items) {
+            const container = document.getElementById(id);
+            const max = Math.max(...items.map(item => item.count), 1);
 
-            return os ? `${browser} / ${os}` : browser;
+            if (!items.length) {
+                container.innerHTML = '<p class="muted">No data yet.</p>';
+                return;
+            }
+
+            container.replaceChildren(...items.map(item => {
+                const row = document.createElement('div');
+                row.className = 'bar-row';
+
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                label.textContent = item.label || 'Unknown';
+                label.title = item.label || 'Unknown';
+
+                const track = document.createElement('div');
+                track.className = 'bar-track';
+                const fill = document.createElement('div');
+                fill.className = 'bar-fill';
+                fill.style.width = `${Math.max(4, (item.count / max) * 100)}%`;
+                track.appendChild(fill);
+
+                const count = document.createElement('div');
+                count.className = 'bar-count';
+                count.textContent = item.count;
+
+                row.append(label, track, count);
+                return row;
+            }));
+        }
+
+        function renderTrend(items) {
+            const container = document.getElementById('trend');
+            const note = document.getElementById('trendNote');
+
+            if (!items.length) {
+                container.innerHTML = '<p class="trend-empty">No hourly trend yet.</p>';
+                note.textContent = '';
+                return;
+            }
+
+            const max = Math.max(...items.map(item => item.count), 1);
+            container.replaceChildren(...items.map(item => {
+                const bar = document.createElement('div');
+                bar.className = 'trend-bar';
+                bar.style.height = `${Math.max(6, (item.count / max) * 110)}px`;
+                bar.title = `${new Date(item.hour).toLocaleString()}: ${item.count} visits`;
+                return bar;
+            }));
+            const first = new Date(items[0].hour).toLocaleString();
+            const last = new Date(items[items.length - 1].hour).toLocaleString();
+            note.textContent = `${items.length} active hour bucket(s), ${first} to ${last}.`;
+        }
+
+        function renderInsights(insights) {
+            const container = document.getElementById('insights');
+            if (!insights.length) {
+                container.innerHTML = '<p class="muted">No insights yet. Visit a few public pages and reload.</p>';
+                return;
+            }
+            container.replaceChildren(...insights.map(insight => {
+                const div = document.createElement('div');
+                div.className = 'insight';
+                div.textContent = insight;
+                return div;
+            }));
         }
 
         function renderRows(visitors) {
             if (!visitors.length) {
-                rowsEl.innerHTML = '<tr><td colspan="5" class="muted">No visitor logs yet.</td></tr>';
+                rowsEl.innerHTML = '<tr><td colspan="6" class="muted">No public visitor logs yet.</td></tr>';
                 return;
             }
 
             rowsEl.replaceChildren(...visitors.map(visitor => {
                 const tr = document.createElement('tr');
-                const created = visitor.created_at ? new Date(visitor.created_at).toLocaleString() : '-';
-                const location = [visitor.city, visitor.region, visitor.country].filter(Boolean).join(', ');
-                [created, visitor.ip, location, visitor.path, formatBrowser(visitor.user_agent)].forEach((value, index) => {
+                const values = [
+                    formatTime(visitor.created_at),
+                    visitor.ip,
+                    visitor.location,
+                    visitor.path,
+                    visitor.browserLabel,
+                    visitor.device,
+                ];
+
+                values.forEach((value, index) => {
                     const td = document.createElement('td');
                     td.textContent = text(value);
                     if (index === 1 || index === 3) td.className = 'mono';
                     if (index === 4 && visitor.user_agent) td.title = visitor.user_agent;
                     tr.appendChild(td);
                 });
+
                 return tr;
             }));
+        }
+
+        function renderDashboard(data) {
+            const summary = data.summary || {};
+            const total = summary.totalVisits || 0;
+
+            setText('totalVisits', total);
+            setText('uniqueVisitors', summary.uniqueVisitors || 0);
+            setText('mobileVisits', summary.mobileVisits || 0);
+            setText('botVisits', summary.botVisits || 0);
+            setText('mobileShare', `${pct(summary.mobileVisits || 0, total)} of retained visits.`);
+            setText('botShare', `${pct(summary.botVisits || 0, total)} of retained visits.`);
+
+            renderInsights(data.insights || []);
+            renderTrend(data.hourlyTrend || []);
+            renderBars('topPages', data.tops?.pages || []);
+            renderBars('topLocations', data.tops?.locations || []);
+            renderBars('topBrowsers', data.tops?.browsers || []);
+            renderBars('topDevices', data.tops?.devices || []);
+            renderBars('topOperatingSystems', data.tops?.operatingSystems || []);
+            renderBars('topIps', data.tops?.ips || []);
+            renderRows(data.visitors || []);
+
+            dashboardEl.classList.add('visible');
         }
 
         async function loadVisitors() {
@@ -241,8 +587,9 @@
                 const data = await response.json();
                 if (!response.ok) throw new Error(data.error || 'Request failed.');
 
-                renderRows(data.visitors || []);
-                statusEl.textContent = `Loaded ${(data.visitors || []).length} visitor records.`;
+                renderDashboard(data);
+                const count = data.summary?.totalVisits || 0;
+                statusEl.textContent = `Loaded dashboard from ${count} retained public visit${count === 1 ? '' : 's'}.`;
             } catch (error) {
                 statusEl.textContent = error.message;
                 statusEl.className = 'status error';
