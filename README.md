@@ -15,7 +15,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 | AI chatbot | Cloudflare Workers AI — `@cf/meta/llama-3.1-8b-instruct` |
 | Email notifications | Resend API |
 | Storage | Cloudflare KV (download counter + GitHub stats cache) |
-| Database | Cloudflare D1 SQLite (contact form CRM) |
+| Database | Cloudflare D1 SQLite (contact form CRM + private visitor logs) |
 | Fonts | Google Fonts — Inter + Playfair Display |
 | Icons | Font Awesome 6 |
 
@@ -53,6 +53,11 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Returns top languages (bar chart) + recent public commits
 - Cached in KV for 1 hour to avoid rate limits
 
+### Private Visitor IP Viewer (`/admin/visitors.html`)
+- Records HTML page visits through Cloudflare Pages middleware into D1
+- `GET /api/visitor-ips` returns the latest 10 visitor records with IP, location, time, visited path, and browser user agent
+- Protected by `VISITOR_STATS_TOKEN`; do not expose this token publicly
+
 ### Dynamic Project Gallery
 - 17 cards: backend systems · production ML platforms · automation infrastructure · public products/MVPs · published papers · in-progress research
 - Filter tags with icons: All · Backend/Infrastructure · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
@@ -71,6 +76,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 | D1 Database | `DB` | Create database, run schema below |
 | Secret | `RESEND_API_KEY` | Free at resend.com — 3000 emails/month |
 | Secret | `GITHUB_TOKEN` | PAT with `public_repo` read scope (optional) |
+| Secret | `VISITOR_STATS_TOKEN` | Private token for `/admin/visitors.html` |
 
 ### D1 Schema
 
@@ -84,12 +90,34 @@ CREATE TABLE IF NOT EXISTS contacts (
   message    TEXT NOT NULL,
   created_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS visitor_logs (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  ip         TEXT NOT NULL,
+  path       TEXT NOT NULL,
+  country    TEXT,
+  region     TEXT,
+  city       TEXT,
+  user_agent TEXT,
+  created_at TEXT NOT NULL
+);
 ```
 
 ### View Contact Submissions
 
 ```sql
 SELECT * FROM contacts ORDER BY created_at DESC;
+```
+
+### View Recent Visitor IPs
+
+Open `/admin/visitors.html` and enter `VISITOR_STATS_TOKEN`, or query D1 directly:
+
+```sql
+SELECT ip, path, city, region, country, user_agent, created_at
+FROM visitor_logs
+ORDER BY created_at DESC
+LIMIT 10;
 ```
 
 ---
@@ -103,11 +131,15 @@ SELECT * FROM contacts ORDER BY created_at DESC;
 ├── css/
 │   └── premium.css             # Main stylesheet (dark theme)
 ├── functions/
+│   ├── _middleware.js          # Logs HTML page visits to D1
 │   └── api/
 │       ├── chat.js             # POST /api/chat — AI chatbot (Workers AI)
 │       ├── contact.js          # POST /api/contact — contact form + email
 │       ├── download-resume.js  # GET  /api/download-resume — tracking + redirect
-│       └── github-stats.js     # GET  /api/github-stats — GitHub API proxy
+│       ├── github-stats.js     # GET  /api/github-stats — GitHub API proxy
+│       └── visitor-ips.js      # GET  /api/visitor-ips — private visitor IP list
+├── admin/
+│   └── visitors.html           # Private visitor IP viewer
 └── assets/
     ├── cv/                     # Resume PDFs
     └── img/                    # Images

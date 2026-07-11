@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Recent Visitors | Rui Bian Admin</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0e1117;
+            --panel: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --muted: #8b949e;
+            --accent: #f5a623;
+            --danger: #ff7b72;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        main {
+            width: min(1100px, calc(100vw - 32px));
+            margin: 0 auto;
+            padding: 48px 0;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .panel {
+            margin-top: 28px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        input {
+            min-width: min(100%, 360px);
+            flex: 1;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #0d1117;
+            color: var(--text);
+            font: inherit;
+        }
+
+        button {
+            padding: 12px 16px;
+            border: 0;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #0d1117;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .status {
+            margin-top: 12px;
+            min-height: 1.4em;
+            color: var(--muted);
+        }
+
+        .status.error {
+            color: var(--danger);
+        }
+
+        .table-wrap {
+            margin-top: 22px;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 820px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.92rem;
+        }
+
+        th {
+            color: var(--accent);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Recent Visitors</h1>
+        <p>Private admin view for the latest 10 HTML page visits: IP, location, time, visited content, and browser.</p>
+
+        <section class="panel">
+            <div class="controls">
+                <input id="token" type="password" autocomplete="current-password" placeholder="VISITOR_STATS_TOKEN">
+                <button id="load">Load Visitors</button>
+            </div>
+            <div id="status" class="status"></div>
+
+            <div class="table-wrap" aria-live="polite">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>IP</th>
+                            <th>Location</th>
+                            <th>Visited Content</th>
+                            <th>Browser</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rows">
+                        <tr>
+                            <td colspan="5" class="muted">Enter the admin token to load recent visitors.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const tokenInput = document.getElementById('token');
+        const loadButton = document.getElementById('load');
+        const statusEl = document.getElementById('status');
+        const rowsEl = document.getElementById('rows');
+
+        function text(value) {
+            return value || '-';
+        }
+
+        function formatBrowser(userAgent) {
+            if (!userAgent) return '-';
+
+            let browser = 'Unknown browser';
+            if (/Edg\//.test(userAgent)) browser = 'Microsoft Edge';
+            else if (/OPR\//.test(userAgent)) browser = 'Opera';
+            else if (/Chrome\//.test(userAgent) && !/Chromium/.test(userAgent)) browser = 'Chrome';
+            else if (/Safari\//.test(userAgent) && /Version\//.test(userAgent)) browser = 'Safari';
+            else if (/Firefox\//.test(userAgent)) browser = 'Firefox';
+            else if (/DuckDuckGo\//.test(userAgent)) browser = 'DuckDuckGo';
+
+            let os = '';
+            if (/Windows NT/.test(userAgent)) os = 'Windows';
+            else if (/Mac OS X/.test(userAgent)) os = 'macOS';
+            else if (/iPhone|iPad|iPod/.test(userAgent)) os = 'iOS';
+            else if (/Android/.test(userAgent)) os = 'Android';
+            else if (/Linux/.test(userAgent)) os = 'Linux';
+
+            return os ? `${browser} / ${os}` : browser;
+        }
+
+        function renderRows(visitors) {
+            if (!visitors.length) {
+                rowsEl.innerHTML = '<tr><td colspan="5" class="muted">No visitor logs yet.</td></tr>';
+                return;
+            }
+
+            rowsEl.replaceChildren(...visitors.map(visitor => {
+                const tr = document.createElement('tr');
+                const created = visitor.created_at ? new Date(visitor.created_at).toLocaleString() : '-';
+                const location = [visitor.city, visitor.region, visitor.country].filter(Boolean).join(', ');
+                [created, visitor.ip, location, visitor.path, formatBrowser(visitor.user_agent)].forEach((value, index) => {
+                    const td = document.createElement('td');
+                    td.textContent = text(value);
+                    if (index === 1 || index === 3) td.className = 'mono';
+                    if (index === 4 && visitor.user_agent) td.title = visitor.user_agent;
+                    tr.appendChild(td);
+                });
+                return tr;
+            }));
+        }
+
+        async function loadVisitors() {
+            const token = tokenInput.value.trim();
+            if (!token) {
+                statusEl.textContent = 'Token is required.';
+                statusEl.className = 'status error';
+                return;
+            }
+
+            statusEl.textContent = 'Loading...';
+            statusEl.className = 'status';
+
+            try {
+                const response = await fetch('/api/visitor-ips', {
+                    headers: { 'x-admin-token': token },
+                    cache: 'no-store',
+                });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Request failed.');
+
+                renderRows(data.visitors || []);
+                statusEl.textContent = `Loaded ${(data.visitors || []).length} visitor records.`;
+            } catch (error) {
+                statusEl.textContent = error.message;
+                statusEl.className = 'status error';
+            }
+        }
+
+        loadButton.addEventListener('click', loadVisitors);
+        tokenInput.addEventListener('keydown', event => {
+            if (event.key === 'Enter') loadVisitors();
+        });
+    </script>
+</body>
+
+</html>
