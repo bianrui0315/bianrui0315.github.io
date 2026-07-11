@@ -13,7 +13,7 @@ function shouldLogRequest(request, response) {
 
   const url = new URL(request.url);
   if (url.pathname.startsWith('/api/')) return false;
-  if (url.pathname === '/admin/visitors.html') return false;
+  if (url.pathname === '/admin' || url.pathname.startsWith('/admin/')) return false;
 
   const contentType = response.headers.get('content-type') || '';
   return contentType.includes('text/html');

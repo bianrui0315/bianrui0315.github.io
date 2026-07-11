@@ -42,6 +42,7 @@ export async function onRequestGet(context) {
     const result = await env.DB.prepare(
       `SELECT ip, path, country, region, city, user_agent, created_at
        FROM visitor_logs
+       WHERE path NOT LIKE '/admin%'
        ORDER BY created_at DESC
        LIMIT 10`
     ).all();
