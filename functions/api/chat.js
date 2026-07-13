@@ -76,11 +76,12 @@ Problem: 12 SIS dataset types needed reliable automated ingestion with no single
 Design: Chose Go over Python — goroutines provide lower memory overhead than asyncio for high-concurrency API fan-out. Per-goroutine error isolation: individual timeouts/auth failures logged and skipped without blocking concurrent streams. Retry semantics scoped at school granularity, not dataset level. Dynamic school discovery eliminates hardcoded config.
 Impact: 12 dataset types, goroutine fan-out, per-school fault isolation.
 
-PUBLIC PRODUCT — Free Image Tools (freeimgtools.net)
-Stack: Client-side JavaScript, Web Canvas API, Cloudflare, image format tooling, SEO-focused product UX
-Product: A privacy-first public image utility suite for compressing, converting, resizing, and packaging images directly in the browser. Core tools include image compression, JPG/PNG/WebP/AVIF conversion, batch processing, PDF-to-image, image-to-PDF, social media resize presets, target-size compression, metadata removal, color palette extraction, Base64 output, borders, circular crops, and opt-in AI alt-text generation.
+PUBLIC OPEN-SOURCE PRODUCT — Free Image Tools (freeimgtools.net, github.com/bianrui0315/freeimgtools)
+Stack: Client-side JavaScript, Web Canvas API, Cloudflare, image format tooling, SEO-focused product UX, MIT-licensed open source
+Product: A free, open-source, privacy-first public image utility suite for compressing, converting, resizing, and packaging images directly in the browser. Core tools include image compression, JPG/PNG/WebP/AVIF conversion, batch processing, PDF-to-image, image-to-PDF, social media resize presets, target-size compression, metadata removal, color palette extraction, Base64 output, borders, circular crops, and opt-in AI alt-text generation.
 Design: Core image workflows run client-side so users do not need to upload private files for everyday image tasks. AI alt text is an opt-in edge inference workflow for accessibility and SEO copy.
-Impact: Demonstrates Rui's ability to build and ship a public-facing product, not only internal enterprise systems.
+Community: The website is free to use, the source code is public, and collaboration is welcome through issues, pull requests, and community-driven improvements.
+Impact: Demonstrates Rui's ability to build and ship a public-facing open-source product, not only internal enterprise systems.
 
 PUBLIC MVP — OpenChat for AI Agents (github.com/bianrui0315/openchat-ai-agents)
 Stack: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS, Supabase Auth/client scaffolding, Cloudflare Workers Static Assets

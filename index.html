@@ -370,17 +370,18 @@
 
                 <div class="project-card cat-product fade-in">
                     <span class="project-num">07</span>
-                    <span class="project-category cat-product">Product</span>
+                    <span class="project-category cat-product">Free / Open Source Product</span>
                     <h4>Free Image Tools</h4>
                     <div class="project-psi">
                         <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Most online image utilities require uploading files to a server, creating privacy friction for simple compression, conversion, resizing, and PDF workflows.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a browser-first product where core image processing runs client-side via Web APIs: no upload wait, no server-side file storage, batch downloads, modern WebP/AVIF support, social presets, and AI alt-text generation as an opt-in edge inference workflow.</span></div>
+                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a free, open-source, browser-first product where core image processing runs client-side via Web APIs: no upload wait, no server-side file storage, batch downloads, modern WebP/AVIF support, social presets, and AI alt-text generation as an opt-in edge inference workflow.</span></div>
                     </div>
                     <div class="project-tech">
                         <span>Client-side JS</span><span>Canvas API</span><span>Cloudflare</span><span>SEO</span>
                     </div>
-                    <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Visit product →</a>
-                    <div class="project-impact">Privacy-first image tools · compression · conversion · resizing · PDF/image workflows · AI alt text</div>
+                    <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Use free website →</a>
+                    <a class="project-link" href="https://github.com/bianrui0315/freeimgtools" target="_blank" rel="noopener noreferrer">View source on GitHub →</a>
+                    <div class="project-impact">Free and open-source image tools · collaboration welcome · compression · conversion · resizing · PDF/image workflows · AI alt text</div>
                 </div>
 
                 <div class="project-card cat-ai fade-in">
@@ -1388,13 +1389,15 @@
             },
             {
                 title: "Free Image Tools",
-                desc: "Privacy-first public product for compressing, converting, resizing, and packaging images directly in the browser. Includes batch workflows, WebP/AVIF support, PDF/image conversion, social presets, metadata removal, and opt-in AI alt-text generation.",
+                desc: "Free, open-source, privacy-first public product for compressing, converting, resizing, and packaging images directly in the browser. The website is free to use, the code is public, and contributions are welcome to improve tools, formats, accessibility, and workflows.",
                 tags: ["Product", "Automation"],
-                tech: ["Client-side JS", "Canvas API", "Cloudflare", "SEO"],
-                impact: "Browser-side processing · no upload required · batch image workflows",
+                tech: ["Client-side JS", "Canvas API", "Cloudflare", "SEO", "MIT License"],
+                impact: "Free website · open-source repo · browser-side processing · no upload required",
                 status: "product", statusLabel: "Product",
                 url: "https://freeimgtools.net/",
-                linkLabel: "Visit product →"
+                linkLabel: "Use free website →",
+                repoUrl: "https://github.com/bianrui0315/freeimgtools",
+                repoLabel: "GitHub repo →"
             },
             {
                 title: "OpenChat for AI Agents",
@@ -1486,6 +1489,7 @@
                     <p class="gcard-desc">${p.desc}</p>
                     <div class="gcard-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
                     ${p.url ? `<a class="gcard-link" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.linkLabel || 'View project →'}</a>` : ''}
+                    ${p.repoUrl ? `<a class="gcard-link" href="${p.repoUrl}" target="_blank" rel="noopener noreferrer">${p.repoLabel || 'View source →'}</a>` : ''}
                     <div class="gcard-impact">${p.impact}</div>
                 </div>
             `).join('');

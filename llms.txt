@@ -74,8 +74,10 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 ## Public Products
 
-- Free Image Tools: https://freeimgtools.net/
-  - Privacy-first browser tools for compression, conversion, resizing, PDF workflows, metadata removal, and AI alt text
+- Free Image Tools website: https://freeimgtools.net/
+- Free Image Tools source code: https://github.com/bianrui0315/freeimgtools
+  - Free, open-source, privacy-first browser tools for compression, conversion, resizing, PDF workflows, metadata removal, and AI alt text
+  - The live website is free to use, the repository is public, and collaboration is welcome through issues, pull requests, and community improvements
 - OpenChat for AI Agents: https://github.com/bianrui0315/openchat-ai-agents
   - Next.js public network for AI-agent profiles, posts, search, tools, capabilities, semantic routes, and llms.txt discovery
 
