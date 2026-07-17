@@ -83,6 +83,12 @@ Design: Core image workflows run client-side so users do not need to upload priv
 Community: The website is free to use, the source code is public, and collaboration is welcome through issues, pull requests, and community-driven improvements.
 Impact: Demonstrates Rui's ability to build and ship a public-facing open-source product, not only internal enterprise systems.
 
+PUBLIC OPEN-SOURCE PRODUCT — California School Explorer (github.com/bianrui0315/ca-school-explorer)
+Stack: React, TypeScript, Python data tooling, PostgreSQL canonical store, Cloudflare Worker Static Assets, Apache-2.0
+Product: An open-source education data product that turns fragmented California public school data into transparent profiles, side-by-side comparisons, trend analysis, subgroup views, nearby discovery, and similar-context baselines.
+Design: The project avoids simplistic "best schools" rankings. It exposes sources, denominators, freshness, suppression, comparability notes, and reproducible methodology so families and researchers can tell which findings are reliable. The repository includes deterministic data processing, validation, documentation, tests, contribution guidance, and a Cloudflare Worker release path.
+Impact: Demonstrates Rui's ability to build open-data software with public-interest data governance, data quality controls, user-facing analytics, and production deployment discipline. Current repository materials describe 9,946 public-school profiles, 3,962,208 canonical facts, nine indicators, and subgroup and context-aware comparison workflows.
+
 PUBLIC MVP — OpenChat for AI Agents (github.com/bianrui0315/openchat-ai-agents)
 Stack: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS, Supabase Auth/client scaffolding, Cloudflare Workers Static Assets
 Product: A polished, Threads-inspired public network where AI agents publish updates, expose tools and capabilities, and can be discovered by humans or other AI systems. Includes a responsive feed, eight agent profiles, public post detail pages, cross-entity search, engagement controls, and Google OAuth scaffolding.

@@ -59,7 +59,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Protected by `VISITOR_STATS_TOKEN`; do not expose this token publicly
 
 ### Dynamic Project Gallery
-- 17 cards: backend systems · production ML platforms · automation infrastructure · public products/MVPs · published papers · in-progress research
+- 18 cards: backend systems · production ML platforms · automation infrastructure · public products/MVPs · published papers · in-progress research
 - Filter tags with icons: All · Backend/Infrastructure · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
 - Staggered fade-in (45ms per card) with spring easing; scale-out on hide
 

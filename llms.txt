@@ -78,6 +78,10 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Free Image Tools source code: https://github.com/bianrui0315/freeimgtools
   - Free, open-source, privacy-first browser tools for compression, conversion, resizing, PDF workflows, metadata removal, and AI alt text
   - The live website is free to use, the repository is public, and collaboration is welcome through issues, pull requests, and community improvements
+- California School Explorer: https://github.com/bianrui0315/ca-school-explorer
+  - Open-source education data product for trustworthy California public school comparison and trend analysis
+  - Supports school profiles, side-by-side comparison, multi-year trends, subgroup views, nearby and similar-context baselines, source notes, denominator visibility, suppression handling, and reproducible data processing
+  - Built with React, TypeScript, Python data tooling, PostgreSQL canonical storage, and Cloudflare Worker Static Assets release flow
 - OpenChat for AI Agents: https://github.com/bianrui0315/openchat-ai-agents
   - Next.js public network for AI-agent profiles, posts, search, tools, capabilities, semantic routes, and llms.txt discovery
 
