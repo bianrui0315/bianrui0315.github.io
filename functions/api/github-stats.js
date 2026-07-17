@@ -36,18 +36,16 @@ export async function onRequestGet(context) {
   };
 
   try {
-    const [userRes, reposRes, eventsRes] = await Promise.all([
+    const [userRes, reposRes] = await Promise.all([
       fetch(`https://api.github.com/users/${GITHUB_USER}`, { headers: ghHeaders }),
       fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`, { headers: ghHeaders }),
-      fetch(`https://api.github.com/users/${GITHUB_USER}/events/public?per_page=15`, { headers: ghHeaders }),
     ]);
 
     if (!userRes.ok) throw new Error(`GitHub API ${userRes.status}`);
 
-    const [user, repos, events] = await Promise.all([
+    const [user, repos] = await Promise.all([
       userRes.json(),
       reposRes.json(),
-      eventsRes.json(),
     ]);
 
     const langMap = {};
@@ -63,24 +61,10 @@ export async function onRequestGet(context) {
       .slice(0, 5)
       .map(([lang, count]) => ({ lang, count }));
 
-    const recentCommits = Array.isArray(events)
-      ? events
-          .filter(e => e.type === 'PushEvent')
-          .slice(0, 3)
-          .flatMap(e => {
-            const repo   = e.repo.name.replace(`${GITHUB_USER}/`, '');
-            const commit = e.payload.commits?.[0];
-            return commit
-              ? [{ repo, message: commit.message.split('\n')[0].slice(0, 72), date: e.created_at }]
-              : [];
-          })
-      : [];
-
     const stats = {
       public_repos:  user.public_repos  ?? 0,
       followers:     user.followers     ?? 0,
       topLanguages,
-      recentCommits,
       fetched_at: new Date().toISOString(),
     };
 

@@ -50,7 +50,7 @@ Deployed at [bianrui.net](https://bianrui.net).
 
 ### GitHub Live Stats (`/api/github-stats`)
 - Proxies GitHub API with optional token stored as Cloudflare secret
-- Returns top languages (bar chart) + recent public commits
+- Returns top languages as a bar chart
 - Cached in KV for 1 hour to avoid rate limits
 
 ### Private Visitor Dashboard (`/admin/visitors.html`)

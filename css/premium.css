@@ -1865,9 +1865,9 @@ a:hover {
    ============================================================ */
 .gh-stats-widget {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    max-width: 620px;
+    max-width: 360px;
     margin: var(--spacing-lg) auto 0;
     text-align: left;
 }
@@ -1946,27 +1946,6 @@ a:hover {
     text-align: right;
     color: var(--text-muted);
     font-size: 0.75rem;
-}
-
-.gh-commit-item {
-    margin-bottom: 10px;
-}
-
-.gh-commit-item:last-child { margin-bottom: 0; }
-
-.gh-commit-repo {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    margin-bottom: 2px;
-}
-
-.gh-commit-msg {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .gh-stats-loading {

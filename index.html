@@ -959,10 +959,6 @@
                     <h4><i class="fa-brands fa-github"></i> Top Languages</h4>
                     <div id="gh-lang-bars"></div>
                 </div>
-                <div class="gh-stats-card">
-                    <h4><i class="fa-solid fa-code-commit"></i> Recent Commits</h4>
-                    <div id="gh-recent-commits"></div>
-                </div>
             </div>
 
             <!-- Contact Form -->
@@ -1268,19 +1264,6 @@
                             </div>
                             <span class="lang-count">${count}</span>
                         </div>`).join('');
-                }
-
-                const commitsContainer = document.getElementById('gh-recent-commits');
-                if (commitsContainer) {
-                    if (data.recentCommits?.length) {
-                        commitsContainer.innerHTML = data.recentCommits.map(c => `
-                            <div class="gh-commit-item">
-                                <div class="gh-commit-repo">${c.repo}</div>
-                                <div class="gh-commit-msg">${c.message}</div>
-                            </div>`).join('');
-                    } else {
-                        commitsContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.82rem;">No recent public commits.</p>';
-                    }
                 }
 
                 const loading = document.getElementById('gh-stats-loading');
