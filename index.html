@@ -424,6 +424,52 @@
         </div>
     </section>
 
+    <!-- Visual Evidence Section -->
+    <section class="section visual-evidence-section fade-in" id="visual-evidence" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2>Product &amp; Dashboard Evidence</h2>
+            <p class="section-subtitle">Public LinkedIn media from Rui's Expatiate role: product previews and a dashboard screenshot that give recruiters concrete visual evidence without exposing student-level or customer-sensitive data.</p>
+
+            <div class="visual-evidence-grid">
+                <article class="evidence-card">
+                    <div class="evidence-media">
+                        <img src="assets/img/project-previews/itaap-dashboard-preview.png" alt="Projected California school dashboard preview with high-level risk indicators">
+                    </div>
+                    <div class="evidence-body">
+                        <span class="evidence-kicker">Dashboard Preview</span>
+                        <h3>Projected California School Dashboard</h3>
+                        <p>Public preview of district-level decision intelligence: chronic absenteeism, suspension, English learner progress, graduation, academic performance, and college/career readiness indicators.</p>
+                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </article>
+
+                <article class="evidence-card">
+                    <div class="evidence-media">
+                        <img src="assets/img/project-previews/iep-pilot-preview.png" alt="IEP Pilot public product preview for AI-assisted special education planning">
+                    </div>
+                    <div class="evidence-body">
+                        <span class="evidence-kicker">AI Product Preview</span>
+                        <h3>IEP Pilot</h3>
+                        <p>Public product media for AI-assisted special education workflows, aligning with Rui's production work in compliance intelligence, automation, and interpretable decision support.</p>
+                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </article>
+
+                <article class="evidence-card">
+                    <div class="evidence-media">
+                        <img src="assets/img/project-previews/sst-504-preview.png" alt="Track SST and 504 processes public product preview">
+                    </div>
+                    <div class="evidence-body">
+                        <span class="evidence-kicker">Workflow Product Preview</span>
+                        <h3>Track SST &amp; 504 Processes</h3>
+                        <p>Public media for intervention tracking software, reinforcing the operational side of Rui's AI/data engineering work: workflow automation, program visibility, and reporting systems.</p>
+                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Dynamic Project Gallery -->
     <section class="section" id="gallery" style="border-top: 1px solid var(--border-color);">
         <div class="container">
@@ -1089,11 +1135,13 @@
         let chatOpen = false;
         let recommendationsVisible = false;
         let heroVisibleOnMobile = false;
+        let visualEvidenceVisibleOnMobile = false;
         const mobileHeroQuery = window.matchMedia('(max-width: 560px)');
 
         function updateBotToggleVisibility() {
             const hideForHero = mobileHeroQuery.matches && heroVisibleOnMobile;
-            botToggle.classList.toggle('bot-toggle-hidden', (recommendationsVisible || hideForHero) && !chatOpen);
+            const hideForEvidence = mobileHeroQuery.matches && visualEvidenceVisibleOnMobile;
+            botToggle.classList.toggle('bot-toggle-hidden', (recommendationsVisible || hideForHero || hideForEvidence) && !chatOpen);
         }
 
         const heroSection = document.getElementById('home');
@@ -1104,6 +1152,15 @@
             }, { threshold: [0, 0.2, 0.5] });
             heroBotVisibilityObserver.observe(heroSection);
             mobileHeroQuery.addEventListener('change', updateBotToggleVisibility);
+        }
+
+        const visualEvidenceSection = document.getElementById('visual-evidence');
+        if (visualEvidenceSection && botToggle) {
+            const evidenceBotVisibilityObserver = new IntersectionObserver(entries => {
+                visualEvidenceVisibleOnMobile = entries.some(entry => entry.isIntersecting);
+                updateBotToggleVisibility();
+            }, { threshold: 0.12 });
+            evidenceBotVisibilityObserver.observe(visualEvidenceSection);
         }
 
         const recommendationsSection = document.getElementById('recommendations');
