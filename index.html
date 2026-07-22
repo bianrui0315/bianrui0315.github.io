@@ -93,12 +93,11 @@
             </button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#ecosystem" class="nav-item">Skills</a></li>
-                <li><a href="#projects" class="nav-item">Projects</a></li>
-                <li><a href="#gallery" class="nav-item">Gallery</a></li>
                 <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#case-studies" class="nav-item">Case Studies</a></li>
                 <li><a href="projects.html" class="nav-item">Engineering Log</a></li>
-                <li><a href="#credentials" class="nav-item">Credentials</a></li>
-                <li><a href="#leadership" class="nav-item">Leadership</a></li>
+                <li><a href="#academic" class="nav-item">Academic</a></li>
+                <li><a href="#recommendations" class="nav-item">Recommendations</a></li>
                 <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
         </div>
@@ -459,6 +458,8 @@
             </div>
 
             <div class="portfolio-footer">
+                <a href="#case-studies" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Case Studies →</a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
                 <a href="projects.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Full Engineering Log →</a>
                 &nbsp;&nbsp;·&nbsp;&nbsp;
                 <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">GitHub →</a>
@@ -512,26 +513,67 @@
         </div>
     </section>
 
-    <!-- Dynamic Project Gallery -->
-    <section class="section" id="gallery" style="border-top: 1px solid var(--border-color);">
+    <!-- Case Studies Section -->
+    <section class="section case-study-index-section fade-in" id="case-studies" style="border-top: 1px solid var(--border-color);">
         <div class="container">
-            <h2>Project Index</h2>
-            <p class="section-subtitle">All AI systems, data platforms, backend services, products, tools, and research — filter by category.</p>
+            <h2>Case Studies</h2>
+            <p class="section-subtitle">Three focused reads for hiring teams: the product screenshot, the system decision, the engineering signal, and a direct path into the full Engineering Log.</p>
 
-            <div class="gallery-filters" id="galleryFilters">
-                <button class="filter-btn filter-active" data-tag="all"><i class="fa-solid fa-grip"></i> All</button>
-                <button class="filter-btn" data-tag="Backend / Infrastructure"><i class="fa-solid fa-network-wired"></i> Backend / Infrastructure</button>
-                <button class="filter-btn" data-tag="AI / LLM"><i class="fa-solid fa-microchip"></i> AI / LLM</button>
-                <button class="filter-btn" data-tag="ML"><i class="fa-solid fa-chart-line"></i> Machine Learning</button>
-                <button class="filter-btn" data-tag="Data Engineering"><i class="fa-solid fa-database"></i> Data Engineering</button>
-                <button class="filter-btn" data-tag="Automation"><i class="fa-solid fa-gears"></i> Automation</button>
-                <button class="filter-btn" data-tag="Go"><i class="fa-solid fa-bolt"></i> Go</button>
-                <button class="filter-btn" data-tag="Product"><i class="fa-solid fa-cube"></i> Product</button>
-                <button class="filter-btn" data-tag="Visualization"><i class="fa-solid fa-chart-pie"></i> Visualization</button>
-                <button class="filter-btn" data-tag="Research"><i class="fa-solid fa-flask"></i> Research</button>
+            <div class="case-study-index-grid">
+                <article class="case-study-card cat-backend">
+                    <div class="case-study-media ai-flow-preview" aria-label="AI workflow orchestration architecture preview">
+                        <div class="flow-line">
+                            <span class="flow-pill">Operator GUI</span><span class="flow-arrow">→</span><span class="flow-pill">LangGraph Gate</span><span class="flow-arrow">→</span><span class="flow-pill">Audit Log</span>
+                        </div>
+                        <div class="flow-lanes">
+                            <span class="flow-lane">Ingestion</span><span class="flow-lane">IEP Compliance</span><span class="flow-lane">Prediction Scoring</span><span class="flow-lane">LEA Reports</span>
+                        </div>
+                    </div>
+                    <div class="case-study-body">
+                        <span class="project-category cat-backend">AI / Data Software</span>
+                        <h3>AI Data Workflow Orchestration Platform</h3>
+                        <p>How Rui turned fragile manual workflows into a monitored LangGraph platform with local LLM diagnostics, node-level isolation, and privacy-by-architecture.</p>
+                        <div class="case-study-actions">
+                            <a href="case-studies/ai-data-workflow-orchestration.html">Read Case Study →</a>
+                            <a href="projects.html#ai-data-workflow-orchestration">Engineering Log →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-study-card cat-product">
+                    <div class="case-study-media">
+                        <img src="assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer product screenshot">
+                    </div>
+                    <div class="case-study-body">
+                        <span class="project-category cat-product">Open Data Product</span>
+                        <h3>California School Explorer</h3>
+                        <p>An open-source public-data product for comparing California schools with source notes, subgroup views, similar-context baselines, and reliability guidance.</p>
+                        <div class="case-study-actions">
+                            <a href="case-studies/california-school-explorer.html">Read Case Study →</a>
+                            <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-study-card cat-product">
+                    <div class="case-study-media">
+                        <img src="assets/img/case-studies/free-image-tools-home.jpg" alt="Free Image Tools product screenshot">
+                    </div>
+                    <div class="case-study-body">
+                        <span class="project-category cat-product">Free / Open Source Product</span>
+                        <h3>Free Image Tools</h3>
+                        <p>A free, open-source image utility suite where core compression, conversion, resizing, and PDF workflows run client-side in the browser.</p>
+                        <div class="case-study-actions">
+                            <a href="case-studies/free-image-tools.html">Read Case Study →</a>
+                            <a href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Use Product →</a>
+                        </div>
+                    </div>
+                </article>
             </div>
 
-            <div class="gallery-grid" id="galleryGrid"></div>
+            <div class="portfolio-footer">
+                <a href="projects.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Browse the complete Engineering Log →</a>
+            </div>
         </div>
     </section>
 
@@ -841,91 +883,69 @@
         </div>
     </section>
 
-    <!-- Credentials Section -->
-    <section class="section fade-in" id="credentials">
+    <!-- Academic & Credentials Section -->
+    <section class="section fade-in" id="academic">
         <div class="container">
-            <h2>Professional Credentials</h2>
+            <h2>Academic &amp; Credentials</h2>
+            <p class="section-subtitle">A compact proof layer: Rui's strongest signal is shipped AI/data software; the academic work and certifications show research depth, cybersecurity grounding, and continuous learning.</p>
 
-            <!-- DataCamp Suite -->
-            <div class="cert-issuer-group">
-                <div class="cert-issuer-header">
-                    <div class="cert-issuer-badge datacamp">DC</div>
-                    <div class="cert-issuer-header-text">
-                        <h3>DataCamp</h3>
-                        <p>4 Active Certifications &middot; Issued 2026 &middot; Valid through 2028</p>
+            <div class="academic-grid">
+                <div class="academic-card academic-learning">
+                    <div class="cert-issuer-header">
+                        <div class="cert-issuer-badge datacamp">DC</div>
+                        <div class="cert-issuer-header-text">
+                            <h3>Continuous Learning</h3>
+                            <p>DataCamp certifications issued 2026, valid through 2028</p>
+                        </div>
+                    </div>
+                    <div class="cert-grid">
+                        <div class="cert-card">AI Engineer for Developers Associate</div>
+                        <div class="cert-card">AI Engineer for Data Scientists Associate</div>
+                        <div class="cert-card">Data Scientist Associate</div>
+                        <div class="cert-card">Data Engineer Associate</div>
+                    </div>
+                    <div class="cert-standalone-card compact-cert">
+                        <div class="cert-issuer-badge google">G</div>
+                        <div>
+                            <h4>Google Cybersecurity Professional Certificate</h4>
+                            <p>Coursera &middot; Issued Aug 2023</p>
+                        </div>
                     </div>
                 </div>
-                <div class="cert-grid">
-                    <div class="cert-card">AI Engineer for Developers Associate</div>
-                    <div class="cert-card">AI Engineer for Data Scientists Associate</div>
-                    <div class="cert-card">Data Scientist Associate</div>
-                    <div class="cert-card">Data Engineer Associate</div>
-                </div>
-            </div>
 
-            <!-- Standalone Certs -->
-            <div class="cert-standalone-grid">
-                <div class="cert-standalone-card">
-                    <div class="cert-issuer-badge google">G</div>
-                    <div>
-                        <h4>Google Cybersecurity Professional Certificate</h4>
-                        <p>Coursera &middot; Issued Aug 2023</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Thought Leadership Section -->
-    <section class="section fade-in" id="leadership">
-        <div class="container">
-            <h2>Thought Leadership</h2>
-
-            <div class="leadership-grid">
-                <!-- Publications & Patents -->
-                <div class="publications">
-                    <h3 style="font-size: 1.25rem; margin-bottom: var(--spacing-md);">Selected Publications & Patents
-                    </h3>
-                    <div class="pub-list">
+                <div class="academic-card">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Research Background</h3>
+                    <p>PhD-level research in internet measurement, cybersecurity, BGP routing, proxy ecosystems, and distributed systems. Industry visitors do not need the full paper story here; the key publications are listed as evidence.</p>
+                    <div class="pub-list compact-pubs">
                         <div class="pub-item">
-                            <h4>Silent Observers Make a Difference: A Large-scale Analysis of Transparent Proxies on the
-                                Internet.</h4>
-                            <div class="pub-meta">Rui Bian et al. | IEEE INFOCOM, 2024.</div>
+                            <h4>Silent Observers Make a Difference: A Large-scale Analysis of Transparent Proxies on the Internet.</h4>
+                            <div class="pub-meta">Rui Bian et al. | IEEE INFOCOM, 2024</div>
                         </div>
                         <div class="pub-item">
                             <h4>Shining a Light on Dark Places: A Comprehensive Analysis of Open Proxy Ecosystem.</h4>
-                            <div class="pub-meta">Rui Bian et al. | Computer Networks, 2022.</div>
+                            <div class="pub-meta">Rui Bian et al. | Computer Networks, 2022</div>
                         </div>
                         <div class="pub-item">
-                            <h4>Towards Passive Analysis of Anycast in Global Routing: Unintended Impact of Remote
-                                Peering.</h4>
-                            <div class="pub-meta">Rui Bian et al. | ACM SIGCOMM CCR, 2019.</div>
+                            <h4>Towards Passive Analysis of Anycast in Global Routing: Unintended Impact of Remote Peering.</h4>
+                            <div class="pub-meta">Rui Bian et al. | ACM SIGCOMM CCR, 2019</div>
                         </div>
                         <div class="pub-item" style="border-left-color: var(--text-secondary);">
                             <h4>Patent: Manufacturing method of micro lens / 一种微透镜的制作方法.</h4>
-                            <div class="pub-meta">Gang Liu, Ying Xiong, Rui Bian et al. | CN104614936B.</div>
+                            <div class="pub-meta">Gang Liu, Ying Xiong, Rui Bian et al. | CN104614936B</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Academic Service -->
-                <div class="service-area">
-                    <div class="service-box">
-                        <h3><i class="fa-solid fa-globe" style="color: var(--accent-color); margin-right: 0.5rem;"></i> Academic Service</h3>
-                        <p style="font-size: 0.95rem;">Extensive peer review contributions ensuring the integrity and
-                            quality of high-tier network science and security venues.</p>
-
-                        <h4
-                            style="font-size: 1rem; color: var(--text-primary); margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm);">
-                            Key TPC / Reviewer Roles:</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem;">
+                <div class="academic-card academic-service">
+                    <h3><i class="fa-solid fa-globe"></i> Academic Service</h3>
+                    <p>Reviewer/TPC experience for network science, security, and systems venues:</p>
+                    <ul>
                             <li>IEEE INFOCOM ('17, '18, '19, '20, '21)</li>
                             <li>IEEE/IFIP DSN ('19, '21, '22)</li>
                             <li>IEEE Transactions on Network Science and Engineering (TNSE)</li>
                             <li>Computer Networks</li>
                             <li>IEEE ITEC, IEEE RTC, IEEE SmartSys</li>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>

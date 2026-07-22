@@ -14,7 +14,7 @@
     document.body.appendChild(atmosphere);
 
     const revealTargets = [
-        ...document.querySelectorAll('.case-section, .case-visual-shell, .case-metric, .case-shot, .case-callout, .evidence-card')
+        ...document.querySelectorAll('.case-section, .case-visual-shell, .case-metric, .case-shot, .case-callout, .evidence-card, .case-study-card')
     ];
 
     revealTargets.forEach((target, index) => {
@@ -23,6 +23,19 @@
         }
         target.style.setProperty('--reveal-index', String(index % 6));
     });
+
+    const allRevealTargets = [...document.querySelectorAll('.fade-in, .motion-reveal')];
+
+    function revealVisibleTargets() {
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        allRevealTargets.forEach(target => {
+            if (target.classList.contains('visible')) return;
+            const rect = target.getBoundingClientRect();
+            if (rect.top < viewportHeight * 0.9 && rect.bottom > viewportHeight * 0.08) {
+                target.classList.add('visible');
+            }
+        });
+    }
 
     if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -33,16 +46,16 @@
             });
         }, { threshold: 0.16, rootMargin: '0px 0px -64px 0px' });
 
-        document.querySelectorAll('.motion-reveal').forEach(target => revealObserver.observe(target));
+        allRevealTargets.forEach(target => revealObserver.observe(target));
     } else {
-        document.querySelectorAll('.motion-reveal').forEach(target => target.classList.add('visible'));
+        allRevealTargets.forEach(target => target.classList.add('visible'));
     }
 
     const parallaxTargets = [
-        ...document.querySelectorAll('.project-preview, .case-visual-shell, .evidence-media img')
+        ...document.querySelectorAll('.project-preview, .case-visual-shell, .case-study-media, .evidence-media img')
     ];
     const tiltTargets = [
-        ...document.querySelectorAll('.project-card, .evidence-card')
+        ...document.querySelectorAll('.project-card, .evidence-card, .case-study-card')
     ];
 
     let ticking = false;
@@ -53,6 +66,7 @@
 
         progress.style.transform = `scaleX(${ratio})`;
         document.documentElement.style.setProperty('--scroll-progress', ratio.toFixed(4));
+        revealVisibleTargets();
 
         if (!reduceMotion && window.innerWidth > 760) {
             parallaxTargets.forEach(target => {
