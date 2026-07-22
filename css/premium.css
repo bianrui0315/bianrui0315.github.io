@@ -770,18 +770,28 @@ a:hover {
 
 .recommendation-quote {
     color: var(--text-secondary);
-    font-size: 0.88rem;
-    line-height: 1.68;
+    font-size: 0.94rem;
+    line-height: 1.65;
     margin: 0;
-    padding: 0.8rem 0;
+    padding: 0;
 }
 
-.recommendation-quote:first-of-type {
-    padding-top: 0;
+.recommendation-link {
+    margin-top: auto;
+    padding-top: 1rem;
+    color: var(--accent-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
-.recommendation-quote + .recommendation-quote {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+.recommendation-link:hover {
+    color: var(--text-primary);
 }
 
 .recommendation-author {

@@ -6,7 +6,7 @@
  *   PORTFOLIO_KV : KV Namespace binding
  */
 
-const RESUME_PATH = '/assets/cv/Ray_Rui_Bian_Data_Scientist.pdf';
+const RESUME_PATH = '/assets/cv/Rui_Bian_AI_Data_Software_Engineer.pdf';
 const KV_KEY      = 'resume_download_count';
 
 export async function onRequestGet(context) {

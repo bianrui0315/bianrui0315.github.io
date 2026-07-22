@@ -128,7 +128,7 @@ Rui is transitioning into his incoming Founding AI and Data Engineer role. For q
 
 - Portfolio: https://bianrui.net/
 - Full engineering log: https://bianrui.net/projects.html
-- Resume PDF: https://bianrui.net/assets/cv/Ray_Rui_Bian_Data_Scientist.pdf
+- Resume PDF: https://bianrui.net/assets/cv/Rui_Bian_AI_Data_Software_Engineer.pdf
 - GitHub: https://github.com/bianrui0315
 - LinkedIn: https://www.linkedin.com/in/bianrui0315/
 - Google Scholar: https://scholar.google.com/citations?user=B7DwSFoAAAAJ&hl=en
