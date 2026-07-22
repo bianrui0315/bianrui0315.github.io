@@ -40,6 +40,8 @@ Rui builds AI-powered data software, production ML systems, backend APIs, data p
 
 PROJECT 1 — AI Data Workflow Orchestration Platform (AI / Data Software)
 Stack: LangGraph, Ollama (qwen2.5:7b local LLM), Python, subprocess, Tkinter
+Portfolio case study: https://bianrui.net/case-studies/ai-data-workflow-orchestration.html
+Engineering log: https://bianrui.net/projects.html#ai-data-workflow-orchestration
 Problem: Multi-step data pipelines required manual execution, missed steps, no failure diagnosis.
 Design: AI-powered data workflow software using a LangGraph state machine with gate-node conditional routing + 4-stage fan-out parallelism. Chose local Ollama over cloud LLM — student records never leave the server (privacy by architecture, not policy). Per-district fault isolation at node level — one failure triggers LLM diagnosis without cascading. Multi-tenant config eliminates per-district code changes.
 Impact: 75–90% runtime reduction. Replaced 4–6 hour weekly manual process with a single command. 30+ districts, 100K+ records/run, zero data egress.
@@ -77,13 +79,17 @@ Impact: 12 dataset types, goroutine fan-out, per-school fault isolation.
 
 PUBLIC OPEN-SOURCE PRODUCT — Free Image Tools (freeimgtools.net, github.com/bianrui0315/freeimgtools)
 Stack: Client-side JavaScript, Web Canvas API, Cloudflare, image format tooling, SEO-focused product UX, MIT-licensed open source
+Portfolio case study: https://bianrui.net/case-studies/free-image-tools.html
+Engineering log: https://bianrui.net/projects.html#free-image-tools
 Product: A free, open-source, privacy-first public image utility suite for compressing, converting, resizing, and packaging images directly in the browser. Core tools include image compression, JPG/PNG/WebP/AVIF conversion, batch processing, PDF-to-image, image-to-PDF, social media resize presets, target-size compression, metadata removal, color palette extraction, Base64 output, borders, circular crops, and opt-in AI alt-text generation.
 Design: Core image workflows run client-side so users do not need to upload private files for everyday image tasks. AI alt text is an opt-in edge inference workflow for accessibility and SEO copy.
 Community: The website is free to use, the source code is public, and collaboration is welcome through issues, pull requests, and community-driven improvements.
 Impact: Demonstrates Rui's ability to build and ship a public-facing open-source product, not only internal enterprise systems.
 
-PUBLIC OPEN-SOURCE PRODUCT — California School Explorer (github.com/bianrui0315/ca-school-explorer)
+PUBLIC OPEN-SOURCE PRODUCT — California School Explorer (ca-school-explorer.thrilling-fragrance.workers.dev, github.com/bianrui0315/ca-school-explorer)
 Stack: React, TypeScript, Python data tooling, PostgreSQL canonical store, Cloudflare Worker Static Assets, Apache-2.0
+Portfolio case study: https://bianrui.net/case-studies/california-school-explorer.html
+Engineering log: https://bianrui.net/projects.html#california-school-explorer
 Product: An open-source education data product that turns fragmented California public school data into transparent profiles, side-by-side comparisons, trend analysis, subgroup views, nearby discovery, and similar-context baselines.
 Design: The project avoids simplistic "best schools" rankings. It exposes sources, denominators, freshness, suppression, comparability notes, and reproducible methodology so families and researchers can tell which findings are reliable. The repository includes deterministic data processing, validation, documentation, tests, contribution guidance, and a Cloudflare Worker release path.
 Impact: Demonstrates Rui's ability to build open-data software with public-interest data governance, data quality controls, user-facing analytics, and production deployment discipline. Current repository materials describe 9,946 public-school profiles, 3,962,208 canonical facts, nine indicators, and subgroup and context-aware comparison workflows.

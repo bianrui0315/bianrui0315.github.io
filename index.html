@@ -284,135 +284,177 @@
 
             <div class="project-grid">
 
-                <div class="project-card cat-backend fade-in">
+                <article class="project-card project-featured cat-backend fade-in">
                     <span class="project-num">01</span>
                     <span class="project-category cat-backend">AI / Data Software Platform</span>
                     <h4>AI Data Workflow Orchestration Platform</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Multi-step data pipelines required manual execution, missed steps, and had no failure diagnosis.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">LangGraph state machine with gate-node conditional routing + 4-stage fan-out parallelism; chose local Ollama over cloud LLM — student records never leave the server, eliminating compliance risk at architecture level; per-district fault isolation at node level — single failure triggers LLM diagnosis without cascading; multi-tenant config eliminates per-district code changes.</span></div>
+                    <div class="project-preview ai-flow-preview" aria-label="AI workflow orchestration architecture preview">
+                        <div class="flow-line">
+                            <span class="flow-pill">Operator GUI</span><span class="flow-arrow">→</span><span class="flow-pill">LangGraph Gate</span><span class="flow-arrow">→</span><span class="flow-pill">Audit Log</span>
+                        </div>
+                        <div class="flow-lanes">
+                            <span class="flow-lane">Ingestion</span><span class="flow-lane">IEP Compliance</span><span class="flow-lane">Prediction Scoring</span><span class="flow-lane">LEA Reports</span>
+                        </div>
                     </div>
+                    <p class="project-summary"><strong>Rui built the orchestration layer</strong> that turns fragile manual district data workflows into a monitored AI/data software platform.</p>
+                    <ul class="project-proof">
+                        <li>LangGraph gate node, parallel fan-out, local LLM failure diagnosis, and idempotent reruns.</li>
+                        <li>Privacy-by-architecture: student data stays local instead of going to cloud LLM services.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>LangGraph</span><span>Ollama</span><span>Python</span><span>subprocess</span><span>Tkinter</span>
                     </div>
+                    <div class="project-actions">
+                        <a href="case-studies/ai-data-workflow-orchestration.html">Case Study →</a>
+                        <a href="projects.html#ai-data-workflow-orchestration">Engineering Log →</a>
+                    </div>
                     <div class="project-impact">75–90% runtime reduction · 30+ districts · 100K+ records/run · node-level fault isolation · zero data egress</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-go fade-in">
+                <article class="project-card cat-go fade-in">
                     <span class="project-num">02</span>
                     <span class="project-category cat-go">Go / Data Service</span>
                     <h4>High-Reliability Concurrent SIS Data Ingestion Service</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">12 SIS dataset types needed reliable ingestion into MongoDB without one school-level API failure aborting a full run.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a Go service with goroutine fan-out, per-school retry boundaries, dynamic school discovery, startup config validation, MongoDB health checks, and idempotent collection reloads for safe reruns.</span></div>
-                    </div>
+                    <p class="project-summary"><strong>Rui engineered a compiled ingestion service</strong> for high-volume school data loading with concurrency and operational guardrails.</p>
+                    <ul class="project-proof">
+                        <li>Goroutine fan-out with per-school fault boundaries and safe partial failure handling.</li>
+                        <li>Startup config validation, MongoDB health checks, and idempotent reloads for reruns.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>Go</span><span>MongoDB</span><span>REST API</span><span>net/http</span><span>Concurrent I/O</span>
                     </div>
+                    <div class="project-actions"><a href="projects.html#sis-go-ingestion">Engineering Log →</a></div>
                     <div class="project-impact">12 dataset types · goroutine fan-out · per-school fault isolation · compiled single binary</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-backend fade-in">
+                <article class="project-card cat-backend fade-in">
                     <span class="project-num">03</span>
                     <span class="project-category cat-backend">AI Backend API</span>
                     <h4>Adaptive Creative Analysis API</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">A creative review workflow needed structured analysis without being locked to one model, one latency tier, or a fragile external provider.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">FastAPI service with Pydantic validation, SQLAlchemy persistence, explainable tier routing, OpenAI Structured Outputs, deterministic fallback provider, bounded retries, health checks, and Docker-ready deployment.</span></div>
-                    </div>
+                    <p class="project-summary"><strong>Rui designed a production API</strong> that makes LLM analysis structured, auditable, and provider-resilient.</p>
+                    <ul class="project-proof">
+                        <li>Pydantic schemas, persisted lifecycle state, health checks, and Docker-ready deployment.</li>
+                        <li>Explainable model-tier routing with bounded retries and deterministic fallback.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>FastAPI</span><span>Pydantic</span><span>SQLAlchemy</span><span>Docker</span><span>pytest</span>
                     </div>
+                    <div class="project-actions"><a href="projects.html#adaptive-creative-api">Engineering Log →</a></div>
                     <div class="project-impact">Schema-validated API · explainable routing · retry/fallback resilience · auditable failed states</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-pipeline fade-in">
+                <article class="project-card cat-pipeline fade-in">
                     <span class="project-num">04</span>
                     <span class="project-category cat-pipeline">Data Ingestion Software</span>
                     <h4>Hybrid API/Automation Government Data Ingestion Pipeline</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">30+ districts required 45+ minutes of manual portal navigation per cycle to retrieve compliance reports.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Dual-mode ingestion uses REST APIs for structured flows and Selenium only for portal-locked reports; automatic LEA-to-credential routing and idempotent truncate-reload keep reruns safe after partial failures.</span></div>
-                    </div>
+                    <p class="project-summary"><strong>Rui automated an operational bottleneck</strong> by combining APIs, browser automation, credential routing, and safe database reloads.</p>
+                    <ul class="project-proof">
+                        <li>REST-first ingestion, Selenium only for portal-locked reports, and per-district isolation.</li>
+                        <li>Idempotent truncate-reload makes failed or partial cycles safe to run again.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>Python</span><span>REST API</span><span>Selenium</span><span>SQLAlchemy</span><span>SQL Server</span>
                     </div>
+                    <div class="project-actions"><a href="projects.html#government-data-ingestion">Engineering Log →</a></div>
                     <div class="project-impact">30+ districts · 7 report types · minimal browser automation surface · idempotent reruns</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-ml fade-in">
+                <article class="project-card cat-ml fade-in">
                     <span class="project-num">05</span>
                     <span class="project-category cat-ml">Predictive Data Product</span>
                     <h4>Multi-Domain Risk Prediction &amp; Decision-Support System</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Districts had no early visibility into student risk across academic, attendance, and behavioral domains.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Per-district model selection, SQL Server batch scoring, OpenAI/Gemini fallback narratives, and idempotent reruns make ML outputs operationally reliable instead of notebook-only.</span></div>
-                    </div>
+                    <p class="project-summary"><strong>Rui operationalized predictive ML</strong> across academic, attendance, and behavioral domains for decision support.</p>
+                    <ul class="project-proof">
+                        <li>Per-district model selection and batch scoring instead of one brittle global model.</li>
+                        <li>LLM narrative fallback chain with graceful degradation and auditable outputs.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>scikit-learn</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span>
                     </div>
+                    <div class="project-actions"><a href="projects.html#student-outcome-prediction">Engineering Log →</a></div>
                     <div class="project-impact">20+ districts · 6 concurrent domains · graceful degradation · idempotent batch scoring</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-compliance fade-in">
+                <article class="project-card cat-compliance fade-in">
                     <span class="project-num">06</span>
                     <span class="project-category cat-compliance">Compliance Intelligence</span>
                     <h4>Automated Compliance Monitoring &amp; Risk Scoring System</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">21 districts tracked federal IEP deadlines manually in spreadsheets, with no automated risk scoring or visibility.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">4-stage pipeline with SQL extraction, MFA-aware Playwright, PDF parsing, computable compliance rules, district-level fault isolation, and Power BI monitoring.</span></div>
-                    </div>
+                    <p class="project-summary"><strong>Rui converted compliance work into software</strong> with rule engines, extraction automation, and BI monitoring.</p>
+                    <ul class="project-proof">
+                        <li>SQL extraction, MFA-aware Playwright, PDF parsing, and computable deadline rules.</li>
+                        <li>District-level fault isolation and dashboard visibility for operational review.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>Playwright</span><span>PDF parsing</span><span>SQL Server</span><span>Power BI</span>
                     </div>
+                    <div class="project-actions"><a href="projects.html#compliance-monitoring">Engineering Log →</a></div>
                     <div class="project-impact">21 districts · 0 missed IEP deadlines · computable-rule compliance · district-level fault isolation</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-product fade-in">
+                <article class="project-card project-featured cat-product fade-in">
                     <span class="project-num">07</span>
                     <span class="project-category cat-product">Free / Open Source Product</span>
                     <h4>Free Image Tools</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">Most online image utilities require uploading files to a server, creating privacy friction for simple compression, conversion, resizing, and PDF workflows.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a free, open-source, browser-first product where core image processing runs client-side via Web APIs: no upload wait, no server-side file storage, batch downloads, modern WebP/AVIF support, social presets, and AI alt-text generation as an opt-in edge inference workflow.</span></div>
+                    <div class="project-preview">
+                        <img src="assets/img/case-studies/free-image-tools-home.jpg" alt="Free Image Tools product homepage preview">
                     </div>
+                    <p class="project-summary"><strong>Rui built and open-sourced a free product</strong> for privacy-first image compression, conversion, resizing, PDF workflows, and AI alt text.</p>
+                    <ul class="project-proof">
+                        <li>Core tools run in the browser with no upload required and no server-side file storage.</li>
+                        <li>Open repository and free website invite issues, pull requests, and community improvements.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>Client-side JS</span><span>Canvas API</span><span>Cloudflare</span><span>SEO</span>
                     </div>
-                    <a class="project-link" href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Use free website →</a>
-                    <a class="project-link" href="https://github.com/bianrui0315/freeimgtools" target="_blank" rel="noopener noreferrer">View source on GitHub →</a>
+                    <div class="project-actions">
+                        <a href="case-studies/free-image-tools.html">Case Study →</a>
+                        <a href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Use Website →</a>
+                        <a href="projects.html#free-image-tools">Engineering Log →</a>
+                    </div>
                     <div class="project-impact">Free and open-source image tools · collaboration welcome · compression · conversion · resizing · PDF/image workflows · AI alt text</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-ai fade-in">
+                <article class="project-card cat-ai fade-in">
                     <span class="project-num">08</span>
                     <span class="project-category cat-ai">AI Product</span>
                     <h4>OpenChat for AI Agents</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">AI agents lack a public, crawlable network where humans and other systems can discover their identities, capabilities, tools, and activity.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built a Threads-inspired, mock-first MVP with eight semantic agent profiles, public post pages, cross-entity search, engagement controls, Supabase OAuth scaffolding, and AI-readable discovery through llms.txt, robots rules, and a generated sitemap. Static export to Cloudflare Workers eliminates request-time server compute.</span></div>
-                    </div>
+                    <p class="project-summary"><strong>Rui prototyped an AI-native network</strong> where humans and systems can discover agents, capabilities, tools, and activity.</p>
+                    <ul class="project-proof">
+                        <li>Semantic profiles, public post routes, search, engagement controls, and Supabase OAuth scaffolding.</li>
+                        <li>AI-readable discovery through llms.txt, robots rules, generated sitemap, and static Cloudflare export.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Supabase</span><span>Cloudflare</span>
                     </div>
-                    <a class="project-link" href="https://github.com/bianrui0315/openchat-ai-agents" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                    <div class="project-actions">
+                        <a href="https://github.com/bianrui0315/openchat-ai-agents" target="_blank" rel="noopener noreferrer">GitHub →</a>
+                        <a href="projects.html#openchat-ai-agents">Engineering Log →</a>
+                    </div>
                     <div class="project-impact">Mock-first MVP · 8 agent profiles · semantic public routes · zero request-time compute</div>
-                </div>
+                </article>
 
-                <div class="project-card cat-product fade-in">
+                <article class="project-card project-featured cat-product fade-in">
                     <span class="project-num">09</span>
                     <span class="project-category cat-product">Open Data Product</span>
                     <h4>California School Explorer</h4>
-                    <div class="project-psi">
-                        <div class="psi-row"><span class="psi-label">Problem</span><span class="psi-text">California public education data is fragmented across official snapshots, suppressed rows, changing denominators, and context gaps that make school comparison hard for families and researchers.</span></div>
-                        <div class="psi-row"><span class="psi-label">Design</span><span class="psi-text">Built an open-source school comparison and trend-analysis platform with transparent methodology, source-aware data processing, same-district and similar-context baselines, subgroup views, shareable comparisons, and coverage/reliability notes instead of opaque rankings.</span></div>
+                    <div class="project-preview">
+                        <img src="assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison interface preview">
                     </div>
+                    <p class="project-summary"><strong>Rui built an open data product</strong> that makes California school comparison more transparent, contextual, and reproducible.</p>
+                    <ul class="project-proof">
+                        <li>School profiles, side-by-side compare, trends, subgroup lenses, and similar-context baselines.</li>
+                        <li>Source notes, denominator visibility, suppression handling, and reliability guidance instead of opaque rankings.</li>
+                    </ul>
                     <div class="project-tech">
                         <span>React</span><span>TypeScript</span><span>Python</span><span>PostgreSQL</span><span>Cloudflare Workers</span>
                     </div>
-                    <a class="project-link" href="https://github.com/bianrui0315/ca-school-explorer" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                    <div class="project-actions">
+                        <a href="case-studies/california-school-explorer.html">Case Study →</a>
+                        <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product →</a>
+                        <a href="projects.html#california-school-explorer">Engineering Log →</a>
+                    </div>
                     <div class="project-impact">9,946 public school profiles · 3.9M+ canonical facts · nine indicators · subgroup and similar-context comparison</div>
-                </div>
+                </article>
 
             </div>
 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
+    <title>California School Explorer — Rui Bian</title>
+    <meta name="description" content="Case study by Rui Bian: open-source California School Explorer, a public-data product for trustworthy school comparison, trends, subgroup lenses, and transparent methodology.">
+    <link rel="canonical" href="https://bianrui.net/case-studies/california-school-explorer.html">
+    <meta property="og:title" content="California School Explorer — Rui Bian">
+    <meta property="og:description" content="Open-source public-data product by Rui Bian for trustworthy California public school comparison and trend analysis.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bianrui.net/case-studies/california-school-explorer.html">
+    <meta property="og:image" content="https://bianrui.net/assets/img/case-studies/california-school-explorer-home.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      "name": "California School Explorer",
+      "author": {"@type": "Person", "name": "Rui Bian", "url": "https://bianrui.net/"},
+      "codeRepository": "https://github.com/bianrui0315/ca-school-explorer",
+      "programmingLanguage": ["TypeScript", "Python"],
+      "url": "https://bianrui.net/case-studies/california-school-explorer.html"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd60b4c730.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/premium.css">
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="case-body">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo" aria-label="Rui Bian home">
+                <img src="../assets/img/site-logo.png" alt="" class="logo-mark">
+                <span class="logo-text">RUI BIAN</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#projects" class="nav-link">Work</a></li>
+                <li><a href="../projects.html#california-school-explorer" class="nav-link">Engineering Log</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="case-hero">
+        <div class="container case-hero-grid">
+            <div>
+                <div class="case-eyebrow">Case Study · Open Data Product</div>
+                <h1>California School Explorer</h1>
+                <p class="case-lede">Rui built an open-source public-data product that helps families, researchers, and education teams compare California schools with context, source notes, subgroup lenses, and transparent reliability guidance.</p>
+                <div class="case-actions">
+                    <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product</a>
+                    <a href="https://github.com/bianrui0315/ca-school-explorer" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="../projects.html#california-school-explorer">Engineering Log</a>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metric"><strong>9,946</strong><span>School profiles</span></div>
+                    <div class="case-metric"><strong>3.9M+</strong><span>Canonical facts</span></div>
+                    <div class="case-metric"><strong>9</strong><span>Education indicators</span></div>
+                    <div class="case-metric"><strong>32</strong><span>Subgroup lenses</span></div>
+                </div>
+            </div>
+            <div class="case-visual-shell">
+                <img src="../assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison interface with school cards and contextual filters">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>The Product Problem</h2>
+                    <p>Official California education data is powerful but fragmented across datasets, years, denominators, suppressed rows, and reporting rules. Simple rankings hide uncertainty and context, so Rui designed the product around transparent comparison rather than one-score judgment.</p>
+                </div>
+                <div class="case-callout">
+                    <h2>Rui's Role</h2>
+                    <p>Rui handled the product direction, frontend implementation, data modeling, reproducible Python processing, source validation, PostgreSQL canonical storage, and Cloudflare deployment path.</p>
+                </div>
+            </div>
+            <div class="container case-image-grid">
+                <figure class="case-shot">
+                    <img src="../assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison view">
+                    <figcaption>Side-by-side comparison with filters, context panels, and transparent indicator summaries.</figcaption>
+                </figure>
+                <figure class="case-shot">
+                    <img src="../assets/img/case-studies/california-school-explorer-brief.jpg" alt="California School Explorer family decision brief">
+                    <figcaption>Shareable decision brief view that turns public data into an explainable comparison artifact.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container">
+                <h2>What Rui Built</h2>
+                <ul class="case-list">
+                    <li><strong>Context-aware comparison:</strong> school profiles, side-by-side compare, nearby schools, same-district references, and similar-context baselines.</li>
+                    <li><strong>Trustworthy data layer:</strong> canonical facts, deterministic migrations, source notes, denominator visibility, suppression handling, freshness, and comparability caveats.</li>
+                    <li><strong>Decision artifacts:</strong> family briefs and shareable comparison URLs that communicate tradeoffs without hiding methodology.</li>
+                    <li><strong>Open-source product engineering:</strong> React, TypeScript, Python data tooling, PostgreSQL, and Cloudflare Worker Static Assets.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>Capability Signal</h2>
+                    <p>This project shows Rui's strength at the intersection of data engineering, product judgment, frontend systems, public-data governance, and trustworthy analytics communication.</p>
+                </div>
+                <div>
+                    <h2>Source Links</h2>
+                    <div class="case-actions">
+                        <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/brief?view=brief&q=Porter+Ranch%2C+CA+91326&lat=34.293744&lng=-118.582012&place=Porter+Ranch%2C+CA+91326&approx=1&r=10&grade=10&type=all&coverage=50&pa=1.5&pt=1&pc=1&pr=1.5&schools=19651361996321%2C19651360102475%2C19647331933746#brief-title" target="_blank" rel="noopener noreferrer">Sample Brief</a>
+                        <a href="https://github.com/bianrui0315/ca-school-explorer" target="_blank" rel="noopener noreferrer">Repository</a>
+                        <a href="../projects.html#california-school-explorer">Complete Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

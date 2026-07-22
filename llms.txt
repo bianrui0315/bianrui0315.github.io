@@ -39,6 +39,8 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 ### AI Data Workflow Orchestration Platform
 
+- Case study: https://bianrui.net/case-studies/ai-data-workflow-orchestration.html
+- Full technical details: https://bianrui.net/projects.html#ai-data-workflow-orchestration
 - LangGraph state machine for AI-assisted data workflow orchestration with conditional routing and parallel fan-out
 - Local Ollama failure analysis keeps student data off cloud LLM services
 - Tenant-level fault isolation prevents one district failure from aborting a full run
@@ -75,9 +77,14 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 - Free Image Tools website: https://freeimgtools.net/
 - Free Image Tools source code: https://github.com/bianrui0315/freeimgtools
+- Free Image Tools portfolio case study: https://bianrui.net/case-studies/free-image-tools.html
+- Free Image Tools complete engineering details: https://bianrui.net/projects.html#free-image-tools
   - Free, open-source, privacy-first browser tools for compression, conversion, resizing, PDF workflows, metadata removal, and AI alt text
   - The live website is free to use, the repository is public, and collaboration is welcome through issues, pull requests, and community improvements
-- California School Explorer: https://github.com/bianrui0315/ca-school-explorer
+- California School Explorer live product: https://ca-school-explorer.thrilling-fragrance.workers.dev/
+- California School Explorer source code: https://github.com/bianrui0315/ca-school-explorer
+- California School Explorer portfolio case study: https://bianrui.net/case-studies/california-school-explorer.html
+- California School Explorer complete engineering details: https://bianrui.net/projects.html#california-school-explorer
   - Open-source education data product for trustworthy California public school comparison and trend analysis
   - Supports school profiles, side-by-side comparison, multi-year trends, subgroup views, nearby and similar-context baselines, source notes, denominator visibility, suppression handling, and reproducible data processing
   - Built with React, TypeScript, Python data tooling, PostgreSQL canonical storage, and Cloudflare Worker Static Assets release flow
@@ -127,6 +134,9 @@ Rui presents himself professionally as an AI and Data Engineer. For questions no
 
 - Portfolio: https://bianrui.net/
 - Full engineering log: https://bianrui.net/projects.html
+- AI Data Workflow Orchestration case study: https://bianrui.net/case-studies/ai-data-workflow-orchestration.html
+- California School Explorer case study: https://bianrui.net/case-studies/california-school-explorer.html
+- Free Image Tools case study: https://bianrui.net/case-studies/free-image-tools.html
 - Resume PDF: https://bianrui.net/assets/cv/Rui_Bian_AI_Data_Software_Engineer.pdf
 - GitHub: https://github.com/bianrui0315
 - LinkedIn: https://www.linkedin.com/in/bianrui0315/

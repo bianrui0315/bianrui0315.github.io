@@ -2,15 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://bianrui.net/</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-07-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://bianrui.net/projects.html</loc>
-        <lastmod>2026-06-23</lastmod>
+        <lastmod>2026-07-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://bianrui.net/case-studies/ai-data-workflow-orchestration.html</loc>
+        <lastmod>2026-07-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://bianrui.net/case-studies/california-school-explorer.html</loc>
+        <lastmod>2026-07-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://bianrui.net/case-studies/free-image-tools.html</loc>
+        <lastmod>2026-07-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
     </url>
     <url>
         <loc>https://bianrui.net/assets/blog/Utilizing%20Machine%20Learning%20and%20Artificial%20Intelligence%20to%20Process%20and%20Predict%20K-12%20Student%20Data.html</loc>
@@ -44,7 +62,7 @@
     </url>
     <url>
         <loc>https://bianrui.net/llms.txt</loc>
-        <lastmod>2026-07-09</lastmod>
+        <lastmod>2026-07-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

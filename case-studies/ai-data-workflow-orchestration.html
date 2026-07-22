@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
+    <title>AI Data Workflow Orchestration Platform — Rui Bian</title>
+    <meta name="description" content="Case study by Rui Bian: LangGraph-based AI/data workflow orchestration with local LLM failure diagnosis, node-level isolation, privacy-by-architecture, and 75-90% runtime reduction.">
+    <link rel="canonical" href="https://bianrui.net/case-studies/ai-data-workflow-orchestration.html">
+    <meta property="og:title" content="AI Data Workflow Orchestration Platform — Rui Bian">
+    <meta property="og:description" content="How Rui Bian built a monitored LangGraph orchestration platform for production data workflows, local LLM diagnostics, and privacy-preserving operations.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bianrui.net/case-studies/ai-data-workflow-orchestration.html">
+    <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "AI Data Workflow Orchestration Platform",
+      "author": {"@type": "Person", "name": "Rui Bian", "url": "https://bianrui.net/"},
+      "description": "LangGraph-based production data workflow orchestration with local LLM failure diagnosis, privacy-by-architecture, and node-level fault isolation.",
+      "url": "https://bianrui.net/case-studies/ai-data-workflow-orchestration.html"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd60b4c730.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/premium.css">
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="case-body">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo" aria-label="Rui Bian home">
+                <img src="../assets/img/site-logo.png" alt="" class="logo-mark">
+                <span class="logo-text">RUI BIAN</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html#projects" class="nav-link">Work</a></li>
+                <li><a href="../projects.html#ai-data-workflow-orchestration" class="nav-link">Engineering Log</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="case-hero">
+        <div class="container case-hero-grid">
+            <div>
+                <div class="case-eyebrow">Case Study · AI / Data Software Platform</div>
+                <h1>AI Data Workflow Orchestration Platform</h1>
+                <p class="case-lede">Rui built the orchestration layer that turned a fragile, multi-step district data process into one monitored operator workflow with local LLM failure diagnosis and privacy-preserving execution.</p>
+                <div class="case-actions">
+                    <a href="../projects.html#ai-data-workflow-orchestration">Full Engineering Log</a>
+                    <a href="../index.html#projects">Back to Selected Work</a>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metric"><strong>75-90%</strong><span>Runtime reduction</span></div>
+                    <div class="case-metric"><strong>30+</strong><span>District workflows</span></div>
+                    <div class="case-metric"><strong>100K+</strong><span>Records per run</span></div>
+                    <div class="case-metric"><strong>0</strong><span>Cloud data egress</span></div>
+                </div>
+            </div>
+            <div class="case-visual-shell">
+                <div class="architecture-board">
+                    <div class="arch-band">
+                        <div class="arch-boundary-label">Privacy Boundary · Student data stays local</div>
+                        <div class="arch-row">
+                            <div class="arch-node accent">Operator GUI</div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-node accent">LangGraph Gate Node</div>
+                            <div class="arch-arrow">→</div>
+                            <div class="arch-node accent">Audit Log + Status</div>
+                        </div>
+                        <div class="arch-lanes">
+                            <div class="arch-node lane">Ingestion</div>
+                            <div class="arch-node lane">IEP Compliance</div>
+                            <div class="arch-node lane">Prediction Scoring</div>
+                            <div class="arch-node lane">LEA Reports</div>
+                        </div>
+                        <div class="arch-sidecar">
+                            Local Ollama failure diagnosis reads stage logs, explains likely causes, and suggests fixes without sending sensitive operational data to a cloud LLM provider.
+                            <div class="arch-chips">
+                                <span>node-level isolation</span>
+                                <span>idempotent reruns</span>
+                                <span>conditional routing</span>
+                                <span>operator visibility</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>The Problem</h2>
+                    <p>Weekly production data work depended on manual sequencing across ingestion, compliance, prediction, and reporting stages. A missed step or partial failure could silently break downstream outputs, and non-technical operators had limited visibility into what happened.</p>
+                </div>
+                <div class="case-callout">
+                    <h2>Rui's Role</h2>
+                    <p>Rui designed the orchestration architecture, implemented the LangGraph state machine, connected stage-level execution and monitoring, and made failure diagnosis usable for operations without exposing sensitive data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container">
+                <h2>Engineering Decisions</h2>
+                <ul class="case-list">
+                    <li><strong>Gate-node routing:</strong> downstream work only runs when prerequisites succeed, reducing bad output propagation.</li>
+                    <li><strong>Parallel fan-out:</strong> LRE, compliance, prediction, and LEA report stages can run concurrently after ingestion.</li>
+                    <li><strong>Typed state reducer:</strong> concurrent node writes are merged predictably instead of mutating shared state ad hoc.</li>
+                    <li><strong>Local LLM diagnostics:</strong> Ollama analyzes logs on the server, preserving privacy while helping operators recover faster.</li>
+                    <li><strong>Rerun-safe execution:</strong> stage boundaries and logs make partial failures visible and restartable.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>Capability Signal</h2>
+                    <p>This project shows Rui's ability to combine AI workflow design, backend orchestration, data platform reliability, privacy constraints, and operator UX into one production-minded system.</p>
+                </div>
+                <div>
+                    <h2>Where To Go Deeper</h2>
+                    <p>The homepage keeps this project short for recruiters. The Engineering Log preserves the complete technical details, stack, and operational impact.</p>
+                    <div class="case-actions">
+                        <a href="../projects.html#ai-data-workflow-orchestration">Read Complete Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
