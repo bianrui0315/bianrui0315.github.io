@@ -104,6 +104,7 @@ a:hover {
 .section {
     padding: var(--spacing-xxl) 0;
     position: relative;
+    scroll-margin-top: 88px;
 }
 
 /* Navigation */
@@ -1860,6 +1861,21 @@ a:hover {
     color: #fca5a5;
 }
 
+.privacy-note {
+    max-width: 680px;
+    margin: var(--spacing-lg) auto 0;
+    padding: var(--spacing-md) var(--spacing-md) 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.55;
+}
+
+.privacy-note i {
+    color: var(--accent-color);
+    margin-right: 0.35rem;
+}
+
 /* ============================================================
    GitHub Live Stats Widget
    ============================================================ */
@@ -1876,9 +1892,9 @@ a:hover {
     .gh-stats-widget { grid-template-columns: 1fr; }
 
     .bot-toggle {
-        right: 16px;
-        bottom: 16px;
-        padding: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 6px;
         border-radius: 999px;
     }
 
@@ -1887,8 +1903,9 @@ a:hover {
     }
 
     .bot-toggle-avatar {
-        width: 40px;
-        height: 40px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
     }
 }
 

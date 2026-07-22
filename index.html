@@ -9,8 +9,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
-    <title>Rui Bian | Incoming Founding AI & Data Engineer</title>
-    <meta name="description" content="Rui Bian, PhD — incoming Founding AI and Data Engineer, starting soon. Builds AI-powered data software, production ML systems, data platforms, resilient APIs, and automation products.">
+    <title>Rui Bian | AI & Data Software Engineer</title>
+    <meta name="description" content="Rui Bian, PhD — AI and data software engineer building reliable production systems from messy operational data, backend APIs, ML workflows, data platforms, and automation products.">
     <meta name="keywords" content="Rui Bian, Founding AI and Data Engineer, AI Data Software, Data Software Engineer, AI Engineer, Data Platform Engineer, Backend Engineer, Software Engineer, ML Systems, FastAPI, Go, Python, Distributed Systems, REST APIs, Cloudflare Workers, PhD, Computer Engineering">
     <meta name="google-site-verification" content="PbrneMZzm9Aa2FzYXJ0vC0v1G3k90C6wWLx52WfqBgc">
 
@@ -18,15 +18,15 @@
     <link rel="canonical" href="https://bianrui.net/">
 
     <!-- Open Graph / SEO Meta Tags -->
-    <meta property="og:title" content="Rui Bian, PhD | Incoming Founding AI & Data Engineer">
+    <meta property="og:title" content="Rui Bian, PhD | AI & Data Software Engineer">
     <meta property="og:description"
-        content="Incoming Founding AI and Data Engineer, starting soon. 14+ years building AI-powered data software, backend services, production ML systems, and public software products.">
+        content="AI and data software engineer building reliable production systems from messy operational data, backend services, ML workflows, and public software products.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bianrui.net/">
     <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Rui Bian, PhD | Incoming Founding AI & Data Engineer">
-    <meta name="twitter:description" content="Incoming Founding AI and Data Engineer, starting soon. AI data software · data platforms · production ML systems.">
+    <meta name="twitter:title" content="Rui Bian, PhD | AI & Data Software Engineer">
+    <meta name="twitter:description" content="Building reliable AI/data systems from messy operational workflows: backend APIs, data platforms, production ML, and automation.">
     <meta name="twitter:image" content="https://bianrui.net/assets/img/headshot.jpg">
 
     <!-- JSON-LD Structured Data -->
@@ -114,9 +114,9 @@
                         <span class="availability-dot"></span>
                         Incoming Role · Starting Soon
                     </div>
-                    <h1 class="gradient-text">Incoming Founding AI &amp; Data Engineer</h1>
-                    <p class="hero-tagline">Building AI-powered data software: production ML systems, data platforms, and intelligent workflow automation</p>
-                    <p class="hero-subtext">Starting soon &middot; Ph.D. Computer Engineering &middot; AI Engineering &middot; Data Software &middot; Backend APIs</p>
+                    <h1 class="gradient-text">I Build Reliable AI &amp; Data Software</h1>
+                    <p class="hero-tagline">Turning fragmented operational data, manual workflows, and fragile ML prototypes into production systems people can trust</p>
+                    <p class="hero-subtext">Incoming Founding AI &amp; Data Engineer &middot; Starting soon &middot; Ph.D. Computer Engineering &middot; Backend APIs &middot; Data Platforms &middot; Production ML</p>
                     <ul class="hero-bullets">
                         <li>Built AI and data software across <strong>32 production systems</strong> serving <strong>30+ school districts</strong> — ingestion, ML orchestration, prediction services, compliance intelligence, and workflow automation</li>
                         <li>Turns messy operational data into reliable software products: FastAPI &middot; Go services &middot; SQL Server &middot; MongoDB &middot; Cloudflare Workers &middot; LangGraph &middot; local LLMs</li>
@@ -961,6 +961,11 @@
                 </div>
             </div>
 
+            <p class="privacy-note">
+                <i class="fa-solid fa-shield-halved"></i>
+                Privacy note: this site records lightweight visit telemetry such as IP address, approximate location, timestamp, visited path, and browser for security, debugging, and private analytics. Visitor logs are not sold, published, or used for advertising.
+            </p>
+
             <!-- Contact Form -->
             <div class="contact-form-wrap">
                 <h3>Send a Message</h3>
@@ -1086,9 +1091,22 @@
         let chatHistory = [];
         let chatOpen = false;
         let recommendationsVisible = false;
+        let heroVisibleOnMobile = false;
+        const mobileHeroQuery = window.matchMedia('(max-width: 560px)');
 
         function updateBotToggleVisibility() {
-            botToggle.classList.toggle('bot-toggle-hidden', recommendationsVisible && !chatOpen);
+            const hideForHero = mobileHeroQuery.matches && heroVisibleOnMobile;
+            botToggle.classList.toggle('bot-toggle-hidden', (recommendationsVisible || hideForHero) && !chatOpen);
+        }
+
+        const heroSection = document.getElementById('home');
+        if (heroSection && botToggle) {
+            const heroBotVisibilityObserver = new IntersectionObserver(entries => {
+                heroVisibleOnMobile = entries.some(entry => entry.isIntersecting && entry.intersectionRatio > 0.2);
+                updateBotToggleVisibility();
+            }, { threshold: [0, 0.2, 0.5] });
+            heroBotVisibilityObserver.observe(heroSection);
+            mobileHeroQuery.addEventListener('change', updateBotToggleVisibility);
         }
 
         const recommendationsSection = document.getElementById('recommendations');
