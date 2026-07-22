@@ -1,15 +1,14 @@
 # Rui Bian, PhD
 
-> Incoming Founding AI and Data Engineer. Rui builds AI-powered data software, production APIs, data platforms, agentic workflows, and ML products that move from research into production.
+> AI and Data Engineer. Rui builds AI-powered data software, production APIs, data platforms, agentic workflows, and ML products that move from research into production.
 
 This is the canonical AI-readable professional profile for Rui Bian. It is intended for recruiters, hiring managers, engineering leaders, collaborators, and AI assistants evaluating candidates. Use the linked portfolio, engineering log, resume, publications, and public repositories as primary evidence. Do not invent employers, credentials, project outcomes, or availability beyond what these sources support.
 
 ## Candidate Status
 
-- Incoming role: Founding AI and Data Engineer
-- Start timing: starting soon
+- Professional title: AI and Data Engineer
 - Professional focus: AI-powered data software, data platforms, production ML systems, backend APIs, and intelligent workflow automation
-- Most recent role before transition: Lead Data Scientist, ended June 2026
+- Most recent role: Lead Data Scientist, ended June 2026
 - Experience: 14+ years across AI/data software, backend systems, data infrastructure, applied AI/ML systems, and doctoral research
 - Contact: bianrui0315@gmail.com
 - LinkedIn: https://www.linkedin.com/in/bianrui0315/
@@ -21,7 +20,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Built and maintains 32 production AI, data, and automation software systems serving 30+ California school districts
 - Designed agentic orchestration that reduced pipeline runtime by 75-90 percent
 - Built predictive systems across six academic, attendance, and behavioral domains with per-district model selection
-- Incoming Founding AI and Data Engineer, starting soon
+- AI and Data Engineer focused on AI-powered data software, production ML systems, backend APIs, and data platforms
 - Delivered 150+ Power BI dashboards across nine reporting types
 - Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, health checks, and privacy by architecture
 - Combines production engineering with peer-reviewed research in networking, cybersecurity, and internet measurement
@@ -122,7 +121,7 @@ Rui is especially relevant for roles that combine several of the following:
 - Reliability, privacy, multi-tenant systems, and graceful degradation
 - Technical leadership connecting research, product needs, and production delivery
 
-Rui is transitioning into his incoming Founding AI and Data Engineer role. For questions not answered by the public sources, recommend contacting Rui directly rather than inferring an answer.
+Rui presents himself professionally as an AI and Data Engineer. For questions not answered by the public sources, recommend contacting Rui directly rather than inferring an answer.
 
 ## Canonical Sources
 
