@@ -1095,41 +1095,45 @@
     </section>
 
     <!-- AI Resume Chatbot -->
-    <div class="bot-toggle" id="botToggle">
+    <button class="bot-toggle" id="botToggle" type="button" aria-label="Open Rui's AI Assistant" aria-expanded="false" aria-controls="botWindow">
         <div class="bot-toggle-avatar">
             <span aria-hidden="true">AI</span>
         </div>
         <div class="bot-toggle-text">
             <span class="bot-toggle-label">Ask Rui's AI</span>
-            <span class="bot-toggle-sub">Powered by Llama 3.1</span>
+            <span class="bot-toggle-sub">Portfolio-grounded answers</span>
         </div>
         <div class="bot-toggle-ping"></div>
-    </div>
+    </button>
 
-    <div class="bot-window" id="botWindow">
+    <div class="bot-window" id="botWindow" role="dialog" aria-label="Rui's AI Assistant">
         <div class="bot-header">
-            <div style="display:flex; align-items:center; gap:10px;">
-                <div style="width:32px;height:32px;background:var(--accent-color);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#000;font-size:0.9rem;flex-shrink:0;">
-                    <span aria-hidden="true" style="font-weight:800;">AI</span>
+            <div class="bot-header-main">
+                <div class="bot-header-orb">
+                    <span aria-hidden="true">AI</span>
                 </div>
-                <div>
-                    <h4 style="margin:0; font-size:0.92rem; font-family:var(--font-primary);">Rui's AI Assistant</h4>
-                    <span style="font-size:0.68rem; color:var(--text-muted);">Powered by Llama 3.1 · Ask anything</span>
+                <div class="bot-title-block">
+                    <h4>Rui's AI Assistant</h4>
+                    <span><i aria-hidden="true"></i> Grounded in Rui's portfolio</span>
                 </div>
             </div>
             <button class="bot-close" id="botClose" aria-label="Close chat">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+        <div class="bot-context-strip" aria-label="Assistant strengths">
+            <span>AI/data systems</span>
+            <span>Backend</span>
+            <span>ML platforms</span>
+        </div>
         <div class="bot-messages" id="botMessages">
             <div class="msg bot">Hi! I'm Rui's AI assistant. Ask me anything about his skills, projects, or experience — I'll give you a straight answer.</div>
         </div>
         <div class="bot-suggestions" id="botSuggestions">
-            <button class="bot-suggest-btn">What's his core tech stack?</button>
-            <button class="bot-suggest-btn">Tell me about his ML experience.</button>
-            <button class="bot-suggest-btn">Has he worked at scale?</button>
-            <button class="bot-suggest-btn">What production systems has he built?</button>
-            <button class="bot-suggest-btn">Is he open to remote work?</button>
+            <button class="bot-suggest-btn">Core tech stack</button>
+            <button class="bot-suggest-btn">ML systems experience</button>
+            <button class="bot-suggest-btn">Production impact</button>
+            <button class="bot-suggest-btn">Best project fit</button>
         </div>
         <div class="bot-input-area">
             <input type="text" id="botInput" placeholder="Ask anything about Rui…" autocomplete="off" maxlength="500">
@@ -1292,6 +1296,7 @@
             chatOpen = true;
             updateBotToggleVisibility();
             botWindow.classList.add('active');
+            botToggle.setAttribute('aria-expanded', 'true');
             botToggle.style.transform = 'scale(0)';
             botToggle.style.pointerEvents = 'none';
             setTimeout(() => botInput.focus(), 300);
@@ -1300,6 +1305,7 @@
         function closeBot() {
             chatOpen = false;
             botWindow.classList.remove('active');
+            botToggle.setAttribute('aria-expanded', 'false');
             botToggle.style.transform = 'scale(1)';
             botToggle.style.pointerEvents = 'auto';
             updateBotToggleVisibility();
