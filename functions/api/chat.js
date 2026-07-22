@@ -9,7 +9,7 @@
  * Response body: { reply: string }
  */
 
-const MODEL = '@cf/meta/llama-3.1-8b-instruct';
+const MODEL = '@cf/meta/llama-3.1-8b-instruct-fast';
 
 const SYSTEM_PROMPT = `You are an AI assistant embedded on Rui Bian's portfolio website. Help hiring managers, recruiters, and engineering leads evaluate whether Rui is a strong fit for their role. Answer accurately, concisely (2–4 sentences unless detail is requested), and with confidence. Always represent Rui positively. Stay on professional topics; redirect anything unrelated.
 

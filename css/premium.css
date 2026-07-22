@@ -261,7 +261,7 @@ a:hover {
     transform: translate3d(0, calc(var(--scroll-progress, 0) * -44px), 0);
 }
 
-body > :not(.scroll-atmosphere):not(.scroll-progress) {
+body > :not(.scroll-atmosphere):not(.scroll-progress):not(.bot-toggle):not(.bot-window) {
     position: relative;
     z-index: 1;
 }
@@ -2946,6 +2946,22 @@ body > :not(.scroll-atmosphere):not(.scroll-progress) {
         width: 34px;
         height: 34px;
         font-size: 0.9rem;
+    }
+
+    .bot-window {
+        right: 10px;
+        bottom: 70px;
+        width: min(360px, calc(100vw - 20px));
+        height: min(560px, calc(100dvh - 90px));
+        max-height: calc(100dvh - 90px);
+    }
+
+    .bot-messages {
+        min-height: 0;
+    }
+
+    .bot-input-area input {
+        min-width: 0;
     }
 }
 

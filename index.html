@@ -1201,9 +1201,7 @@
         const mobileHeroQuery = window.matchMedia('(max-width: 560px)');
 
         function updateBotToggleVisibility() {
-            const hideForHero = mobileHeroQuery.matches && heroVisibleOnMobile;
-            const hideForEvidence = mobileHeroQuery.matches && visualEvidenceVisibleOnMobile;
-            botToggle.classList.toggle('bot-toggle-hidden', (recommendationsVisible || hideForHero || hideForEvidence) && !chatOpen);
+            botToggle.classList.remove('bot-toggle-hidden');
         }
 
         const heroSection = document.getElementById('home');
