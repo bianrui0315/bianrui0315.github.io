@@ -1097,7 +1097,7 @@
     <!-- AI Resume Chatbot -->
     <div class="bot-toggle" id="botToggle">
         <div class="bot-toggle-avatar">
-            <i class="fa-solid fa-robot"></i>
+            <span aria-hidden="true">AI</span>
         </div>
         <div class="bot-toggle-text">
             <span class="bot-toggle-label">Ask Rui's AI</span>
@@ -1110,7 +1110,7 @@
         <div class="bot-header">
             <div style="display:flex; align-items:center; gap:10px;">
                 <div style="width:32px;height:32px;background:var(--accent-color);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#000;font-size:0.9rem;flex-shrink:0;">
-                    <i class="fa-solid fa-robot"></i>
+                    <span aria-hidden="true" style="font-weight:800;">AI</span>
                 </div>
                 <div>
                     <h4 style="margin:0; font-size:0.92rem; font-family:var(--font-primary);">Rui's AI Assistant</h4>
@@ -1118,7 +1118,7 @@
                 </div>
             </div>
             <button class="bot-close" id="botClose" aria-label="Close chat">
-                <i class="fa-solid fa-xmark"></i>
+                <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="bot-messages" id="botMessages">
@@ -1134,7 +1134,7 @@
         <div class="bot-input-area">
             <input type="text" id="botInput" placeholder="Ask anything about Rui…" autocomplete="off" maxlength="500">
             <button id="botSend" class="bot-send-btn" aria-label="Send">
-                <i class="fa-solid fa-paper-plane"></i>
+                <span aria-hidden="true">&rarr;</span>
             </button>
         </div>
     </div>
