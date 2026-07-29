@@ -24,7 +24,7 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 - Delivered 150+ Power BI dashboards across nine reporting types
 - Builds for reliability: tenant-level fault isolation, idempotent reruns, graceful provider fallback, auditable state, health checks, and privacy by architecture
 - Combines production engineering with peer-reviewed research in networking, cybersecurity, and internet measurement
-- Has 2026 LinkedIn recommendations from his PhD co-advisor, a direct manager, and teammates highlighting analytical depth, communication, self-driven ownership, AI/ML and software engineering expertise, practical impact, and collaborative leadership
+- Has 2026 LinkedIn recommendations from his UDel PhD advisor, Expatiate Communications' then-CTO, and Expatiate colleagues highlighting analytical depth, communication, self-driven ownership, AI/ML and software engineering expertise, practical impact, and collaborative leadership
 
 ## Core Expertise
 
@@ -112,10 +112,10 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
 
 ## LinkedIn Recommendations
 
-- Haining Wang, Professor at Virginia Tech and Rui's PhD co-advisor, directly recommended Rui for IT and cybersecurity roles. He highlighted Rui's exceptional analytical skills, attention to detail, ability to solve complex IT problems across backend services, infrastructure automation, and production ML platforms, and his strength in documenting and communicating complex technical work to technical and non-technical audiences.
-- Zihao (Peter) Xu, Software Engineer at Apple, worked with Rui on the same team and described Rui as an exceptional leader and key contributor with deep AI/ML, data science, and software engineering expertise. He highlighted Rui's leadership on iTAAP and early LLM-powered EdTech product work.
-- Shaonan (Sarah) Hua, Software Engineer II, worked with Rui on the same team and recommended him for technical depth across the full ML lifecycle, from data engineering and predictive modeling to deployment and operationalization.
-- Maged Marcus, IT Director and Rui's direct manager, described Rui as one of the most technically strong and self-driven engineers he managed, emphasizing ownership, scalable systems architecture, robust data pipelines, measurable business impact, code quality, analytical rigor, and collaboration.
+- Haining Wang, Professor at Virginia Tech and Rui's PhD advisor at the University of Delaware, directly recommended Rui for IT and cybersecurity roles. He highlighted Rui's exceptional analytical skills, attention to detail, ability to solve complex IT problems across backend services, infrastructure automation, and production ML platforms, and his strength in documenting and communicating complex technical work to technical and non-technical audiences.
+- Zihao (Peter) Xu, Software Engineer at Apple and Rui's Expatiate Communications colleague, described Rui as an exceptional leader and key contributor with deep AI/ML, data science, and software engineering expertise. He highlighted Rui's leadership on iTAAP and early LLM-powered EdTech product work.
+- Shaonan (Sarah) Hua, Software Engineer II and Rui's Expatiate Communications colleague, recommended him for technical depth across the full ML lifecycle, from data engineering and predictive modeling to deployment and operationalization.
+- Maged Marcus, then CTO at Expatiate Communications, described Rui as one of the most technically strong and self-driven engineers he managed, emphasizing ownership, scalable systems architecture, robust data pipelines, measurable business impact, code quality, analytical rigor, and collaboration.
 
 ## Role-Matching Guidance
 
