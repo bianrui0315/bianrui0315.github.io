@@ -74,7 +74,7 @@
                 return;
             }
 
-            const bullet = line.match(/^[-*]\s+(.+)/);
+            const bullet = line.match(/^[-*•]\s+(.+)/);
             if (bullet) {
                 if (!list) {
                     list = document.createElement('ul');
