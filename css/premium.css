@@ -392,9 +392,76 @@ body > :not(.scroll-atmosphere):not(.scroll-progress):not(.bot-toggle):not(.bot-
 .hero-subtext {
     font-size: 0.875rem;
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.9rem;
     font-family: var(--font-primary);
     letter-spacing: 0.03em;
+}
+
+.current-company-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 100%;
+    margin: 0 0 1.4rem;
+    padding: 0.5rem 0.65rem 0.5rem 0.85rem;
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(245, 166, 35, 0.08), rgba(255, 255, 255, 0.018)),
+        rgba(17, 24, 39, 0.68);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+.current-company-label {
+    color: var(--text-muted);
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.company-logo-frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: min(208px, 44vw);
+    height: 48px;
+    overflow: hidden;
+}
+
+.company-logo {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.company-logo-light {
+    display: none;
+}
+
+:root[data-theme="light"] .company-logo-dark,
+body[data-theme="light"] .company-logo-dark,
+body.light-theme .company-logo-dark {
+    display: none;
+}
+
+:root[data-theme="light"] .company-logo-light,
+body[data-theme="light"] .company-logo-light,
+body.light-theme .company-logo-light {
+    display: block;
+}
+
+:root[data-theme="light"] .current-company-brand,
+body[data-theme="light"] .current-company-brand,
+body.light-theme .current-company-brand,
+:root[data-theme="light"] .timeline-company-logo,
+body[data-theme="light"] .timeline-company-logo,
+body.light-theme .timeline-company-logo {
+    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(18, 45, 50, 0.16);
 }
 
 /* Hero tagline + scannable bullets */
@@ -545,7 +612,28 @@ body > :not(.scroll-atmosphere):not(.scroll-progress):not(.bot-toggle):not(.bot-
 .timeline-company {
     font-size: 0.95rem;
     color: var(--text-secondary);
+    margin: 0;
+}
+
+.timeline-company-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
     margin: 0 0 var(--spacing-sm);
+}
+
+.timeline-company-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 38px;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid rgba(245, 166, 35, 0.18);
+    border-radius: 7px;
+    background: rgba(10, 15, 30, 0.58);
+    overflow: hidden;
 }
 
 .timeline-highlights {
@@ -2936,6 +3024,15 @@ body > :not(.scroll-atmosphere):not(.scroll-progress):not(.bot-toggle):not(.bot-
         margin-right: auto;
     }
 
+    .current-company-brand {
+        justify-content: center;
+    }
+
+    .company-logo-frame {
+        width: min(190px, 52vw);
+        height: 44px;
+    }
+
     .hero-stats {
         justify-content: center;
         flex-direction: column;
@@ -3092,6 +3189,22 @@ body > :not(.scroll-atmosphere):not(.scroll-progress):not(.bot-toggle):not(.bot-
 
 @media (max-width: 560px) {
     .gh-stats-widget { grid-template-columns: 1fr; }
+
+    .current-company-brand {
+        width: min(260px, 100%);
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .company-logo-frame {
+        width: min(210px, 68vw);
+    }
+
+    .timeline-company-logo {
+        width: min(156px, 72vw);
+    }
 
     .bot-toggle {
         right: 10px;
