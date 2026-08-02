@@ -48,6 +48,10 @@
     box-sizing: border-box;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -3319,7 +3323,7 @@ body.light-theme .timeline-company-logo {
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 0.9rem;
-    display: none;
+    display: block;
 }
 
 .form-feedback.success {
