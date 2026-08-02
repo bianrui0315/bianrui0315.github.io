@@ -9,7 +9,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
-    <title>Rui Bian | Founding AI & Data Engineer</title>
+    <meta name="theme-color" content="#0a0f1e">
+    <title>Rui Bian | Founding AI &amp; Data Engineer</title>
     <meta name="description" content="Rui Bian, PhD — Founding AI and Data Engineer at Big Shot Pictures, building reliable AI/data infrastructure, backend APIs, ML workflows, data platforms, and automation products.">
     <meta name="keywords" content="Rui Bian, Founding AI and Data Engineer, Big Shot Pictures, AI Data Software, Data Software Engineer, AI Engineer, Data Platform Engineer, Backend Engineer, Software Engineer, ML Systems, FastAPI, Go, Python, Distributed Systems, REST APIs, Cloudflare Workers, PhD, Computer Engineering">
     <meta name="google-site-verification" content="PbrneMZzm9Aa2FzYXJ0vC0v1G3k90C6wWLx52WfqBgc">
@@ -23,11 +24,13 @@
         content="Founding AI and Data Engineer at Big Shot Pictures, building reliable AI/data infrastructure, backend services, ML workflows, and public software products.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bianrui.net/">
-    <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
+    <meta property="og:image" content="https://bianrui.net/assets/img/og/portfolio.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rui Bian, PhD | Founding AI & Data Engineer">
     <meta name="twitter:description" content="Founding AI and Data Engineer building reliable AI/data systems: backend APIs, data platforms, production ML, and automation.">
-    <meta name="twitter:image" content="https://bianrui.net/assets/img/headshot.jpg">
+    <meta name="twitter:image" content="https://bianrui.net/assets/img/og/portfolio.png">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -75,12 +78,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/fd60b4c730.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/site-ui.js?v=20260802-2"></script>
+    <script src="/assets/vendor/lucide.min.js?v=1.28.0" defer></script>
 
     <!-- Premium CSS -->
-    <link rel="stylesheet" href="css/premium.css?v=20260802-org-education-logos">
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
+    <link rel="stylesheet" href="/css/premium.css?v=20260802-reliability-pass-9">
+    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 
 <body>
@@ -88,22 +91,27 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo" aria-label="Rui Bian home">
-                <img src="assets/img/site-logo.png" alt="" class="logo-mark">
+            <a href="/" class="logo" aria-label="Rui Bian home">
+                <img src="/assets/img/favicon-48x48.png" alt="" class="logo-mark" width="36" height="36">
                 <span class="logo-text">RUI BIAN</span>
             </a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links" id="navLinks" data-nav-links>
                 <li><a href="#ecosystem" class="nav-item">Skills</a></li>
                 <li><a href="#experience" class="nav-item">Experience</a></li>
                 <li><a href="#case-studies" class="nav-item">Case Studies</a></li>
-                <li><a href="projects.html" class="nav-item">Engineering Log</a></li>
+                <li><a href="/projects" class="nav-item">Engineering Log</a></li>
                 <li><a href="#academic" class="nav-item">Academic</a></li>
                 <li><a href="#recommendations" class="nav-item">Recommendations</a></li>
                 <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+                    <i data-lucide="sun" aria-hidden="true"></i>
+                </button>
+                <button class="mobile-menu-btn" type="button" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <i data-lucide="menu" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -120,45 +128,31 @@
                     <h1 class="gradient-text">I Build Reliable AI &amp; Data Software</h1>
                     <p class="hero-tagline">Turning fragmented operational data, manual workflows, and fragile ML prototypes into production systems people can trust</p>
                     <p class="hero-subtext">Founding AI &amp; Data Engineer at Big Shot Pictures &middot; Ph.D. Computer Engineering &middot; Backend APIs &middot; Data Platforms &middot; Production ML</p>
-                    <div class="current-company-brand" aria-label="Current company: Big Shot Pictures">
+                    <div class="hero-cta hero-cta-primary">
+                        <div class="resume-action">
+                            <a href="/api/download-resume" class="btn-resume">
+                                <i data-lucide="download" aria-hidden="true"></i> Download Resume
+                            </a>
+                            <span id="hero-dl-count" class="resume-dl-count"></span>
+                        </div>
+                        <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" class="btn-github">
+                            <i data-lucide="github" aria-hidden="true"></i> GitHub
+                        </a>
+                    </div>
+                    <div class="current-company-brand">
                         <span class="current-company-label">Current company</span>
                         <span class="company-logo-frame">
-                            <img src="assets/img/big-shot-logo-gold.png" alt="Big Shot Pictures" class="company-logo company-logo-dark">
-                            <img src="assets/img/big-shot-logo-dark.png" alt="" aria-hidden="true" class="company-logo company-logo-light">
+                            <img src="/assets/img/big-shot-logo-gold.png" data-theme-src-dark="/assets/img/big-shot-logo-gold.png" data-theme-src-light="/assets/img/big-shot-logo-dark.png" alt="Big Shot Pictures" class="company-logo" width="208" height="80" decoding="async">
                         </span>
                     </div>
                     <ul class="hero-bullets">
                         <li>Currently leading 0-to-1 AI and data infrastructure for data-driven creative and business operations at <strong>Big Shot Pictures</strong></li>
                         <li>Built AI and data software across <strong>32 production systems</strong> serving <strong>30+ school districts</strong> — ingestion, ML orchestration, prediction services, compliance intelligence, and workflow automation</li>
-                        <li>Turns messy operational data into reliable software products: FastAPI &middot; Go services &middot; SQL Server &middot; MongoDB &middot; Cloudflare Workers &middot; LangGraph &middot; local LLMs</li>
                     </ul>
-
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <h4>30+</h4>
-                            <p>School Districts</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>150+</h4>
-                            <p>Power BI Dashboards</p>
-                        </div>
-                    </div>
-
-                    <div class="hero-cta">
-                        <div style="display:flex; flex-direction:column; align-items:flex-start;">
-                            <a href="/api/download-resume" class="btn-resume">
-                                <i class="fa-solid fa-file-arrow-down"></i> Download AI/Data Resume
-                            </a>
-                            <span id="hero-dl-count" class="resume-dl-count"></span>
-                        </div>
-                        <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" class="btn-github">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                    </div>
                 </div>
 
                 <div class="hero-photo">
-                    <img src="assets/img/headshot.jpg" alt="Rui Bian, PhD — Founding AI and Data Engineer">
+                    <img src="/assets/img/headshot.jpg" alt="Rui Bian, PhD, Founding AI and Data Engineer" width="260" height="260" loading="eager" decoding="async" fetchpriority="high">
                 </div>
             </div>
         </div>
@@ -169,27 +163,27 @@
         <div class="container">
             <div class="metrics-grid">
                 <div class="metric-item">
-                    <span class="metric-num count-up" data-target="32" data-suffix="">0</span>
+                    <span class="metric-num count-up" data-target="32" data-suffix="">32</span>
                     <span class="metric-label">Systems<br>Shipped</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num count-up" data-target="30" data-suffix="+">0+</span>
+                    <span class="metric-num count-up" data-target="30" data-suffix="+">30+</span>
                     <span class="metric-label">School<br>Districts Served</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num count-up" data-target="150" data-suffix="+">0+</span>
+                    <span class="metric-num count-up" data-target="150" data-suffix="+">150+</span>
                     <span class="metric-label">Power BI<br>Dashboards</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num count-up" data-target="18" data-suffix="">0</span>
+                    <span class="metric-num count-up" data-target="18" data-suffix="">18</span>
                     <span class="metric-label">School Sites<br>Automated</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num count-up" data-target="10" data-suffix="K+">0K+</span>
+                    <span class="metric-num count-up" data-target="10" data-suffix="K+">10K+</span>
                     <span class="metric-label">California<br>Schools Mapped</span>
                 </div>
                 <div class="metric-item">
-                    <span class="metric-num count-up" data-target="90" data-suffix="%">0%</span>
+                    <span class="metric-num count-up" data-target="90" data-suffix="%">90%</span>
                     <span class="metric-label">Pipeline<br>Time Saved</span>
                 </div>
             </div>
@@ -203,82 +197,62 @@
             <div class="ecosystem-grid">
 
                 <div class="eco-category fade-in">
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i data-lucide="layers" aria-hidden="true"></i>
                     <h3>AI &amp; Data Software</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">AI Product Systems</span>
-                        <span class="skill-tag">Data Software Platforms</span>
                         <span class="skill-tag">Production ML Services</span>
-                        <span class="skill-tag">FastAPI / Flask</span>
+                        <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">Go Services</span>
                         <span class="skill-tag">REST APIs</span>
                         <span class="skill-tag">LangGraph</span>
-                        <span class="skill-tag">Local LLMs</span>
-                        <span class="skill-tag">Data Quality</span>
                         <span class="skill-tag">Cloudflare Workers</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">Idempotent Pipelines</span>
                         <span class="skill-tag">Observability</span>
                     </div>
                 </div>
 
                 <div class="eco-category fade-in">
-                    <i class="fa-solid fa-server"></i>
+                    <i data-lucide="server" aria-hidden="true"></i>
                     <h3>Data Platforms</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Batch &amp; Streaming Pipelines</span>
+                        <span class="skill-tag">Batch Pipelines</span>
                         <span class="skill-tag">ETL Design</span>
-                        <span class="skill-tag">Data Quality Systems</span>
+                        <span class="skill-tag">Data Quality</span>
                         <span class="skill-tag">SQL Server / T-SQL</span>
                         <span class="skill-tag">Apache Spark</span>
                         <span class="skill-tag">Microsoft Fabric</span>
-                        <span class="skill-tag">pandas / numpy</span>
-                        <span class="skill-tag">SQLAlchemy</span>
-                        <span class="skill-tag">Playwright</span>
-                        <span class="skill-tag">Selenium</span>
-                        <span class="skill-tag">asyncio</span>
-                        <span class="skill-tag">SFTP Automation</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
                     </div>
                 </div>
 
                 <div class="eco-category fade-in">
-                    <i class="fa-solid fa-brain"></i>
+                    <i data-lucide="brain-circuit" aria-hidden="true"></i>
                     <h3>AI / ML Systems</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">LangGraph</span>
-                        <span class="skill-tag">Ollama (Local LLM)</span>
-                        <span class="skill-tag">OpenAI API</span>
-                        <span class="skill-tag">Gemini API</span>
+                        <span class="skill-tag">Agentic Workflows</span>
+                        <span class="skill-tag">Local LLMs</span>
+                        <span class="skill-tag">Structured Outputs</span>
                         <span class="skill-tag">Predictive Modeling</span>
-                        <span class="skill-tag">Classification</span>
-                        <span class="skill-tag">Anomaly Detection</span>
-                        <span class="skill-tag">Model Evaluation &amp; Monitoring</span>
-                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">Model Evaluation</span>
                         <span class="skill-tag">SHAP Explainability</span>
-                        <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">XGBoost</span>
-                        <span class="skill-tag">ARIMA / Holt-Winters</span>
+                        <span class="skill-tag">scikit-learn / XGBoost</span>
                         <span class="skill-tag">MLflow</span>
                     </div>
                 </div>
 
                 <div class="eco-category fade-in">
-                    <i class="fa-solid fa-code"></i>
+                    <i data-lucide="code-2" aria-hidden="true"></i>
                     <h3>Software Stack</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Go (Golang)</span>
+                        <span class="skill-tag">Go</span>
                         <span class="skill-tag">TypeScript</span>
                         <span class="skill-tag">React / Next.js</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                        <span class="skill-tag">SQL / T-SQL</span>
-                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Playwright</span>
                         <span class="skill-tag">Power BI / DAX</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">Plotly Mapbox</span>
-                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Git / CI</span>
                     </div>
                 </div>
 
@@ -286,200 +260,39 @@
         </div>
     </section>
 
-    <!-- Production Portfolio Section -->
-    <section class="section" id="projects" style="border-top: 1px solid var(--border-color);">
+    <!-- Selected Systems Section -->
+    <section class="section section-rule" id="projects">
         <div class="container">
-            <h2>Selected Engineering &amp; Product Work</h2>
-            <p class="section-subtitle">AI-powered data software and public products — production ML orchestration, data platforms, backend APIs, reliable ingestion services, privacy-first tooling, and operator-facing automation.</p>
-
-            <div class="project-grid">
-
-                <article class="project-card project-featured cat-backend fade-in">
-                    <span class="project-num">01</span>
-                    <span class="project-category cat-backend">AI / Data Software Platform</span>
-                    <h4>AI Data Workflow Orchestration Platform</h4>
-                    <div class="project-preview ai-flow-preview" aria-label="AI workflow orchestration architecture preview">
-                        <div class="flow-line">
-                            <span class="flow-pill">Operator GUI</span><span class="flow-arrow">→</span><span class="flow-pill">LangGraph Gate</span><span class="flow-arrow">→</span><span class="flow-pill">Audit Log</span>
-                        </div>
-                        <div class="flow-lanes">
-                            <span class="flow-lane">Ingestion</span><span class="flow-lane">IEP Compliance</span><span class="flow-lane">Prediction Scoring</span><span class="flow-lane">LEA Reports</span>
-                        </div>
-                    </div>
-                    <p class="project-summary"><strong>Rui built the orchestration layer</strong> that turns fragile manual district data workflows into a monitored AI/data software platform.</p>
-                    <ul class="project-proof">
-                        <li>LangGraph gate node, parallel fan-out, local LLM failure diagnosis, and idempotent reruns.</li>
-                        <li>Privacy-by-architecture: student data stays local instead of going to cloud LLM services.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>LangGraph</span><span>Ollama</span><span>Python</span><span>subprocess</span><span>Tkinter</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="case-studies/ai-data-workflow-orchestration.html">Case Study →</a>
-                        <a href="projects.html#ai-data-workflow-orchestration">Engineering Log →</a>
-                    </div>
-                    <div class="project-impact">75–90% runtime reduction · 30+ districts · 100K+ records/run · node-level fault isolation · zero data egress</div>
-                </article>
-
-                <article class="project-card cat-go fade-in">
-                    <span class="project-num">02</span>
+            <h2>Selected Engineering Systems</h2>
+            <p class="section-subtitle">A fast scan of Rui's backend and data platform work. The Engineering Log preserves architecture, tradeoffs, implementation details, and outcomes across the complete portfolio.</p>
+            <div class="selected-system-grid">
+                <article class="selected-system fade-in">
                     <span class="project-category cat-go">Go / Data Service</span>
-                    <h4>High-Reliability Concurrent SIS Data Ingestion Service</h4>
-                    <p class="project-summary"><strong>Rui engineered a compiled ingestion service</strong> for high-volume school data loading with concurrency and operational guardrails.</p>
-                    <ul class="project-proof">
-                        <li>Goroutine fan-out with per-school fault boundaries and safe partial failure handling.</li>
-                        <li>Startup config validation, MongoDB health checks, and idempotent reloads for reruns.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Go</span><span>MongoDB</span><span>REST API</span><span>net/http</span><span>Concurrent I/O</span>
-                    </div>
-                    <div class="project-actions"><a href="projects.html#sis-go-ingestion">Engineering Log →</a></div>
-                    <div class="project-impact">12 dataset types · goroutine fan-out · per-school fault isolation · compiled single binary</div>
+                    <h3>Concurrent SIS Ingestion</h3>
+                    <p>Goroutine fan-out, per-school fault boundaries, startup validation, and idempotent MongoDB reloads across 12 dataset types.</p>
+                    <a href="/projects#sis-go-ingestion">Read the engineering record &rarr;</a>
                 </article>
-
-                <article class="project-card cat-backend fade-in">
-                    <span class="project-num">03</span>
+                <article class="selected-system fade-in">
                     <span class="project-category cat-backend">AI Backend API</span>
-                    <h4>Adaptive Creative Analysis API</h4>
-                    <p class="project-summary"><strong>Rui designed a production API</strong> that makes LLM analysis structured, auditable, and provider-resilient.</p>
-                    <ul class="project-proof">
-                        <li>Pydantic schemas, persisted lifecycle state, health checks, and Docker-ready deployment.</li>
-                        <li>Explainable model-tier routing with bounded retries and deterministic fallback.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>FastAPI</span><span>Pydantic</span><span>SQLAlchemy</span><span>Docker</span><span>pytest</span>
-                    </div>
-                    <div class="project-actions"><a href="projects.html#adaptive-creative-api">Engineering Log →</a></div>
-                    <div class="project-impact">Schema-validated API · explainable routing · retry/fallback resilience · auditable failed states</div>
+                    <h3>Adaptive Creative Analysis API</h3>
+                    <p>Schema-validated FastAPI service with explainable model-tier routing, bounded retries, deterministic fallback, and persisted lifecycle state.</p>
+                    <a href="/projects#adaptive-creative-api">Read the engineering record &rarr;</a>
                 </article>
-
-                <article class="project-card cat-pipeline fade-in">
-                    <span class="project-num">04</span>
-                    <span class="project-category cat-pipeline">Data Ingestion Software</span>
-                    <h4>Hybrid API/Automation Government Data Ingestion Pipeline</h4>
-                    <p class="project-summary"><strong>Rui automated an operational bottleneck</strong> by combining APIs, browser automation, credential routing, and safe database reloads.</p>
-                    <ul class="project-proof">
-                        <li>REST-first ingestion, Selenium only for portal-locked reports, and per-district isolation.</li>
-                        <li>Idempotent truncate-reload makes failed or partial cycles safe to run again.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Python</span><span>REST API</span><span>Selenium</span><span>SQLAlchemy</span><span>SQL Server</span>
-                    </div>
-                    <div class="project-actions"><a href="projects.html#government-data-ingestion">Engineering Log →</a></div>
-                    <div class="project-impact">30+ districts · 7 report types · minimal browser automation surface · idempotent reruns</div>
+                <article class="selected-system fade-in">
+                    <span class="project-category cat-pipeline">Data Platform</span>
+                    <h3>Government Data Ingestion</h3>
+                    <p>REST-first collection, portal automation only where necessary, credential routing, tenant isolation, and rerun-safe SQL loading.</p>
+                    <a href="/projects#government-data-ingestion">Read the engineering record &rarr;</a>
                 </article>
-
-                <article class="project-card cat-ml fade-in">
-                    <span class="project-num">05</span>
-                    <span class="project-category cat-ml">Predictive Data Product</span>
-                    <h4>Multi-Domain Risk Prediction &amp; Decision-Support System</h4>
-                    <p class="project-summary"><strong>Rui operationalized predictive ML</strong> across academic, attendance, and behavioral domains for decision support.</p>
-                    <ul class="project-proof">
-                        <li>Per-district model selection and batch scoring instead of one brittle global model.</li>
-                        <li>LLM narrative fallback chain with graceful degradation and auditable outputs.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>scikit-learn</span><span>ARIMA</span><span>Holt-Winters</span><span>OpenAI API</span><span>Gemini API</span>
-                    </div>
-                    <div class="project-actions"><a href="projects.html#student-outcome-prediction">Engineering Log →</a></div>
-                    <div class="project-impact">20+ districts · 6 concurrent domains · graceful degradation · idempotent batch scoring</div>
-                </article>
-
-                <article class="project-card cat-compliance fade-in">
-                    <span class="project-num">06</span>
-                    <span class="project-category cat-compliance">Compliance Intelligence</span>
-                    <h4>Automated Compliance Monitoring &amp; Risk Scoring System</h4>
-                    <p class="project-summary"><strong>Rui converted compliance work into software</strong> with rule engines, extraction automation, and BI monitoring.</p>
-                    <ul class="project-proof">
-                        <li>SQL extraction, MFA-aware Playwright, PDF parsing, and computable deadline rules.</li>
-                        <li>District-level fault isolation and dashboard visibility for operational review.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Playwright</span><span>PDF parsing</span><span>SQL Server</span><span>Power BI</span>
-                    </div>
-                    <div class="project-actions"><a href="projects.html#compliance-monitoring">Engineering Log →</a></div>
-                    <div class="project-impact">21 districts · 0 missed IEP deadlines · computable-rule compliance · district-level fault isolation</div>
-                </article>
-
-                <article class="project-card project-featured cat-product fade-in">
-                    <span class="project-num">07</span>
-                    <span class="project-category cat-product">Free / Open Source Product</span>
-                    <h4>Free Image Tools</h4>
-                    <div class="project-preview">
-                        <img src="assets/img/case-studies/free-image-tools-home.jpg" alt="Free Image Tools product homepage preview">
-                    </div>
-                    <p class="project-summary"><strong>Rui built and open-sourced a free product</strong> for privacy-first image compression, conversion, resizing, PDF workflows, and AI alt text.</p>
-                    <ul class="project-proof">
-                        <li>Core tools run in the browser with no upload required and no server-side file storage.</li>
-                        <li>Open repository and free website invite issues, pull requests, and community improvements.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Client-side JS</span><span>Canvas API</span><span>Cloudflare</span><span>SEO</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="case-studies/free-image-tools.html">Case Study →</a>
-                        <a href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Use Website →</a>
-                        <a href="projects.html#free-image-tools">Engineering Log →</a>
-                    </div>
-                    <div class="project-impact">Free and open-source image tools · collaboration welcome · compression · conversion · resizing · PDF/image workflows · AI alt text</div>
-                </article>
-
-                <article class="project-card cat-ai fade-in">
-                    <span class="project-num">08</span>
-                    <span class="project-category cat-ai">AI Product</span>
-                    <h4>OpenChat for AI Agents</h4>
-                    <p class="project-summary"><strong>Rui prototyped an AI-native network</strong> where humans and systems can discover agents, capabilities, tools, and activity.</p>
-                    <ul class="project-proof">
-                        <li>Semantic profiles, public post routes, search, engagement controls, and Supabase OAuth scaffolding.</li>
-                        <li>AI-readable discovery through llms.txt, robots rules, generated sitemap, and static Cloudflare export.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Supabase</span><span>Cloudflare</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/bianrui0315/openchat-ai-agents" target="_blank" rel="noopener noreferrer">GitHub →</a>
-                        <a href="projects.html#openchat-ai-agents">Engineering Log →</a>
-                    </div>
-                    <div class="project-impact">Mock-first MVP · 8 agent profiles · semantic public routes · zero request-time compute</div>
-                </article>
-
-                <article class="project-card project-featured cat-product fade-in">
-                    <span class="project-num">09</span>
-                    <span class="project-category cat-product">Open Data Product</span>
-                    <h4>California School Explorer</h4>
-                    <div class="project-preview">
-                        <img src="assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison interface preview">
-                    </div>
-                    <p class="project-summary"><strong>Rui built an open data product</strong> that makes California school comparison more transparent, contextual, and reproducible.</p>
-                    <ul class="project-proof">
-                        <li>School profiles, side-by-side compare, trends, subgroup lenses, and similar-context baselines.</li>
-                        <li>Source notes, denominator visibility, suppression handling, and reliability guidance instead of opaque rankings.</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span>React</span><span>TypeScript</span><span>Python</span><span>PostgreSQL</span><span>Cloudflare Workers</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="case-studies/california-school-explorer.html">Case Study →</a>
-                        <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product →</a>
-                        <a href="projects.html#california-school-explorer">Engineering Log →</a>
-                    </div>
-                    <div class="project-impact">9,946 public school profiles · 3.9M+ canonical facts · nine indicators · subgroup and similar-context comparison</div>
-                </article>
-
             </div>
-
             <div class="portfolio-footer">
-                <a href="#case-studies" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Case Studies →</a>
-                &nbsp;&nbsp;·&nbsp;&nbsp;
-                <a href="projects.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Full Engineering Log →</a>
-                &nbsp;&nbsp;·&nbsp;&nbsp;
-                <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">GitHub →</a>
+                <a href="/projects">Browse the complete Engineering Log &rarr;</a>
             </div>
         </div>
     </section>
 
     <!-- Visual Evidence Section -->
-    <section class="section visual-evidence-section fade-in" id="visual-evidence" style="border-top: 1px solid var(--border-color);">
+    <section class="section section-rule visual-evidence-section fade-in" id="visual-evidence">
         <div class="container">
             <h2>Product &amp; Dashboard Evidence</h2>
             <p class="section-subtitle">Public LinkedIn media from Rui's Expatiate role: product previews and a dashboard screenshot that give recruiters concrete visual evidence without exposing student-level or customer-sensitive data.</p>
@@ -487,37 +300,37 @@
             <div class="visual-evidence-grid">
                 <article class="evidence-card">
                     <div class="evidence-media">
-                        <img src="assets/img/project-previews/itaap-dashboard-preview.png" alt="Projected California school dashboard preview with high-level risk indicators">
+                        <img src="/assets/img/project-previews/itaap-dashboard-preview.png" alt="Projected California school dashboard preview with high-level risk indicators" width="480" height="313" loading="lazy" decoding="async">
                     </div>
                     <div class="evidence-body">
                         <span class="evidence-kicker">Dashboard Preview</span>
                         <h3>Projected California School Dashboard</h3>
                         <p>Public preview of district-level decision intelligence: chronic absenteeism, suspension, English learner progress, graduation, academic performance, and college/career readiness indicators.</p>
-                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i data-lucide="linkedin" aria-hidden="true"></i></a>
                     </div>
                 </article>
 
                 <article class="evidence-card">
                     <div class="evidence-media">
-                        <img src="assets/img/project-previews/iep-pilot-preview.png" alt="IEP Pilot public product preview for AI-assisted special education planning">
+                        <img src="/assets/img/project-previews/iep-pilot-preview.png" alt="IEP Pilot public product preview for AI-assisted special education planning" width="400" height="425" loading="lazy" decoding="async">
                     </div>
                     <div class="evidence-body">
                         <span class="evidence-kicker">AI Product Preview</span>
                         <h3>IEP Pilot</h3>
                         <p>Public product media for AI-assisted special education workflows, aligning with Rui's production work in compliance intelligence, automation, and interpretable decision support.</p>
-                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i data-lucide="linkedin" aria-hidden="true"></i></a>
                     </div>
                 </article>
 
                 <article class="evidence-card">
                     <div class="evidence-media">
-                        <img src="assets/img/project-previews/sst-504-preview.png" alt="Track SST and 504 processes public product preview">
+                        <img src="/assets/img/project-previews/sst-504-preview.png" alt="Track SST and 504 processes public product preview" width="445" height="298" loading="lazy" decoding="async">
                     </div>
                     <div class="evidence-body">
                         <span class="evidence-kicker">Workflow Product Preview</span>
                         <h3>Track SST &amp; 504 Processes</h3>
                         <p>Public media for intervention tracking software, reinforcing the operational side of Rui's AI/data engineering work: workflow automation, program visibility, and reporting systems.</p>
-                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/bianrui0315/details/experience/" target="_blank" rel="noopener noreferrer">View LinkedIn evidence <i data-lucide="linkedin" aria-hidden="true"></i></a>
                     </div>
                 </article>
             </div>
@@ -525,14 +338,14 @@
     </section>
 
     <!-- Case Studies Section -->
-    <section class="section case-study-index-section fade-in" id="case-studies" style="border-top: 1px solid var(--border-color);">
+    <section class="section section-rule case-study-index-section fade-in" id="case-studies">
         <div class="container">
             <h2>Case Studies</h2>
             <p class="section-subtitle">Three focused reads for hiring teams: the product screenshot, the system decision, the engineering signal, and a direct path into the full Engineering Log.</p>
 
             <div class="case-study-index-grid">
                 <article class="case-study-card cat-backend">
-                    <div class="case-study-media ai-flow-preview" aria-label="AI workflow orchestration architecture preview">
+                    <div class="case-study-media ai-flow-preview" role="img" aria-label="AI workflow orchestration architecture preview">
                         <div class="flow-line">
                             <span class="flow-pill">Operator GUI</span><span class="flow-arrow">→</span><span class="flow-pill">LangGraph Gate</span><span class="flow-arrow">→</span><span class="flow-pill">Audit Log</span>
                         </div>
@@ -545,22 +358,22 @@
                         <h3>AI Data Workflow Orchestration Platform</h3>
                         <p>How Rui turned fragile manual workflows into a monitored LangGraph platform with local LLM diagnostics, node-level isolation, and privacy-by-architecture.</p>
                         <div class="case-study-actions">
-                            <a href="case-studies/ai-data-workflow-orchestration.html">Read Case Study →</a>
-                            <a href="projects.html#ai-data-workflow-orchestration">Engineering Log →</a>
+                            <a href="/case-studies/ai-data-workflow-orchestration">Read Case Study →</a>
+                            <a href="/projects#ai-data-workflow-orchestration">Engineering Log →</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="case-study-card cat-product">
                     <div class="case-study-media">
-                        <img src="assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer product screenshot">
+                        <img src="/assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer product screenshot" width="1440" height="980" loading="lazy" decoding="async">
                     </div>
                     <div class="case-study-body">
                         <span class="project-category cat-product">Open Data Product</span>
                         <h3>California School Explorer</h3>
                         <p>An open-source public-data product for comparing California schools with source notes, subgroup views, similar-context baselines, and reliability guidance.</p>
                         <div class="case-study-actions">
-                            <a href="case-studies/california-school-explorer.html">Read Case Study →</a>
+                            <a href="/case-studies/california-school-explorer">Read Case Study →</a>
                             <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product →</a>
                         </div>
                     </div>
@@ -568,14 +381,14 @@
 
                 <article class="case-study-card cat-product">
                     <div class="case-study-media">
-                        <img src="assets/img/case-studies/free-image-tools-home.jpg" alt="Free Image Tools product screenshot">
+                        <img src="/assets/img/case-studies/free-image-tools-home.jpg" alt="Free Image Tools product screenshot" width="1440" height="980" loading="lazy" decoding="async">
                     </div>
                     <div class="case-study-body">
                         <span class="project-category cat-product">Free / Open Source Product</span>
                         <h3>Free Image Tools</h3>
                         <p>A free, open-source image utility suite where core compression, conversion, resizing, and PDF workflows run client-side in the browser.</p>
                         <div class="case-study-actions">
-                            <a href="case-studies/free-image-tools.html">Read Case Study →</a>
+                            <a href="/case-studies/free-image-tools">Read Case Study →</a>
                             <a href="https://freeimgtools.net/" target="_blank" rel="noopener noreferrer">Use Product →</a>
                         </div>
                     </div>
@@ -583,13 +396,13 @@
             </div>
 
             <div class="portfolio-footer">
-                <a href="projects.html" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Browse the complete Engineering Log →</a>
+                <a href="/projects">Browse the complete Engineering Log →</a>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="section fade-in" id="experience" style="border-top: 1px solid var(--border-color);">
+    <section class="section section-rule fade-in" id="experience">
         <div class="container">
             <h2>Experience</h2>
             <div class="timeline">
@@ -600,9 +413,8 @@
                     <div class="timeline-role">Founding AI and Data Engineer</div>
                     <div class="timeline-company-header">
                         <p class="timeline-company">Big Shot Pictures</p>
-                        <span class="timeline-company-logo" aria-label="Big Shot Pictures logo">
-                            <img src="assets/img/big-shot-logo-gold.png" alt="" aria-hidden="true" class="company-logo company-logo-dark">
-                            <img src="assets/img/big-shot-logo-dark.png" alt="" aria-hidden="true" class="company-logo company-logo-light">
+                        <span class="timeline-company-logo" role="img" aria-label="Big Shot Pictures logo">
+                            <img src="/assets/img/big-shot-logo-gold.png" data-theme-src-dark="/assets/img/big-shot-logo-gold.png" data-theme-src-light="/assets/img/big-shot-logo-dark.png" alt="Big Shot Pictures" class="company-logo" width="180" height="70" loading="lazy" decoding="async">
                         </span>
                     </div>
                     <ul class="timeline-highlights">
@@ -619,13 +431,13 @@
                     <div class="timeline-role">Lead Data Scientist</div>
                     <div class="timeline-company-header">
                         <p class="timeline-company">Expatiate Communications · Pasadena, CA</p>
-                        <span class="timeline-company-logo logo-on-light logo-wide" aria-label="Expatiate Communications logo">
-                            <img src="assets/img/logo-expatiate-communications.svg" alt="">
+                        <span class="timeline-company-logo logo-on-light logo-wide" role="img" aria-label="Expatiate Communications logo">
+                            <img src="/assets/img/logo-expatiate-communications.svg" alt="Expatiate Communications" width="180" height="48" loading="lazy" decoding="async">
                         </span>
                     </div>
                     <ul class="timeline-highlights">
                         <li>Sole architect and owner of 32 production systems serving 30+ school districts; standardized district onboarding to configuration files — reduced new-district setup from weeks of engineering work to hours of configuration</li>
-                        <li>Built LangGraph agentic orchestration achieving <strong style="color: var(--accent-color);">75–90% pipeline runtime reduction</strong>; designed 6-domain outcome prediction with per-district model selection; enabled compliance teams to run multi-district risk pipelines without engineering support</li>
+                        <li>Built LangGraph agentic orchestration achieving <strong class="text-accent">75–90% pipeline runtime reduction</strong>; designed 6-domain outcome prediction with per-district model selection; enabled compliance teams to run multi-district risk pipelines without engineering support</li>
                         <li>Deployed operator-first platform on Microsoft Fabric: non-technical staff run complex compliance workflows via GUI launchers; automated Gmail API reporting eliminated manual weekly reporting burden across 18 school sites</li>
                     </ul>
                 </div>
@@ -636,8 +448,8 @@
                     <div class="timeline-role">Ph.D. Researcher — Computer Engineering</div>
                     <div class="timeline-company-header">
                         <p class="timeline-company">University of Delaware · Newark, DE</p>
-                        <span class="timeline-company-logo logo-on-light" aria-label="University of Delaware logo">
-                            <img src="assets/img/logo-university-of-delaware.png" alt="">
+                        <span class="timeline-company-logo logo-on-light" role="img" aria-label="University of Delaware logo">
+                            <img src="/assets/img/logo-university-of-delaware.png" alt="University of Delaware" width="72" height="72" loading="lazy" decoding="async">
                         </span>
                     </div>
                     <ul class="timeline-highlights">
@@ -665,249 +477,44 @@
     </section>
 
     <!-- Platform Design Principles Section -->
-    <section class="section" id="strengths" style="border-top: 1px solid var(--border-color);">
+    <section class="section section-rule" id="strengths">
         <div class="container">
             <h2>Platform Design Principles</h2>
-            <p class="section-subtitle">Three non-negotiable engineering constraints applied across all 32 production systems — not policies, but structural guarantees.</p>
+            <p class="section-subtitle">The design habits behind Rui's production AI and data systems. Full implementation evidence remains in the Engineering Log.</p>
             <div class="capabilities-grid">
 
                 <div class="capability-card reliable fade-in">
-                    <i class="fa-solid fa-shield-halved capability-icon"></i>
+                    <i data-lucide="shield-check" class="capability-icon" aria-hidden="true"></i>
                     <h3>Fault Isolation by Default</h3>
-                    <p>Every system isolates failures at the tenant boundary. One school or district failing never cascades to others — enforced at the goroutine or node level, not by try/catch wrapping.</p>
+                    <p>Failures stop at the tenant or workflow-node boundary, preserving useful work and making recovery observable.</p>
                     <ul class="capability-evidence">
-                        <li>Per-district error recovery node in LangGraph pipelines — failure triggers LLM diagnosis, not pipeline abort</li>
-                        <li>Per-goroutine isolation in Go SIS Service — individual timeouts logged and skipped without blocking concurrent streams</li>
-                        <li>Single MFA failure never aborts IEP Compliance Pipeline across 21 districts</li>
-                        <li>Pre-flight Extract_checker validates all inputs before any database write</li>
+                        <li>LangGraph recovery nodes diagnose a failed district without aborting the full run</li>
+                        <li>Go ingestion isolates timeouts and authentication failures per school</li>
                     </ul>
                 </div>
 
                 <div class="capability-card innov fade-in">
-                    <i class="fa-solid fa-rotate capability-icon"></i>
+                    <i data-lucide="refresh-cw" class="capability-icon" aria-hidden="true"></i>
                     <h3>Idempotent Operations</h3>
-                    <p>All ETL pipelines use truncate-reload semantics — never append-only. Any pipeline is safe to rerun after partial failure without data corruption, duplication, or manual cleanup.</p>
+                    <p>Deterministic stages and controlled reloads make partial failures safe to rerun without duplication or manual cleanup.</p>
                     <ul class="capability-evidence">
-                        <li>Truncate-reload in CALPADS Pipeline — consistent state guaranteed regardless of failure point</li>
-                        <li>Idempotent batch scoring in Risk Prediction System — results reproducible given same input snapshot</li>
-                        <li>30+ districts on shared infrastructure with strict tenant data isolation</li>
-                        <li>Test mode in every user-facing system — no accidental production sends or overwrites</li>
+                        <li>Batch scoring is reproducible from the same input snapshot</li>
+                        <li>User-facing workflows include test modes before production writes or sends</li>
                     </ul>
                 </div>
 
                 <div class="capability-card domain fade-in">
-                    <i class="fa-solid fa-lock capability-icon"></i>
+                    <i data-lucide="lock-keyhole" class="capability-icon" aria-hidden="true"></i>
                     <h3>Privacy by Architecture</h3>
-                    <p>AI inference on student data runs locally via Ollama — a structural constraint, not a configuration option. Eliminates PII exposure risk regardless of downstream code changes or vendor policy.</p>
+                    <p>Sensitive inference stays local and multi-tenant boundaries are structural, reducing reliance on downstream policy choices.</p>
                     <ul class="capability-evidence">
-                        <li>Local Ollama qwen2.5:7b for failure analysis — zero student data sent to cloud LLM APIs</li>
-                        <li>No student PII in any external API payload — enforced by design, not by access control policy</li>
-                        <li>Multi-tenant architecture: district A cannot access district B data by construction</li>
-                        <li>Structured audit log maintained locally for all pipeline runs</li>
+                        <li>Local Ollama diagnostics keep student records off cloud LLM services</li>
+                        <li>Tenant-scoped data paths and local audit logs support review</li>
                     </ul>
                 </div>
 
             </div>
-        </div>
-    </section>
-
-    <!-- Engineering Philosophy Section -->
-    <section class="section fade-in" id="philosophy" style="border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <h2>Engineering Philosophy</h2>
-            <div class="philosophy-block">
-
-                <div class="philosophy-statement fade-in">
-                    <strong class="philosophy-lead">Reliability is a product feature.</strong>
-                    Systems handling public-sector student data must remain correct under partial failure, degraded upstream inputs, and operational retries. Design approach prioritizes isolation boundaries, deterministic recovery semantics, and operational transparency — not as optimizations, but as first-class requirements that shape every architectural decision from the start.
-                </div>
-
-                <div class="philosophy-statement fade-in">
-                    <strong class="philosophy-lead">Systems scale humans, not just compute.</strong>
-                    Every system I build is operated by non-technical staff: compliance coordinators, district program managers, school administrators. Architectural decisions account for the human operating layer — test modes before production sends, color-coded risk signals instead of raw scores, single-command automation for workflows that previously required engineering involvement. The measure of leverage is not pipeline throughput, but whether your systems enable people who couldn't do the work before to do it reliably now.
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section class="section" id="impact">
-        <div class="container">
-            <h2>High-Impact Engineering</h2>
-
-            <div class="case-grid">
-                <!-- Case Study 1 -->
-                <div class="card case-card fade-in">
-                    <h3>Transforming EdTech Intelligence at Scale</h3>
-                    <div class="case-meta">
-                        <span>Expatiate Communications</span>
-                        <span>Lead Data Scientist</span>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>The Challenge</h4>
-                        <p>School districts lacked predictive visibility into IEP compliance, academic progress, and operational risk — relying on slow, fragmented manual data aggregation across disparate assessment platforms.</p>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Architecture</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>Designed a <strong>LangGraph agentic pipeline orchestrator</strong> with gate-node conditional routing, fan-out parallelism across 4 concurrent stages, and a local Ollama LLM (qwen2.5:7b) that analyzes failures and suggests fixes — no student data leaves the server</li>
-                            <li>Built a <strong>6-domain ML prediction system</strong> (CAASPP ELA/Math, ELPAC, Chronic Absenteeism, College/Career, Suspension) using scikit-learn, ARIMA, and Holt-Winters with per-district model selection; integrated OpenAI + Gemini APIs for plain-language administrative narratives</li>
-                            <li>Automated <strong>IEP compliance tracking</strong> across 21 districts: Playwright PDF download with MFA handling → PDF date parsing → green/yellow/orange/red deadline risk scoring → Power BI dashboards; zero missed IEP deadlines after deployment</li>
-                            <li>Engineered <strong>32 production tools</strong> covering ETL, compliance reporting, browser automation (Playwright + Selenium), async web scraping, SFTP delivery, a Go REST API client to MongoDB, and 150+ Power BI dashboards across 9 dashboard types</li>
-                            <li>Built automated <strong>Gmail API email alert system</strong> delivering data-driven weekly performance summaries to 18 school sites with dynamic metric selection from 12 indicators</li>
-                        </ul>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Business Impact</h4>
-                        <p class="text-accent">Platform deployed across <strong>30+ California school districts</strong>. LangGraph agentic automation achieved a <strong>75–90% reduction in pipeline processing time</strong>. Replaced dozens of hours of weekly manual work — data collection, compliance tracking, report generation, and stakeholder communication — with single-command automated pipelines.</p>
-                    </div>
-                </div>
-
-                <!-- Case Study 2 -->
-                <div class="card case-card fade-in">
-                    <h3>Internet-Scale Transparent Proxy Analysis</h3>
-                    <div class="case-meta">
-                        <span>University of Delaware</span>
-                        <span>Ph.D. Research &middot; IEEE INFOCOM 2024</span>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>The Challenge</h4>
-                        <p>Transparent proxies silently intercept and modify web traffic without user awareness, but their true prevalence, behavior, and network-wide impact were poorly understood at scale.</p>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Methodology</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>Designed a large-scale active measurement system to detect and fingerprint transparent proxies across global internet paths</li>
-                            <li>Built Python-based data collection and analysis pipelines processing millions of network probes</li>
-                            <li>Developed novel detection heuristics combining HTTP header analysis and TCP-level signals</li>
-                        </ul>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Academic Impact</h4>
-                        <p class="text-accent">Published at <strong>IEEE INFOCOM 2024</strong> — one of the top-ranked venues in computer networking, revealing the significant hidden influence of transparent proxies on internet traffic integrity.</p>
-                    </div>
-                </div>
-
-                <!-- Case Study 3 -->
-                <div class="card case-card fade-in">
-                    <h3>Mapping the Open Proxy Ecosystem</h3>
-                    <div class="case-meta">
-                        <span>University of Delaware</span>
-                        <span>Ph.D. Research &middot; Computer Networks 2022</span>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>The Challenge</h4>
-                        <p>The open proxy landscape — used for anonymization, censorship circumvention, and malicious activity — had never been comprehensively characterized in terms of scale, geography, and behavior.</p>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Methodology</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>Crawled, scanned, and analyzed <strong>436,000+ open proxies</strong> across the global internet</li>
-                            <li>Built large-scale data collection infrastructure using Python and AWS for distributed scanning</li>
-                            <li>Applied statistical modeling and traffic analysis to characterize proxy behavior, uptime, and abuse patterns</li>
-                        </ul>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Academic Impact</h4>
-                        <p class="text-accent">Published in <strong>Computer Networks (Elsevier)</strong>, 2022 — delivering the first comprehensive analysis of the open proxy ecosystem and its security implications at internet scale.</p>
-                    </div>
-                </div>
-
-                <!-- Case Study 4 -->
-                <div class="card case-card fade-in">
-                    <h3>Anycast Routing & Remote Peering Effects</h3>
-                    <div class="case-meta">
-                        <span>University of Delaware</span>
-                        <span>Ph.D. Research &middot; ACM SIGCOMM CCR 2019</span>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>The Challenge</h4>
-                        <p>Remote peering in BGP networks was known to distort anycast routing decisions, but the extent of this unintended impact on global traffic distribution — including for major cloud providers — had not been passively quantified.</p>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Methodology</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>Developed a <strong>passive BGP measurement methodology</strong> to infer anycast catchment boundaries without active probing</li>
-                            <li>Analyzed global BGP routing tables and AS-path data across hundreds of vantage points</li>
-                            <li>Correlated routing anomalies with remote peering relationships at internet exchange points (IXPs)</li>
-                        </ul>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Academic Impact</h4>
-                        <p class="text-accent">Published in <strong>ACM SIGCOMM Computer Communication Review</strong>, 2019 — a flagship networking venue — establishing foundational methodology for passive anycast analysis used in subsequent internet measurement research.</p>
-                    </div>
-                </div>
-                <!-- Case Study 5 -->
-                <div class="card case-card fade-in">
-                    <div class="case-status-badge">In Progress</div>
-                    <h3>AI Cloaking &amp; Content Differentiation on the Open Web</h3>
-                    <div class="case-meta">
-                        <span>Independent Research</span>
-                        <span>Target: IMC / WWW / USENIX Security</span>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>The Challenge</h4>
-                        <p>As AI crawlers become ubiquitous, websites are moving beyond binary blocking (robots.txt) to a more sophisticated, unmeasured tactic: returning HTTP 200 responses to both humans and AI bots, but serving degraded, watermarked, or "poisoned" content specifically to crawlers like GPTBot.</p>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Methodology</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>Twin-crawler framework (Playwright) visiting <strong>Tranco Top 10,000 domains</strong> — once as a standard browser UA, once as GPTBot</li>
-                            <li>DOM tree structural comparison and text similarity scoring via <strong>Jaccard &amp; TF-IDF cosine similarity</strong></li>
-                            <li>Sector-level taxonomy: paywall injection, text truncation, gibberish poisoning, visual watermarking</li>
-                        </ul>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Novelty</h4>
-                        <p class="text-accent">Unlike prior work measuring <em>blocking</em>, this measures <em>deception</em> — filling a critical gap in understanding how the web's content landscape diverges between human and AI readers.</p>
-                    </div>
-                </div>
-
-                <!-- Case Study 6 -->
-                <div class="card case-card fade-in">
-                    <div class="case-status-badge">In Progress</div>
-                    <h3>LLM-Hallucinated Infrastructure Domains as an Attack Surface</h3>
-                    <div class="case-meta">
-                        <span>Independent Research</span>
-                        <span>Target: NDSS / CCS / USENIX Security</span>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>The Challenge</h4>
-                        <p>LLMs are widely used to generate Infrastructure-as-Code (Terraform, Kubernetes YAML, Nginx configs). If a model hallucinates a plausible but unregistered domain endpoint, an attacker could register that domain to intercept live API traffic or credentials from deployed systems.</p>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Methodology</h4>
-                        <ul style="padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.75;">
-                            <li>1,000+ DevOps-focused prompts submitted to <strong>GPT-4o, Claude 3.5 Sonnet, and Llama-3-70B</strong></li>
-                            <li>Regex extraction of all generated domains, filtered against known public registries</li>
-                            <li>DNS resolution + Registrar API queries to quantify <strong>hallucination rate and live registrability</strong> of phantom endpoints</li>
-                        </ul>
-                    </div>
-
-                    <div class="case-section">
-                        <h4>Novelty</h4>
-                        <p class="text-accent">Distinct from package hallucination studies — this targets DNS-level infrastructure interception, a critical supply chain risk not previously measured in the LLM security literature.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="portfolio-footer"><a href="/projects">See the implementation record &rarr;</a></div>
         </div>
     </section>
 
@@ -919,11 +526,11 @@
 
             <div class="academic-grid">
                 <div class="academic-card academic-education">
-                    <h3><i class="fa-solid fa-school"></i> Education Background</h3>
+                    <h3><i data-lucide="school" aria-hidden="true"></i> Education Background</h3>
                     <div class="education-grid">
                         <div class="education-item">
                             <span class="education-logo-chip">
-                                <img src="assets/img/logo-university-of-delaware.png" alt="University of Delaware">
+                                <img src="/assets/img/logo-university-of-delaware.png" alt="University of Delaware" width="72" height="72" loading="lazy" decoding="async">
                             </span>
                             <div>
                                 <h4>University of Delaware</h4>
@@ -932,7 +539,7 @@
                         </div>
                         <div class="education-item">
                             <span class="education-logo-chip education-logo-wide">
-                                <img src="assets/img/logo-ustc.jpg" alt="University of Science and Technology of China">
+                                <img src="/assets/img/logo-ustc.jpg" alt="University of Science and Technology of China" width="72" height="74" loading="lazy" decoding="async">
                             </span>
                             <div>
                                 <h4>University of Science and Technology of China</h4>
@@ -966,7 +573,7 @@
                 </div>
 
                 <div class="academic-card">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Research Background</h3>
+                    <h3><i data-lucide="graduation-cap" aria-hidden="true"></i> Research Background</h3>
                     <p>PhD-level research in internet measurement, cybersecurity, BGP routing, proxy ecosystems, and distributed systems. Industry visitors do not need the full paper story here; the key publications are listed as evidence.</p>
                     <div class="pub-list compact-pubs">
                         <div class="pub-item">
@@ -981,7 +588,7 @@
                             <h4>Towards Passive Analysis of Anycast in Global Routing: Unintended Impact of Remote Peering.</h4>
                             <div class="pub-meta">Rui Bian et al. | ACM SIGCOMM CCR, 2019</div>
                         </div>
-                        <div class="pub-item" style="border-left-color: var(--text-secondary);">
+                        <div class="pub-item pub-item-muted">
                             <h4>Patent: Manufacturing method of micro lens / 一种微透镜的制作方法.</h4>
                             <div class="pub-meta">Gang Liu, Ying Xiong, Rui Bian et al. | CN104614936B</div>
                         </div>
@@ -989,7 +596,7 @@
                 </div>
 
                 <div class="academic-card academic-service">
-                    <h3><i class="fa-solid fa-globe"></i> Academic Service</h3>
+                    <h3><i data-lucide="globe" aria-hidden="true"></i> Academic Service</h3>
                     <p>Reviewer/TPC experience for network science, security, and systems venues:</p>
                     <ul>
                             <li>IEEE INFOCOM ('17, '18, '19, '20, '21)</li>
@@ -1004,7 +611,7 @@
     </section>
 
     <!-- Recommendations Section -->
-    <section class="section fade-in" id="recommendations" style="border-top: 1px solid var(--border-color);">
+    <section class="section section-rule fade-in" id="recommendations">
         <div class="container">
             <h2>Professional Recommendations</h2>
             <p class="section-subtitle">LinkedIn recommendations from Rui's UDel PhD advisor, Expatiate Communications' then-CTO, and Expatiate engineering colleagues who worked directly with him on research, production software, AI/ML, and data platform work.</p>
@@ -1012,7 +619,7 @@
             <div class="recommendations-grid">
                 <article class="recommendation-card">
                     <div class="recommendation-top">
-                        <i class="fa-solid fa-quote-left"></i>
+                        <i data-lucide="quote" aria-hidden="true"></i>
                         <span>July 8, 2026</span>
                     </div>
                     <div class="recommendation-author">
@@ -1021,12 +628,12 @@
                         <small>Rui's PhD advisor at University of Delaware</small>
                     </div>
                     <p class="recommendation-quote">Rui didn't just study cybersecurity; he actively solved complex problems across backend services, infrastructure automation, and production ML platforms, combining exceptional analytical skills with clear communication for technical and non-technical teams.</p>
-                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i data-lucide="linkedin" aria-hidden="true"></i></a>
                 </article>
 
                 <article class="recommendation-card">
                     <div class="recommendation-top">
-                        <i class="fa-solid fa-quote-left"></i>
+                        <i data-lucide="quote" aria-hidden="true"></i>
                         <span>June 15, 2026</span>
                     </div>
                     <div class="recommendation-author">
@@ -1035,12 +642,12 @@
                         <small>Expatiate Communications colleague</small>
                     </div>
                     <p class="recommendation-quote">Rui was an exceptional leader and key contributor with deep AI/ML, data science, and software engineering expertise, helping deliver impactful AI-powered data products and moving quickly when LLMs became practical for real-world education technology.</p>
-                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i data-lucide="linkedin" aria-hidden="true"></i></a>
                 </article>
 
                 <article class="recommendation-card">
                     <div class="recommendation-top">
-                        <i class="fa-solid fa-quote-left"></i>
+                        <i data-lucide="quote" aria-hidden="true"></i>
                         <span>June 14, 2026</span>
                     </div>
                     <div class="recommendation-author">
@@ -1049,12 +656,12 @@
                         <small>Expatiate Communications colleague</small>
                     </div>
                     <p class="recommendation-quote">Rui's expertise spans the full ML lifecycle, from data engineering and predictive modeling to deployment and operationalization. He combines a strong research foundation with practical engineering skill to solve complex problems with rigor and efficiency.</p>
-                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i data-lucide="linkedin" aria-hidden="true"></i></a>
                 </article>
 
                 <article class="recommendation-card">
                     <div class="recommendation-top">
-                        <i class="fa-solid fa-quote-left"></i>
+                        <i data-lucide="quote" aria-hidden="true"></i>
                         <span>June 13, 2026</span>
                     </div>
                     <div class="recommendation-author">
@@ -1063,70 +670,61 @@
                         <small>Rui's then-CTO at Expatiate Communications</small>
                     </div>
                     <p class="recommendation-quote">Rui is one of the most technically strong and self-driven engineers I've managed, translating scalable systems architecture, robust data pipelines, and analytical rigor into measurable business impact while raising the bar for code quality and collaboration.</p>
-                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+                    <a class="recommendation-link" href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">Read full recommendation on LinkedIn <i data-lucide="linkedin" aria-hidden="true"></i></a>
                 </article>
             </div>
 
             <div class="recommendations-footer">
                 <a href="https://www.linkedin.com/in/bianrui0315/details/recommendations/?detailScreenTabIndex=0" target="_blank" rel="noopener noreferrer">
-                    View recommendations on LinkedIn <i class="fa-brands fa-linkedin"></i>
+                    View recommendations on LinkedIn <i data-lucide="linkedin" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section fade-in" id="contact"
-        style="border-top: 1px solid var(--border-color); padding-top: var(--spacing-xl);">
-        <div class="container" style="text-align: center;">
-            <h2 style="margin-bottom: var(--spacing-sm);">Let's Connect</h2>
-            <p style="margin-bottom: var(--spacing-lg); max-width: 520px; margin-left: auto; margin-right: auto;">
+    <section class="section section-rule contact-section fade-in" id="contact">
+        <div class="container contact-container">
+            <h2 class="contact-heading">Let's Connect</h2>
+            <p class="contact-lede">
                 Founding AI and Data Engineer at Big Shot Pictures, focused on AI-powered data infrastructure, production ML systems, backend data platforms, and agentic workflow automation.
             </p>
 
             <!-- Social + Resume Links -->
-            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-bottom: var(--spacing-lg);">
+            <div class="contact-links">
                 <a href="mailto:bianrui0315@gmail.com"
-                    style="padding: 10px 24px; border: 1px solid var(--accent-color); border-radius: 8px; color: var(--accent-color); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-envelope"></i> Email
+                    class="contact-link contact-link-accent">
+                    <i data-lucide="mail" aria-hidden="true"></i> Email
                 </a>
                 <a href="https://www.linkedin.com/in/bianrui0315/" target="_blank" rel="noopener noreferrer"
-                    style="padding: 10px 24px; background: var(--accent-color); color: #000; border-radius: 8px; font-weight: 600; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    class="contact-link contact-link-primary">
+                    <i data-lucide="linkedin" aria-hidden="true"></i> LinkedIn
                 </a>
                 <a href="https://github.com/bianrui0315" target="_blank" rel="noopener noreferrer"
-                    style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
-                    <i class="fa-brands fa-github"></i> GitHub
+                    class="contact-link contact-link-secondary">
+                    <i data-lucide="github" aria-hidden="true"></i> GitHub
                 </a>
-                <div style="display:flex; flex-direction:column; align-items:center;">
-                    <a href="/api/download-resume"
-                        style="padding: 10px 24px; border: 1px solid rgba(240,236,228,0.2); border-radius: 8px; color: var(--text-primary); font-weight: 500; font-family: var(--font-primary); display: inline-flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-file-arrow-down"></i> AI/Data Resume
+                <div class="contact-download">
+                    <a href="/api/download-resume" class="contact-link contact-link-secondary">
+                        <i data-lucide="download" aria-hidden="true"></i> AI/Data Resume
                     </a>
                     <span id="contact-dl-count" class="resume-dl-count"></span>
                 </div>
             </div>
 
-            <!-- GitHub Live Stats -->
-            <p id="gh-stats-loading" class="gh-stats-loading">
-                <i class="fa-brands fa-github"></i>&nbsp; Loading GitHub activity&hellip;
-            </p>
-            <div id="gh-stats-widget" class="gh-stats-widget" style="display:none;">
-                <div class="gh-stats-card">
-                    <h4><i class="fa-brands fa-github"></i> Top Languages</h4>
-                    <div id="gh-lang-bars"></div>
-                </div>
-            </div>
-
             <p class="privacy-note">
-                <i class="fa-solid fa-shield-halved"></i>
-                Privacy note: this site records lightweight visit telemetry such as IP address, approximate location, timestamp, visited path, and browser for security, debugging, and private analytics. Visitor logs are not sold, published, or used for advertising.
+                <i data-lucide="shield-check" aria-hidden="true"></i>
+                This site records limited visit telemetry for security and private analytics. It is not sold or used for advertising. <a href="/privacy">Read the privacy notice.</a>
             </p>
 
             <!-- Contact Form -->
             <div class="contact-form-wrap">
                 <h3>Send a Message</h3>
                 <form id="contact-form" novalidate>
+                    <div class="form-honeypot" aria-hidden="true">
+                        <label for="cf-website">Website</label>
+                        <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-group">
                         <label for="cf-name">Name</label>
                         <input type="text" id="cf-name" name="name" required placeholder="Your name" autocomplete="name">
@@ -1139,606 +737,70 @@
                         <label for="cf-message">Message</label>
                         <textarea id="cf-message" name="message" required rows="4" placeholder="Tell me about the role or project&hellip;"></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" id="contact-submit">Send Message &rarr;</button>
-                    <div class="form-feedback" id="contact-feedback"></div>
+                    <button type="submit" class="btn-submit" id="contact-submit">Send Message</button>
+                    <div class="form-feedback" id="contact-feedback" role="status" aria-live="polite" hidden></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- AI Resume Chatbot -->
-    <button class="bot-toggle" id="botToggle" type="button" aria-label="Open Rui's AI Assistant" aria-expanded="false" aria-controls="botWindow">
-        <div class="bot-toggle-avatar">
-            <span aria-hidden="true">AI</span>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Rui Bian. Built for clear, evidence-based engineering conversations. <a href="/privacy">Privacy</a></p>
         </div>
-        <div class="bot-toggle-text">
+    </footer>
+
+    <!-- AI Resume Chatbot -->
+    <button class="bot-toggle" id="botToggle" type="button" aria-label="Open Rui's AI Assistant" aria-expanded="false" aria-controls="botWindow" title="Open Rui's AI Assistant">
+        <span class="bot-toggle-avatar">
+            <span aria-hidden="true">AI</span>
+        </span>
+        <span class="bot-toggle-text">
             <span class="bot-toggle-label">Ask Rui's AI</span>
             <span class="bot-toggle-sub">Portfolio-grounded answers</span>
-        </div>
-        <div class="bot-toggle-ping"></div>
+        </span>
+        <span class="bot-toggle-ping" aria-hidden="true"></span>
     </button>
 
-    <div class="bot-window" id="botWindow" role="dialog" aria-label="Rui's AI Assistant">
+    <div class="bot-window" id="botWindow" role="dialog" aria-modal="true" aria-labelledby="botTitle" inert>
         <div class="bot-header">
             <div class="bot-header-main">
                 <div class="bot-header-orb">
                     <span aria-hidden="true">AI</span>
                 </div>
                 <div class="bot-title-block">
-                    <h4>Rui's AI Assistant</h4>
+                    <h4 id="botTitle">Rui's AI Assistant</h4>
                     <span><i aria-hidden="true"></i> Grounded in Rui's portfolio</span>
                 </div>
             </div>
-            <button class="bot-close" id="botClose" aria-label="Close chat">
-                <span aria-hidden="true">&times;</span>
+            <button class="bot-close" id="botClose" type="button" aria-label="Close chat">
+                <i data-lucide="x" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="bot-context-strip" aria-label="Assistant strengths">
+        <div class="bot-context-strip" role="group" aria-label="Assistant strengths">
             <span>AI/data systems</span>
             <span>Backend</span>
             <span>ML platforms</span>
         </div>
-        <div class="bot-messages" id="botMessages">
+        <div class="bot-messages" id="botMessages" role="log" aria-live="polite" aria-relevant="additions">
             <div class="msg bot">Hi! I'm Rui's AI assistant. Ask me anything about his skills, projects, or experience — I'll give you a straight answer.</div>
         </div>
         <div class="bot-suggestions" id="botSuggestions">
-            <button class="bot-suggest-btn">Core tech stack</button>
-            <button class="bot-suggest-btn">ML systems experience</button>
-            <button class="bot-suggest-btn">Production impact</button>
-            <button class="bot-suggest-btn">Best project fit</button>
+            <button class="bot-suggest-btn" type="button">Core tech stack</button>
+            <button class="bot-suggest-btn" type="button">ML systems experience</button>
+            <button class="bot-suggest-btn" type="button">Production impact</button>
+            <button class="bot-suggest-btn" type="button">Best project fit</button>
         </div>
         <div class="bot-input-area">
-            <input type="text" id="botInput" placeholder="Ask anything about Rui…" autocomplete="off" maxlength="500">
-            <button id="botSend" class="bot-send-btn" aria-label="Send">
-                <span aria-hidden="true">&rarr;</span>
+            <input type="text" id="botInput" aria-label="Ask Rui's AI assistant" placeholder="Ask anything about Rui..." autocomplete="off" maxlength="500">
+            <button id="botSend" class="bot-send-btn" type="button" aria-label="Send message">
+                <i data-lucide="arrow-up" aria-hidden="true"></i>
             </button>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script>
-        // --- Mobile Menu Logic ---
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        const navItems = document.querySelectorAll('.nav-item');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            });
-        });
-
-        // --- Scroll Fade-In Observer ---
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add('visible');
-                appearOnScroll.unobserve(entry.target);
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-
-        // --- AI Resume Chatbot ---
-        const botToggle   = document.getElementById('botToggle');
-        const botWindow   = document.getElementById('botWindow');
-        const botClose    = document.getElementById('botClose');
-        const botMessages = document.getElementById('botMessages');
-        const botInput    = document.getElementById('botInput');
-        const botSend     = document.getElementById('botSend');
-        const botSuggestions = document.getElementById('botSuggestions');
-
-        let chatHistory = [];
-        let chatOpen = false;
-        let recommendationsVisible = false;
-        let heroVisibleOnMobile = false;
-        let visualEvidenceVisibleOnMobile = false;
-        const mobileHeroQuery = window.matchMedia('(max-width: 560px)');
-
-        function updateBotToggleVisibility() {
-            botToggle.classList.remove('bot-toggle-hidden');
-        }
-
-        const heroSection = document.getElementById('home');
-        if (heroSection && botToggle) {
-            const heroBotVisibilityObserver = new IntersectionObserver(entries => {
-                heroVisibleOnMobile = entries.some(entry => entry.isIntersecting && entry.intersectionRatio > 0.2);
-                updateBotToggleVisibility();
-            }, { threshold: [0, 0.2, 0.5] });
-            heroBotVisibilityObserver.observe(heroSection);
-            mobileHeroQuery.addEventListener('change', updateBotToggleVisibility);
-        }
-
-        const visualEvidenceSection = document.getElementById('visual-evidence');
-        if (visualEvidenceSection && botToggle) {
-            const evidenceBotVisibilityObserver = new IntersectionObserver(entries => {
-                visualEvidenceVisibleOnMobile = entries.some(entry => entry.isIntersecting);
-                updateBotToggleVisibility();
-            }, { threshold: 0.12 });
-            evidenceBotVisibilityObserver.observe(visualEvidenceSection);
-        }
-
-        const recommendationsSection = document.getElementById('recommendations');
-        if (recommendationsSection && botToggle) {
-            const botVisibilityObserver = new IntersectionObserver(entries => {
-                recommendationsVisible = entries.some(entry => entry.isIntersecting);
-                updateBotToggleVisibility();
-            }, { threshold: 0.12 });
-            botVisibilityObserver.observe(recommendationsSection);
-        }
-
-        function addMessage(text, sender) {
-            const el = document.createElement('div');
-            el.className = `msg ${sender}`;
-            el.textContent = text;
-            botMessages.appendChild(el);
-            botMessages.scrollTop = botMessages.scrollHeight;
-        }
-
-        function showTypingIndicator() {
-            const el = document.createElement('div');
-            el.className = 'typing-indicator';
-            el.id = 'typingIndicator';
-            el.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-            botMessages.appendChild(el);
-            botMessages.scrollTop = botMessages.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const el = document.getElementById('typingIndicator');
-            if (el) el.remove();
-        }
-
-        async function sendMessage(text) {
-            const msg = text.trim();
-            if (!msg) return;
-
-            addMessage(msg, 'user');
-            chatHistory.push({ role: 'user', content: msg });
-
-            botInput.value = '';
-            botSend.disabled = true;
-            botInput.disabled = true;
-            botSuggestions.style.display = 'none';
-            showTypingIndicator();
-
-            try {
-                const res = await fetch('/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: msg, history: chatHistory.slice(-6) }),
-                });
-                const data = await res.json();
-                removeTypingIndicator();
-                const reply = data.reply || "Sorry, I couldn't get a response. Please email bianrui0315@gmail.com.";
-                addMessage(reply, 'bot');
-                chatHistory.push({ role: 'assistant', content: reply });
-            } catch {
-                removeTypingIndicator();
-                addMessage("Network error — please email bianrui0315@gmail.com directly.", 'bot');
-            } finally {
-                botSend.disabled = false;
-                botInput.disabled = false;
-                botInput.focus();
-            }
-        }
-
-        botToggle.addEventListener('click', () => {
-            chatOpen = true;
-            updateBotToggleVisibility();
-            botWindow.classList.add('active');
-            botToggle.setAttribute('aria-expanded', 'true');
-            botToggle.style.transform = 'scale(0)';
-            botToggle.style.pointerEvents = 'none';
-            setTimeout(() => botInput.focus(), 300);
-        });
-
-        function closeBot() {
-            chatOpen = false;
-            botWindow.classList.remove('active');
-            botToggle.setAttribute('aria-expanded', 'false');
-            botToggle.style.transform = 'scale(1)';
-            botToggle.style.pointerEvents = 'auto';
-            updateBotToggleVisibility();
-        }
-
-        botClose.addEventListener('click', closeBot);
-
-        // Close on click outside
-        document.addEventListener('click', (e) => {
-            if (chatOpen && !botWindow.contains(e.target) && !botToggle.contains(e.target)) {
-                closeBot();
-            }
-        });
-
-        botSend.addEventListener('click', () => sendMessage(botInput.value));
-
-        botInput.addEventListener('keydown', e => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage(botInput.value);
-            }
-        });
-
-        document.querySelectorAll('.bot-suggest-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                sendMessage(this.textContent);
-            });
-        });
-
-        // --- Animated Counter for Metrics Strip ---
-        function animateCount(el) {
-            const target = parseInt(el.dataset.target, 10);
-            const suffix = el.dataset.suffix || '';
-            const duration = 1800;
-            const startTime = performance.now();
-            function step(ts) {
-                const progress = Math.min((ts - startTime) / duration, 1);
-                const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-                el.textContent = Math.floor(ease * target) + suffix;
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-        }
-
-        let countersStarted = false;
-        const counterEls = document.querySelectorAll('.count-up');
-        const metricsSection = document.getElementById('metrics');
-
-        if (metricsSection && counterEls.length) {
-            const counterObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !countersStarted) {
-                        countersStarted = true;
-                        counterEls.forEach(el => animateCount(el));
-                        counterObserver.disconnect();
-                    }
-                });
-            }, { threshold: 0.4 });
-            counterObserver.observe(metricsSection);
-        }
-
-        // --- Resume Download Counter ---
-        async function loadResumeCount() {
-            try {
-                const res = await fetch('/api/download-resume?stats=1');
-                if (!res.ok) return;
-                const { count } = await res.json();
-                if (count > 0) {
-                    const label = `Downloaded ${count} time${count !== 1 ? 's' : ''}`;
-                    ['hero-dl-count', 'contact-dl-count'].forEach(id => {
-                        const el = document.getElementById(id);
-                        if (el) el.textContent = label;
-                    });
-                }
-            } catch { /* silently ignore */ }
-        }
-
-        // --- GitHub Live Stats ---
-        async function loadGitHubStats() {
-            try {
-                const res = await fetch('/api/github-stats');
-                if (!res.ok) throw new Error('non-200');
-                const data = await res.json();
-                if (data.error) throw new Error(data.error);
-
-                const langContainer = document.getElementById('gh-lang-bars');
-                if (langContainer && data.topLanguages?.length) {
-                    const max = data.topLanguages[0].count;
-                    langContainer.innerHTML = data.topLanguages.map(({ lang, count }) => `
-                        <div class="lang-bar-row">
-                            <span class="lang-bar-label">${lang}</span>
-                            <div class="lang-bar-track">
-                                <div class="lang-bar-fill" style="width:${Math.round(count / max * 100)}%"></div>
-                            </div>
-                            <span class="lang-count">${count}</span>
-                        </div>`).join('');
-                }
-
-                const loading = document.getElementById('gh-stats-loading');
-                if (loading) loading.style.display = 'none';
-                const widget = document.getElementById('gh-stats-widget');
-                if (widget) widget.style.display = 'grid';
-            } catch {
-                const loading = document.getElementById('gh-stats-loading');
-                if (loading) loading.style.display = 'none';
-            }
-        }
-
-        // --- Contact Form ---
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function (e) {
-                e.preventDefault();
-                const btn      = document.getElementById('contact-submit');
-                const feedback = document.getElementById('contact-feedback');
-                const name     = document.getElementById('cf-name').value.trim();
-                const email    = document.getElementById('cf-email').value.trim();
-                const message  = document.getElementById('cf-message').value.trim();
-
-                feedback.className = 'form-feedback';
-                feedback.style.display = 'none';
-
-                if (!name || !email || !message) {
-                    feedback.textContent = 'Please fill in all fields.';
-                    feedback.className = 'form-feedback error';
-                    feedback.style.display = 'block';
-                    return;
-                }
-
-                btn.disabled = true;
-                btn.textContent = 'Sending…';
-
-                try {
-                    const res = await fetch('/api/contact', {
-                        method:  'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body:    JSON.stringify({ name, email, message }),
-                    });
-                    const data = await res.json();
-
-                    if (res.ok && data.success) {
-                        feedback.textContent = 'Message sent! I\'ll be in touch soon.';
-                        feedback.className = 'form-feedback success';
-                        contactForm.reset();
-                    } else {
-                        feedback.textContent = data.error || 'Something went wrong. Please try emailing directly.';
-                        feedback.className = 'form-feedback error';
-                    }
-                } catch {
-                    feedback.textContent = 'Network error. Please email bianrui0315@gmail.com directly.';
-                    feedback.className = 'form-feedback error';
-                } finally {
-                    feedback.style.display = 'block';
-                    btn.disabled = false;
-                    btn.textContent = 'Send Message →';
-                }
-            });
-        }
-
-        // --- Dynamic Project Gallery ---
-        const GALLERY_PROJECTS = [
-            {
-                title: "AI Data Workflow Orchestration Platform",
-                desc: "AI-powered data workflow platform with LangGraph gate-node routing, 4-stage fan-out parallelism, node-level fault isolation, GUI operator controls, and local Ollama failure diagnosis with zero student data sent to cloud APIs.",
-                tags: ["Backend / Infrastructure", "AI / LLM", "Automation"],
-                tech: ["LangGraph", "Ollama", "Python", "subprocess", "Tkinter"],
-                impact: "75–90% runtime reduction · 30+ districts · 100K+ records/run",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "High-Reliability Concurrent SIS Data Ingestion Service",
-                desc: "Go data service for high-concurrency API fan-out into MongoDB with per-school error isolation, startup config validation, connectivity checks, and idempotent collection reloads.",
-                tags: ["Backend / Infrastructure", "Go", "Data Engineering"],
-                tech: ["Go", "MongoDB", "REST API", "net/http"],
-                impact: "12 dataset types · goroutine fan-out · per-school fault isolation",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Adaptive Creative Analysis API",
-                desc: "AI backend API that validates and persists submissions, routes requests to fast or rich analysis tiers, and returns schema-validated structured review output with transparent processing metadata.",
-                tags: ["Backend / Infrastructure", "AI / LLM"],
-                tech: ["FastAPI", "Pydantic", "OpenAI", "SQLAlchemy", "SQLite", "Docker"],
-                impact: "Explainable complexity routing · retry/fallback resilience · auditable failed states",
-                status: "product", statusLabel: "API"
-            },
-            {
-                title: "Hybrid API/Automation Government Data Ingestion Pipeline",
-                desc: "Data ingestion software with dual-mode collection: REST API for structured data, Selenium reserved for portal-locked flows only. Auto LEA-to-credential routing handles 30+ districts. Idempotent truncate-reload.",
-                tags: ["Backend / Infrastructure", "Data Engineering", "Automation"],
-                tech: ["Python", "REST API", "Selenium", "SQLAlchemy", "SQL Server"],
-                impact: "30+ districts · 7 report types · idempotent reruns",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Multi-Domain Risk Prediction & Decision-Support System",
-                desc: "Predictive data product for 6 student outcome domains (CAASPP, ELPAC, Absenteeism, College/Career, Suspension) with per-district model selection and dual-API fallback chain for graceful degradation.",
-                tags: ["ML"],
-                tech: ["scikit-learn", "ARIMA", "Holt-Winters", "OpenAI API", "Gemini API"],
-                impact: "20+ districts · 6 concurrent domains · 3-layer graceful degradation",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Automated IEP Compliance Monitoring & Risk Scoring",
-                desc: "Compliance intelligence software with a 4-stage pipeline: SQL extraction → MFA-aware Playwright PDF download → date parsing → IDEA deadline risk scoring. Federal thresholds encoded as auditable first-class rules.",
-                tags: ["Automation", "Data Engineering"],
-                tech: ["Playwright", "PDF parsing", "SQL Server", "Power BI"],
-                impact: "21 districts · 0 missed IEP deadlines · district-level fault isolation",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Geospatial School Analytics & Search Platform",
-                desc: "Vectorized NumPy Haversine for sub-second distance search across 10K+ schools. Progressive filtering explicitly distinguishes 'no data' from 'underperforming' — no false negatives.",
-                tags: ["Visualization"],
-                tech: ["Streamlit", "Plotly Mapbox", "NumPy", "SQL Server"],
-                impact: "10K+ schools · sub-second search · correctness-first design",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Free Image Tools",
-                desc: "Free, open-source, privacy-first public product for compressing, converting, resizing, and packaging images directly in the browser. The website is free to use, the code is public, and contributions are welcome to improve tools, formats, accessibility, and workflows.",
-                tags: ["Product", "Automation"],
-                tech: ["Client-side JS", "Canvas API", "Cloudflare", "SEO", "MIT License"],
-                impact: "Free website · open-source repo · browser-side processing · no upload required",
-                status: "product", statusLabel: "Product",
-                url: "https://freeimgtools.net/",
-                linkLabel: "Use free website →",
-                repoUrl: "https://github.com/bianrui0315/freeimgtools",
-                repoLabel: "GitHub repo →"
-            },
-            {
-                title: "California School Explorer",
-                desc: "Open-source education data product that turns fragmented California public school data into transparent school profiles, side-by-side comparisons, trend analysis, subgroup lenses, nearby and similar-context baselines, and source/reliability notes.",
-                tags: ["Product", "Data Engineering", "Visualization"],
-                tech: ["React", "TypeScript", "Python", "PostgreSQL", "Cloudflare Workers"],
-                impact: "9,946 public schools · 3.9M+ canonical facts · nine indicators · Apache-2.0",
-                status: "product", statusLabel: "Open Source",
-                url: "https://github.com/bianrui0315/ca-school-explorer",
-                linkLabel: "View on GitHub →"
-            },
-            {
-                title: "OpenChat for AI Agents",
-                desc: "Threads-inspired public network where AI agents publish updates, expose tools and capabilities, and can be discovered through semantic profiles, public posts, cross-entity search, llms.txt, and a generated sitemap.",
-                tags: ["Product", "Backend / Infrastructure", "AI / LLM"],
-                tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind", "Supabase", "Cloudflare"],
-                impact: "Mock-first MVP · 8 agent profiles · static export · zero request-time compute",
-                status: "product", statusLabel: "MVP",
-                url: "https://github.com/bianrui0315/openchat-ai-agents",
-                linkLabel: "View on GitHub →"
-            },
-            {
-                title: "Gmail API Automated Weekly Reporting System",
-                desc: "Weekly data-driven performance summaries delivered to 18 school sites via Gmail API. Dynamic metric selection from 12 indicators per site, fully automated end-to-end.",
-                tags: ["Automation"],
-                tech: ["Gmail API", "Python", "OAuth2", "SQL Server"],
-                impact: "18 school sites · 12 dynamic indicators · zero manual effort",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Async Two-Phase Playwright Profile Scraper",
-                desc: "Phase 1 collects profile URLs at scale; phase 2 extracts structured data concurrently via asyncio. Handles pagination, rate limiting, and session persistence.",
-                tags: ["Automation"],
-                tech: ["Playwright", "asyncio", "Python", "BeautifulSoup"],
-                impact: "~6,000 professional profiles extracted",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "Power BI Analytics Suite — 150+ Dashboards",
-                desc: "9 dashboard types covering student performance, IEP compliance, attendance, and predictive risk across 30+ school districts. Complex DAX measures over multi-source SQL Server data models.",
-                tags: ["Visualization", "Data Engineering"],
-                tech: ["Power BI", "DAX", "SQL Server", "Microsoft Fabric"],
-                impact: "150+ dashboards · 9 types · 30+ districts",
-                status: "production", statusLabel: "Production"
-            },
-            {
-                title: "IEEE INFOCOM 2024: Transparent Proxy Analysis at Internet Scale",
-                desc: "Large-scale active measurement system detecting and fingerprinting transparent proxies across global internet paths using novel HTTP header and TCP-level detection heuristics.",
-                tags: ["Research"],
-                tech: ["Python", "AWS", "HTTP analysis", "TCP measurement"],
-                impact: "Published IEEE INFOCOM 2024 · internet-scale measurement",
-                status: "research", statusLabel: "Published"
-            },
-            {
-                title: "Elsevier Computer Networks 2022: Open Proxy Ecosystem Analysis",
-                desc: "Crawled, scanned, and analyzed 436,000+ open proxies across the global internet. Statistical modeling and traffic analysis to characterize proxy behavior, uptime, and abuse patterns.",
-                tags: ["Research"],
-                tech: ["Python", "AWS", "Statistical modeling", "Traffic analysis"],
-                impact: "436K+ proxies analyzed · Computer Networks, Elsevier 2022",
-                status: "research", statusLabel: "Published"
-            },
-            {
-                title: "ACM SIGCOMM CCR 2019: Passive Anycast BGP Analysis",
-                desc: "Passive BGP measurement methodology to infer anycast catchment boundaries without active probing. Correlated routing anomalies with remote peering relationships at internet exchange points.",
-                tags: ["Research"],
-                tech: ["BGP measurement", "Python", "AS-path analysis"],
-                impact: "ACM SIGCOMM CCR 2019 · foundational methodology cited by subsequent work",
-                status: "research", statusLabel: "Published"
-            },
-            {
-                title: "AI Cloaking & Content Differentiation Research",
-                desc: "Twin-crawler framework (Playwright) visiting Tranco Top 10,000 domains as browser UA vs. GPTBot. DOM tree comparison + Jaccard/TF-IDF cosine similarity to detect AI-targeted content degradation.",
-                tags: ["Research", "AI / LLM"],
-                tech: ["Playwright", "Python", "TF-IDF", "Jaccard similarity"],
-                impact: "Top 10K domains · target: IMC / WWW / USENIX Security",
-                status: "in-progress", statusLabel: "In Progress"
-            },
-            {
-                title: "LLM-Hallucinated Infrastructure Domains Research",
-                desc: "1,000+ DevOps prompts to GPT-4o, Claude 3.5 Sonnet, Llama-3-70B. Regex extraction of generated domains + DNS/Registrar API queries to measure hallucination rate and live registrability.",
-                tags: ["Research", "AI / LLM"],
-                tech: ["GPT-4o", "Claude API", "Python", "DNS analysis"],
-                impact: "1K+ prompts · target: NDSS / CCS / USENIX Security",
-                status: "in-progress", statusLabel: "In Progress"
-            }
-        ];
-
-        (function initGallery() {
-            const grid = document.getElementById('galleryGrid');
-            if (!grid) return;
-
-            grid.innerHTML = GALLERY_PROJECTS.map(p => `
-                <div class="gallery-card" data-tags="${p.tags.join(',')}">
-                    <div class="gcard-top">
-                        <span class="gcard-status status-${p.status}">${p.statusLabel}</span>
-                        ${p.tags.map(t => `<span class="gcard-tag">${t}</span>`).join('')}
-                    </div>
-                    <h4 class="gcard-title">${p.title}</h4>
-                    <p class="gcard-desc">${p.desc}</p>
-                    <div class="gcard-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
-                    ${p.url ? `<a class="gcard-link" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.linkLabel || 'View project →'}</a>` : ''}
-                    ${p.repoUrl ? `<a class="gcard-link" href="${p.repoUrl}" target="_blank" rel="noopener noreferrer">${p.repoLabel || 'View source →'}</a>` : ''}
-                    <div class="gcard-impact">${p.impact}</div>
-                </div>
-            `).join('');
-
-            let filterTimer = null;
-
-            function filterGallery(tag) {
-                document.querySelectorAll('.filter-btn').forEach(b =>
-                    b.classList.toggle('filter-active', b.dataset.tag === tag)
-                );
-
-                if (filterTimer) clearTimeout(filterTimer);
-
-                let showIdx = 0;
-                document.querySelectorAll('.gallery-card').forEach(card => {
-                    const match = tag === 'all' || card.dataset.tags.split(',').includes(tag);
-                    card.dataset.vis = match ? '1' : '0';
-
-                    if (match) {
-                        const delay = showIdx * 45;
-                        showIdx++;
-                        card.style.transitionDelay = `0ms`;
-                        card.style.display = '';
-                        requestAnimationFrame(() => requestAnimationFrame(() => {
-                            card.style.transitionDelay = `${delay}ms`;
-                            card.classList.remove('gcard-hide');
-                        }));
-                    } else {
-                        card.style.transitionDelay = '0ms';
-                        card.classList.add('gcard-hide');
-                    }
-                });
-
-                filterTimer = setTimeout(() => {
-                    document.querySelectorAll('.gallery-card[data-vis="0"]').forEach(c => {
-                        c.style.display = 'none';
-                        c.style.transitionDelay = '0ms';
-                    });
-                }, 320);
-            }
-
-            document.querySelectorAll('.filter-btn').forEach(btn =>
-                btn.addEventListener('click', () => filterGallery(btn.dataset.tag))
-            );
-        })();
-
-        loadResumeCount();
-        loadGitHubStats();
-
-    </script>
-    <script src="assets/js/scroll-effects.js" defer></script>
+    <script src="/assets/js/home.js?v=20260802-2" defer></script>
+    <script src="/assets/js/scroll-effects.js?v=20260802" defer></script>
 </body>
 
 </html>

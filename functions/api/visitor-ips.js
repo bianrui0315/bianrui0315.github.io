@@ -1,3 +1,5 @@
+import { jsonResponse, methodNotAllowed } from '../_lib/http.js';
+
 /**
  * GET /api/visitor-ips
  *
@@ -5,22 +7,11 @@
  *
  * Required bindings:
  *   DB                  : D1 Database binding
- *   VISITOR_STATS_TOKEN : Secret used as x-admin-token or ?token=
+ *   VISITOR_STATS_TOKEN : Secret supplied only through the x-admin-token header
  */
 
-function jsonResponse(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'no-store',
-    },
-  });
-}
-
 function getToken(request) {
-  const url = new URL(request.url);
-  return request.headers.get('x-admin-token') || url.searchParams.get('token') || '';
+  return request.headers.get('x-admin-token') || '';
 }
 
 function parseVisitor(userAgent = '') {
@@ -166,7 +157,7 @@ function buildDashboard(rows) {
   };
 }
 
-export async function onRequestGet(context) {
+async function handleGet(context) {
   const { request, env } = context;
 
   if (!env.VISITOR_STATS_TOKEN) {
@@ -197,4 +188,9 @@ export async function onRequestGet(context) {
       setup: 'Create the visitor_logs table in Cloudflare D1.',
     }, 503);
   }
+}
+
+export function onRequest(context) {
+  if (context.request.method !== 'GET') return methodNotAllowed('GET');
+  return handleGet(context);
 }

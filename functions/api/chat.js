@@ -1,3 +1,10 @@
+import {
+  checkRateLimit,
+  jsonResponse,
+  methodNotAllowed,
+  rateLimitResponse,
+} from '../_lib/http.js';
+
 /**
  * POST /api/chat
  * AI resume assistant powered by Cloudflare Workers AI (Llama 3.1 8B).
@@ -47,8 +54,8 @@ Rui builds AI-powered data infrastructure, production ML systems, backend APIs, 
 
 PROJECT 1 — AI Data Workflow Orchestration Platform (AI / Data Software)
 Stack: LangGraph, Ollama (qwen2.5:7b local LLM), Python, subprocess, Tkinter
-Portfolio case study: https://bianrui.net/case-studies/ai-data-workflow-orchestration.html
-Engineering log: https://bianrui.net/projects.html#ai-data-workflow-orchestration
+Portfolio case study: https://bianrui.net/case-studies/ai-data-workflow-orchestration
+Engineering log: https://bianrui.net/projects#ai-data-workflow-orchestration
 Problem: Multi-step data pipelines required manual execution, missed steps, no failure diagnosis.
 Design: AI-powered data workflow software using a LangGraph state machine with gate-node conditional routing + 4-stage fan-out parallelism. Chose local Ollama over cloud LLM — student records never leave the server (privacy by architecture, not policy). Per-district fault isolation at node level — one failure triggers LLM diagnosis without cascading. Multi-tenant config eliminates per-district code changes.
 Impact: 75–90% runtime reduction. Replaced 4–6 hour weekly manual process with a single command. 30+ districts, 100K+ records/run, zero data egress.
@@ -86,8 +93,8 @@ Impact: 12 dataset types, goroutine fan-out, per-school fault isolation.
 
 PUBLIC OPEN-SOURCE PRODUCT — Free Image Tools (freeimgtools.net, github.com/bianrui0315/freeimgtools)
 Stack: Client-side JavaScript, Web Canvas API, Cloudflare, image format tooling, SEO-focused product UX, MIT-licensed open source
-Portfolio case study: https://bianrui.net/case-studies/free-image-tools.html
-Engineering log: https://bianrui.net/projects.html#free-image-tools
+Portfolio case study: https://bianrui.net/case-studies/free-image-tools
+Engineering log: https://bianrui.net/projects#free-image-tools
 Product: A free, open-source, privacy-first public image utility suite for compressing, converting, resizing, and packaging images directly in the browser. Core tools include image compression, JPG/PNG/WebP/AVIF conversion, batch processing, PDF-to-image, image-to-PDF, social media resize presets, target-size compression, metadata removal, color palette extraction, Base64 output, borders, circular crops, and opt-in AI alt-text generation.
 Design: Core image workflows run client-side so users do not need to upload private files for everyday image tasks. AI alt text is an opt-in edge inference workflow for accessibility and SEO copy.
 Community: The website is free to use, the source code is public, and collaboration is welcome through issues, pull requests, and community-driven improvements.
@@ -95,16 +102,17 @@ Impact: Demonstrates Rui's ability to build and ship a public-facing open-source
 
 PUBLIC OPEN-SOURCE PRODUCT — California School Explorer (ca-school-explorer.thrilling-fragrance.workers.dev, github.com/bianrui0315/ca-school-explorer)
 Stack: React, TypeScript, Python data tooling, PostgreSQL canonical store, Cloudflare Worker Static Assets, Apache-2.0
-Portfolio case study: https://bianrui.net/case-studies/california-school-explorer.html
-Engineering log: https://bianrui.net/projects.html#california-school-explorer
+Portfolio case study: https://bianrui.net/case-studies/california-school-explorer
+Engineering log: https://bianrui.net/projects#california-school-explorer
 Product: An open-source education data product that turns fragmented California public school data into transparent profiles, side-by-side comparisons, trend analysis, subgroup views, nearby discovery, and similar-context baselines.
 Design: The project avoids simplistic "best schools" rankings. It exposes sources, denominators, freshness, suppression, comparability notes, and reproducible methodology so families and researchers can tell which findings are reliable. The repository includes deterministic data processing, validation, documentation, tests, contribution guidance, and a Cloudflare Worker release path.
 Impact: Demonstrates Rui's ability to build open-data software with public-interest data governance, data quality controls, user-facing analytics, and production deployment discipline. Current repository materials describe 9,946 public-school profiles, 3,962,208 canonical facts, nine indicators, and subgroup and context-aware comparison workflows.
 
-PUBLIC MVP — OpenChat for AI Agents (github.com/bianrui0315/openchat-ai-agents)
+PRIVATE PRODUCT PROTOTYPE — OpenChat for AI Agents
 Stack: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS, Supabase Auth/client scaffolding, Cloudflare Workers Static Assets
 Product: A polished, Threads-inspired public network where AI agents publish updates, expose tools and capabilities, and can be discovered by humans or other AI systems. Includes a responsive feed, eight agent profiles, public post detail pages, cross-entity search, engagement controls, and Google OAuth scaffolding.
 Design: Mock data, components, search, auth, and Supabase concerns are isolated by module. Semantic public routes, llms.txt, robots rules, and a generated sitemap support human and machine discovery. Static export to Cloudflare Workers requires no request-time server compute.
+Availability: The source repository is private. A product walkthrough and source discussion are available in hiring conversations. Do not claim that a public repository exists.
 Impact: Demonstrates full-stack product architecture, AI-native web discoverability, progressive external-service integration, and cost-conscious edge deployment.
 
 PROJECT — Adaptive Creative Analysis API
@@ -147,7 +155,7 @@ Automation: Playwright (sync + async), Selenium, asyncio, BeautifulSoup, Paramik
 Visualization: Power BI/DAX (150+ dashboards, 9 types), Streamlit, Plotly Mapbox, Folium
 
 === IMPACT METRICS ===
-32 production systems shipped | 1 independent AI backend project | 1 public product + 1 public MVP | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
+32 production systems shipped | 1 independent AI backend project | 2 live open-source products + 1 private prototype | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
 
 === CERTIFICATIONS (2026, valid through 2028) ===
 DataCamp: AI Engineer for Developers Associate, AI Engineer for Data Scientists Associate, Data Scientist Associate, Data Engineer Associate.
@@ -164,15 +172,20 @@ Rui is Founding AI and Data Engineer at Big Shot Pictures, focused on AI-powered
 
 If a question cannot be answered from the above, say you're not certain and suggest emailing bianrui0315@gmail.com directly.`;
 
-function jsonResponse(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { 'Content-Type': 'application/json' },
-  });
-}
-
-export async function onRequestPost(context) {
+async function handlePost(context) {
   const { request, env } = context;
+
+  const origin = request.headers.get('Origin');
+  if (origin && origin !== new URL(request.url).origin) {
+    return jsonResponse({ error: 'Cross-origin requests are not accepted.' }, 403);
+  }
+
+  const rateLimit = await checkRateLimit(context, {
+    name: 'chat',
+    limit: 20,
+    windowSeconds: 3600,
+  });
+  if (!rateLimit.allowed) return rateLimitResponse(rateLimit);
 
   if (!env.AI) {
     return jsonResponse({ error: 'AI binding not configured.' }, 503);
@@ -180,7 +193,13 @@ export async function onRequestPost(context) {
 
   let body;
   try {
-    body = await request.json();
+    const contentType = request.headers.get('Content-Type') || '';
+    if (!contentType.includes('application/json')) {
+      return jsonResponse({ error: 'Content-Type must be application/json.' }, 415);
+    }
+    const raw = await request.text();
+    if (raw.length > 10_000) return jsonResponse({ error: 'Request body is too large.' }, 413);
+    body = JSON.parse(raw);
   } catch {
     return jsonResponse({ error: 'Invalid request body.' }, 400);
   }
@@ -195,6 +214,10 @@ export async function onRequestPost(context) {
     .filter(m => m.role === 'user' || m.role === 'assistant')
     .slice(-6)
     .map(m => ({ role: m.role, content: String(m.content).slice(0, 500) }));
+  const lastHistoryItem = history.at(-1);
+  if (lastHistoryItem?.role === 'user' && lastHistoryItem.content.trim() === userMessage) {
+    history.pop();
+  }
 
   try {
     const result = await env.AI.run(MODEL, {
@@ -203,13 +226,19 @@ export async function onRequestPost(context) {
         ...history,
         { role: 'user', content: userMessage },
       ],
-      max_tokens: 130,
+      max_tokens: 220,
       temperature: 0.4,
     });
 
     const reply = result?.response?.trim() || "I'm not sure about that — please email bianrui0315@gmail.com for details.";
     return jsonResponse({ reply });
-  } catch {
-    return jsonResponse({ reply: "Sorry, I'm having trouble right now. Please email bianrui0315@gmail.com directly." });
+  } catch (error) {
+    console.error('Workers AI request failed:', error?.message || 'unknown error');
+    return jsonResponse({ error: 'The assistant is temporarily unavailable. Please email Rui directly.' }, 502);
   }
+}
+
+export function onRequest(context) {
+  if (context.request.method !== 'POST') return methodNotAllowed('POST');
+  return handlePost(context);
 }

@@ -1,3 +1,5 @@
+import { withSecurityHeaders } from './_lib/http.js';
+
 /**
  * Site-wide visitor logging for HTML page views.
  *
@@ -14,6 +16,8 @@ function shouldLogRequest(request, response) {
   const url = new URL(request.url);
   if (url.pathname.startsWith('/api/')) return false;
   if (url.pathname === '/admin' || url.pathname.startsWith('/admin/')) return false;
+  if (request.headers.get('Sec-GPC') === '1') return false;
+  if (response.status >= 400) return false;
 
   const contentType = response.headers.get('content-type') || '';
   return contentType.includes('text/html');
@@ -33,7 +37,7 @@ async function logVisit(request, env) {
   const url = new URL(request.url);
   const cf = request.cf || {};
   const ip = getVisitorIp(request).slice(0, 64);
-  const path = `${url.pathname}${url.search}`.slice(0, 500);
+  const path = url.pathname.slice(0, 500);
   const country = (request.headers.get('CF-IPCountry') || cf.country || '').slice(0, 8);
   const region = (cf.region || cf.regionCode || '').slice(0, 100);
   const city = (cf.city || '').slice(0, 100);
@@ -58,7 +62,7 @@ async function logVisit(request, env) {
 }
 
 export async function onRequest(context) {
-  const response = await context.next();
+  const response = withSecurityHeaders(await context.next());
 
   if (shouldLogRequest(context.request, response)) {
     const task = logVisit(context.request, context.env).catch(() => {});

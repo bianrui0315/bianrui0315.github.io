@@ -8,14 +8,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
+    <meta name="theme-color" content="#0a0f1e">
     <title>California School Explorer — Rui Bian</title>
     <meta name="description" content="Case study by Rui Bian: open-source California School Explorer, a public-data product for trustworthy school comparison, trends, subgroup lenses, and transparent methodology.">
-    <link rel="canonical" href="https://bianrui.net/case-studies/california-school-explorer.html">
+    <link rel="canonical" href="https://bianrui.net/case-studies/california-school-explorer">
     <meta property="og:title" content="California School Explorer — Rui Bian">
     <meta property="og:description" content="Open-source public-data product by Rui Bian for trustworthy California public school comparison and trend analysis.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://bianrui.net/case-studies/california-school-explorer.html">
+    <meta property="og:url" content="https://bianrui.net/case-studies/california-school-explorer">
     <meta property="og:image" content="https://bianrui.net/assets/img/case-studies/california-school-explorer-home.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="California School Explorer — Rui Bian">
+    <meta name="twitter:description" content="Open-source California public school comparison with transparent data quality and context.">
+    <meta name="twitter:image" content="https://bianrui.net/assets/img/case-studies/california-school-explorer-home.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -24,29 +29,34 @@
       "author": {"@type": "Person", "name": "Rui Bian", "url": "https://bianrui.net/"},
       "codeRepository": "https://github.com/bianrui0315/ca-school-explorer",
       "programmingLanguage": ["TypeScript", "Python"],
-      "url": "https://bianrui.net/case-studies/california-school-explorer.html"
+      "url": "https://bianrui.net/case-studies/california-school-explorer"
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/fd60b4c730.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/premium.css">
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
+    <script src="/assets/js/site-ui.js?v=20260802-2"></script>
+    <script src="/assets/vendor/lucide.min.js?v=1.28.0" defer></script>
+    <link rel="stylesheet" href="/css/premium.css?v=20260802-reliability-pass-9">
+    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body class="case-body">
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="../index.html" class="logo" aria-label="Rui Bian home">
-                <img src="../assets/img/site-logo.png" alt="" class="logo-mark">
+            <a href="/" class="logo" aria-label="Rui Bian home">
+                <img src="/assets/img/favicon-48x48.png" alt="" class="logo-mark" width="36" height="36">
                 <span class="logo-text">RUI BIAN</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="../index.html" class="nav-link">Portfolio</a></li>
-                <li><a href="../index.html#case-studies" class="nav-link">Case Studies</a></li>
-                <li><a href="../projects.html#california-school-explorer" class="nav-link">Engineering Log</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-links" id="navLinks" data-nav-links>
+                <li><a href="/" class="nav-link">Portfolio</a></li>
+                <li><a href="/#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="/projects#california-school-explorer" class="nav-link">Engineering Log</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme"><i data-lucide="sun" aria-hidden="true"></i></button>
+                <button class="mobile-menu-btn" type="button" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><i data-lucide="menu" aria-hidden="true"></i></button>
+            </div>
         </div>
     </nav>
 
@@ -59,7 +69,7 @@
                 <div class="case-actions">
                     <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product</a>
                     <a href="https://github.com/bianrui0315/ca-school-explorer" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="../projects.html#california-school-explorer">Engineering Log</a>
+                    <a href="/projects#california-school-explorer">Engineering Log</a>
                 </div>
                 <div class="case-metrics">
                     <div class="case-metric"><strong>9,946</strong><span>School profiles</span></div>
@@ -69,7 +79,7 @@
                 </div>
             </div>
             <div class="case-visual-shell">
-                <img src="../assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison interface with school cards and contextual filters">
+                <img src="/assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison interface with school cards and contextual filters" width="1440" height="980" loading="eager" decoding="async" fetchpriority="high">
             </div>
         </div>
     </header>
@@ -88,11 +98,11 @@
             </div>
             <div class="container case-image-grid">
                 <figure class="case-shot">
-                    <img src="../assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison view">
+                    <img src="/assets/img/case-studies/california-school-explorer-home.jpg" alt="California School Explorer comparison view" width="1440" height="980" loading="lazy" decoding="async">
                     <figcaption>Side-by-side comparison with filters, context panels, and transparent indicator summaries.</figcaption>
                 </figure>
                 <figure class="case-shot">
-                    <img src="../assets/img/case-studies/california-school-explorer-brief.jpg" alt="California School Explorer family decision brief">
+                    <img src="/assets/img/case-studies/california-school-explorer-brief.jpg" alt="California School Explorer family decision brief" width="1440" height="980" loading="lazy" decoding="async">
                     <figcaption>Shareable decision brief view that turns public data into an explainable comparison artifact.</figcaption>
                 </figure>
             </div>
@@ -121,12 +131,13 @@
                     <div class="case-actions">
                         <a href="https://ca-school-explorer.thrilling-fragrance.workers.dev/brief?view=brief&q=Porter+Ranch%2C+CA+91326&lat=34.293744&lng=-118.582012&place=Porter+Ranch%2C+CA+91326&approx=1&r=10&grade=10&type=all&coverage=50&pa=1.5&pt=1&pc=1&pr=1.5&schools=19651361996321%2C19651360102475%2C19647331933746#brief-title" target="_blank" rel="noopener noreferrer">Sample Brief</a>
                         <a href="https://github.com/bianrui0315/ca-school-explorer" target="_blank" rel="noopener noreferrer">Repository</a>
-                        <a href="../projects.html#california-school-explorer">Complete Details</a>
+                        <a href="/projects#california-school-explorer">Complete Details</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script src="../assets/js/scroll-effects.js" defer></script>
+    <footer class="site-footer"><div class="container"><p>&copy; 2026 Rui Bian. <a href="/privacy">Privacy</a></p></div></footer>
+    <script src="/assets/js/scroll-effects.js?v=20260802" defer></script>
 </body>
 </html>

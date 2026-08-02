@@ -1,6 +1,6 @@
 # bianrui.net — Portfolio Site
 
-Personal portfolio for **Rui Bian, PhD** — AI & Data Engineer focused on AI-powered data software, production ML systems, and backend data platforms.
+Personal portfolio for **Rui Bian, PhD** — Founding AI & Data Engineer focused on AI-powered data software, production ML systems, and backend data platforms.
 Deployed at [bianrui.net](https://bianrui.net).
 
 ---
@@ -12,22 +12,22 @@ Deployed at [bianrui.net](https://bianrui.net).
 | Hosting | Cloudflare Pages |
 | Static frontend | HTML · CSS · Vanilla JS |
 | Serverless backend | Cloudflare Pages Functions (ES modules) |
-| AI chatbot | Cloudflare Workers AI — `@cf/meta/llama-3.1-8b-instruct` |
+| AI chatbot | Cloudflare Workers AI — `@cf/meta/llama-3.1-8b-instruct-fast` |
 | Email notifications | Resend API |
-| Storage | Cloudflare KV (download counter + GitHub stats cache) |
+| Storage | Cloudflare KV (download counter, cache, and abuse controls) |
 | Database | Cloudflare D1 SQLite (contact form CRM + private visitor logs) |
 | Fonts | Google Fonts — Inter + Playfair Display |
-| Icons | Font Awesome 6 |
+| Icons | Locally vendored Lucide |
 
 ---
 
 ## Features
 
 ### AI Resume Chatbot (`/api/chat`)
-- Powered by **Llama 3.1 8B** via Cloudflare Workers AI — no third-party API key needed
-- Full resume system prompt: flagship systems, public product, design principles, publications, certifications
-- Multi-turn conversation with history (last 6 messages sent per request)
-- Floating pill button with pulsing online indicator; free-text input + quick-suggest chips
+- Powered by **Llama 3.1 8B** through a Cloudflare Workers AI binding
+- Portfolio-grounded system prompt covering current work, flagship systems, public products, design principles, publications, certifications, and recommendations
+- Multi-turn conversation with a bounded recent history and server-side input limits
+- Responsive bottom-right launcher, keyboard-accessible dialog, free-text input, and quick prompts
 
 ### AI-Readable Professional Profile (`/llms.txt`)
 - Recruiter-focused professional summary for AI assistants and crawlers
@@ -35,33 +35,35 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Exposes verified role fit, evidence, technical strengths, LinkedIn recommendations, publications, and contact information
 
 ### Professional Recommendations
-- Homepage section with 2026 LinkedIn recommendations from a PhD co-advisor, teammates, and a direct manager
+- Homepage 2×2 section with 2026 LinkedIn recommendations from Rui's University of Delaware PhD advisor, Expatiate Communications' then-CTO, and two Expatiate colleagues
 - Highlights AI/data software, software engineering, AI/ML, leadership, ownership, and measurable business impact
 
 ### Contact Form (`/api/contact`)
-- Validates and stores submissions in **Cloudflare D1** (SQLite)
-- Sends instant email notification via **Resend API**
-- Server-side HTML escaping prevents injection in email body
+- Validates submissions, applies a honeypot and lightweight KV rate limit, and rejects cross-origin requests
+- Stores messages in **Cloudflare D1** and can send notifications through **Resend**
+- Reports success only when at least one configured delivery channel succeeds
+- Server-side HTML escaping prevents injection in email notifications
 
 ### Resume Download Tracking (`/api/download-resume`)
 - `GET /api/download-resume` — increments counter in KV, redirects to PDF
 - `GET /api/download-resume?stats=1` — returns `{ count: N }` JSON
 - Download count displayed live near both resume buttons
 
-### GitHub Live Stats (`/api/github-stats`)
-- Proxies GitHub API with optional token stored as Cloudflare secret
-- Returns top languages as a bar chart
-- Cached in KV for 1 hour to avoid rate limits
-
 ### Private Visitor Dashboard (`/admin/visitors.html`)
-- Records HTML page visits through Cloudflare Pages middleware into D1
-- `GET /api/visitor-ips` returns the latest 10 visitor records plus retained-window summary stats, page/location/browser/device rankings, hourly trend data, and generated insights
-- Protected by `VISITOR_STATS_TOKEN`; do not expose this token publicly
+- Records successful public HTML page visits through Cloudflare Pages middleware into D1; admin/API paths and Global Privacy Control requests are excluded
+- Retains the latest 200 records and shows the latest 10 plus summary metrics, page/location/browser/device rankings, hourly trends, and generated insights
+- Protected by `VISITOR_STATS_TOKEN`, supplied only through the `x-admin-token` request header
 
-### Dynamic Project Gallery
-- 18 cards: backend systems · production ML platforms · automation infrastructure · public products/MVPs · published papers · in-progress research
-- Filter tags with icons: All · Backend/Infrastructure · AI/LLM · ML · Data Engineering · Automation · Go · Product · Visualization · Research
-- Staggered fade-in (45ms per card) with spring easing; scale-out on hide
+### Engineering Log and Case Studies
+- Three visual case studies for the AI workflow orchestration platform, California School Explorer, and Free Image Tools
+- A filterable Engineering Log documenting 36 systems and products across backend software, AI/ML, data engineering, compliance, automation, BI, and public products
+- Private prototypes are clearly labeled; the site does not advertise a public repository when source code is private
+
+### Reliability, Privacy, and SEO
+- Clean canonical URLs, sitemap, `llms.txt`, structured data, custom social cards, redirects, and a no-index custom 404 page
+- Dark/light themes, responsive drawer navigation, reduced-motion support, accessible focus states, and local icon assets
+- Security headers, JSON API errors, method restrictions, bounded request bodies, and soft KV rate limits
+- Public privacy notice describing visitor telemetry, contact storage, AI processing, and local preferences
 
 ---
 
@@ -71,11 +73,10 @@ Deployed at [bianrui.net](https://bianrui.net).
 
 | Type | Variable Name | Notes |
 |---|---|---|
-| Workers AI | `AI` | Enable in dashboard — free 10K req/day |
+| Workers AI | `AI` | Workers AI binding used by `/api/chat` |
 | KV Namespace | `PORTFOLIO_KV` | Create namespace `portfolio-kv` |
 | D1 Database | `DB` | Create database, run schema below |
-| Secret | `RESEND_API_KEY` | Free at resend.com — 3000 emails/month |
-| Secret | `GITHUB_TOKEN` | PAT with `public_repo` read scope (optional) |
+| Secret | `RESEND_API_KEY` | Optional email delivery channel |
 | Secret | `VISITOR_STATS_TOKEN` | Private token for `/admin/visitors.html` |
 
 ### D1 Schema
@@ -127,34 +128,43 @@ LIMIT 10;
 ```
 ├── index.html                  # Main portfolio page
 ├── projects.html               # Full engineering log
+├── privacy.html                # Public data and privacy notice
+├── 404.html                    # Custom no-index error page
 ├── llms.txt                    # AI-readable recruiter profile
+├── sitemap.xml                 # Canonical public URLs
+├── _headers                    # Cache and security headers
+├── _redirects                  # Legacy-to-canonical redirects
+├── _routes.json                # Pages Functions routing boundaries
 ├── css/
-│   └── premium.css             # Main stylesheet (dark theme)
+│   └── premium.css             # Responsive dark/light design system
 ├── functions/
 │   ├── _middleware.js          # Logs HTML page visits to D1
+│   ├── _lib/http.js            # Shared headers, JSON, and rate limiting
 │   └── api/
 │       ├── chat.js             # POST /api/chat — AI chatbot (Workers AI)
 │       ├── contact.js          # POST /api/contact — contact form + email
 │       ├── download-resume.js  # GET  /api/download-resume — tracking + redirect
-│       ├── github-stats.js     # GET  /api/github-stats — GitHub API proxy
-│       └── visitor-ips.js      # GET  /api/visitor-ips — private visitor dashboard data
+│       ├── visitor-ips.js      # GET /api/visitor-ips — private visitor dashboard data
+│       └── [[path]].js         # JSON 404 for unknown API routes
 ├── admin/
 │   └── visitors.html           # Private visitor analytics dashboard
+├── scripts/
+│   └── build_resume.py         # Reproducible ATS-friendly resume builder
 └── assets/
-    ├── cv/                     # Resume PDFs
-    └── img/                    # Images
+    ├── cv/                     # Current resume PDF
+    ├── img/                    # Site, company, school, project, and OG images
+    ├── js/                     # Shared UI and page behavior
+    └── vendor/                 # Vendored Lucide runtime and license
 ```
 
 ---
 
 ## Local Development
 
-Cloudflare Pages Functions require `wrangler` for local testing with bindings:
+Cloudflare Pages Functions require Wrangler for local testing:
 
 ```bash
-npm install -g wrangler
-wrangler pages dev . --compatibility-date=2024-01-01
+npx wrangler pages dev . --port 8788 --compatibility-date=2026-08-02
 ```
 
-Static pages work with any local server (e.g. VS Code Live Server).  
-Without bindings, all API endpoints degrade gracefully — the UI still renders.
+Static pages work with any local server. Without Cloudflare bindings, the UI still renders and the APIs return explicit configuration or delivery errors for their unavailable capabilities.

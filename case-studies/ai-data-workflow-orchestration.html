@@ -8,14 +8,21 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
+    <meta name="theme-color" content="#0a0f1e">
     <title>AI Data Workflow Orchestration Platform — Rui Bian</title>
     <meta name="description" content="Case study by Rui Bian: LangGraph-based AI/data workflow orchestration with local LLM failure diagnosis, node-level isolation, privacy-by-architecture, and 75-90% runtime reduction.">
-    <link rel="canonical" href="https://bianrui.net/case-studies/ai-data-workflow-orchestration.html">
+    <link rel="canonical" href="https://bianrui.net/case-studies/ai-data-workflow-orchestration">
     <meta property="og:title" content="AI Data Workflow Orchestration Platform — Rui Bian">
     <meta property="og:description" content="How Rui Bian built a monitored LangGraph orchestration platform for production data workflows, local LLM diagnostics, and privacy-preserving operations.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://bianrui.net/case-studies/ai-data-workflow-orchestration.html">
-    <meta property="og:image" content="https://bianrui.net/assets/img/headshot.jpg">
+    <meta property="og:url" content="https://bianrui.net/case-studies/ai-data-workflow-orchestration">
+    <meta property="og:image" content="https://bianrui.net/assets/img/og/ai-data-workflow.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Data Workflow Orchestration Platform — Rui Bian">
+    <meta name="twitter:description" content="Production LangGraph orchestration, local LLM diagnostics, fault isolation, and privacy-preserving execution.">
+    <meta name="twitter:image" content="https://bianrui.net/assets/img/og/ai-data-workflow.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -23,29 +30,34 @@
       "name": "AI Data Workflow Orchestration Platform",
       "author": {"@type": "Person", "name": "Rui Bian", "url": "https://bianrui.net/"},
       "description": "LangGraph-based production data workflow orchestration with local LLM failure diagnosis, privacy-by-architecture, and node-level fault isolation.",
-      "url": "https://bianrui.net/case-studies/ai-data-workflow-orchestration.html"
+      "url": "https://bianrui.net/case-studies/ai-data-workflow-orchestration"
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/fd60b4c730.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/premium.css">
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
+    <script src="/assets/js/site-ui.js?v=20260802-2"></script>
+    <script src="/assets/vendor/lucide.min.js?v=1.28.0" defer></script>
+    <link rel="stylesheet" href="/css/premium.css?v=20260802-reliability-pass-9">
+    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body class="case-body">
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="../index.html" class="logo" aria-label="Rui Bian home">
-                <img src="../assets/img/site-logo.png" alt="" class="logo-mark">
+            <a href="/" class="logo" aria-label="Rui Bian home">
+                <img src="/assets/img/favicon-48x48.png" alt="" class="logo-mark" width="36" height="36">
                 <span class="logo-text">RUI BIAN</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="../index.html" class="nav-link">Portfolio</a></li>
-                <li><a href="../index.html#case-studies" class="nav-link">Case Studies</a></li>
-                <li><a href="../projects.html#ai-data-workflow-orchestration" class="nav-link">Engineering Log</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-links" id="navLinks" data-nav-links>
+                <li><a href="/" class="nav-link">Portfolio</a></li>
+                <li><a href="/#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="/projects#ai-data-workflow-orchestration" class="nav-link">Engineering Log</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme"><i data-lucide="sun" aria-hidden="true"></i></button>
+                <button class="mobile-menu-btn" type="button" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><i data-lucide="menu" aria-hidden="true"></i></button>
+            </div>
         </div>
     </nav>
 
@@ -56,8 +68,8 @@
                 <h1>AI Data Workflow Orchestration Platform</h1>
                 <p class="case-lede">Rui built the orchestration layer that turned a fragile, multi-step district data process into one monitored operator workflow with local LLM failure diagnosis and privacy-preserving execution.</p>
                 <div class="case-actions">
-                    <a href="../projects.html#ai-data-workflow-orchestration">Full Engineering Log</a>
-                    <a href="../index.html#projects">Back to Selected Work</a>
+                    <a href="/projects#ai-data-workflow-orchestration">Full Engineering Log</a>
+                    <a href="/#projects">Back to Selected Work</a>
                 </div>
                 <div class="case-metrics">
                     <div class="case-metric"><strong>75-90%</strong><span>Runtime reduction</span></div>
@@ -135,12 +147,13 @@
                     <h2>Where To Go Deeper</h2>
                     <p>The homepage keeps this project short for recruiters. The Engineering Log preserves the complete technical details, stack, and operational impact.</p>
                     <div class="case-actions">
-                        <a href="../projects.html#ai-data-workflow-orchestration">Read Complete Details</a>
+                        <a href="/projects#ai-data-workflow-orchestration">Read Complete Details</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script src="../assets/js/scroll-effects.js" defer></script>
+    <footer class="site-footer"><div class="container"><p>&copy; 2026 Rui Bian. <a href="/privacy">Privacy</a></p></div></footer>
+    <script src="/assets/js/scroll-effects.js?v=20260802" defer></script>
 </body>
 </html>
