@@ -636,6 +636,25 @@ body.light-theme .timeline-company-logo {
     overflow: hidden;
 }
 
+.timeline-company-logo.logo-wide {
+    width: 210px;
+    height: 46px;
+    padding: 0.25rem 0.7rem;
+}
+
+.timeline-company-logo.logo-on-light {
+    background: rgba(250, 248, 241, 0.96);
+    border-color: rgba(245, 166, 35, 0.22);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.timeline-company-logo > img:not(.company-logo) {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
 .timeline-highlights {
     list-style: none;
     padding: 0;
@@ -1521,6 +1540,73 @@ body.light-theme .timeline-company-logo {
     color: var(--text-secondary);
     font-size: 0.92rem;
     line-height: 1.6;
+}
+
+.academic-education {
+    grid-column: 1 / -1;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+@media (min-width: 780px) {
+    .education-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    align-items: center;
+    gap: var(--spacing-md);
+    min-width: 0;
+    padding: 0.85rem;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 10px;
+}
+
+.education-logo-chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 132px;
+    height: 58px;
+    padding: 0.55rem 0.7rem;
+    background: rgba(250, 248, 241, 0.96);
+    border: 1px solid rgba(245, 166, 35, 0.18);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.education-logo-chip img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.education-logo-wide {
+    padding-inline: 0.45rem;
+}
+
+.education-item h4 {
+    color: var(--text-primary);
+    font-size: 0.98rem;
+    font-family: var(--font-primary);
+    line-height: 1.25;
+    margin: 0 0 0.25rem;
+}
+
+.education-item p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 0;
 }
 
 .academic-learning {
@@ -3204,6 +3290,15 @@ body.light-theme .timeline-company-logo {
 
     .timeline-company-logo {
         width: min(156px, 72vw);
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .education-logo-chip {
+        width: min(180px, 100%);
     }
 
     .bot-toggle {
