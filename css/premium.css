@@ -471,40 +471,6 @@ body > footer {
     letter-spacing: 0.03em;
 }
 
-.current-company-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    max-width: 100%;
-    margin: 0 0 1.4rem;
-    padding: 0.5rem 0.65rem 0.5rem 0.85rem;
-    border: 1px solid rgba(245, 166, 35, 0.2);
-    border-radius: 8px;
-    background:
-        linear-gradient(135deg, rgba(245, 166, 35, 0.08), rgba(255, 255, 255, 0.018)),
-        rgba(17, 24, 39, 0.68);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
-}
-
-.current-company-label {
-    color: var(--text-muted);
-    font-size: 0.67rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    line-height: 1;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.company-logo-frame {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: min(208px, 44vw);
-    height: 48px;
-    overflow: hidden;
-}
-
 .company-logo {
     display: block;
     max-width: 100%;
@@ -512,25 +478,6 @@ body > footer {
     object-fit: contain;
 }
 
-.company-logo-light {
-    display: none;
-}
-
-:root[data-theme="light"] .company-logo-dark,
-body[data-theme="light"] .company-logo-dark,
-body.light-theme .company-logo-dark {
-    display: none;
-}
-
-:root[data-theme="light"] .company-logo-light,
-body[data-theme="light"] .company-logo-light,
-body.light-theme .company-logo-light {
-    display: block;
-}
-
-:root[data-theme="light"] .current-company-brand,
-body[data-theme="light"] .current-company-brand,
-body.light-theme .current-company-brand,
 :root[data-theme="light"] .timeline-company-logo,
 body[data-theme="light"] .timeline-company-logo,
 body.light-theme .timeline-company-logo {
@@ -3202,15 +3149,6 @@ body.light-theme .timeline-company-logo {
         margin-right: auto;
     }
 
-    .current-company-brand {
-        justify-content: center;
-    }
-
-    .company-logo-frame {
-        width: min(190px, 52vw);
-        height: 44px;
-    }
-
     .hero-stats {
         justify-content: center;
         flex-direction: column;
@@ -3367,18 +3305,6 @@ body.light-theme .timeline-company-logo {
 
 @media (max-width: 560px) {
     .gh-stats-widget { grid-template-columns: 1fr; }
-
-    .current-company-brand {
-        width: min(260px, 100%);
-        flex-direction: column;
-        gap: 0.5rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .company-logo-frame {
-        width: min(210px, 68vw);
-    }
 
     .timeline-company-logo {
         width: min(156px, 72vw);
@@ -3990,7 +3916,6 @@ body.light-theme .timeline-company-logo {
         repeating-linear-gradient(0deg, rgba(21,39,43,0.025) 0 1px, transparent 1px 92px);
 }
 
-:root[data-theme="light"] .current-company-brand,
 :root[data-theme="light"] .selected-system,
 :root[data-theme="light"] .bot-suggest-btn,
 :root[data-theme="light"] .bot-context-strip span {
