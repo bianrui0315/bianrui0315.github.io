@@ -2185,7 +2185,7 @@ body.light-theme .timeline-company-logo {
 
 @media (min-width: 900px) {
     .case-study-index-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -2632,6 +2632,23 @@ body.light-theme .timeline-company-logo {
 .case-shot img {
     width: 100%;
     display: block;
+}
+
+.beauty-evidence-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.65fr);
+    align-items: start;
+}
+
+.case-shot-mobile {
+    background: #f7f5f2;
+}
+
+.case-shot-mobile img {
+    width: auto;
+    max-width: 100%;
+    max-height: 620px;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .case-shot figcaption {
@@ -3109,7 +3126,8 @@ body.light-theme .timeline-company-logo {
 
     .case-hero-grid,
     .case-two-col,
-    .case-image-grid {
+    .case-image-grid,
+    .beauty-evidence-grid {
         grid-template-columns: 1fr;
     }
 

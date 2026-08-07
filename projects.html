@@ -49,7 +49,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <script src="/assets/js/site-ui.js?v=20260802-2"></script>
     <script src="/assets/vendor/lucide.min.js?v=1.28.0" defer></script>
-    <link rel="stylesheet" href="/css/premium.css?v=20260802-reliability-pass-10">
+    <link rel="stylesheet" href="/css/premium.css?v=20260807-beauty-case-1">
     <style>
         /* Page Header */
         .page-header {
@@ -304,7 +304,7 @@
                 <div class="ph-stat"><strong>30+</strong><span>Districts</span></div>
                 <div class="ph-stat"><strong>150+</strong><span>Dashboards</span></div>
                 <div class="ph-stat"><strong>6</strong><span>Domains</span></div>
-                <div class="ph-stat"><strong>2</strong><span>Live Open-Source Products</span></div>
+                <div class="ph-stat"><strong>3</strong><span>Live Public Products</span></div>
             </div>
         </div>
     </header>
@@ -332,6 +332,21 @@
                         <div class="case-study-actions">
                             <a href="/case-studies/ai-data-workflow-orchestration">Read Case Study →</a>
                             <a href="#ai-data-workflow-orchestration">Full Details →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-study-card cat-product">
+                    <div class="case-study-media">
+                        <img src="/assets/img/case-studies/beauty-ranking-discovery.png" alt="Mirror Light beauty product ranking and comparison interface" width="1440" height="980" loading="lazy" decoding="async">
+                    </div>
+                    <div class="case-study-body">
+                        <span class="project-category cat-product">Recommendation / Data Product</span>
+                        <h3>Mirror Light Beauty Ranking</h3>
+                        <p>Explainable beauty product discovery with local personalization, D1 and FTS5 search, quality-gated catalog data, and scheduled ETL.</p>
+                        <div class="case-study-actions">
+                            <a href="/case-studies/beauty-ranking">Read Case Study &rarr;</a>
+                            <a href="#beauty-ranking">Full Details &rarr;</a>
                         </div>
                     </div>
                 </article>
@@ -928,6 +943,23 @@
                         <div class="card-tech"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span><span>Supabase</span><span>Cloudflare Workers</span></div>
                         <p class="project-link">Source and walkthrough available for hiring conversations.</p>
                         <div class="card-impact">Private prototype · 8 agent profiles · semantic routes · AI-readable discovery · zero request-time compute</div>
+                    </div>
+
+                    <div class="detail-card cat-product" data-category="product" id="beauty-ranking">
+                        <div class="card-top"><span class="card-num">37</span><span class="project-category cat-product">Recommendation / Data Product</span></div>
+                        <h3>Mirror Light Beauty Ranking</h3>
+                        <p class="card-problem">Beauty shoppers need one place to compare products, ingredients, regional context, tradeoffs, and personal fit without trusting opaque popularity lists or sending a private preference profile to a backend.</p>
+                        <ul class="card-approach">
+                            <li>Built a bilingual React and TypeScript product with overall, new, sensitive-skin, value, regional, and personalized discovery modes plus product details, comparison, wishlist, random discovery, and PDF/TXT export</li>
+                            <li>Designed a documented 0&ndash;100 local match score across product quality, skin preferences, goals, texture, budget, weather, and explicit avoidances; the profile stays in browser storage</li>
+                            <li>Implemented a single Cloudflare Worker for static assets, same-origin APIs, optional no-store weather lookup, D1 queries, and weekly Cron orchestration</li>
+                            <li>Used D1 normalized tables, FTS5 indexes, bound SQL parameters, controlled sort enums, bounded list projections, paginated catalog endpoints, and on-demand detail reads</li>
+                            <li>Created a streaming Open Beauty Facts preparation path with content hashing, source attribution, staging tables, quality gates, batch audit records, and last-good-state preservation after ETL failure</li>
+                        </ul>
+                        <div class="card-tech"><span>React 19</span><span>TypeScript</span><span>Cloudflare Workers</span><span>D1 / FTS5</span><span>Cron</span><span>Vitest</span></div>
+                        <a class="project-link" href="https://beauty-ranking.bianrui0315.workers.dev/" target="_blank" rel="noopener noreferrer">Open live product &rarr;</a>
+                        <a class="project-link" href="https://github.com/bianrui0315/beauty-ranking" target="_blank" rel="noopener noreferrer" title="Private repository; access may be required">Private source on GitHub &rarr;</a>
+                        <div class="card-impact">67,209 source records evaluated · 3,763 quality-filtered candidates · 10 explainable rankings · privacy-first personalization · weekly ETL</div>
                     </div>
 
                 </div>

@@ -91,6 +91,13 @@ This is the canonical AI-readable professional profile for Rui Bian. It is inten
   - Open-source education data product for trustworthy California public school comparison and trend analysis
   - Supports school profiles, side-by-side comparison, multi-year trends, subgroup views, nearby and similar-context baselines, source notes, denominator visibility, suppression handling, and reproducible data processing
   - Built with React, TypeScript, Python data tooling, PostgreSQL canonical storage, and Cloudflare Worker Static Assets release flow
+- Mirror Light Beauty Ranking live product: https://beauty-ranking.bianrui0315.workers.dev/
+- Mirror Light Beauty Ranking source repository (private; access may be required): https://github.com/bianrui0315/beauty-ranking
+- Mirror Light Beauty Ranking portfolio case study: https://bianrui.net/case-studies/beauty-ranking
+- Mirror Light Beauty Ranking complete engineering details: https://bianrui.net/projects#beauty-ranking
+  - Bilingual beauty product research and recommendation platform with explainable rankings, local personalization, regional context, product comparison, wishlist, and PDF/TXT export
+  - Uses React, TypeScript, Cloudflare Workers, D1, FTS5, Cron, staged Open Beauty Facts data, content hashing, quality gates, and ETL audit records
+  - The live product is public; the source repository is private and must not be described as open source
 - OpenChat for AI Agents is a private product prototype. It explores AI-agent profiles, posts, search, tools, capabilities, semantic routes, and AI-readable discovery. Source and a walkthrough are available in hiring conversations; no public repository URL is claimed.
 
 ## Research and Education
@@ -139,10 +146,11 @@ Rui presents himself professionally as Founding AI and Data Engineer at Big Shot
 - AI Data Workflow Orchestration case study: https://bianrui.net/case-studies/ai-data-workflow-orchestration
 - California School Explorer case study: https://bianrui.net/case-studies/california-school-explorer
 - Free Image Tools case study: https://bianrui.net/case-studies/free-image-tools
+- Mirror Light Beauty Ranking case study: https://bianrui.net/case-studies/beauty-ranking
 - Resume PDF: https://bianrui.net/assets/cv/Rui_Bian_AI_Data_Software_Engineer.pdf
 - GitHub: https://github.com/bianrui0315
 - LinkedIn: https://www.linkedin.com/in/bianrui0315/
 - Google Scholar: https://scholar.google.com/citations?user=B7DwSFoAAAAJ&hl=en
 - Contact: mailto:bianrui0315@gmail.com
 
-Last updated: 2026-08-02
+Last updated: 2026-08-07

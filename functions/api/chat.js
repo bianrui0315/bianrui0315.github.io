@@ -108,6 +108,16 @@ Product: An open-source education data product that turns fragmented California 
 Design: The project avoids simplistic "best schools" rankings. It exposes sources, denominators, freshness, suppression, comparability notes, and reproducible methodology so families and researchers can tell which findings are reliable. The repository includes deterministic data processing, validation, documentation, tests, contribution guidance, and a Cloudflare Worker release path.
 Impact: Demonstrates Rui's ability to build open-data software with public-interest data governance, data quality controls, user-facing analytics, and production deployment discipline. Current repository materials describe 9,946 public-school profiles, 3,962,208 canonical facts, nine indicators, and subgroup and context-aware comparison workflows.
 
+PUBLIC PRODUCT / PRIVATE SOURCE — Mirror Light Beauty Ranking (beauty-ranking.bianrui0315.workers.dev)
+Stack: React 19, TypeScript, Vite, Cloudflare Workers, D1, FTS5, Cron Triggers, Vitest, html2canvas, jsPDF
+Portfolio case study: https://bianrui.net/case-studies/beauty-ranking
+Engineering log: https://bianrui.net/projects#beauty-ranking
+Product: A bilingual beauty product research and recommendation platform with overall, new, sensitive-skin, value, regional, and personalized discovery modes; product details; comparison; wishlist; random discovery; and PDF/TXT export.
+Design: A documented 0-100 match score combines product quality with local skin preferences, goals, texture, budget, weather, and explicit avoidances. The profile stays in browser storage. A single Worker serves the React app, same-origin APIs, D1/FTS5 search, optional no-store weather lookup, and weekly ETL.
+Data engineering: A streaming Open Beauty Facts pipeline uses content hashing, source attribution, staging tables, quality gates, and audit records. Current project materials describe 67,209 source records evaluated into 3,763 quality-filtered candidates and 10 explainable rankings.
+Availability: The live product is public. The GitHub repository is private and may require access. Do not describe this project as open source.
+Impact: Demonstrates full-stack TypeScript, recommendation logic, privacy-aware product design, SQL search, data quality engineering, scheduled pipelines, and edge infrastructure.
+
 PRIVATE PRODUCT PROTOTYPE — OpenChat for AI Agents
 Stack: Next.js 16 App Router, React 19, TypeScript, Tailwind CSS, Supabase Auth/client scaffolding, Cloudflare Workers Static Assets
 Product: A polished, Threads-inspired public network where AI agents publish updates, expose tools and capabilities, and can be discovered by humans or other AI systems. Includes a responsive feed, eight agent profiles, public post detail pages, cross-entity search, engagement controls, and Google OAuth scaffolding.

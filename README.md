@@ -55,9 +55,9 @@ Deployed at [bianrui.net](https://bianrui.net).
 - Protected by `VISITOR_STATS_TOKEN`, supplied only through the `x-admin-token` request header
 
 ### Engineering Log and Case Studies
-- Three visual case studies for the AI workflow orchestration platform, California School Explorer, and Free Image Tools
-- A filterable Engineering Log documenting 36 systems and products across backend software, AI/ML, data engineering, compliance, automation, BI, and public products
-- Private prototypes are clearly labeled; the site does not advertise a public repository when source code is private
+- Four visual case studies for the AI workflow orchestration platform, Mirror Light Beauty Ranking, California School Explorer, and Free Image Tools
+- A filterable Engineering Log documenting 37 systems and products across backend software, AI/ML, data engineering, compliance, automation, BI, and public products
+- Private prototypes and source repositories are clearly labeled rather than presented as public open-source projects
 
 ### Reliability, Privacy, and SEO
 - Clean canonical URLs, sitemap, `llms.txt`, structured data, custom social cards, redirects, and a no-index custom 404 page

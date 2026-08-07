@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180x180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="AI-readable professional profile">
+    <meta name="theme-color" content="#0a0f1e">
+    <title>Mirror Light Beauty Ranking &mdash; Rui Bian</title>
+    <meta name="description" content="Case study by Rui Bian: Mirror Light, a bilingual beauty product recommendation and research platform with explainable rankings, local personalization, D1 search, and scheduled ETL.">
+    <link rel="canonical" href="https://bianrui.net/case-studies/beauty-ranking">
+    <meta property="og:title" content="Mirror Light Beauty Ranking &mdash; Rui Bian">
+    <meta property="og:description" content="A bilingual beauty product recommendation and research platform built with React, TypeScript, Cloudflare Workers, D1, FTS5, and scheduled ETL.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bianrui.net/case-studies/beauty-ranking">
+    <meta property="og:image" content="https://bianrui.net/assets/img/case-studies/beauty-ranking-discovery.png">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="980">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mirror Light Beauty Ranking &mdash; Rui Bian">
+    <meta name="twitter:description" content="Explainable beauty recommendations, privacy-first personalization, searchable product data, and a production edge data pipeline.">
+    <meta name="twitter:image" content="https://bianrui.net/assets/img/case-studies/beauty-ranking-discovery.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Mirror Light Beauty Ranking",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web",
+      "author": {"@type": "Person", "name": "Rui Bian", "url": "https://bianrui.net/"},
+      "url": "https://beauty-ranking.bianrui0315.workers.dev/",
+      "description": "A bilingual beauty product recommendation and research platform with explainable rankings, local personalization, searchable product data, and scheduled ETL."
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="/assets/js/site-ui.js?v=20260802-2"></script>
+    <script src="/assets/vendor/lucide.min.js?v=1.28.0" defer></script>
+    <link rel="stylesheet" href="/css/premium.css?v=20260807-beauty-case-1">
+    <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"e3298533396643cb999381ebcf203126"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="case-body">
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo" aria-label="Rui Bian home">
+                <img src="/assets/img/favicon-48x48.png" alt="" class="logo-mark" width="36" height="36">
+                <span class="logo-text">RUI BIAN</span>
+            </a>
+            <ul class="nav-links" id="navLinks" data-nav-links>
+                <li><a href="/" class="nav-link">Portfolio</a></li>
+                <li><a href="/#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="/projects#beauty-ranking" class="nav-link">Engineering Log</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme"><i data-lucide="sun" aria-hidden="true"></i></button>
+                <button class="mobile-menu-btn" type="button" data-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"><i data-lucide="menu" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="case-hero">
+        <div class="container case-hero-grid">
+            <div>
+                <div class="case-eyebrow">Case Study &middot; Recommendation &amp; Data Product</div>
+                <h1>Mirror Light Beauty Ranking</h1>
+                <p class="case-lede">Rui built a bilingual beauty product research and recommendation platform that turns product records, ingredients, regional context, and user preferences into explainable discovery experiences without uploading a personal profile to the backend.</p>
+                <div class="case-actions">
+                    <a href="https://beauty-ranking.bianrui0315.workers.dev/" target="_blank" rel="noopener noreferrer">Live Product</a>
+                    <a href="https://github.com/bianrui0315/beauty-ranking" target="_blank" rel="noopener noreferrer" title="Private repository; access may be required">Private GitHub</a>
+                    <a href="/projects#beauty-ranking">Engineering Log</a>
+                </div>
+                <div class="case-metrics">
+                    <div class="case-metric"><strong>3,763</strong><span>Quality-filtered records</span></div>
+                    <div class="case-metric"><strong>10</strong><span>Explainable rankings</span></div>
+                    <div class="case-metric"><strong>0&ndash;100</strong><span>Local match score</span></div>
+                    <div class="case-metric"><strong>Weekly</strong><span>Scheduled ETL</span></div>
+                </div>
+            </div>
+            <div class="case-visual-shell">
+                <img src="/assets/img/case-studies/beauty-ranking-discovery.png" alt="Mirror Light desktop ranking interface with four beauty products and a comparison table" width="1440" height="980" loading="eager" decoding="async" fetchpriority="high">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>The Product Problem</h2>
+                    <p>Beauty discovery is fragmented across rankings, ingredient lists, regional reviews, and shopping pages. Popularity-only lists also hide sample size, freshness, and uncertainty. Mirror Light brings those signals into one research surface while keeping recommendations explainable and clearly separated from medical advice.</p>
+                </div>
+                <div class="case-callout">
+                    <h2>Rui's Role</h2>
+                    <p>Rui led the product design, responsive React implementation, ranking and personalization logic, Worker APIs, D1 schema and FTS5 search, bulk data preparation, scheduled ETL, privacy model, testing, and Cloudflare deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container">
+                <h2>Product Evidence</h2>
+                <p>The interface supports ranked discovery, cross-product comparison, ingredient and market context, detailed product research, bilingual content, and a dedicated mobile experience.</p>
+                <div class="case-image-grid beauty-evidence-grid">
+                    <figure class="case-shot">
+                        <img src="/assets/img/case-studies/beauty-ranking-detail.png" alt="Mirror Light product detail drawer showing rating, ingredients, tradeoffs, and regional review scores" width="1440" height="980" loading="lazy" decoding="async">
+                        <figcaption>Product detail keeps strengths, tradeoffs, ingredients, regional evidence, pricing, and source paths in one inspectable view.</figcaption>
+                    </figure>
+                    <figure class="case-shot case-shot-mobile">
+                        <img src="/assets/img/case-studies/beauty-ranking-mobile.png" alt="Mirror Light mobile discovery interface with search, ranking filters, and bottom navigation" width="390" height="844" loading="lazy" decoding="async">
+                        <figcaption>Mobile layout preserves search, discovery modes, regional filters, rankings, and thumb-friendly navigation.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container">
+                <h2>What Rui Built</h2>
+                <ul class="case-list">
+                    <li><strong>Explainable recommendation layer:</strong> overall, new, sensitive-skin, value, and personalized rankings with a documented 0&ndash;100 match score rather than a black-box recommendation.</li>
+                    <li><strong>Privacy-first personalization:</strong> skin profile, goals, budget, texture preferences, and optional weather context stay on the device; exact location is not stored in D1.</li>
+                    <li><strong>Searchable product data:</strong> D1 tables and FTS5 indexes support bounded product, brand, category, market, and INCI ingredient discovery with paginated detail APIs.</li>
+                    <li><strong>Production data workflow:</strong> streaming Open Beauty Facts preparation, content hashing, staging tables, source attribution, quality gates, audit records, and a weekly incremental ETL path.</li>
+                    <li><strong>Single edge deployment:</strong> one Cloudflare Worker serves the React application, same-origin APIs, D1 queries, optional weather lookup, and Cron-driven updates without a separate CORS surface.</li>
+                    <li><strong>Consumer-ready workflow:</strong> bilingual UI, regional views, random discovery, local wishlist persistence, and PDF/TXT export turn research into a usable decision artifact.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>Engineering Decisions</h2>
+                    <p>List queries read only bounded summary fields, while complete ingredients load on demand. Controlled sort enums map to fixed SQL fragments, requests use bound parameters, stale ranking requests are canceled, and failed ETL runs preserve the last successful data rather than publishing partial state.</p>
+                </div>
+                <div>
+                    <h2>Trust Boundaries</h2>
+                    <p>The live experience clearly marks demonstration scores and review-pending catalog records. Rankings are research aids, not medical or purchasing advice, and source licensing, formula versions, and regional availability remain visible verification concerns.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="container case-two-col">
+                <div>
+                    <h2>Capability Signal</h2>
+                    <p>This project demonstrates Rui's ability to connect consumer product judgment with recommendation logic, privacy-aware UX, data quality engineering, full-stack TypeScript, SQL search, scheduled pipelines, and edge infrastructure.</p>
+                </div>
+                <div>
+                    <h2>Go Deeper</h2>
+                    <p>The live application is public. The source repository is private, so access may be required; implementation details are also summarized in the Engineering Log.</p>
+                    <div class="case-actions">
+                        <a href="https://beauty-ranking.bianrui0315.workers.dev/" target="_blank" rel="noopener noreferrer">Open Live Product</a>
+                        <a href="https://github.com/bianrui0315/beauty-ranking" target="_blank" rel="noopener noreferrer">Private Repository</a>
+                        <a href="/projects#beauty-ranking">Complete Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="container"><p>&copy; 2026 Rui Bian. <a href="/privacy">Privacy</a></p></div></footer>
+    <script src="/assets/js/scroll-effects.js?v=20260802" defer></script>
+</body>
+</html>
