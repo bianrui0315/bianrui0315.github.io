@@ -95,8 +95,8 @@ PUBLIC OPEN-SOURCE PRODUCT — Free Image Tools (freeimgtools.net, github.com/bi
 Stack: Client-side JavaScript, Web Canvas API, Cloudflare, image format tooling, SEO-focused product UX, MIT-licensed open source
 Portfolio case study: https://bianrui.net/case-studies/free-image-tools
 Engineering log: https://bianrui.net/projects#free-image-tools
-Product: A free, open-source, privacy-first public image utility suite for compressing, converting, resizing, and packaging images directly in the browser. Core tools include image compression, JPG/PNG/WebP/AVIF conversion, batch processing, PDF-to-image, image-to-PDF, social media resize presets, target-size compression, metadata removal, color palette extraction, Base64 output, borders, circular crops, and opt-in AI alt-text generation.
-Design: Core image workflows run client-side so users do not need to upload private files for everyday image tasks. AI alt text is an opt-in edge inference workflow for accessibility and SEO copy.
+Product: A free, open-source, privacy-first suite of 50+ focused image utilities. A problem-first homepage and natural-language finder route everyday requests into compression, conversion, resizing, PDF, social, metadata, and opt-in AI workflows without requiring users to learn format jargon.
+Design: Core image workflows run client-side so users do not need to upload private files for everyday tasks. Dedicated tool pages expose output format, target size, quality, EXIF removal, batch download, and mobile handoff controls. My Tools, recent and saved shortcuts, sharing, and multilingual navigation support repeat use. AI alt text remains an opt-in edge inference workflow for accessibility and SEO copy.
 Community: The website is free to use, the source code is public, and collaboration is welcome through issues, pull requests, and community-driven improvements.
 Impact: Demonstrates Rui's ability to build and ship a public-facing open-source product, not only internal enterprise systems.
 
@@ -104,7 +104,7 @@ PUBLIC OPEN-SOURCE PRODUCT — California School Explorer (ca-school-explorer.th
 Stack: React, TypeScript, Python data tooling, PostgreSQL canonical store, Cloudflare Worker Static Assets, Apache-2.0
 Portfolio case study: https://bianrui.net/case-studies/california-school-explorer
 Engineering log: https://bianrui.net/projects#california-school-explorer
-Product: An open-source education data product that turns fragmented California public school data into transparent profiles, side-by-side comparisons, trend analysis, subgroup views, nearby discovery, and similar-context baselines.
+Product: An open-source education data product that turns fragmented California public school data into transparent profiles, a three-column comparison workspace, Area Explorer, trend analysis, subgroup views, nearby discovery, similar-context baselines, and a shareable Family Decision Brief.
 Design: The project avoids simplistic "best schools" rankings. It exposes sources, denominators, freshness, suppression, comparability notes, and reproducible methodology so families and researchers can tell which findings are reliable. The repository includes deterministic data processing, validation, documentation, tests, contribution guidance, and a Cloudflare Worker release path.
 Impact: Demonstrates Rui's ability to build open-data software with public-interest data governance, data quality controls, user-facing analytics, and production deployment discipline. Current repository materials describe 9,946 public-school profiles, 3,962,208 canonical facts, nine indicators, and subgroup and context-aware comparison workflows.
 
@@ -165,7 +165,7 @@ Automation: Playwright (sync + async), Selenium, asyncio, BeautifulSoup, Paramik
 Visualization: Power BI/DAX (150+ dashboards, 9 types), Streamlit, Plotly Mapbox, Folium
 
 === IMPACT METRICS ===
-32 production systems shipped | 1 independent AI backend project | 2 live open-source products + 1 private prototype | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
+37 systems and products documented | 1 independent AI backend project | 2 live open-source products + 1 public private-source product + 1 private prototype | 30+ school districts | 150+ Power BI dashboards | 18 school sites automated | 10,000+ CA schools mapped | 90% pipeline time saved | 436,000+ proxies analyzed | millions of network probes at internet scale | PhD GPA 3.96/4.0
 
 === CERTIFICATIONS (2026, valid through 2028) ===
 DataCamp: AI Engineer for Developers Associate, AI Engineer for Data Scientists Associate, Data Scientist Associate, Data Engineer Associate.
